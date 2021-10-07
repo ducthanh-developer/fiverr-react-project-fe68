@@ -1,13 +1,9 @@
-import React, { Component, Fragment } from 'react';
-import MovieList from './MovieList/MovieList';
-export default class Home extends Component {
-  render() {
-    return (
-      <>
-        {/* Banner */}
-        {/* Filter */}
-        <MovieList />
-      </>
-    );
-  }
+import React from 'react'
+
+export default function Home() {
+  return (
+    <div>
+      hello
+    </div>
+  )
 }
