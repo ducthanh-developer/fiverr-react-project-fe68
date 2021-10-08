@@ -14,7 +14,7 @@ export default function Sliderr() {
         slidesToScroll: 1
     };
     const { Search } = Input;
-   
+
     const onSearch = value => console.log(value);
     return (
         <div>
@@ -22,19 +22,16 @@ export default function Sliderr() {
                 <Slider {...settings}>
                     <div className="">
                         <img src="https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/d14871e2d118f46db2c18ad882619ea8-1599835783966/bg-hero-3-1792-x1.png" alt="" />
-                        
                     </div>
                     <div className="">
                         <img src="https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/93085acc959671e9e9e77f3ca8147f82-1599427734108/bg-hero-4-1792-x1.png" alt="" />
                     </div>
                 </Slider>
             </div>
-
-
             <div className="Sliders__search ">
-                <div>
-                    <h1>Find the perfect</h1>
-                    <h1> freelance</h1>
+                <div className="Sliders__search__item">
+                    <h1>Find the perfect <span>freelance</span></h1>
+                    <h1>services for your business</h1>
                 </div>
                 <Space direction="vertical">
                     <div className="">
@@ -59,6 +56,10 @@ export default function Sliderr() {
                         </div>
                         <div className="col-2 Sliders__bottom__item">
                             facebook
+                        </div>
+                        <div className="col-2 Sliders__bottom__item">
+                            Google
+
                         </div>
                         <div className="col-2 Sliders__bottom__item">
                             Google

@@ -26,8 +26,7 @@ function SamplePrevArrow(props) {
 
 export default function Product() {
   const settings = {
-    dots: true,
-    infinite: false,
+   
     speed: 500,
     slidesToShow: 5,
     slidesToScroll: 4,

@@ -13,7 +13,7 @@
     left: 90px;
     top: 230px;
     .ant-input-affix-wrapper-lg {
-        width: 500px;
+        width: 550px;
         height: 54px;
     }
     .ant-input-search-button {
@@ -22,11 +22,54 @@
         width: 110px;
         border: none;
     }
+    .Sliders__search__item {
+        h1{
+            color:white;
+            font-size:50px;
+            font-weight:bold;
+        }
+    }
 }
 
-@media screen and (max-width: 975px) {
+@media screen and (max-width: 1200px) {
     .Sliders__search {
         position: absolute;
+        top: 10px;
+        .ant-input-affix-wrapper-lg {
+            width: 480px;
+            height: 59px;
+        }
+        .ant-input-search-button {
+            height: 59px;
+            background-color: rgb(9, 74, 27);
+            width: 70px;
+            border: none;
+        }
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+    .Sliders__search {
+        position: absolute;
+        top: 10px;
+        .ant-input-affix-wrapper-lg {
+            width: 380px;
+            height: 59px;
+        }
+        .ant-input-search-button {
+            height: 59px;
+            background-color: rgb(9, 74, 27);
+            width: 70px;
+            border: none;
+        }
+        .Sliders__search__item {
+            h1{
+                color:white;
+                font-size:30px;
+                font-weight:bold;
+            }
+        }
     }
 }
 @media (max-width: 975px) {
@@ -36,13 +79,13 @@
 }
 
 
-@media (max-width: 575px) {
+@media (max-width: 576px) {
     .Sliders__search {
-        top: 150px;
+        top: 10px;
         position: absolute;
       
         .ant-input-affix-wrapper-lg {
-            width: 300px;
+            width: 50px;
             height: 50px;
         }
         .ant-input-search-button {
