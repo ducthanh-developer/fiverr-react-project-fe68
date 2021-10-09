@@ -1,11 +1,16 @@
 //sliders
 .Sliders {
     position: relative;
-    img{
+    width: 100%;
+    img {
         width: 100%;
     }
+    .slick-slider{
+        .slick-track{
+            // width: 100% !important;
+        }
+    }
 }
-
 
 //Sliders__search
 .Sliders__search {
@@ -13,7 +18,7 @@
     left: 90px;
     top: 230px;
     .ant-input-affix-wrapper-lg {
-        width: 500px;
+        width: 550px;
         height: 54px;
     }
     .ant-input-search-button {
@@ -22,47 +27,77 @@
         width: 110px;
         border: none;
     }
-}
-
-@media screen and (max-width: 975px) {
-    .Sliders__search {
-        position: absolute;
-    }
-}
-@media (max-width: 975px) {
-    .Sliders__search {
-        position: absolute;
+    .Sliders__search__item {
+        h1 {
+            color: white;
+            font-size: 50px;
+            font-weight: bold;
+        }
     }
 }
 
+@media screen and (max-width: 1200px) {
+    .Sliders {
+        position: relative;
+        img {
+            width: 100%;
+        }
+    }
 
-@media (max-width: 575px) {
     .Sliders__search {
-        top: 150px;
         position: absolute;
-      
+        top: 200px;
+
         .ant-input-affix-wrapper-lg {
-            width: 300px;
-            height: 50px;
+            width: 480px;
+            height: 59px;
         }
         .ant-input-search-button {
-            height: 50px;
+            height: 59px;
             background-color: rgb(9, 74, 27);
             width: 70px;
             border: none;
         }
-      
     }
 }
 
-
-@media (max-width: 375px) {
+@media screen and (max-width: 960px) {
+    .Sliders {
+        position: relative;
+        img {
+            width: 110%;
+        }
+    }
     .Sliders__search {
+        position: absolute;
         top: 100px;
-        position: absolute;
-      
         .ant-input-affix-wrapper-lg {
-            width: 200px;
+            width: 380px;
+            height: 59px;
+        }
+        .ant-input-search-button {
+            height: 59px;
+            background-color: rgb(9, 74, 27);
+            width: 70px;
+            border: none;
+        }
+        .Sliders__search__item {
+            h1 {
+                color: white;
+                font-size: 30px;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 576px) {
+    .Sliders__search {
+        position: absolute;
+
+        .ant-input-affix-wrapper-lg {
+            width: 250px;
             height: 50px;
         }
         .ant-input-search-button {
@@ -71,10 +106,32 @@
             width: 70px;
             border: none;
         }
-      
     }
 }
 
+@media (max-width: 440px) {
+    .Sliders__search {
+        top: 10px;
+
+        .ant-input-affix-wrapper-lg {
+            width: 70px;
+            height: 30px;
+        }
+        .ant-input-search-button {
+            height: 30px;
+            background-color: rgb(9, 74, 27);
+            width: 70px;
+            border: none;
+        }
+        .Sliders__search__item {
+            h1 {
+                color: white;
+                font-size: 10px;
+                font-weight: bold;
+            }
+        }
+    }
+}
 
 // class="ant-btn ant-btn-primary ant-btn-lg ant-input-search-button"
 .Sliders__bottom {
@@ -87,4 +144,55 @@
         font-weight: bold;
         color: rgba(68, 60, 51, 0.387);
     }
+}
+
+
+
+
+
+
+.carousel__content{
+    .carousel__images{
+        .images__item__trangti{
+            img{
+               
+                width: 110%;
+                height: 700px;
+                display: block;
+            }
+        }
+        .images__item__bantay{
+            img{
+                width: 100%;
+                height: 700px;
+            }
+        }
+    }
+
+}
+
+
+
+
+@media (max-width: 576px) {
+   
+
+.carousel__content{
+    .carousel__images{
+        .images__item__trangti{
+            img{
+                width: 110%;
+                height: 400px;
+                display: block;
+            }
+        }
+        .images__item__bantay{
+            img{
+                width: 100%;
+                height: 400px;
+            }
+        }
+    }
+
+}
 }
