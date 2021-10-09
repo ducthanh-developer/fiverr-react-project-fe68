@@ -109,29 +109,29 @@
     }
 }
 
-// @media (max-width: 440px) {
-//     .Sliders__search {
-//         top: 10px;
+@media (max-width: 440px) {
+    .Sliders__search {
+        top: 10px;
 
-//         .ant-input-affix-wrapper-lg {
-//             width: 70px;
-//             height: 30px;
-//         }
-//         .ant-input-search-button {
-//             height: 30px;
-//             background-color: rgb(9, 74, 27);
-//             width: 70px;
-//             border: none;
-//         }
-//         .Sliders__search__item {
-//             h1 {
-//                 color: white;
-//                 font-size: 10px;
-//                 font-weight: bold;
-//             }
-//         }
-//     }
-// }
+        .ant-input-affix-wrapper-lg {
+            width: 70px;
+            height: 30px;
+        }
+        .ant-input-search-button {
+            height: 30px;
+            background-color: rgb(9, 74, 27);
+            width: 70px;
+            border: none;
+        }
+        .Sliders__search__item {
+            h1 {
+                color: white;
+                font-size: 10px;
+                font-weight: bold;
+            }
+        }
+    }
+}
 
 // class="ant-btn ant-btn-primary ant-btn-lg ant-input-search-button"
 .Sliders__bottom {
