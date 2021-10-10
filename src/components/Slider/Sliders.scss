@@ -1,18 +1,4 @@
-//sliders
-.Sliders {
-    position: relative;
-    width: 100%;
-    img {
-        width: 100%;
-    }
-    .slick-slider{
-        .slick-track{
-            // width: 100% !important;
-        }
-    }
-}
 
-//Sliders__search
 .Sliders__search {
     position: absolute;
     left: 90px;
@@ -61,16 +47,22 @@
     }
 }
 
-@media screen and (max-width: 960px) {
-    .Sliders {
-        position: relative;
-        img {
-            width: 110%;
+@media screen and (max-width: 768px) {
+    .carousel__content {
+        .carousel__images {
+            .images__item {
+                img {
+                    height: 300px;
+                    width: 100%;
+                }
+            }
         }
     }
+   
     .Sliders__search {
         position: absolute;
         top: 100px;
+        left:30px;
         .ant-input-affix-wrapper-lg {
             width: 380px;
             height: 59px;
@@ -91,13 +83,63 @@
     }
 }
 
+@media screen and (max-width: 960px) {
+    .carousel__content {
+        .carousel__images {
+            .images__item {
+                img {
+                    height: 500px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .Sliders__search {
+        left:24px;
+        position: absolute;
+        top: 80px;
+        .ant-input-affix-wrapper-lg {
+            width: 400px;
+            height: 55px;
+        }
+        .ant-input-search-button {
+            height: 55px;
+            background-color: rgb(21, 186, 68);
+            width: 100px;
+            border: none;
+        }
+        .Sliders__search__item {
+            h1 {
+                color: white;
+                font-size: 45px;
+                font-weight: bold;
+            }
+        }
+    }
+}
 
 @media (max-width: 576px) {
+    .carousel__content {
+        .carousel__images {
+            .images__item {
+                img {
+                    height: 250px;
+                    width: 100%;
+                }
+            }
+        }
+    }
     .Sliders__search {
         position: absolute;
-
+        top: 50px;
+        left:10px;
+        .Sliders__search__item{
+            h1{
+                font-size:30px;
+            }
+        }
         .ant-input-affix-wrapper-lg {
-            width: 250px;
+            width: 290px;
             height: 50px;
         }
         .ant-input-search-button {
@@ -107,26 +149,37 @@
             border: none;
         }
     }
+    
 }
 
-@media (max-width: 440px) {
+@media (max-width: 400px) {
+    .carousel__content {
+        .carousel__images {
+            .images__item {
+                img {
+                    height: 250px;
+                    width: 100%;
+                }
+            }
+        }
+    }
     .Sliders__search {
-        top: 10px;
-
+        top: 100px;
+        left: 20px;
         .ant-input-affix-wrapper-lg {
-            width: 70px;
-            height: 30px;
+            width: 220px;
+            height: 40px;
         }
         .ant-input-search-button {
-            height: 30px;
-            background-color: rgb(9, 74, 27);
+            height: 40px;
+            background-color: rgb(81, 213, 118);
             width: 70px;
-            border: none;
+            border-right: 20px;
         }
         .Sliders__search__item {
             h1 {
                 color: white;
-                font-size: 10px;
+                font-size: 19px;
                 font-weight: bold;
             }
         }
@@ -146,53 +199,21 @@
     }
 }
 
-
-
-
-
-
-.carousel__content{
-    .carousel__images{
-        .images__item__trangti{
-            img{
-               
+.carousel__content {
+    .carousel__images {
+        .images__item__trangti {
+            img {
                 width: 110%;
                 height: 700px;
                 display: block;
             }
         }
-        .images__item__bantay{
-            img{
+        .images__item__bantay {
+            img {
                 width: 100%;
                 height: 700px;
             }
         }
     }
-
 }
 
-
-
-
-@media (max-width: 576px) {
-   
-
-.carousel__content{
-    .carousel__images{
-        .images__item__trangti{
-            img{
-                width: 110%;
-                height: 400px;
-                display: block;
-            }
-        }
-        .images__item__bantay{
-            img{
-                width: 100%;
-                height: 400px;
-            }
-        }
-    }
-
-}
-}
