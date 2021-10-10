@@ -4,7 +4,6 @@
     position: relative;
     max-width: 90%;
     img {
-        margin-left: 13px;
         height: 375px;
         width: 90%;
         border-radius: 4px;
@@ -17,7 +16,7 @@
 @media (max-width: 454px) {
     .Product__content {
         max-width: 90%;
-        margin-left: 10px;
+        // margin-left: 10px;
         img {
             height: 375px;
             width: 100%;
@@ -29,40 +28,23 @@
     }
 }
 
-// .slick-prev, .slick-next {
-//     font-size: 65px;
-//     line-height: 0;
-//     position: absolute;
-//     top: 50%;
-//     display: block;
-//     width: 45px;
-//     height: 46px;
-//     padding: 0;
-//     transform: translate(0, -50%);
-//     cursor: pointer;
-//     color: transparent;
-//     border: none;
-//     outline: none;
-//     background: transparent;
-//     border-radius: 20px;
-// }
-
-// class="slick-arrow slick-prev slick-disabled"
-
 .Product__icon {
     .slick-arrow {
-        border-radius: 30px;
-        padding-left: 10px;
-        width: 44px;
+        padding-left: 15px;
+        width: 59px;
+        display: block;
+        background: #fff;
+        position: absolute;
+        height: 59px;
+        padding-top: 20px;
         display: block;
         background: #fafafa;
         position: absolute;
-        height: 44px;
-        padding-top: 13px;
+        padding-top: 19px;
         box-shadow: 0 2px 5px 0 rgb(0 0 0 / 15%);
-
-        /* margin-left: 10px; */
-        margin-right: 13px;
+        z-index: 55;
+        margin-right: 16px;
+        border-radius:29px;
     }
     .slick-next:before {
         color: red;
@@ -71,17 +53,17 @@
     .slick-prev {
         border-radius: 30px;
         padding-left: 5px;
-        width: 45px;
+        width: 59px;
         display: block;
         background: #fff;
         position: absolute;
-        height: 45px;
-        padding-top: 13px;
-        margin-left: 10px;
+        height: 59px;
+        padding-top: 20px;
+        margin-left: -2px;
         box-shadow: 0 2px 5px 0 rgb(0 0 0 / 15%);
         border: 0;
         text-align: center;
-        z-index: 4;
+        z-index: 55;
     }
     .slick-prev:before {
         color: red;

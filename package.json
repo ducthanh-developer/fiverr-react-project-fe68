@@ -1,7 +1,9 @@
 {
-  "name": "cinema-booking",
+  "name": "fiverr-react-project-fe68",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://fiverr.cybersoft.edu.vn/api",
+
   "dependencies": {
     "@testing-library/jest-dom": "5.11.4",
     "@testing-library/react": "11.1.0",
