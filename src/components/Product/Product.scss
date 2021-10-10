@@ -59,7 +59,7 @@
         position: absolute;
         height: 44px;
         padding-top: 13px;
-        box-shadow: 0 2px 5px 0 rgb(0 0 0 / 15%);
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
 
         /* margin-left: 10px; */
         margin-right: 13px;
@@ -78,7 +78,7 @@
         height: 45px;
         padding-top: 13px;
         margin-left: 10px;
-        box-shadow: 0 2px 5px 0 rgb(0 0 0 / 15%);
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
         border: 0;
         text-align: center;
         z-index: 4;

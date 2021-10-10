@@ -1,0 +1,196 @@
+$primary-color: #62646a;
+$second-color: #1dbf73;
+$active-color: #02c2a9;
+$max-width: 1400px;
+
+.header {
+  a {
+    color: $primary-color;
+    text-decoration: none;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  svg {
+    fill: #95979d;
+  }
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: $primary-color;
+  font-weight: 600;
+  &-package {
+    align-items: center;
+    height: 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 32px;
+    .package-logo {
+      width: 89px;
+      height: 27px;
+      display: block;
+      margin: -4px 32px 0 0;
+    }
+    .package-search {
+      width: 30%;
+      .search-bar {
+        position: relative;
+        .search-form {
+          position: relative;
+          margin: 0;
+          .search-icon {
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            z-index: 5;
+            top: 5px;
+            left: 8px;
+          }
+          .search-input {
+            border-radius: 3px 0 0 3px;
+            padding: 7px 7px 7px 28px;
+            border: 1px #b5b6ba solid;
+            border-color: #dadbdd;
+            box-shadow: none;
+            z-index: 3;
+            flex: 1 1 auto;
+            height: 100%;
+            &:focus {
+              border-color: #95979d;
+              box-shadow: none;
+            }
+            &:focus-visible {
+              outline: none;
+            }
+          }
+          .search-btn {
+            cursor: pointer;
+            padding: 0 16px;
+            display: block;
+            font-size: 14px;
+            font-weight: 700;
+            border-radius: 0 3px 3px 0;
+            background-color: $second-color;
+            color: white;
+            outline: none;
+            border: none;
+            &:hover {
+              background: #19a463;
+            }
+          }
+        }
+      }
+    }
+
+    .package-nav {
+      justify-content: flex-end;
+      flex-grow: 1;
+      margin: 0;
+      .nav-list {
+        align-items: center;
+        font-size: 17px;
+        line-height: 24px;
+        .nav-item {
+          display: block;
+          padding: 0 24px 0 0;
+          &:last-of-type {
+            padding: 0;
+          }
+          svg {
+            margin-right: 5px;
+          }
+          .nav-link {
+            padding: 0;
+            &.nav-link--btn {
+              background: none;
+              padding: 10px 16px;
+              font-size: 14px;
+              line-height: 100%;
+              border: 1px solid $second-color;
+              border-radius: 4px;
+              color: $second-color;
+              &:hover {
+                background: $second-color;
+                color: white;
+              }
+            }
+          }
+          &.active {
+            .nav-link {
+              color: $active-color;
+            }
+          }
+          &:hover {
+            svg {
+              fill: $second-color;
+            }
+            .nav-link {
+              color: $second-color;
+            }
+          }
+        }
+      }
+    }
+  }
+  &-category {
+    border-bottom: 1px solid #e4e5e7;
+    border-top: 1px solid #e4e5e7;
+    .category-menu {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 32px;
+      .menu {
+        align-items: center;
+        justify-content: space-between;
+        &-item {
+          padding: 0 10px;
+          &:first-child {
+            padding-left: 0;
+          }
+          &:last-child {
+            padding-right: 0;
+          }
+          &:hover {
+            .menu-link::after {
+              content: "";
+              position: absolute;
+              z-index: 1;
+              height: 3px;
+              left: 0;
+              bottom: 0;
+              width: 100%;
+              background: $second-color;
+            }
+          }
+
+          .menu-link {
+            position: relative;
+            display: block;
+            line-height: 24px;
+            padding: 8px 0;
+            font-size: 16px;
+            font-weight: 400;
+            span {
+              position: relative;
+              top: -1px;
+              margin-left: 6px;
+              color: #ff62ad;
+              background: white;
+              border: 1px solid #ff62ad;
+              padding: 2px 8px 2px;
+              font-size: 10px;
+              line-height: 100%;
+              font-weight: 700;
+              border-radius: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
