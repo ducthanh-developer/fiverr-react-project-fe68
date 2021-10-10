@@ -148,6 +148,7 @@ $max-width: 1400px;
         align-items: center;
         justify-content: space-between;
         &-item {
+          position: relative;
           padding: 0 10px;
           &:first-child {
             padding-left: 0;
@@ -165,6 +166,9 @@ $max-width: 1400px;
               bottom: 0;
               width: 100%;
               background: $second-color;
+            }
+            .menu-panel{
+              display: block;
             }
           }
 
@@ -187,6 +191,29 @@ $max-width: 1400px;
               line-height: 100%;
               font-weight: 700;
               border-radius: 10px;
+            }
+          }
+          .menu-panel {
+            display: none;
+            column-count: 2;
+            column-gap: 72px;
+            position: absolute;
+            left: -10px;
+            top: 100%;
+            z-index: 100;
+            padding: 20px 32px;
+            background: #fff;
+            border: 1px solid #e4e5e7;
+            box-shadow: 0 1px 3px #dadbdd;
+            .panel-item {
+              width: 248px;
+              .panel-link {
+                padding: 6px 0;
+                display: block;
+                position: relative;
+                font-size: 16px;
+                line-height: 24px;
+              }
             }
           }
         }
