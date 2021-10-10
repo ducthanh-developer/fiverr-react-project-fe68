@@ -40,11 +40,12 @@
         display: block;
         background: #fafafa;
         position: absolute;
-        padding-top: 19px;
-        box-shadow: 0 2px 5px 0 rgb(0 0 0 / 15%);
-        z-index: 55;
-        margin-right: 16px;
-        border-radius:29px;
+        height: 44px;
+        padding-top: 13px;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
+
+        /* margin-left: 10px; */
+        margin-right: 13px;
     }
     .slick-next:before {
         color: red;
@@ -57,10 +58,10 @@
         display: block;
         background: #fff;
         position: absolute;
-        height: 59px;
-        padding-top: 20px;
-        margin-left: -2px;
-        box-shadow: 0 2px 5px 0 rgb(0 0 0 / 15%);
+        height: 45px;
+        padding-top: 13px;
+        margin-left: 10px;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
         border: 0;
         text-align: center;
         z-index: 55;

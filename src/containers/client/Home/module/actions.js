@@ -1,4 +1,5 @@
 import movieApi from "apis/movieApi";
+import callApi from "utils/callApi";
 import {
   FETCH_ALL_MOVIE_FAILED,
   FETCH_ALL_MOVIE_SUCCESS,
@@ -44,3 +45,5 @@ export const actFetchAllMovieApi = () => {
       });
   };
 };
+
+
