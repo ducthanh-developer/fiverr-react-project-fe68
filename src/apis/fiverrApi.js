@@ -1,4 +1,3 @@
-import  "settings/apiConfig";
 import callApi from "utils/callApi";
 
 const fiverrApi = {
