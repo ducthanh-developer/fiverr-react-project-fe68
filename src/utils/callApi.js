@@ -4,7 +4,7 @@ import { BASE_URL } from 'settings/apiConfig';
 const callApi =  (endpoint, method = 'GET', data = null,
 ) => {
   return  axios({
-    url: `api/${endpoint}`,
+    url: `${endpoint}`,
     method,
     data,
     headers: {

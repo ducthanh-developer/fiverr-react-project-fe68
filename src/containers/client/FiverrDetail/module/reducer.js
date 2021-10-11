@@ -2,7 +2,7 @@ import { FETCH_DETAIL_JOB_FAIL, FETCH_DETAIL_JOB_SUCCESS } from "./types";
 
 
 const initialState = {
-  jobDetail:{},
+  jobDetail:null,
   error: '',
 };
 
