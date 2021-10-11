@@ -3,7 +3,6 @@ import Product from 'components/Product/Product';
 import Selling from 'components/Selling/Selling';
 import Slider from 'components/Slider/Slider';
 import React, { Component, Fragment } from 'react';
-import FiverrDetail from '../FiverrDetail/FiverrDetail';
 export default class Home extends Component {
   render() {
     return (
@@ -15,7 +14,7 @@ export default class Home extends Component {
         <Product/>
         <Selling/>
         <Marketplace/>
-        <FiverrDetail/>
+        {/* <FiverrDetail/> */}
       </>
     );
   }

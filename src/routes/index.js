@@ -4,7 +4,7 @@ import Home from 'containers/client/Home/Home';
 
 import Review from 'containers/client/Review/Review';
 import Theater from 'containers/client/Theater/Theater';
-
+import FriverrDetail from 'containers/client/FiverrDetail/FiverrDetail'
 export const clientRoutes = [
   {
     path: '/',
@@ -26,6 +26,13 @@ export const clientRoutes = [
     component: About,
     exact: false,
   },
+
+  {
+    path: '/FriverrDetail',
+    component: FriverrDetail,
+    exact: false,
+  },
+  
  
 ];
 

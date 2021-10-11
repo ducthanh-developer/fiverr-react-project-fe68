@@ -6,7 +6,13 @@ function ClientLayout(props) {
   return (
     <>
       <Header />
+      {/* <Slider/>
+      <Product/>
+      <Selling/>
+      <Marketplace/> */}
       {props.children}
+
+
     </>
   );
 }

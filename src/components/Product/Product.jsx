@@ -1,5 +1,6 @@
 
 import React from 'react'
+import { Link, NavLink } from 'react-router-dom';
 import Slider from "react-slick";
 import "../Product/Product.scss"
 function SampleNextArrow(props) {
@@ -95,7 +96,9 @@ export default function Product() {
       </h2>
       <Slider {...settings}>
         <div className="">
-          <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741678/logo-design-2x.png" alt="..." />
+          <Link className="navLink" to="/FriverrDetail">
+            <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741678/logo-design-2x.png" alt="..." />
+          </Link>
         </div>
         <div>
           <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/ae11e2d45410b0eded7fba0e46b09dbd-1598561917003/wordpress-2x.png" alt="..." />

@@ -22,22 +22,23 @@ export default function FiverrDetail(props) {
   //   })
   // }
   return (
-    <div>
-      <Card
-        hoverable
-        style={{ width: 240 }}
-        cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
-      >
-        <Meta title="Europe Street beat" description="www.instagram.com" />
-      </Card>,
-      {/* {jobDetail?.map((job, index) => {
+    <div className="container">
+      <div className="row">
+      {jobDetail?.map((job, index) => {
         return (
-          <div>
-            {job.name}
+          <div key={index} className="col-3">
+            <Card
+              hoverable
+              style={{ width: 240 }}
+              cover={<img alt="example" src={job.image} />}
+            >
+              <Meta title={job.name} description="www.instagram.com" />
+            </Card>,
+           
           </div>
         )
-      })} */}
-
+      })}
+      </div>
     </div>
   )
 }
