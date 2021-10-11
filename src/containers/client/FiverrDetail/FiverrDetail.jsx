@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { actGetJobDetail } from "../FiverrDetail/module/actions"
 import { Card } from 'antd';
+import "./FiverrDetail.scss"
 
 export default function FiverrDetail(props) {
   const { Meta } = Card;
@@ -13,23 +14,15 @@ export default function FiverrDetail(props) {
     dispatch(actGetJobDetail());
   }, []);
 
-  // const renderListJob = () => {
-  //   return jobDetail.data?.map((job, index) => {
-  //     <div key={index} >
-  //       {job.name}
-
-  //     </div>
-  //   })
-  // }
   return (
     <div className="container">
       <div className="row">
       {jobDetail?.map((job, index) => {
         return (
-          <div key={index} className="col-3">
+          <div key={index} className="col-3  fiverr__item">
             <Card
               hoverable
-              style={{ width: 240 }}
+              style={{ width: 340 }}
               cover={<img alt="example" src={job.image} />}
             >
               <Meta title={job.name} description="www.instagram.com" />

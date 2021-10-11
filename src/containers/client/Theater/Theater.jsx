@@ -1,11 +1,14 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { useEffect } from 'react'
+import callApi from 'utils/callApi';
 
-export default class Theater extends Component {
-    render() {
-        return (
-            <div>
-                Theater
-            </div>
-        )
-    }
+export default function Theater() {
+    useEffect(()=>{
+
+    }, [])
+    return (
+        <div>
+            
+        </div>
+    )
 }
