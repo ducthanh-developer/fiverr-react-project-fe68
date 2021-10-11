@@ -100,17 +100,64 @@ export default function Header() {
             <li className="menu-item">
               <a href="#" className="menu-link">
                 Graphics & Design
-                <ul className="menu-panel">
-                  <ul className="menu-bucket">
-                    
-                  </ul>
-                </ul>
               </a>
             </li>
             <li className="menu-item">
               <a href="#" className="menu-link">
                 Digital Marketing
               </a>
+              <ul className="menu-panel">
+                  <li className="panel-item">
+                    <a href="#" className="panel-link">
+                      Social Media Marketing
+                    </a>
+                  </li>
+                  <li className="panel-item">
+                    <a href="#" className="panel-link">
+                      Social Media Marketing
+                    </a>
+                  </li>
+                  <li className="panel-item">
+                    <a href="#" className="panel-link">
+                      Social Media Marketing
+                    </a>
+                  </li>
+                  <li className="panel-item">
+                    <a href="#" className="panel-link">
+                      Social Media Marketing
+                    </a>
+                  </li>
+                  <li className="panel-item">
+                    <a href="#" className="panel-link">
+                      Social Media Marketing
+                    </a>
+                  </li>
+                  <li className="panel-item">
+                    <a href="#" className="panel-link">
+                      Social Media Marketing
+                    </a>
+                  </li>
+                  <li className="panel-item">
+                    <a href="#" className="panel-link">
+                      Social Media Marketing
+                    </a>
+                  </li>
+                  <li className="panel-item">
+                    <a href="#" className="panel-link">
+                      Social Media Marketing
+                    </a>
+                  </li>
+                  <li className="panel-item">
+                    <a href="#" className="panel-link">
+                      Social Media Marketing
+                    </a>
+                  </li>
+                  <li className="panel-item">
+                    <a href="#" className="panel-link">
+                      Social Media Marketing
+                    </a>
+                  </li>
+                </ul>
             </li>
             <li className="menu-item">
               <a href="#" className="menu-link">

@@ -3,10 +3,10 @@
 
 
 import React from 'react'
-import "./Sliders.scss"
+import "./Carousel.scss"
 import { Input, Space } from 'antd';
 
-function Slider() {
+function Carousel() {
     const { Search } = Input;
     const onSearch = value => console.log(value);
     return (
@@ -53,4 +53,4 @@ function Slider() {
         </div>
     )
 }
-export default Slider;
+export default Carousel;
