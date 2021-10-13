@@ -19,27 +19,3 @@ export const actGetJobDetail = () => {
     }
   };
 };
-
-
-
-
-
-// export const actGetJobDetail = () => {
-//   return dispatch => {
-//     fiverrApi.fetchAllJobFiverrApi()
-//       .then(res => {
-//         console.log(res.data.content);
-//         dispatch({
-//           type: FETCH_DETAIL_JOB_SUCCESS,
-//           payload: res.data.content,
-//         })
-//       }).catch(error => {
-//         console.log("sai ne", error.response.data)
-//         dispatch({
-//           type: FETCH_DETAIL_JOB_FAIL,
-//           payload: error.response.data
-//         })
-
-//       })
-//   }
-// }
