@@ -2,7 +2,7 @@ import axios from "axios";
 
 const callApi = (endpoint, method = "GET", data = null) => {
   return axios({
-    url: `api/${endpoint}`,
+    url: `/${endpoint}`,
     method,
     data,
     headers: {

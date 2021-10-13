@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <div className="header">
       <header className="header-package row">
-        <a href="#" className="package-logo">
+        <a href=".." className="package-logo">
           <svg
             width="89"
             height="27"
@@ -46,17 +46,17 @@ export default function Header() {
         <nav className="package-nav row">
           <ul className="row nav-list">
             <li className="nav-item active">
-              <a href="#" className="nav-link">
+              <a href="..." className="nav-link">
                 Fiverr Pro
               </a>
             </li>
             <li className="nav-item">
-              <a href="#" className="nav-link">
+              <a href="..." className="nav-link">
                 Explore
               </a>
             </li>
             <li className="nav-item">
-              <a href="#" className="nav-link">
+              <a href="..." className="nav-link">
                 <svg
                   width="18"
                   height="18"
@@ -72,22 +72,22 @@ export default function Header() {
               </a>
             </li>
             <li className="nav-item">
-              <a href="#" className="nav-link">
+              <a href="..." className="nav-link">
                 $ USD
               </a>
             </li>
             <li className="nav-item">
-              <a href="#" className="nav-link">
+              <a href="..." className="nav-link">
                 Become a Seller
               </a>
             </li>
             <li className="nav-item">
-              <a href="#" className="nav-link">
+              <a href="..." className="nav-link">
                 Sing In
               </a>
             </li>
             <li className="nav-item">
-              <a href="#" className="nav-link nav-link--btn">
+              <a href="..." className="nav-link nav-link--btn">
                 Join
               </a>
             </li>
@@ -98,100 +98,100 @@ export default function Header() {
         <nav className="category-menu">
           <ul className="menu row">
             <li className="menu-item">
-              <a href="#" className="menu-link">
+              <a href="..." className="menu-link">
                 Graphics & Design
               </a>
             </li>
             <li className="menu-item">
-              <a href="#" className="menu-link">
+              <a href="..." className="menu-link">
                 Digital Marketing
               </a>
               <ul className="menu-panel">
                   <li className="panel-item">
-                    <a href="#" className="panel-link">
+                    <a href="..." className="panel-link">
                       Social Media Marketing
                     </a>
                   </li>
                   <li className="panel-item">
-                    <a href="#" className="panel-link">
+                    <a href="..." className="panel-link">
                       Social Media Marketing
                     </a>
                   </li>
                   <li className="panel-item">
-                    <a href="#" className="panel-link">
+                    <a href="..." className="panel-link">
                       Social Media Marketing
                     </a>
                   </li>
                   <li className="panel-item">
-                    <a href="#" className="panel-link">
+                    <a href="..." className="panel-link">
                       Social Media Marketing
                     </a>
                   </li>
                   <li className="panel-item">
-                    <a href="#" className="panel-link">
+                    <a href="...." className="panel-link">
                       Social Media Marketing
                     </a>
                   </li>
                   <li className="panel-item">
-                    <a href="#" className="panel-link">
+                    <a href="..." className="panel-link">
                       Social Media Marketing
                     </a>
                   </li>
                   <li className="panel-item">
-                    <a href="#" className="panel-link">
+                    <a href="..." className="panel-link">
                       Social Media Marketing
                     </a>
                   </li>
                   <li className="panel-item">
-                    <a href="#" className="panel-link">
+                    <a href="..." className="panel-link">
                       Social Media Marketing
                     </a>
                   </li>
                   <li className="panel-item">
-                    <a href="#" className="panel-link">
+                    <a href="..." className="panel-link">
                       Social Media Marketing
                     </a>
                   </li>
                   <li className="panel-item">
-                    <a href="#" className="panel-link">
+                    <a href="..." className="panel-link">
                       Social Media Marketing
                     </a>
                   </li>
                 </ul>
             </li>
             <li className="menu-item">
-              <a href="#" className="menu-link">
+              <a href="...." className="menu-link">
                 Writing & Translation
               </a>
             </li>
             <li className="menu-item">
-              <a href="#" className="menu-link">
+              <a href="..." className="menu-link">
                 Video & Animation
               </a>
             </li>
             <li className="menu-item">
-              <a href="#" className="menu-link">
+              <a href="..." className="menu-link">
                 Music & Audio
               </a>
             </li>
             <li className="menu-item">
-              <a href="#" className="menu-link">
+              <a href="..." className="menu-link">
                 Programming & Tech
               </a>
             </li>
             <li className="menu-item">
-              <a href="#" className="menu-link">
+              <a href="..." className="menu-link">
                 Data
                 <span>NEW</span>
               </a>
             </li>
             <li className="menu-item">
-              <a href="#" className="menu-link">
+              <a href="..." className="menu-link">
                 Business
               </a>
             </li>
             <li className="menu-item">
-              <a href="#" className="menu-link">
+              <a href="..." className="menu-link">
                 Lifestyle
               </a>
             </li>
