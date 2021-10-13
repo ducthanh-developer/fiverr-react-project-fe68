@@ -5,6 +5,7 @@ import Product from "./Product/Product";
 import Testimonial from "./Testimonial/Testimonial";
 import Selling from "./Selling/Selling";
 import Marketplace from "./Marketplace/Marketplace";
+import DetailJobs from "../DetailJobs/DetailJobs";
 
 export default function Home() {
   return (
@@ -23,6 +24,8 @@ export default function Home() {
 
       {/* Marketplace */}
       <Marketplace />
+      {/* <DetailJobs/> */}
+     
     </main>
   );
 }
