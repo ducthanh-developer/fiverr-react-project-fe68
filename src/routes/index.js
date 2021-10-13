@@ -1,36 +1,23 @@
-import About from 'containers/client/About/About';
-import Home from 'containers/client/Home/Home';
-import Review from 'containers/client/Review/Review';
-import Theater from 'containers/client/Theater/Theater';
+import DetailJobs from 'containers/client/DetailJobs/DetailJobs';
 import FiverrDetail from 'containers/client/FiverrDetail/FiverrDetail';
+import Home from 'containers/client/Home/Home';
 export const clientRoutes = [
   {
     path: '/',
     component: Home,
     exact: true,
   },
-  {
-    path: '/1',
-    component: FiverrDetail,
-    exact: false,
-  },
-  {
-    path: '/theater',
-    component: Theater,
-    exact: false,
-  },
-  {
-    path: '/review',
-    component: Review,
-    exact: false,
-  },
-  {
-    path: '/about',
-    component: About,
-    exact: false,
-  },
 
-  
+  {
+    path: '/fiverr',
+    component: FiverrDetail,
+    exact: true,
+  },
+  {
+    path: '/fiverr/:id',
+    component: DetailJobs,
+    exact: false,
+  },
 
 
 ];

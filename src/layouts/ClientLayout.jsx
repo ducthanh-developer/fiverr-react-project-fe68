@@ -7,7 +7,6 @@ function ClientLayout(props) {
   return (
     <>
       <Header />
-     
       {props.children}
 {/* <FiverrDetail/> */}
 

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { actGetJobDetail } from "../FiverrDetail/module/actions"
 import { Card } from 'antd';
 import "./FiverrDetail.scss"
+import {Link} from "react-router-dom"
 
 export default function FiverrDetail(props) {
   const { Meta } = Card;
@@ -19,7 +20,11 @@ export default function FiverrDetail(props) {
       <div className="row">
       {jobDetail?.map((job, index) => {
         return (
-          <div key={index} className="col-3  fiverr__item">
+          <div key={index} className="col-3  fiverr__item"> 
+
+            <Link to={`/fiverr/${job._id}`}  >
+
+
             <Card
               hoverable
               style={{ width: 340 }}
@@ -27,6 +32,8 @@ export default function FiverrDetail(props) {
             >
               <Meta title={job.name} description="www.instagram.com" />
             </Card>,
+            </Link>
+           
            
           </div>
         )
@@ -35,3 +42,12 @@ export default function FiverrDetail(props) {
     </div>
   )
 }
+
+
+
+
+// <button className="btn btn-dark">
+// <Link to={`/movie-detail/${movie.maPhim}`}>
+//   View detail
+// </Link>
+// </button>

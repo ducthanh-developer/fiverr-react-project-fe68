@@ -2,7 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import PageNotFound from 'containers/shared/PageNotFound/PageNotFound';
 import ClientLayout from 'layouts/ClientLayout';
-import { adminRoutes, clientRoutes } from 'routes';
+import {  clientRoutes } from 'routes';
 
 function App() {
   const renderRoutes = (routes, Layout) => {
