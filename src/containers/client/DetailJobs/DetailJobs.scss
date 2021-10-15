@@ -1,0 +1,162 @@
+.detailjob {
+    margin-top: 70px;
+    margin-bottom: 170px;
+    .detailjob__right {
+        .minimalist {
+            color: black;
+            font-size: 30px;
+            font-weight: 600;
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
+        }
+        .infor {
+            i {
+                font-size: 30px;
+            }
+            .Seller {
+                margin-left: 10px;
+                font-weight: 500;
+            }
+            .Level {
+                margin-left: 10px;
+            }
+            .Star {
+                margin-left: 20px;
+                font-size: 30px;
+                color: rgb(255, 187, 0);
+            }
+        }
+        .exceptional {
+            img {
+                margin-left: -8px;
+            }
+            .People {
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+/// tabs
+.detailjob__tabs {
+    .tabs1 {
+        border-right: 1px solid #00000021;
+        background: #6c757d14;
+        border-bottom: 1px solid #00000021;
+        width: 145px;
+        height: 57px;
+        border-left: 1px solid #00000021;
+        border-top: 1px solid #00000021;
+    }
+    .Standard {
+        font-size: 17px;
+        font-weight: bold;
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
+    .price {
+        margin-top: 12px;
+        font-weight: bold;
+        font-size: 17px;
+    }
+    .application {
+        margin-top: 20px;
+        font-size: 15px;
+        margin-left: 7px;
+        font-weight: 500;
+        color:rgb(104, 111, 111);
+        margin-bottom: 20px;
+    }
+    .Files {
+        font-size: 17px;
+        font-weight: bold;
+    }
+}
+
+.detailjob__left {
+    .ant-card-body {
+        padding: 0;
+    }
+    .detailjobs__check{
+        width: 390px;
+        .checked__jobs{
+            nav{
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+            .ant-btn{
+                margin-top: 20px;
+            }
+
+        }
+    }
+    
+}
+
+.detailjob {
+    p {
+        margin: 0 0 20px;
+        line-height: 1.5;
+        font-weight: 300;
+    }
+   
+    .content > div {
+        display: none;
+    }
+    input {
+        display: none;
+    }
+    .tabs1 {
+        font-size: 17px;
+        display: inline-block;
+        padding: 15px 25px;
+        font-weight: 600;
+        text-align: center;
+    }
+    .tabs1:hover {
+        cursor: pointer;
+        border-bottom: 1px solid transparent;
+        transition: all 0.3s ease-out 0.1s;
+    }
+    input:checked + label {
+        background: #ffffff;
+        color: green;
+        border-bottom: 3px solid;
+        font-weight: bold;
+    }
+
+    #tab-1:checked ~ .content #content-1,
+    #tab-2:checked ~ .content #content-2,
+    #tab-3:checked ~ .content #content-3,
+    #tab-4:checked ~ .content #content-4 {
+        display: block;
+        animation-name: inUp;
+        animation-timing-function: ease-in-out;
+        animation-duration: 0.6s;
+    }
+
+    @media screen and (max-width: 400px) {
+        label {
+            padding: 15px 10px;
+        }
+    }
+
+    @keyframes inUp {
+        0% {
+            opacity: 0;
+            transform: translateY(100px);
+        }
+        90% {
+            transform: translateY(-10px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+// .checked__job {
+//     .hh {
+//         margin-bottom: 10px;
+//     }
+// }
