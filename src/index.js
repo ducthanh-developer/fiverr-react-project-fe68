@@ -5,6 +5,7 @@ import 'jquery/dist/jquery';
 import 'popper.js/dist/umd/popper';
 import 'bootstrap/dist/js/bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '@fortawesome/free-solid-svg-icons/'
 import 'antd/dist/antd.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';

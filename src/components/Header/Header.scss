@@ -2,17 +2,22 @@ $primary-color: #62646a;
 $second-color: #1dbf73;
 $active-color: #02c2a9;
 $max-width: 1400px;
-
-.header {
-  a {
+a {
+  color: $primary-color;
+  text-decoration: none;
+  &:hover {
     color: $primary-color;
-    text-decoration: none;
   }
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.row {
+  margin: 0;
+}
+.header {
   svg {
     fill: #95979d;
   }
@@ -167,7 +172,7 @@ $max-width: 1400px;
               width: 100%;
               background: $second-color;
             }
-            .menu-panel{
+            .menu-panel {
               display: block;
             }
           }

@@ -1,5 +1,6 @@
 import FiverrDetail from 'containers/client/FiverrDetail/FiverrDetail';
 import Home from 'containers/client/Home/Home';
+import ListJobs from 'containers/client/ListJobs/ListJobs';
 export const clientRoutes = [
   {
     path: '/',
@@ -9,8 +10,13 @@ export const clientRoutes = [
   {
     path: '/fiverr',
     component: FiverrDetail,
-    exact: false,
+    exact: true,
   },
+  {
+    path: '/list-jobs',
+    component: ListJobs,
+    exact: true,
+  }
  
 ];
 
