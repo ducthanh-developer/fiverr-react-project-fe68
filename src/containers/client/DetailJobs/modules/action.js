@@ -1,30 +1,22 @@
 
 import fiverrApi from "apis/fiverrApi";
-import { FETCH_TITTLE_SUCCESS } from "../modules/type";
+import { FETCH_COMMENT_SUCCESS, FETCH_TITTLE_SUCCESS } from "../modules/type";
 
 
 export const actLayCongViecChiTiet = (tittleJob) => ({
   type: FETCH_TITTLE_SUCCESS,
   payload: tittleJob,
 });
-// export const actGetJobTittle = (jobId) => {
-//   return async (dispatch) => {
-//     try {
-//       const result = await fiverrApi.fetchTittleFiverrApi(jobId);
-
-//       console.log("result1111 ", result);
-//       dispatch(actLayCongViecChiTiet(result.data));
-//     } catch (error) {
-//       console.log("saihhhh", error.response?.data);
-//     }
-//   };
-// };
 
 
-
+export const actLayCommentSuccess = (commentJob) => ({
+  type: FETCH_COMMENT_SUCCESS,
+  payload: commentJob,
+});
 
 
 export const actGetJobTittle= (jobId) => {
+  console.log("object", jobId);
   return(dispatch)=>{
     fiverrApi
     .fetchTittleFiverrApi(jobId)
@@ -35,16 +27,15 @@ export const actGetJobTittle= (jobId) => {
   }
 }
 
-// export const actFetchMovieDetailApi = (movieId) => {
-//   return (dispatch) => {
-//       movieApi
-//           .fetchMovieDetailApi(movieId)
-//           .then((res) => {
-//               const { content } = res.data;
-//               dispatch(actFetchMovieDetailSuccess(content));
-//           })
-//           .catch(
-//               (err) => console.log(err)
-//           );
-//   };
-// };
+export const actGetComment= () => {
+  return(dispatch)=>{
+    fiverrApi
+    .fetchCommentApi()
+    .then(result=>{
+      dispatch(actLayCommentSuccess(result.data))
+      console.log("object", result.data)
+    })
+    .catch(error=>{console.log("errrhhh", error.response?.data);});
+  }
+}
+

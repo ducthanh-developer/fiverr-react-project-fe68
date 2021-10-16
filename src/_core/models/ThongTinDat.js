@@ -4,6 +4,11 @@ export class ThongTinDat {
     price = '';
     name = '';
     image = '';
+    proServices='';
+    localSellers='';
+    onlineSellers='';
+    deliveryTime= '';
+    status='';
     taiKhoanNguoiDat = '';
 }
 

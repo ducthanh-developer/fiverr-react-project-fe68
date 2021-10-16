@@ -1,4 +1,3 @@
-import BookingJob from 'containers/client/DetailJobs/BookingJob/BookingJob';
 import DetailJobs from 'containers/client/DetailJobs/DetailJobs';
 import FiverrDetail from 'containers/client/FiverrDetail/FiverrDetail';
 import Home from 'containers/client/Home/Home';
@@ -19,13 +18,6 @@ export const clientRoutes = [
     component: DetailJobs,
     exact: false,
   },
-
-  {
-    path: '/fiverr/:id',
-    component: BookingJob,
-    exact: false,
-  },
-
 
 ];
 

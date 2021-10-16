@@ -10,12 +10,12 @@ const fiverrApi = {
     //detailJobs
     fetchTittleFiverrApi(jobId) {
       return  callApi(`jobs/${jobId}?`);
-      
     },
-    //
-    fetchBookingJob(jobId, thongTinDat = new ThongTinDat()){
-      return callApiPatch(`jobs/booking/${jobId}?`, thongTinDat);
-
+    fetchBookingJob(jobId){
+      return callApiPatch(`jobs/booking/${jobId}`);
+    },
+    fetchCommentApi(jobId){
+      return callApi(`comments/by-job/${jobId}`)
     }
 }
 

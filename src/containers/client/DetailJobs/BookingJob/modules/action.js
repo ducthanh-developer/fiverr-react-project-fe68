@@ -8,12 +8,12 @@ export const acBookingJob=(bookingJob) =>({
     payload: bookingJob,
 })
 
-export const actDatCongViec= ( thongTinDat) => {
+export const actDatCongViec= ( thongTinDat,headers="") => {
     return(dispatch)=>{
       fiverrApi
-      .fetchBookingJobApi(thongTinDat)
+      .fetchBookingJob(thongTinDat,headers )
       .then(result=>{
-        console.log(thongTinDat)
+        console.log("hh",thongTinDat)
         alert("Booking Success!");
         dispatch(acBookingJob(result.data))
       })

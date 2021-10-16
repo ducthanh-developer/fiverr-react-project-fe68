@@ -1,6 +1,4 @@
 import { BOOKIING_JOB_FAIL, BOOKIING_JOB_SUCCESS } from "./type";
-
-
 const initialState = {
   bookingJob:null,
   error: '',
@@ -9,7 +7,7 @@ const initialState = {
 const bookingJobReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case BOOKIING_JOB_SUCCESS:
-      state.bookingJob = payload;
+      state.bookingJob = [];
       return { ...state, };
     case BOOKIING_JOB_FAIL:
       state.error = payload;

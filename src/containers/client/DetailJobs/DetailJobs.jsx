@@ -5,8 +5,8 @@ import { Card } from 'antd';
 import { GithubFilled, StarFilled } from '@ant-design/icons';
 import "../DetailJobs/DetailJobs.scss"
 import { Checkbox, Button } from 'antd';
-import { actDatCongViec } from "./BookingJob/modules/action";
-import { ThongTinDat } from "_core/models/ThongTinDat";
+import Slider from "react-slick";
+import fiverrApi from "apis/fiverrApi";
 
 export default function DetailJobs(props) {
   function onChange(e) {
@@ -14,17 +14,34 @@ export default function DetailJobs(props) {
   }
   console.log("props", props)
   const dispatch = useDispatch();
-  const { tittleJob, _id } = useSelector((state) => state.tittleJobReducer);
+  const { tittleJob, commentJob } = useSelector((state) => state.tittleJobReducer);
   console.log("gg", tittleJob);
+  console.log("ggg", commentJob);
+
   useEffect(() => {
     dispatch(actGetJobTittle(props.match.params.id));
+
   }, []);
 
-
+  useEffect(async () => {
+    try {
+      let res = await fiverrApi.fetchCommentApi('60e5b578ed980c7344c64d7e');
+    console.log("res", res)
+    } catch (err) {
+      console.log("err r1", err);
+    }
+  }, []);
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  };
   return (
     <div className="container detailjob">
       <div className="row">
-        <div className="col-12 col-lg-8 detailjob__right">
+        <div className="col-12 col-lg-7 detailjob__right">
           <div>
             <div className="minimalist">
               I will design 3 flat minimalist logo design
@@ -58,19 +75,20 @@ export default function DetailJobs(props) {
           {tittleJob?.map((Detial, index) => {
             return (
               <div key={index}>
-                <img alt="example" src={Detial.image} style={{ width: 590 }} />
+                <Slider {...settings}>
+                  <div>
+                    <img alt="example" src={Detial.image} style={{ width: 590 }} />
+                  </div>
+                 
+                </Slider>
               </div>
             )
           })}
         </div>
-
-
-        <div className=" col-12 col-lg-4  detailjob__left">
+        <div className=" col-12 col-lg-5  detailjob__left">
           <Card
             hoverable
-            style={{ width: 437, height: 500 }}
-
-          >
+            style={{ width: 437, height: 500 }} >
             <div className="detailjob__tabs">
               <div className=" mia">
                 <input id="tab-1" type="radio" name="tabs" defaultChecked />
@@ -129,13 +147,13 @@ export default function DetailJobs(props) {
                               <Checkbox onChange={onChange} checked={job.status}>status</Checkbox>
                             </nav>
                             <Button onClick={() => {
-                              const thongTinDat = new ThongTinDat();
-                              thongTinDat._id = props.match.params.id;
-
-                              console.log("thongtindat",thongTinDat );
-                              dispatch(actDatCongViec( thongTinDat));
-
-
+                              fiverrApi.fetchBookingJob(props.match.params.id)
+                                .then((res) => {
+                                  console.log(res)
+                                  alert("Booking")
+                                }
+                                )
+                                .catch(err => console.log(err));
 
                             }} type="primary" block>
                               {job.price}$
@@ -143,7 +161,6 @@ export default function DetailJobs(props) {
                           </div>
                         )
                       })}
-
                     </div>
                   </div>
                   <div id="content-2">
@@ -160,11 +177,8 @@ export default function DetailJobs(props) {
                   </div>
                 </div>
               </div>
-
-
             </div>
           </Card>,
-
         </div>
       </div>
     </div>
