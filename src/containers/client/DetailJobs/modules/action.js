@@ -27,15 +27,15 @@ export const actGetJobTittle= (jobId) => {
   }
 }
 
-export const actGetComment= () => {
-  return(dispatch)=>{
-    fiverrApi
-    .fetchCommentApi()
-    .then(result=>{
-      dispatch(actLayCommentSuccess(result.data))
-      console.log("object", result.data)
-    })
-    .catch(error=>{console.log("errrhhh", error.response?.data);});
-  }
-}
+// export const actGetComment= () => {
+//   return(dispatch)=>{
+//     fiverrApi
+//     .fetchCommentApi()
+//     .then(result=>{
+//       dispatch(actLayCommentSuccess(result.data))
+//       console.log("object", result.data)
+//     })
+//     .catch(error=>{console.log("errrhhh", error.response?.data);});
+//   }
+// }
 

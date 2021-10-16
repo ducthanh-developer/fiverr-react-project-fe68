@@ -14,23 +14,21 @@ export default function DetailJobs(props) {
   }
   console.log("props", props)
   const dispatch = useDispatch();
-  const { tittleJob, commentJob } = useSelector((state) => state.tittleJobReducer);
+  const { tittleJob,  } = useSelector((state) => state.tittleJobReducer);
   console.log("gg", tittleJob);
-  console.log("ggg", commentJob);
-
   useEffect(() => {
     dispatch(actGetJobTittle(props.match.params.id));
-
   }, []);
 
-  useEffect(async () => {
-    try {
-      let res = await fiverrApi.fetchCommentApi('60e5b578ed980c7344c64d7e');
-    console.log("res", res)
-    } catch (err) {
-      console.log("err r1", err);
-    }
-  }, []);
+
+  // useEffect(async () => {
+  //   try {
+  //     let res = await fiverrApi.fetchBookingJob(props.match.params.id);
+  //     console.log(res)
+  //   } catch (err) {
+  //     console.log("err r1", err);
+  //   }
+  // }, []);
   const settings = {
     dots: true,
     infinite: true,
@@ -147,6 +145,22 @@ export default function DetailJobs(props) {
                               <Checkbox onChange={onChange} checked={job.status}>status</Checkbox>
                             </nav>
                             <Button onClick={() => {
+                              // const thongTinDat = new ThongTinDat();
+                              // thongTinDat._id = props.match.params.id;
+                              // thongTinDat.price = job.price;
+                              // console.log("Id",  thongTinDat._id)
+                              // thongTinDat.name = job.name;
+                              // thongTinDat.image = job.image;
+                              // thongTinDat.localSellers = job.localSellers;
+                              // thongTinDat.proServices = job.proServices;
+                              // thongTinDat.onlineSellers = job.onlineSellers;
+                              // thongTinDat.deliveryTime = job.deliveryTime;
+                              // thongTinDat.status = job.status;
+
+                              // thongTinDat.taiKhoanNguoiDat = job.usersBooking;
+                              // console.log("thongtindat", thongTinDat);
+
+                              // dispatch(actDatCongViec());
                               fiverrApi.fetchBookingJob(props.match.params.id)
                                 .then((res) => {
                                   console.log(res)
@@ -155,7 +169,8 @@ export default function DetailJobs(props) {
                                 )
                                 .catch(err => console.log(err));
 
-                            }} type="primary" block>
+                            }}
+                             type="primary" block>
                               {job.price}$
                             </Button>
                           </div>

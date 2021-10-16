@@ -5,7 +5,6 @@ import Product from "./Product/Product";
 import Testimonial from "./Testimonial/Testimonial";
 import Selling from "./Selling/Selling";
 import Marketplace from "./Marketplace/Marketplace";
-import DetailJobs from "../DetailJobs/DetailJobs";
 // import BookingJob from "../DetailJobs/BookingJob/BookingJob";
 
 export default function Home() {

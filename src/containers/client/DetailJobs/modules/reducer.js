@@ -1,5 +1,4 @@
-import { FETCH_COMMENT_FAIL, FETCH_COMMENT_SUCCESS } from "../CommentJob/modules/type";
-import { FETCH_TITTLE_FAIL, FETCH_TITTLE_SUCCESS } from "./type";
+import { FETCH_COMMENT_FAIL, FETCH_COMMENT_SUCCESS, FETCH_TITTLE_FAIL, FETCH_TITTLE_SUCCESS } from "./type";
 
 
 const initialState = {
