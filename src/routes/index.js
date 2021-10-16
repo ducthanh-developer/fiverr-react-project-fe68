@@ -1,17 +1,12 @@
 import DetailJobs from "containers/client/DetailJobs/DetailJobs";
 import FiverrDetail from "containers/client/FiverrDetail/FiverrDetail";
 import Home from "containers/client/Home/Home";
+import ListJobCategories from "containers/client/ListJobCategories/ListJobCategories";
 import ListJobs from "containers/client/ListJobs/ListJobs";
 export const clientRoutes = [
   {
     path: "/",
     component: Home,
-    exact: true,
-  },
-
-  {
-    path: "/fiverr",
-    component: FiverrDetail,
     exact: true,
   },
   {
@@ -23,6 +18,11 @@ export const clientRoutes = [
     path: "/fiverr/:id",
     component: DetailJobs,
     exact: false,
+  },
+  {
+    path: "/job-categories",
+    component: ListJobCategories,
+    exact: true,
   },
 ];
 
