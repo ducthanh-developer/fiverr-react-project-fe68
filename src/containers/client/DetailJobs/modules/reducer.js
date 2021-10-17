@@ -16,7 +16,7 @@ const tittleJobReducer = (state = initialState, { type, payload }) => {
       state.error = payload;
       return { ...state };
       case FETCH_COMMENT_SUCCESS:
-        state.commentJob = [0];
+        state.commentJob = payload;
         return { ...state};
         case FETCH_COMMENT_FAIL:
           state.error = payload;

@@ -11,13 +11,16 @@ const fiverrApi = {
     fetchTittleFiverrApi(jobId) {
       return  callApi(`jobs/${jobId}?`);
     },
-    fetchBookingJob(jobId){
+    fetchBookingJob(jobId, thongTinDat= new ThongTinDat()) { 
       return callApiPatch(`jobs/booking/${jobId}`);
     },
     fetchCommentApi(jobId){
       return callApi(`comments/by-job/${jobId}`)
+    },
+    // userInformation
+    fetchUserListJobsApi(){
+      return callApi(`users/614600386a0800001c187e11`)
     }
 }
-
 
 export default fiverrApi;

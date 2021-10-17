@@ -1,34 +1,29 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { actGetJobTittle } from "./modules/action"
+import { actGetJobTittle, actGetComment } from "./modules/action"
 import { Card } from 'antd';
 import { GithubFilled, StarFilled } from '@ant-design/icons';
 import "../DetailJobs/DetailJobs.scss"
 import { Checkbox, Button } from 'antd';
 import Slider from "react-slick";
 import fiverrApi from "apis/fiverrApi";
+import { actDatCongViec } from "./BookingJob/modules/action";
+import { ThongTinDat } from "_core/models/ThongTinDat";
 
 export default function DetailJobs(props) {
   function onChange(e) {
     console.log(`checked = ${e.target.checked}`);
   }
-  console.log("props", props)
   const dispatch = useDispatch();
-  const { tittleJob,  } = useSelector((state) => state.tittleJobReducer);
-  console.log("gg", tittleJob);
+  const { tittleJob, commentJob } = useSelector((state) => state.tittleJobReducer);
+
+  console.log("object", commentJob);
   useEffect(() => {
     dispatch(actGetJobTittle(props.match.params.id));
+    dispatch(actGetComment(props.match.params.id))
   }, []);
 
 
-  // useEffect(async () => {
-  //   try {
-  //     let res = await fiverrApi.fetchBookingJob(props.match.params.id);
-  //     console.log(res)
-  //   } catch (err) {
-  //     console.log("err r1", err);
-  //   }
-  // }, []);
   const settings = {
     dots: true,
     infinite: true,
@@ -37,22 +32,16 @@ export default function DetailJobs(props) {
     slidesToScroll: 1
   };
   return (
-    <div className="container detailjob">
+    <div>
+      <div className="container detailjob">
       <div className="row">
         <div className="col-12 col-lg-7 detailjob__right">
           <div>
-            <div className="minimalist">
-              I will design 3 flat minimalist logo design
-            </div>
+            <div className="minimalist"> I will design 3 flat minimalist logo design </div>
             <div className="infor">
               <i><GithubFilled /></i>
-              <span className="Seller">
-                Top Rated Seller
-              </span>
-              <span className="Level">
-                Level 2 Seller |
-              </span>
-
+              <span className="Seller">Top Rated Seller</span>
+              <span className="Level">Level 2 Seller | </span>
               <span className="Star">
                 <StarFilled />
                 <StarFilled />
@@ -77,11 +66,27 @@ export default function DetailJobs(props) {
                   <div>
                     <img alt="example" src={Detial.image} style={{ width: 590 }} />
                   </div>
-                 
+
                 </Slider>
               </div>
             )
           })}
+
+          <div className="container comment">
+            <h3>About This Gig </h3>
+            <h6>Top Rated Seller with all positive reviews</h6>
+            <h5>Hello,</h5>
+            <div>Want a custom website built for your business? Or Having trouble in recognizing or fixing
+            </div>
+            <div>
+              the issues/bugs in your existing website/blog. It is not a problem because I'm here to fix any
+            </div>
+            <div>issues in HTML, CSS,   Bootstrap jquery, javascript, PHP or database(Mysql/Oracle). </div>
+            <h5>Things I offer:</h5>
+            <div className="row">
+
+            </div>
+          </div>
         </div>
         <div className=" col-12 col-lg-5  detailjob__left">
           <Card
@@ -145,32 +150,29 @@ export default function DetailJobs(props) {
                               <Checkbox onChange={onChange} checked={job.status}>status</Checkbox>
                             </nav>
                             <Button onClick={() => {
-                              // const thongTinDat = new ThongTinDat();
-                              // thongTinDat._id = props.match.params.id;
-                              // thongTinDat.price = job.price;
-                              // console.log("Id",  thongTinDat._id)
-                              // thongTinDat.name = job.name;
-                              // thongTinDat.image = job.image;
-                              // thongTinDat.localSellers = job.localSellers;
-                              // thongTinDat.proServices = job.proServices;
-                              // thongTinDat.onlineSellers = job.onlineSellers;
-                              // thongTinDat.deliveryTime = job.deliveryTime;
-                              // thongTinDat.status = job.status;
+                              const thongTinDat = new ThongTinDat();
+                              thongTinDat._id = props.match.params.id;
+                              thongTinDat.price = job.price;
+                              console.log("Id", thongTinDat._id)
+                              thongTinDat.name = job.name;
+                              thongTinDat.image = job.image;
+                              thongTinDat.localSellers = job.localSellers;
+                              thongTinDat.proServices = job.proServices;
+                              thongTinDat.onlineSellers = job.onlineSellers;
+                              thongTinDat.deliveryTime = job.deliveryTime;
+                              thongTinDat.status = job.status;
 
-                              // thongTinDat.taiKhoanNguoiDat = job.usersBooking;
-                              // console.log("thongtindat", thongTinDat);
-
-                              // dispatch(actDatCongViec());
-                              fiverrApi.fetchBookingJob(props.match.params.id)
-                                .then((res) => {
-                                  console.log(res)
-                                  alert("Booking")
-                                }
-                                )
-                                .catch(err => console.log(err));
-
+                              thongTinDat.taiKhoanNguoiDat = job.usersBooking;
+                              console.log("thongtindat", thongTinDat);
+                              dispatch(actDatCongViec(props.match.params.id));
+                              // fiverrApi.fetchBookingJob(props.match.params.id)
+                              // .then((res) => {
+                              //   console.log(res)
+                              //   alert("Booking")
+                              // })
+                              // .catch(err => console.log(err));
                             }}
-                             type="primary" block>
+                              block>
                               {job.price}$
                             </Button>
                           </div>
@@ -196,6 +198,25 @@ export default function DetailJobs(props) {
           </Card>,
         </div>
       </div>
+
+      {/* //comment */}
+      {/* <div className="container comment">
+        <h3>About This Gig </h3>
+        <h6>Top Rated Seller with all positive reviews</h6>
+        <h5>Hello,</h5>
+        <div>Want a custom website built for your business? Or Having trouble in recognizing or fixing
+        </div>
+        <div>
+          the issues/bugs in your existing website/blog. It is not a problem because I'm here to fix any
+        </div>
+        <div>issues in HTML, CSS,   Bootstrap jquery, javascript, PHP or database(Mysql/Oracle). </div>
+        <h5>Things I offer:</h5>
+        <div className="row">
+
+        </div>
+      </div> */}
     </div>
+    </div>
+    
   )
 }

@@ -16,7 +16,7 @@ export const actLayCommentSuccess = (commentJob) => ({
 
 
 export const actGetJobTittle= (jobId) => {
-  console.log("object", jobId);
+  console.log("jobId", jobId);
   return(dispatch)=>{
     fiverrApi
     .fetchTittleFiverrApi(jobId)
@@ -27,15 +27,16 @@ export const actGetJobTittle= (jobId) => {
   }
 }
 
-// export const actGetComment= () => {
-//   return(dispatch)=>{
-//     fiverrApi
-//     .fetchCommentApi()
-//     .then(result=>{
-//       dispatch(actLayCommentSuccess(result.data))
-//       console.log("object", result.data)
-//     })
-//     .catch(error=>{console.log("errrhhh", error.response?.data);});
-//   }
-// }
+export const actGetComment = (jobId) => {
+  return async (dispatch) => {
+    try {
+      const result = await fiverrApi.fetchCommentApi(jobId);
 
+      console.log("resulthhhhh ", result);
+      console.log('data', result.data);
+      dispatch(actLayCommentSuccess(result.data));
+    } catch (error) {
+      console.log("sai", error.response?.data);
+    }
+  };
+};
