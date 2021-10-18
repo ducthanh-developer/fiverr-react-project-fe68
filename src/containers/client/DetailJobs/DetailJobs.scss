@@ -1,12 +1,11 @@
 .detailjob {
     width: 1500px !important;
-    text-align: center;
     margin-top: 70px;
     margin-bottom: 170px;
     .detailjob__right {
         .minimalist {
             color: black;
-            font-size: 30px;
+            font-size: 28px;
             font-weight: 600;
             font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
         }
@@ -16,15 +15,31 @@
             }
             .Seller {
                 margin-left: 10px;
-                font-weight: 500;
+                font-weight: 700;
+                color: #404145;
             }
             .Level {
                 margin-left: 10px;
+                color: #ffb33e;
+                font-weight: 500;
             }
             .Star {
                 margin-left: 20px;
-                font-size: 20px;
+                font-size: 16px;
                 color: rgb(255, 187, 0);
+                svg{
+                    margin-right: 7px;
+                    margin-top: -7px;
+                }
+                .rating{
+                
+                }
+                .name{
+                    color: black;
+                    margin-left: 10px;
+                    font-weight: 700;
+                    font-size: 15px;
+                }
             }
         }
         .exceptional {
@@ -74,7 +89,6 @@
         font-weight: bold;
     }
 }
-
 .detailjob__left {
     .ant-card-body {
         padding: 0;
@@ -89,6 +103,21 @@
             .ant-btn{
                 margin-top: 20px;
             }
+        }
+        button{
+            background-color:#19A463;
+            color: white;
+            span{
+                font-weight: 600;
+            }
+        }
+        .Compare__package{
+            margin-top: 13px;
+            margin-bottom:20px;
+            text-align: center;
+            color:#19A463;
+            font-weight: 700;
+            // background-color:#19A463;
 
         }
     }
@@ -157,15 +186,19 @@
         }
     }
 }
-// .checked__job {
-//     .hh {
-//         margin-bottom: 10px;
-//     }
-// }
-
-
-
 //commented
 .comment{
     margin-top:100px;
+    h5{
+        font-weight: 700;
+        line-height: 28px;
+    }
+    h6{
+        background-color: #19A463;
+        width: 300px;
+    }
+    .hello{
+        font-size:17px;
+        
+        }
 }
