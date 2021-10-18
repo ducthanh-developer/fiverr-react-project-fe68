@@ -86,14 +86,14 @@ export default function DetailJobs(props) {
               <h5>About This Gig </h5>
               <h6>Top Rated Seller with all positive reviews</h6>
               <div className="hello">Hello,</div>
-              <div>Want a custom website built for your business? Or Having trouble in recognizing or fixing
-              </div>
               <div>
-                the issues/bugs in your existing website/blog. It is not a problem because I'm here to fix any
+                
               </div>
-              <div>issues in HTML, CSS,   Bootstrap jquery, javascript, PHP or database(Mysql/Oracle). </div>
-              <h5>Things I offer:</h5>
-              <div className="">
+              <div className="content">Want a custom website built for your business? Or Having trouble in recognizing or fixing </div>
+              <div className="content">  the issues/bugs in your existing website/blog. It is not a problem because I'm here to fix  </div>
+              <div className="content">any issues in HTML, CSS,   Bootstrap jquery, javascript, PHP or database(Mysql/Oracle). </div>
+              <h5 className="offer">Things I offer:</h5>
+              <div className="information_detailjob">
                 <ul>
                   <li>CRM development</li>
                   <li>E-commerce&nbsp;Development</li>
