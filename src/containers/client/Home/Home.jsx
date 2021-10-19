@@ -6,6 +6,7 @@ import Testimonial from "./Testimonial/Testimonial";
 import Selling from "./Selling/Selling";
 import Marketplace from "./Marketplace/Marketplace";
 import UserInformation from "../UserInformation/UserInformation";
+import ListJobCategories from "../ListJobCategories/ListJobCategories";
 // import BookingJob from "../DetailJobs/BookingJob/BookingJob";
 
 export default function Home() {
@@ -28,7 +29,9 @@ export default function Home() {
       {/* <DetailJobs/> */}
       {/* <BookingJob/> */}
       <UserInformation/>
+      <ListJobCategories/>
      
     </main>
   );
 }
+

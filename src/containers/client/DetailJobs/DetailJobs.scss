@@ -1,8 +1,9 @@
 .detailjob {
-    width: 1500px !important;
     margin-top: 70px;
     margin-bottom: 170px;
+
     .detailjob__right {
+        // margin-left: 150px;
         .minimalist {
             color: black;
             font-size: 28px;
@@ -40,6 +41,10 @@
                     font-size: 15px;
                 }
             }
+        }
+        hr {
+            width: 600px;
+            margin-left: 5px !important;
         }
         .exceptional {
             img {
@@ -204,8 +209,54 @@
         font-size: 16px;
         font-weight: 400;
     }
-    .offer{
-        margin-top: 20px;
-        margin-bottom: 20px;
+    .offer {
+        margin-top: 25px;
+        margin-bottom: 25px;
     }
+    .information_detailjob {
+        ul {
+            li {
+                font-size: 16px;
+                font-weight: 400;
+            }
+        }
+    }
+    .satisfied {
+        background-color: #ffb33e;
+        font-weight: 600;
+        width: 600px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+    hr {
+        width: 600px;
+        margin-left: 10px;
+    }
+    .comment__bottom {
+        .Programming,
+        .Expertise {
+            font-size: 17px;
+            font-weight: 500;
+            color: #4041456e;
+            margin-bottom: 10px;
+        }
+        .php,.Cross__Browser {
+            font-size: 17px;
+        }
+    }
+    .About {
+        font-weight: 700;
+        font-size: 20px;
+    }
+}
+
+
+@media (min-width: 1200px)
+{
+    .Detailjob__checkout{
+        .container{
+            max-width: 1344px;
+        }
+    }
+   
 }

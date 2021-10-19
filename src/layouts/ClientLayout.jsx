@@ -1,3 +1,4 @@
+import Footer from 'components/Footer/Footer';
 import Header from 'components/Header/Header';
 import withLayout from 'hocs/withLayout';
 // import FiverrDetail from '../containers/client/FiverrDetail/FiverrDetail'
@@ -8,8 +9,7 @@ function ClientLayout(props) {
     <>
       <Header />
       {props.children}
-{/* <FiverrDetail/> */}
-
+      <Footer />
     </>
   );
 }
