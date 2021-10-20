@@ -190,13 +190,14 @@
 }
 //commented
 .comment {
+    margin-left: 50px;
     margin-top: 100px;
     h5 {
         font-weight: 700;
         line-height: 28px;
     }
     h6 {
-        background-color: #19a463;
+        background-color: #eed0a2;
         width: 300px;
     }
     .hello {
@@ -222,7 +223,7 @@
         }
     }
     .satisfied {
-        background-color: #ffb33e;
+        background-color: #eed0a2;
         font-weight: 600;
         width: 600px;
         margin-top: 25px;
@@ -240,7 +241,8 @@
             color: #4041456e;
             margin-bottom: 10px;
         }
-        .php,.Cross__Browser {
+        .php,
+        .Cross__Browser {
             font-size: 17px;
         }
     }
@@ -250,13 +252,84 @@
     }
 }
 
-
-@media (min-width: 1200px)
-{
-    .Detailjob__checkout{
-        .container{
+@media (min-width: 1200px) {
+    .Detailjob__checkout {
+        .container {
             max-width: 1344px;
         }
     }
+}
+
+.user__comment {
+    margin-top: 50px;
+    .comment__user__name {
+        img {
+            width: 39px;
+            margin-right: 15px;
+        }
+        span {
+            font-weight: 600;
+            font-size: 22px;
+            margin-bottom: 50px;
+        }
+        .comment__item {
+            margin-left: 50px;
+        }
+        .Published {
+            margin-left: 50px;
+            margin-top: 20px;
+            line-height: 22px;
+            color: #404145;
+            word-wrap: break-word;
+        }
+    }
+}
+
+.contact__user {
+    img {
+        position: relative;
+        width: 100%;
+        height: 80%;
+        display: block;
+        border-radius: 50%;
+        margin-left: -20px;
+        margin-top: 20px;
+    }
    
+    .nofilrazzaq {
+        margin-left: -10px;
+        margin-top: 5px;
+        font-weight: 600;
+        font-size: 20px;
+    }
+    .Web__Developer {
+        margin-left: -10px;
+        font-size: 19px;
+        font-weight: 400;
+    }
+   
+    .Star__comment {
+        margin-left: -10px;
+        color: #ffb33e;
+        font-size: 15px;
+        margin-top: 10px;
+        svg {
+            margin-top: -10px;
+            margin-right: 4px;
+        }
+    }
+    button {
+        background: white;
+        border: 1px solid;
+        width: 132px;
+        margin-left: -10px;
+        padding-top: 8px;
+        padding-bottom: 11px;
+        margin-top: 10px;
+        border-radius: 6px;
+        font-size: 14px;
+    }
+    hr {
+        margin-top: 50px;
+    }
 }

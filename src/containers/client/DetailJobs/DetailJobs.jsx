@@ -6,9 +6,8 @@ import { GithubFilled, StarFilled } from '@ant-design/icons';
 import "../DetailJobs/DetailJobs.scss"
 import { Checkbox, Button } from 'antd';
 import Slider from "react-slick";
-import fiverrApi from "apis/fiverrApi";
 import { actDatCongViec } from "./BookingJob/modules/action";
-import { ThongTinDat } from "_core/models/ThongTinDat";
+import { ThongTinDat,  } from "_core/models/ThongTinDat";
 
 export default function DetailJobs(props) {
   function onChange(e) {
@@ -80,77 +79,6 @@ export default function DetailJobs(props) {
                 </div>
               )
             })}
-
-            {/* <div className="comment">
-              <h5>About This Gig </h5>
-              <h6>Top Rated Seller with all positive reviews</h6>
-              <div className="hello">Hello,</div>
-              <div className="content">Want a custom website built for your business? Or Having trouble in recognizing or fixing</div>
-              <div className="content">Want a custom website built for your business? Or Having trouble in recognizing  </div>
-              <div className="content">or fixing any issues in HTML, CSS,   Bootstrap jquery, javascript, PHP or database(Mysql/Oracle). </div>
-              <h5 className="offer">Things I offer:</h5>
-              <div className="information_detailjob">
-                <ul>
-                  <li>CRM development</li>
-                  <li>E-commerce&nbsp;Development</li>
-                  <li>Custom website development (both front-end and back-end) with Laravel, PHP and MySQL</li>
-                  <li>Vue.js, HTML, CSS, Boostrap, Javascript/Jquery, PHP single/multi web page,</li>
-                  <li>Complete website creation from scratch using Laravel Rest Api and vue.js</li>
-                  <li>Web Application with proper exception handling</li>
-                  <li>Can work with APIs, integrate API's in your applications.</li>
-                  <li>Responsive - Mobile Friendly sites.</li><li>Great UI/UX for&nbsp;your site.</li>
-                  <li>PSD to HTML, XD to HTML&nbsp;or any other design to HTML with best quality and pixel perfect design</li>
-                  <li>Fix issues in&nbsp;front-end or add some changes to it.</li>
-                  <li>Bug Investigation and Bug fixing.</li>
-                  <li>MySQL database design and integration in websites.</li>
-                  <li>MySQL database bugs fixing and integration issues fixing.&nbsp;</li>
-                </ul>
-              </div>
-              <div className="satisfied">I will do the work until you are satisfied with fast and responsive communication. </div>
-              <hr></hr>
-              <div className="row comment__bottom">
-                <div className="col-4">
-                  <div className="Programming">Programming Language</div>
-                  <div className="php">PHP</div>
-                </div>
-                <div className="col-8">
-                  <div className="Expertise">Expertise </div>
-                  <div className="Cross__Browser">Cross Browser</div>
-                  <div className="Cross__Browser">Cross Browser</div>
-                  <div className="Cross__Browser">Cross Browser</div>
-                </div>
-              </div>
-              <div className="About">About The Seller</div>
-              <div className="row">
-                <div className="col-2">
-                  <img src="../../images/Market/2.png" alt="" style={{ width: 100 }} />
-                </div>
-                <div className="col-10">
-                  <div>nofilrazzaq
-                  </div>
-                  <div>Web Developer
-                  </div>
-                  <span className="Star">
-                    {tittleJob?.map((job, index) => {
-                      return (
-                        <span key={index} className="">
-                          <StarFilled />
-                          <StarFilled />
-                          <StarFilled />
-                          <StarFilled />
-                          <StarFilled />
-                          <StarFilled />/
-                          <span className="rating">{job.rating}</span>
-                          <span className="name">{job.name}</span>
-                        </span>
-                      )
-                    })}
-                  </span>
-                  <div>                <button>Contact me</button>
-                  </div>
-                </div>
-              </div>
-            </div> */}
           </div>
           <div className=" col-12 col-lg-4  detailjob__left container">
             <Card
@@ -229,7 +157,7 @@ export default function DetailJobs(props) {
                                 thongTinDat.taiKhoanNguoiDat = job.usersBooking;
                                 console.log("thongtindat", thongTinDat);
                                 dispatch(actDatCongViec(props.match.params.id));
-                                
+
                               }}
                                 block >
                                 <span className="mr-10">Continue (${job.price})</span>
@@ -259,8 +187,6 @@ export default function DetailJobs(props) {
             </Card>,
           </div>
         </div>
-
-
         <div className="comment">
           <h5>About This Gig </h5>
           <h6>Top Rated Seller with all positive reviews</h6>
@@ -301,16 +227,16 @@ export default function DetailJobs(props) {
             </div>
           </div>
           <div className="About">About The Seller</div>
-          <div className="row">
-            <div className="col-1">
-              <img src="../../images/Market/2.png" alt="" style={{ width: 100 }} />
+          <div className="row contact__user">
+            <div className="col-1 ">
+              <img src="https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/a094e2f0e126604aaaef8b8cefe2b077-1580057123471/8863736e-6ad6-4a99-8c37-d300e714b164.png" alt="" style={{ width: 100 }} />
             </div>
             <div className="col-10">
-              <div>nofilrazzaq
+              <div className="nofilrazzaq">nofilrazzaq
               </div>
-              <div>Web Developer
+              <div className="Web__Developer">Web Developer
               </div>
-              <span className="Star">
+              <span className="Star__comment">
                 {tittleJob?.map((job, index) => {
                   return (
                     <span key={index} className="">
@@ -319,22 +245,38 @@ export default function DetailJobs(props) {
                       <StarFilled />
                       <StarFilled />
                       <StarFilled />
-                      <StarFilled />/
+                      <StarFilled />
                       <span className="rating">{job.rating}</span>
                     </span>
                   )
                 })}
               </span>
-              <div> <button>Contact me</button>
+              <div className="contact"> <button>Contact me</button>
               </div>
             </div>
+            <hr></hr>
+
           </div>
+
         </div>
         <div className="user__comment">
-          {commentJob.user?.map((mia, index)=>{
-          return (
-            <div key={index}>{mia.name}</div>
-          )
+          <div className="comment__user__name">
+            <div><img src="../../images/Market/3.png" alt="..." />
+              <span>cmtranslation</span>
+            </div>
+            <div className="comment__item">Very easy to communicate with and delivered the project early.
+            </div>
+            <div className="comment__item">
+              The job was a custom modification of an existing JavaScript discord bot using youtube APIs.
+            </div>
+            <div className="comment__item">
+              The bot is now working with the specified modifications.</div>
+            <div className="Published">Published 2 months ago</div>
+          </div>
+          {commentJob.User?.map((mia, index) => {
+            return (
+              <div key={index}>{mia.name}</div>
+            )
           })}
         </div>
       </div>

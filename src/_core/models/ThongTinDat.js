@@ -12,3 +12,8 @@ export class ThongTinDat {
     taiKhoanNguoiDat = '';
 }
 
+export class User {
+    birthday='';
+    name ='';
+}
+

@@ -1,6 +1,6 @@
 import callApi from "utils/callApi";
 import callApiPatch from "utils/callApiPatch";
-import { ThongTinDat } from "_core/models/ThongTinDat";
+import { ThongTinDat, User } from "_core/models/ThongTinDat";
 
 const fiverrApi = {
     fetchAllJobFiverrApi() {
@@ -14,7 +14,7 @@ const fiverrApi = {
     fetchBookingJob(jobId, thongTinDat= new ThongTinDat()) { 
       return callApiPatch(`jobs/booking/${jobId}`);
     },
-    fetchCommentApi(jobId){
+    fetchCommentApi(jobId, user =new User()){
       return callApi(`comments/by-job/${jobId}`)
     },
     // userInformation

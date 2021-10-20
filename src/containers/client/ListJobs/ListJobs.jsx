@@ -7,12 +7,12 @@ export default function ListJobs() {
         <nav className="layout-row row">
           <b>Suggested</b>
           <div className="search-tags">
-            <a href="#">html css</a>
-            <a href="#">html website</a>
-            <a href="#">psd to html</a>
-            <a href="#">html design</a>
-            <a href="#">html email</a>
-            <a href="#">html css javascript</a>
+            <a href="...">html css</a>
+            <a href="...">html website</a>
+            <a href="...">psd to html</a>
+            <a href="...">html design</a>
+            <a href="...">html email</a>
+            <a href="...">html css javascript</a>
           </div>
         </nav>
       </header>
@@ -100,22 +100,22 @@ export default function ListJobs() {
           <div className="listing-container row">
             <div className="col-sm-3 card-layout">
               <div className="card-wrapper">
-                <a href="" className="media">
+                <a href="..." className="media">
                   <img
                     className="w-100"
-                    src="./images/ListJobs/a5945e0c694538f4e36215017d623873aac3ce67.jpg"
-                  />
+                    src="./images/ListJobs/a5945e0c694538f4e36215017d623873aac3ce67.jpg" alt="...." />
+
                 </a>
                 <div className="seller-info row">
                   <div className="seller-image">
                     <img
                       src="./images/ListJobs/JPEG_20201030_153457_4491597895407383130.jpg"
-                      alt=""
+                      alt="..."
                     />
                   </div>
                   <div className="seller-identifiers">
                     <div className="seller-name">
-                      <a href="">rajnishbaldha</a>
+                      <a href="...">rajnishbaldha</a>
                     </div>
                     <div className="seller-level">
                       <span>Level 2 Seller</span>
@@ -123,7 +123,7 @@ export default function ListJobs() {
                   </div>
                 </div>
                 <h3 className="seller-title">
-                  <a href="">I will edit html and css on your webpage</a>
+                  <a href="...">I will edit html and css on your webpage</a>
                 </h3>
                 <div className="content-info">
                   <div className="rating-wrapper">
@@ -153,7 +153,7 @@ export default function ListJobs() {
                       <path d="M14.4469 1.95625C12.7344 0.496875 10.1875 0.759375 8.61561 2.38125L7.99999 3.01562L7.38436 2.38125C5.81561 0.759375 3.26561 0.496875 1.55311 1.95625C-0.409388 3.63125 -0.512513 6.6375 1.24374 8.45312L7.29061 14.6969C7.68124 15.1 8.31561 15.1 8.70624 14.6969L14.7531 8.45312C16.5125 6.6375 16.4094 3.63125 14.4469 1.95625Z" />
                     </svg>
                   </div>
-                  <a href="" className="price">
+                  <a href="..." className="price">
                     <small>Starting at</small>
                     <span>$15</span>
                   </a>
@@ -162,22 +162,22 @@ export default function ListJobs() {
             </div>
             <div className="col-sm-3 card-layout">
               <div className="card-wrapper">
-                <a href="" className="media">
+                <a href="..." className="media">
                   <img
                     className="w-100"
-                    src="./images/ListJobs/a5945e0c694538f4e36215017d623873aac3ce67.jpg"
+                    src="./images/ListJobs/a5945e0c694538f4e36215017d623873aac3ce67.jpg" alt="...."
                   />
                 </a>
                 <div className="seller-info row">
                   <div className="seller-image">
                     <img
                       src="./images/ListJobs/JPEG_20201030_153457_4491597895407383130.jpg"
-                      alt=""
+                      alt="..."
                     />
                   </div>
                   <div className="seller-identifiers">
                     <div className="seller-name">
-                      <a href="">rajnishbaldha</a>
+                      <a href="...">rajnishbaldha</a>
                     </div>
                     <div className="seller-level">
                       <span>Level 2 Seller</span>
@@ -185,7 +185,7 @@ export default function ListJobs() {
                   </div>
                 </div>
                 <h3 className="seller-title">
-                  <a href="">I will edit html and css on your webpage</a>
+                  <a href="...">I will edit html and css on your webpage</a>
                 </h3>
                 <div className="content-info">
                   <div className="rating-wrapper">
@@ -215,7 +215,7 @@ export default function ListJobs() {
                       <path d="M14.4469 1.95625C12.7344 0.496875 10.1875 0.759375 8.61561 2.38125L7.99999 3.01562L7.38436 2.38125C5.81561 0.759375 3.26561 0.496875 1.55311 1.95625C-0.409388 3.63125 -0.512513 6.6375 1.24374 8.45312L7.29061 14.6969C7.68124 15.1 8.31561 15.1 8.70624 14.6969L14.7531 8.45312C16.5125 6.6375 16.4094 3.63125 14.4469 1.95625Z" />
                     </svg>
                   </div>
-                  <a href="" className="price">
+                  <a href="..." className="price">
                     <small>Starting at</small>
                     <span>$15</span>
                   </a>
@@ -224,22 +224,22 @@ export default function ListJobs() {
             </div>
             <div className="col-sm-3 card-layout">
               <div className="card-wrapper">
-                <a href="" className="media">
+                <a href="..." className="media">
                   <img
                     className="w-100"
-                    src="./images/ListJobs/a5945e0c694538f4e36215017d623873aac3ce67.jpg"
+                    src="./images/ListJobs/a5945e0c694538f4e36215017d623873aac3ce67.jpg" alt="...."
                   />
                 </a>
                 <div className="seller-info row">
                   <div className="seller-image">
                     <img
                       src="./images/ListJobs/JPEG_20201030_153457_4491597895407383130.jpg"
-                      alt=""
+                      alt="..."
                     />
                   </div>
                   <div className="seller-identifiers">
                     <div className="seller-name">
-                      <a href="">rajnishbaldha</a>
+                      <a href="...">rajnishbaldha</a>
                     </div>
                     <div className="seller-level">
                       <span>Level 2 Seller</span>
@@ -247,7 +247,7 @@ export default function ListJobs() {
                   </div>
                 </div>
                 <h3 className="seller-title">
-                  <a href="">I will edit html and css on your webpage</a>
+                  <a href="...">I will edit html and css on your webpage</a>
                 </h3>
                 <div className="content-info">
                   <div className="rating-wrapper">
@@ -277,7 +277,7 @@ export default function ListJobs() {
                       <path d="M14.4469 1.95625C12.7344 0.496875 10.1875 0.759375 8.61561 2.38125L7.99999 3.01562L7.38436 2.38125C5.81561 0.759375 3.26561 0.496875 1.55311 1.95625C-0.409388 3.63125 -0.512513 6.6375 1.24374 8.45312L7.29061 14.6969C7.68124 15.1 8.31561 15.1 8.70624 14.6969L14.7531 8.45312C16.5125 6.6375 16.4094 3.63125 14.4469 1.95625Z" />
                     </svg>
                   </div>
-                  <a href="" className="price">
+                  <a href="..." className="price">
                     <small>Starting at</small>
                     <span>$15</span>
                   </a>
@@ -286,22 +286,22 @@ export default function ListJobs() {
             </div>
             <div className="col-sm-3 card-layout">
               <div className="card-wrapper">
-                <a href="" className="media">
+                <a href="..." className="media">
                   <img
                     className="w-100"
-                    src="./images/ListJobs/a5945e0c694538f4e36215017d623873aac3ce67.jpg"
+                    src="./images/ListJobs/a5945e0c694538f4e36215017d623873aac3ce67.jpg" alt="...."
                   />
                 </a>
                 <div className="seller-info row">
                   <div className="seller-image">
                     <img
                       src="./images/ListJobs/JPEG_20201030_153457_4491597895407383130.jpg"
-                      alt=""
+                      alt="..."
                     />
                   </div>
                   <div className="seller-identifiers">
                     <div className="seller-name">
-                      <a href="">rajnishbaldha</a>
+                      <a href="....">rajnishbaldha</a>
                     </div>
                     <div className="seller-level">
                       <span>Level 2 Seller</span>
@@ -309,7 +309,7 @@ export default function ListJobs() {
                   </div>
                 </div>
                 <h3 className="seller-title">
-                  <a href="">I will edit html and css on your webpage</a>
+                  <a href="...">I will edit html and css on your webpage</a>
                 </h3>
                 <div className="content-info">
                   <div className="rating-wrapper">
@@ -339,7 +339,7 @@ export default function ListJobs() {
                       <path d="M14.4469 1.95625C12.7344 0.496875 10.1875 0.759375 8.61561 2.38125L7.99999 3.01562L7.38436 2.38125C5.81561 0.759375 3.26561 0.496875 1.55311 1.95625C-0.409388 3.63125 -0.512513 6.6375 1.24374 8.45312L7.29061 14.6969C7.68124 15.1 8.31561 15.1 8.70624 14.6969L14.7531 8.45312C16.5125 6.6375 16.4094 3.63125 14.4469 1.95625Z" />
                     </svg>
                   </div>
-                  <a href="" className="price">
+                  <a href="..." className="price">
                     <small>Starting at</small>
                     <span>$15</span>
                   </a>
@@ -348,10 +348,10 @@ export default function ListJobs() {
             </div>
             <div className="col-sm-3 card-layout">
               <div className="card-wrapper">
-                <a href="" className="media">
+                <a href="...." className="media">
                   <img
                     className="w-100"
-                    src="./images/ListJobs/a5945e0c694538f4e36215017d623873aac3ce67.jpg"
+                    src="./images/ListJobs/a5945e0c694538f4e36215017d623873aac3ce67.jpg" alt="...."
                   />
                 </a>
                 <div className="seller-info row">
@@ -363,7 +363,7 @@ export default function ListJobs() {
                   </div>
                   <div className="seller-identifiers">
                     <div className="seller-name">
-                      <a href="">rajnishbaldha</a>
+                      <a href="...">rajnishbaldha</a>
                     </div>
                     <div className="seller-level">
                       <span>Level 2 Seller</span>
@@ -371,7 +371,7 @@ export default function ListJobs() {
                   </div>
                 </div>
                 <h3 className="seller-title">
-                  <a href="">I will edit html and css on your webpage</a>
+                  <a href="....">I will edit html and css on your webpage</a>
                 </h3>
                 <div className="content-info">
                   <div className="rating-wrapper">
@@ -401,7 +401,7 @@ export default function ListJobs() {
                       <path d="M14.4469 1.95625C12.7344 0.496875 10.1875 0.759375 8.61561 2.38125L7.99999 3.01562L7.38436 2.38125C5.81561 0.759375 3.26561 0.496875 1.55311 1.95625C-0.409388 3.63125 -0.512513 6.6375 1.24374 8.45312L7.29061 14.6969C7.68124 15.1 8.31561 15.1 8.70624 14.6969L14.7531 8.45312C16.5125 6.6375 16.4094 3.63125 14.4469 1.95625Z" />
                     </svg>
                   </div>
-                  <a href="" className="price">
+                  <a href="...." className="price">
                     <small>Starting at</small>
                     <span>$15</span>
                   </a>
@@ -412,7 +412,7 @@ export default function ListJobs() {
         </div>
         <ul className="page-pagination row">
           <li className="page-number page-arrow">
-            <a href="">
+            <a href="...">
               <span style={{ width: 16, height: 16 }}>
                 <svg
                   width={8}
@@ -426,22 +426,22 @@ export default function ListJobs() {
             </a>
           </li>
           <li className="page-number">
-            <a href="">1</a>
+            <a href="...">1</a>
           </li>
           <li className="page-number">
-            <a href="">2</a>
+            <a href="...">2</a>
           </li>
           <li className="page-number">
-            <a href="">3</a>
+            <a href="...">3</a>
           </li>
           <li className="page-number">
-            <a href="">4</a>
+            <a href="...">4</a>
           </li>
           <li className="page-number">
-            <a href="">5</a>
+            <a href="...">5</a>
           </li>
           <li className="page-number page-arrow">
-            <a href="">
+            <a href="...">
               <span style={{ width: 16, height: 16 }}>
                 <svg
                   width={8}
