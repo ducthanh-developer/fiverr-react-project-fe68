@@ -17,7 +17,7 @@ export default function DetailJobs(props) {
   const { tittleJob, commentJob } = useSelector((state) => state.tittleJobReducer);
   console.log("tittleJob", tittleJob);
 
-  console.log("object", commentJob);
+  console.log("commentJob", commentJob);
   useEffect(() => {
     dispatch(actGetJobTittle(props.match.params.id));
     dispatch(actGetComment(props.match.params.id))
@@ -273,11 +273,21 @@ export default function DetailJobs(props) {
               The bot is now working with the specified modifications.</div>
             <div className="Published">Published 2 months ago</div>
           </div>
-          {commentJob.User?.map((mia, index) => {
+          {commentJob?.map((item, index) => {
             return (
-              <div key={index}>{mia.name}</div>
+              <div key={index}>{item.user.name}</div>
             )
           })}
+
+          <div>{commentJob?.map((item, index) => {
+            return (
+              <div key={index}>{item.user.skill?.map((kynang, index) => {
+                return(
+                  <div>{kynang}</div>
+                )
+              })}</div>
+            )
+          })}</div>
         </div>
       </div>
     </div>

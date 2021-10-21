@@ -8,9 +8,9 @@ import { FETCH_USER_LIST_JOBS_SUCCESS } from "./type";
 // });
 
 
-export const actLayDanhSachCongViecNguoiDung = (userjobs) => ({
+export const actLayDanhSachCongViecNguoiDung = (userJobs) => ({
   type: FETCH_USER_LIST_JOBS_SUCCESS,
-  payload: userjobs,
+  payload: userJobs,
 });
 
 
@@ -21,6 +21,7 @@ export const actGetUserListJobs= () => {
     .fetchUserListJobsApi()
     .then(result=>{
       dispatch(actLayDanhSachCongViecNguoiDung(result.data))
+      console.log("result", result.data)
     })
     .catch(error=>{console.log("errrhhh", error.response?.data);});
   }
