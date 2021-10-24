@@ -25,6 +25,11 @@ export const clientRoutes = [
     component: DetailJobs,
     exact: false,
   },
+  {
+    path: "/fiverr/:id",
+    component: DetailJobs,
+    exact: false,
+  },
 
   // {
   //   path: "/job-categories",
