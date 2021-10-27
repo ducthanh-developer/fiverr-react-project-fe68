@@ -1,5 +1,7 @@
 import callApi from "utils/callApi";
 import callApiPatch from "utils/callApiPatch";
+import callApiPost from "utils/callApiPost";
+import callApiPut from "utils/callApiPut";
 import { ThongTinDat, User } from "_core/models/ThongTinDat";
 
 const fiverrApi = {
@@ -19,7 +21,16 @@ const fiverrApi = {
     },
     // userInformation
     fetchUserListJobsApi(){
-      return callApi(`users/614600386a0800001c187e11`)
+      return callApi(`users/6177e1e82b1032001c3f52a3`)
+    },
+    fetchAddUserInformation(formData){
+      return callApiPut('users/6177e1e82b1032001c3f52a3', formData)
+    },
+    fetchListJobsBooking(){
+      return callApi(`jobs/by-user`)
+    },
+    loginApi(user){
+      return callApiPost(`auth/signin`,user)
     }
 }
 

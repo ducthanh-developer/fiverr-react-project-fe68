@@ -1,118 +1,225 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { actGetUserListJobs } from "./modules/action";
-import { Upload } from 'antd';
+import { actFetchAddUserInformation, actGetUserListJobs } from "./modules/action";
+import { useFormik } from 'formik';
+import "../UserInformation/AddFormSkill.scss"
 import LoadImg from './LoadImg'
-import ImgCrop from 'antd-img-crop';
 import "../UserInformation/UserInformation.scss"
-export default function UserInformation() {
+import { Form, Input, } from 'antd';
+
+export default function UserInformation(props) {
     const dispatch = useDispatch();
     const { userJobs, } = useSelector((state) => state.userListJobsReducer);
     console.log("gg", userJobs);
     useEffect(() => {
-        dispatch(actGetUserListJobs('614600386a0800001c187e11'));
+        dispatch(actGetUserListJobs('6177e1e82b1032001c3f52a3'));
     }, []);
-
-
-    const [fileList, setFileList] = useState([
-        {
-            uid: '-1',
-            name: 'image.png',
-            status: 'done',
-            url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+    const [isShow, setIsShow] = React.useState(true);
+    const handleClick = () => {
+        setIsShow(!isShow);
+    };
+    const Typography = (props) => {
+        return <p>{props.children}</p>;
+    }
+    const formik = useFormik({
+        initialValues: {
+            skill: userJobs?.skill,
+            certification: userJobs?.certification,
         },
-    ]);
-
-    const onChange = ({ fileList: newFileList }) => {
-        setFileList(newFileList);
-    };
-
-    const onPreview = async file => {
-        let src = file.url;
-        if (!src) {
-            src = await new Promise(resolve => {
-                const reader = new FileReader();
-                reader.readAsDataURL(file.originFileObj);
-                reader.onload = () => resolve(reader.result);
-            });
+        onSubmit: (values) => {
+            console.log("values", values);
+            // let formData = new FormData();
+            // formData.append("skill", formik.values.skill)
+            // console.log("formData", formData.get('skill'))
+            dispatch(actFetchAddUserInformation(values));
         }
-        // const image = new Image();
-        // image.src = src;
-        // const imgWindow = window.open(src);
-        // imgWindow.document.write(image.outerHTML);
-    };
+    })
     return (
-        <div className="container user__informational">
-            <div className="upload__images">
-                <ImgCrop >
-                    <div className="img">
-                        <div className="Container">
-                            <Upload
-                                style={{ margin: '100' }}
-                                // action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-                                listType="picture-card"
-                                fileList={fileList}
-                                onChange={onChange}
-                                onPreview={onPreview}>
-                                {fileList.length < 1 && '+ Upload'}
-                            </Upload>
-                        </div>
-
-                    </div>
-
-                </ImgCrop>
-            </div>
-            <div className="row">
-                <div className="col-3 ">
-                    <div className=" card card-1 ">
-                        <LoadImg />
-                        <div className="name__profile text-center ">{userJobs.name}</div>
-                        <hr></hr>
-                        <div className="row">
-                            <div className="col-6">
-
-                                From
-                            </div>
-                            <div className="col-6">
-                                Vietnam
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="col-6">
-                                Member since
-                            </div>
-                            <div className="col-6">
-                                Vietnam
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div className=" card card-2">
-                            <img src="../../images/market/learn.png"  alt="" />
-                            {userJobs.name}
+        <div className="user__information">
+            <div className="container user__information__content ">
+                <div className="row">
+                    <div className="col-12 col-md-12 col-lg-5">
+                        <div className=" card card-1 ">
+                            <LoadImg />
+                            <h6 className="name__profile text-center">{userJobs.email}</h6>
+                            <button className="btn btn__profile">Preview Public Model</button>
                             <hr></hr>
-                            <div className="row">
-                                <div className="col-6">
-                                    From
+                            <div>
+                                <ul className="flex from__item ">
+                                    <li className="flex-item-from">From</li>
+                                    <li className="flex-item-vietnam">Vietnam</li>
+                                </ul>
+                                <ul className="flex from__item ">
+                                    <li className="flex-item-from">Member since</li>
+                                    <li className="flex-item-time">Vietnam</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div className="">
+                            <div className=" card card-2">
+                                <ul className="flex Description ">
+                                    <li className="flex-item-1">Description</li>
+                                    <li className="flex-item-2">  Edit Description </li>
+                                </ul>
+                                <hr></hr>
+                                <ul className="flex Description ">
+                                    <li className="flex-item-1">Skill</li>
+                                    <li className="flex-item-2">
+                                        <>
+                                            <div onClick={handleClick} className="add__skill">AddSkill</div>
+                                            {isShow ?
+                                                <>
+                                                </>
+                                                : <div className="AddFormSkill card">
+                                                    <Typography>
+                                                        <Form
+                                                            layout="horizontal"
+                                                            onSubmitCapture={formik.handleSubmit}
+                                                            labelCol={{ span: 4 }}
+                                                            wrapperCol={{ span: 14 }}
+                                                            layout="horizontal" >
+                                                            <Form.Item label="" >
+                                                                <Input name="skill"
+                                                                    onChange={formik.handleChange}
+                                                                    value={formik.values.skill} />
+                                                            </Form.Item>
+                                                            {/* <Form.Item label="" >
+                                                                <Select>
+                                                                    <Select.Option value="demo">Demo</Select.Option>
+                                                                </Select>
+                                                            </Form.Item> */}
+                                                            <div className="row add__skill__button">
+                                                                <hr></hr>
+
+                                                                <div className="col-6">
+                                                                    <button className="btn btn__cancle__skkil">Cancel</button>
+                                                                </div>
+                                                                <Form.Item label="Tac vụ"  >
+                                                                    <button type="submit" className="btn btn-default" value=""> Thêm</button>
+                                                                </Form.Item>
+                                                            </div>
+                                                        </Form>
+                                                    </Typography>
+                                                </div>
+                                            }
+                                        </>
+                                    </li>
+                                </ul>
+                                <div className="done__add__skill">
+                                    {userJobs.skill?.map((skill, index) => {
+                                        return (
+                                            <div key={index} className="skill">{skill}</div>
+                                        )
+                                    })}
                                 </div>
-                                <div className="col-6">
-                                    Vietnam
+                                <hr></hr>
+                                <ul className="flex Description ">
+                                    <li className="flex-item-1">Skill</li>
+                                    <li className="flex-item-2">
+                                        <>
+                                            <div className="add__skill" onClick={handleClick}>Toggle</div>
+                                            {isShow ?
+                                                <>
+                                                </>
+                                                :
+                                                <div className="AddFormSkill card">
+                                                    <Typography>
+                                                        <Form
+                                                            onSubmitCapture={formik.handleSubmit}
+                                                            labelCol={{ span: 4 }}
+                                                            wrapperCol={{ span: 14 }}
+                                                            layout="horizontal" >
+                                                            <Form.Item label="">
+                                                                <Input name="certification"
+                                                                    onChange={formik.handleChange}
+                                                                    value={formik.values.certification} />
+                                                            </Form.Item>
+                                                            {/* <Form.Item label="" >
+                                                            <Select>
+                                                                <Select.Option value="demo">Demo</Select.Option>
+                                                            </Select>
+                                                        </Form.Item> */}
+                                                            <div className="row add__skill__button">
+                                                                <hr></hr>
+
+                                                                <div className="col-6">
+                                                                    <button className="btn btn__cancle__skkil">Cancel</button>
+                                                                </div>
+                                                                <div className="col-6">
+                                                                    <button className="btn btn-success btn__add__skkil" type="submit">Add</button>
+                                                                </div>
+                                                            </div>
+                                                        </Form>
+                                                    </Typography>
+                                                </div>
+                                            }
+                                        </>
+                                    </li>
+                                    <div className="done__add__skill">
+                                        {userJobs.certification?.map((skill, index) => {
+                                            return (
+                                                <div key={index} className="skill">{skill}</div>
+                                            )
+                                        })}
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-12 col-md-12 col-lg-6 user__information__right">
+                        <div className="card car__done__create">
+                            <div className="Buying">
+                                <img src="https://npm-assets.fiverrcdn.com/assets/@fiverr-private/business_blocks/office-building.7ac5061.gif" alt="" />
+                                <b>Buying services for work? </b>  Get the best experience for your business
+                            </div>
+                            <div className="questions">with 3 quick questions.</div>
+                            <div className="industry">What’s your industry
+                            </div>
+                        </div>
+                        <div className="card create__new__gif">
+                            <div className="row">
+                                <div className="col-9 Gigs">
+                                    It seems that you don't have any active Gigs. Get selling!
+                                </div>
+                                <div className="col-3">
+                                    <button type="submit" className="btn btn-success">Create  a new gif</button>
                                 </div>
                             </div>
+                        </div>
+
+                        <div className="card history__job__booking">
                             <div className="row">
-                                <div className="col-6">
-                                    Member since
+                                <div className="col-3">
+                                    <img src="https://npm-assets.fiverrcdn.com/assets/@fiverr-private/business_blocks/office-building.7ac5061.gif" alt="" />
                                 </div>
-                                <div className="col-6">
-                                    Vietnam
+                                <div className="col-9">
+                                    Lập trình front end với react
+                                    <div>
+                                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt fugiat voluptates dolor, doloremque nihil nulla doloribus, vel ratione eaque dignissimos ea aperiam dolore alias libero. Atque dolor recusandae laborum modi.
+                                        Nobis repellat accusamus impedit laboriosam, illo excepturi voluptatibus aliquam iste incidunt cumque quas officia autem dolorem a libero corrupti rem ullam quis eum? Dolorem neque optio fugiat aliquam nobis facilis.
+
+                                    </div>
                                 </div>
+
                             </div>
-                        </div></div>
-                </div>
-                <div className="col-9">
+                        </div>
+                    </div>
+                    {/* getlistjobbooking */}
 
                 </div>
             </div>
         </div>
+
     )
 }
+
+
+
+
+
+
+
+
+
+
+

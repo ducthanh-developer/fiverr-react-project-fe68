@@ -26,3 +26,17 @@ export const actGetUserListJobs= () => {
     .catch(error=>{console.log("errrhhh", error.response?.data);});
   }
 }
+
+export const actFetchAddUserInformation = (values) => {
+  return async (dispatch) => {
+    try {
+      let { data } = await fiverrApi.fetchAddUserInformation(values);
+      console.log("actionvalues", values)
+      console.log("dta",data);
+            alert("Thêm Thành Công")
+
+    } catch (error) {
+      console.log(error.response?.data);
+    }
+  };
+};

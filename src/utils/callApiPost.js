@@ -17,14 +17,14 @@
 
 import axios from "axios";
 
-const callApi = (
+const callApiPost = (
   endpoint = null,
   data = null,
-  headers="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTc3YzAzNzJiMTAzMjAwMWMzZjUxNTkiLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTYzNTI0MTM3Mn0.Vs_sIbavXiXxWz_E35yuEPrPYp4iLrRjtTloap9HCu8"
+  headers="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTQ2MDAzODZhMDgwMDAwMWMxODdlMTEiLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTYzNDM4OTg5M30.LsTI3ZiINW2Cgv2RbV2cjX3GB-wplWUQUOAO6vH8vzw"
 ) => {
   return axios({
     url: `/${endpoint}`,
-    method: "GET",
+    method: "POST",
     data,
     headers: {
       token: `${headers}`,
@@ -34,4 +34,4 @@ const callApi = (
   });
 };
 
-export default callApi;
+export default callApiPost;

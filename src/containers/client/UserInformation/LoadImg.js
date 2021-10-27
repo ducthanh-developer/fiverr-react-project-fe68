@@ -14,45 +14,6 @@ const ImgUpload = ({
         <input id="photo-upload" type="file" onChange={onChange} />
     </label>
 
-
-// const Name = ({
-//     onChange,
-//     value
-// }) =>
-//     <div className="field">
-//         <label htmlFor="name">
-//             name:
-//         </label>
-//         <input
-//             id="name"
-//             type="text"
-//             onChange={onChange}
-//             maxlength="25"
-//             value={value}
-//             placeholder="Alexa"
-//             required />
-//     </div>
-
-
-// const Status = ({
-//     onChange,
-//     value
-// }) =>
-//     <div className="field">
-//         <label htmlFor="status">
-//             status:
-//         </label>
-//         <input
-//             id="status"
-//             type="text"
-//             onChange={onChange}
-//             maxLength="35"
-//             value={value}
-//             placeholder="It's a nice day!"
-//             required />
-//     </div>
-
-
 const Profile = ({
     onSubmit,
     src,
@@ -137,7 +98,6 @@ export default class Upload extends Component {
                     {(active === 'edit') ? (
                         <Edit onSubmit={this.handleSubmit}>
                             <ImgUpload onChange={this.photoUpload} src={imagePreviewUrl} />
-                          
                         </Edit>
                     ) : (
                         <Profile

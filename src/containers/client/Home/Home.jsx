@@ -5,10 +5,8 @@ import Product from "./Product/Product";
 import Testimonial from "./Testimonial/Testimonial";
 import Selling from "./Selling/Selling";
 import Marketplace from "./Marketplace/Marketplace";
-import UserInformation from "../UserInformation/UserInformation";
+// import UserInformation from "../UserInformation/UserInformation";
 import ListJobCategories from "../ListJobCategories/ListJobCategories";
-import Upload from "../UserInformation/LoadImg";
-// import BookingJob from "../DetailJobs/BookingJob/BookingJob";
 
 export default function Home() {
   return (
@@ -29,10 +27,10 @@ export default function Home() {
       <Marketplace />
       {/* <DetailJobs/> */}
       {/* <BookingJob/> */}
-      <UserInformation/>
+      {/* <UserInformation/> */}
       <ListJobCategories/>
-      <Upload/>
-     
+      {/* <Upload/> */}
+     {/* <ModalForm/> */}
     </main>
   );
 }

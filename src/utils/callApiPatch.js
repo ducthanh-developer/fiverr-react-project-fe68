@@ -4,7 +4,8 @@ import axios from "axios";
 const callApiPatch = (
   endpoint = null,
   data = null,
-  headers="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTQ2MDAzODZhMDgwMDAwMWMxODdlMTEiLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTYzNDM4OTg5M30.LsTI3ZiINW2Cgv2RbV2cjX3GB-wplWUQUOAO6vH8vzw"
+  headers="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTc3YzAzNzJiMTAzMjAwMWMzZjUxNTkiLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTYzNTI0MDUzNn0.lAdcr2gGYCvIWh4ai-cKQdESEiDmu6NDKZIOSJkaCZ8"
+  
 ) => {
   return axios({
     url: `/${endpoint}`,
