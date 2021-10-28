@@ -1,15 +1,12 @@
 import callApi from "utils/callApi";
 
 const fiverrApi = {
-    fetchAllJobFiverrApi() {
-      return  callApi(`jobs`);
-      
-    },
-    fetchTittleFiverrApi(jobId) {
-      return  callApi(`jobs/${jobId}?`);
-      
-    }
-}
-
+  fetchTittleFiverrApi(jobId) {
+    return callApi(`jobs/${jobId}?`);
+  },
+  fetchListJobsApi(){
+    return callApi(`jobs`);
+  }
+};
 
 export default fiverrApi;

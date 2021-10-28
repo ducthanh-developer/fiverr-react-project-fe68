@@ -32,72 +32,72 @@ export default function ListJobCategories() {
         <ul className="side-menu">
           <li className="selected-category">Programming &amp; Tech</li>
           <li>
-            <a href="">WordPress</a>
+            <a href="..">WordPress</a>
           </li>
           <li>
-            <a href="">Website Builders &amp; CMS</a>
+            <a href="..">Website Builders &amp; CMS</a>
           </li>
           <li>
-            <a href="">E-Commerce Development</a>
+            <a href="..">E-Commerce Development</a>
           </li>
           <li>
-            <a href="">Game Development</a>
+            <a href="..">Game Development</a>
           </li>
           <li>
-            <a href="">Development for Streamers</a>
+            <a href="..">Development for Streamers</a>
           </li>
           <li>
-            <a href="">Mobile Apps</a>
+            <a href="..">Mobile Apps</a>
           </li>
           <li>
-            <a href="">Web Programming</a>
+            <a href="..">Web Programming</a>
           </li>
           <li>
-            <a href="">Desktop Applications</a>
+            <a href="..">Desktop Applications</a>
           </li>
           <li>
-            <a href="">Online Coding Lessons</a>
+            <a href="..">Online Coding Lessons</a>
           </li>
           <li>
-            <a href="">Chatbots</a>
+            <a href="..">Chatbots</a>
           </li>
         </ul>
         <div className="main-content row">
-          <a href="" className="medium col-sm-4">
+          <a href=".." className="medium col-sm-4">
             <span className="image-wrapper">
               <img
                 src="./images/ListJobs/desktop_programming_and_tech_wordpress.jpg"
                 className="w-100"
-                alt=""
+                alt=".."
               />
             </span>
             WordPress
           </a>
-          <a href="" className="medium col-sm-4">
+          <a href=".." className="medium col-sm-4">
             <span className="image-wrapper">
               <img
                 src="./images/ListJobs/desktop_programming_and_tech_wordpress.jpg"
                 className="w-100"
-                alt=""
+                alt=".."
               />
             </span>
             Website Builders &amp; CMS
           </a>
-          <a href="" className="medium col-sm-4">
+          <a href=".." className="medium col-sm-4">
             <span className="image-wrapper">
               <img
                 src="./images/ListJobs/desktop_programming_and_tech_wordpress.jpg"
-                alt=""
+                alt=".."
                 className="w-100"
               />
             </span>
             E-Commerce Development
           </a>
-          <a href="" className="medium col-sm-4">
+          <a href=".." className="medium col-sm-4">
             <span className="image-wrapper">
               <img
                 src="./images/ListJobs/desktop_programming_and_tech_wordpress.jpg"
-                alt=""
+                alt=".."
                 className="w-100"
               />
             </span>
