@@ -1,5 +1,6 @@
 import fiverrApi from "apis/fiverrApi";
-import { FETCH_USER_LIST_JOBS_SUCCESS } from "./type";
+// import { FETCH__HISTORY__JOBS__SUCCESS } from "../HistoryJobs/modules/type";
+import { FETCH_USER_LIST_JOBS_SUCCESS,FETCH__HISTORY__JOBS__SUCCESS } from "./type";
 
 
 // export const actLayCongViecChiTiet = (tittleJob) => ({
@@ -14,16 +15,22 @@ export const actLayDanhSachCongViecNguoiDung = (userJobs) => ({
 });
 
 
-export const actGetUserListJobs= () => {
-  console.log("object", );
-  return(dispatch)=>{
+export const actFetchHistorySuccess=(historyJobs) => {
+  return{
+      type: FETCH__HISTORY__JOBS__SUCCESS,
+      payload:historyJobs,
+  }
+}
+export const actGetUserListJobs = (userId) => {
+  console.log("object",);
+  return (dispatch) => {
     fiverrApi
-    .fetchUserListJobsApi()
-    .then(result=>{
-      dispatch(actLayDanhSachCongViecNguoiDung(result.data))
-      console.log("result", result.data)
-    })
-    .catch(error=>{console.log("errrhhh", error.response?.data);});
+      .fetchUserListJobsApi(userId)
+      .then(result => {
+        dispatch(actLayDanhSachCongViecNguoiDung(result.data))
+        console.log("result", result.data)
+      })
+      .catch(error => { console.log("errrhhh", error.response?.data); });
   }
 }
 
@@ -31,12 +38,23 @@ export const actFetchAddUserInformation = (values) => {
   return async (dispatch) => {
     try {
       let { data } = await fiverrApi.fetchAddUserInformation(values);
-      console.log("actionvalues", values)
-      console.log("dta",data);
-            alert("Thêm Thành Công")
+      console.log("actionvalueshhh", values)
+      console.log("dta", data);
+      alert("Thêm Thành Công")
 
     } catch (error) {
       console.log(error.response?.data);
     }
   };
 };
+
+export const actHistoryJobsUser =()=>{
+  return (dispatch)=>{
+      fiverrApi
+      .fetchHistoryJobBookingApi()
+      .then(response=>{
+          dispatch(actFetchHistorySuccess(response.data))
+      })
+      .catch(error=>{console.log("errrhhh", error.response?.data);})
+  }
+}

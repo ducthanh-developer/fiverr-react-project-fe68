@@ -1,18 +1,26 @@
 import React, { useEffect, } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { actFetchAddUserInformation, actGetUserListJobs } from "./modules/action";
+import { actFetchAddUserInformation, actGetUserListJobs, actHistoryJobsUser } from "./modules/action";
+// import actHistoryJobsUser from 'containers/client/UserInformation/HistoryJobs/modules/action'
 import { useFormik } from 'formik';
 import "../UserInformation/AddFormSkill.scss"
 import LoadImg from './LoadImg'
 import "../UserInformation/UserInformation.scss"
 import { Form, Input, } from 'antd';
+import { map } from "jquery";
 
 export default function UserInformation(props) {
+    console.log("props", props);
     const dispatch = useDispatch();
-    const { userJobs, } = useSelector((state) => state.userListJobsReducer);
+    const { userJobs, historyJobs } = useSelector((state) => state.userListJobsReducer);
+    // const { historyJobs } = useSelector((state) => state.historyBokingJobReducer);
+
     console.log("gg", userJobs);
+
+    console.log("historyJobs", historyJobs);
     useEffect(() => {
-        dispatch(actGetUserListJobs('6177e1e82b1032001c3f52a3'));
+        dispatch(actGetUserListJobs(props.match.params.id));
+        dispatch(actHistoryJobsUser(props.match.params.id));
     }, []);
     const [isShow, setIsShow] = React.useState(true);
     const handleClick = () => {
@@ -23,15 +31,15 @@ export default function UserInformation(props) {
     }
     const formik = useFormik({
         initialValues: {
-            skill: userJobs?.skill,
-            certification: userJobs?.certification,
+            skill: '',
+            certification: '',
         },
         onSubmit: (values) => {
             console.log("values", values);
             // let formData = new FormData();
             // formData.append("skill", formik.values.skill)
             // console.log("formData", formData.get('skill'))
-            dispatch(actFetchAddUserInformation(values));
+            dispatch(actFetchAddUserInformation(props.match.params.id, values));
         }
     })
     return (
@@ -179,6 +187,7 @@ export default function UserInformation(props) {
                         <div className="card create__new__gif">
                             <div className="row">
                                 <div className="col-9 Gigs">
+
                                     It seems that you don't have any active Gigs. Get selling!
                                 </div>
                                 <div className="col-3">
@@ -187,18 +196,33 @@ export default function UserInformation(props) {
                             </div>
                         </div>
 
-                        <div className="card history__job__booking">
+                        <div className=" history__job__booking">
                             <div className="row">
-                                <div className="col-3">
-                                    <img src="https://npm-assets.fiverrcdn.com/assets/@fiverr-private/business_blocks/office-building.7ac5061.gif" alt="" />
-                                </div>
-                                <div className="col-9">
-                                    Lập trình front end với react
-                                    <div>
+                                
+                                <div className="col-9" bookingName>
+                                    {historyJobs.bookingJob?.map((booking, index) => {
+                                        return (
+                                            <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+                                                <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://npm-assets.fiverrcdn.com/assets/@fiverr-private/business_blocks/office-building.7ac5061.gif"  />
+                                                <div className="flex-grow">
+                                                    <h2 className="text-pink-500 title-font font-medium text-2xl">{booking.name}</h2>
+                                                    {/* <p className="text-gray-500"><span className="font-bold">Giờ chiếu:</span> {moment(ticket.ngayDat).format('hh:mm A')} - <span className="font-bold">Ngày chiếu:</span>  {moment(ticket.ngayDat).format('DD-MM-YYYY')} .</p> */}
+                                                    <p><span className="font-bold">Địa điểm:</span> fdfd  </p>
+                                                    <p>
+                                                        <span className="font-bold">Tên rạp:</span>  dfd - <span className="font-bold">Ghế:</span>  
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            // <h2 className="text-pink-500 title-font font-medium text-2xl">{booking.name}</h2>
+                                            // <div className="name" key={index}>{booking.name.slice(0, 100)}</div>
+                                        )
+                                    })}
+
+                                    {/* <div>
                                         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt fugiat voluptates dolor, doloremque nihil nulla doloribus, vel ratione eaque dignissimos ea aperiam dolore alias libero. Atque dolor recusandae laborum modi.
                                         Nobis repellat accusamus impedit laboriosam, illo excepturi voluptatibus aliquam iste incidunt cumque quas officia autem dolorem a libero corrupti rem ullam quis eum? Dolorem neque optio fugiat aliquam nobis facilis.
 
-                                    </div>
+                                    </div> */}
                                 </div>
 
                             </div>

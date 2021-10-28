@@ -7,6 +7,7 @@ import Selling from "./Selling/Selling";
 import Marketplace from "./Marketplace/Marketplace";
 // import UserInformation from "../UserInformation/UserInformation";
 import ListJobCategories from "../ListJobCategories/ListJobCategories";
+// import Test from "../UserInformation/Test";
 
 export default function Home() {
   return (
@@ -31,6 +32,7 @@ export default function Home() {
       <ListJobCategories/>
       {/* <Upload/> */}
      {/* <ModalForm/> */}
+     {/* <Test/> */}
     </main>
   );
 }

@@ -2,7 +2,7 @@ import { FETCH_COMMENT_FAIL, FETCH_COMMENT_SUCCESS, FETCH_TITTLE_FAIL, FETCH_TIT
 
 
 const initialState = {
-  tittleJob:null,
+  tittleJob:{},
   commentJob: [],
   error: '',
 };

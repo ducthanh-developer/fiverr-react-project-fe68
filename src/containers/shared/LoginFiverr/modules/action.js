@@ -1,9 +1,5 @@
 import fiverrApi from 'apis/fiverrApi';
-import { LOGIN_FAIL, LOGIN_REQUEST, LOGIN_SUCCESS, LOGOUT } from '../modules/type';
-
-const actLoginRequest = () => ({
-  type: LOGIN_REQUEST,
-});
+import { LOGIN_FAIL,  LOGIN_SUCCESS, LOGOUT } from '../modules/type';
 
 const actLoginSuccess = currentUser => ({
   type: LOGIN_SUCCESS,
@@ -17,12 +13,11 @@ const actLoginFail = error => ({
 
 export const actLogin = (user, history) => {
   return dispatch => {
-    dispatch(actLoginRequest());
     fiverrApi
-      .loginApi(user)
+    .loginApi(user)
       .then(response => {
         dispatch(actLoginSuccess(response.data));
-        console.log(response)
+        console.log(response.data)
         history.push('/');
       })
       .catch(error => {
@@ -30,7 +25,6 @@ export const actLogin = (user, history) => {
       });
   };
 };
-
 export const actLogout = () => ({
   type: LOGOUT,
   payload: null,

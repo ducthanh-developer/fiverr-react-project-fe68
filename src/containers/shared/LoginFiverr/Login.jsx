@@ -54,7 +54,7 @@ export default function Login(props) {
             />
           </Form.Item>
           <Form.Item
-            name="matKhau"
+            name="password"
             rules={[
               {
                 required: true,

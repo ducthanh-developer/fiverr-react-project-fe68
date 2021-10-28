@@ -1,6 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
-import { Link, NavLink } from 'react-router-dom';
+import {  NavLink } from 'react-router-dom';
 
 import "./Product.scss";
 function SampleNextArrow(props) {

@@ -1,7 +1,18 @@
+import { Link } from "react-router-dom";
 import React from "react";
-import "./Header.scss";
-
+import { useDispatch, useSelector } from "react-redux";import "./Header.scss";
+import { actLogout } from "containers/shared/LoginFiverr/modules/action";
 export default function Header() {
+  const dispatch = useDispatch();
+  
+  
+  const { currentUser } = useSelector(state => state.authReducer);
+  console.log("object, currentUser", currentUser);
+  // console.log("object, currentUser", currentUser.user._id);
+
+  const logOut = () => {
+    dispatch(actLogout());
+};
   return (
     <div className="header">
       <header className="header-package row">
@@ -82,15 +93,35 @@ export default function Header() {
               </a>
             </li>
             <li className="nav-item">
-              <a href="..." className="nav-link">
+              {/* {currentUser !==null?<a href="..." className="nav-link">
                 Sing In
-              </a>
+              </a>: <></>} */}
+
             </li>
             <li className="nav-item">
-              <a href="..." className="nav-link nav-link--btn">
+              {currentUser == null ? <Link to="/login" className="nav-link nav-link--btn">
+
                 Join
-              </a>
+              </Link> : <nav>
+                <ul>
+                  <li>
+                    <div className="dropdown">
+                      <div className="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="../../images/market/1.png" alt="" />
+                      </div>
+                      <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <Link className="dropdown-item" href="#"  to={`/login/${currentUser.user._id}`}>Profile</Link>
+                        <a className="dropdown-item" href="..."  onClick={logOut}>Logout</a>
+                        <a className="dropdown-item" href="...">Something else here</a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </nav>
+              }
+
             </li>
+
           </ul>
         </nav>
       </header>
@@ -107,57 +138,57 @@ export default function Header() {
                 Digital Marketing
               </a>
               <ul className="menu-panel">
-                  <li className="panel-item">
-                    <a href="..." className="panel-link">
-                      Social Media Marketing
-                    </a>
-                  </li>
-                  <li className="panel-item">
-                    <a href="..." className="panel-link">
-                      Social Media Marketing
-                    </a>
-                  </li>
-                  <li className="panel-item">
-                    <a href="..." className="panel-link">
-                      Social Media Marketing
-                    </a>
-                  </li>
-                  <li className="panel-item">
-                    <a href="..." className="panel-link">
-                      Social Media Marketing
-                    </a>
-                  </li>
-                  <li className="panel-item">
-                    <a href="...." className="panel-link">
-                      Social Media Marketing
-                    </a>
-                  </li>
-                  <li className="panel-item">
-                    <a href="..." className="panel-link">
-                      Social Media Marketing
-                    </a>
-                  </li>
-                  <li className="panel-item">
-                    <a href="..." className="panel-link">
-                      Social Media Marketing
-                    </a>
-                  </li>
-                  <li className="panel-item">
-                    <a href="..." className="panel-link">
-                      Social Media Marketing
-                    </a>
-                  </li>
-                  <li className="panel-item">
-                    <a href="..." className="panel-link">
-                      Social Media Marketing
-                    </a>
-                  </li>
-                  <li className="panel-item">
-                    <a href="..." className="panel-link">
-                      Social Media Marketing
-                    </a>
-                  </li>
-                </ul>
+                <li className="panel-item">
+                  <a href="..." className="panel-link">
+                    Social Media Marketing
+                  </a>
+                </li>
+                <li className="panel-item">
+                  <a href="..." className="panel-link">
+                    Social Media Marketing
+                  </a>
+                </li>
+                <li className="panel-item">
+                  <a href="..." className="panel-link">
+                    Social Media Marketing
+                  </a>
+                </li>
+                <li className="panel-item">
+                  <a href="..." className="panel-link">
+                    Social Media Marketing
+                  </a>
+                </li>
+                <li className="panel-item">
+                  <a href="...." className="panel-link">
+                    Social Media Marketing
+                  </a>
+                </li>
+                <li className="panel-item">
+                  <a href="..." className="panel-link">
+                    Social Media Marketing
+                  </a>
+                </li>
+                <li className="panel-item">
+                  <a href="..." className="panel-link">
+                    Social Media Marketing
+                  </a>
+                </li>
+                <li className="panel-item">
+                  <a href="..." className="panel-link">
+                    Social Media Marketing
+                  </a>
+                </li>
+                <li className="panel-item">
+                  <a href="..." className="panel-link">
+                    Social Media Marketing
+                  </a>
+                </li>
+                <li className="panel-item">
+                  <a href="..." className="panel-link">
+                    Social Media Marketing
+                  </a>
+                </li>
+              </ul>
             </li>
             <li className="menu-item">
               <a href="...." className="menu-link">

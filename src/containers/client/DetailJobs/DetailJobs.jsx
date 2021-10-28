@@ -7,7 +7,7 @@ import "../DetailJobs/DetailJobs.scss"
 import { Checkbox, Button } from 'antd';
 import Slider from "react-slick";
 import { actDatCongViec } from "./BookingJob/modules/action";
-import { ThongTinDat,  } from "_core/models/ThongTinDat";
+import { ThongTinDat, } from "_core/models/ThongTinDat";
 
 export default function DetailJobs(props) {
   function onChange(e) {
@@ -43,7 +43,7 @@ export default function DetailJobs(props) {
                 <span className="Seller">Top Rated Seller</span>
                 <span className="Level">Level 2 Seller  </span>|
                 <span className="Star">
-                  {tittleJob?.map((job, index) => {
+                  {/* {tittleJob?.map((job, index) => {
                     return (
                       <span key={index} className="">
                         <StarFilled />
@@ -56,7 +56,18 @@ export default function DetailJobs(props) {
                         <span className="name">{job.name}</span>
                       </span>
                     )
-                  })}
+                  })} */}
+                  <span className="">
+                    <StarFilled />
+                    <StarFilled />
+                    <StarFilled />
+                    <StarFilled />
+                    <StarFilled />
+                    <StarFilled />/
+                    <span className="rating">{tittleJob.rating}</span>
+                    <span className="name">{tittleJob.name}</span>
+                  </span>
+
                 </span>
               </div>
               <hr className="hr"></hr>
@@ -67,7 +78,7 @@ export default function DetailJobs(props) {
               </div>
             </div>
             <hr></hr>
-            {tittleJob?.map((Detial, index) => {
+            {/* {tittleJob?.map((Detial, index) => {
               return (
                 <div key={index}>
                   <Slider {...settings}>
@@ -78,7 +89,15 @@ export default function DetailJobs(props) {
                   </Slider>
                 </div>
               )
-            })}
+            })} */}
+            <div >
+              <Slider {...settings}>
+                <div>
+                  <img alt="example" src={tittleJob.image} style={{ width: 590 }} />
+                </div>
+
+              </Slider>
+            </div>
           </div>
           <div className=" col-12 col-lg-4  detailjob__left container">
             <Card
@@ -101,13 +120,17 @@ export default function DetailJobs(props) {
                             Basic
                           </div>
                           <div className="col-2 ">
-                            {tittleJob?.map((Detial, index) => {
+                            {/* {tittleJob?.map((Detial, index) => {
                               return (
                                 <div key={index} className="price">
                                   {Detial.price}$
                                 </div>
                               )
-                            })}
+                            })} */}
+
+                            <div className="price">
+                              {tittleJob.price}$
+                            </div>
                           </div>
                         </div>
                         <div className="application">
@@ -123,7 +146,7 @@ export default function DetailJobs(props) {
                             1 revisions
                           </div>
                         </div>
-                        {tittleJob?.map((job, index) => {
+                        {/* {tittleJob?.map((job, index) => {
                           return (
                             <div className="checked__jobs" key={index}>
                               <nav className="">
@@ -166,7 +189,50 @@ export default function DetailJobs(props) {
                               <div className="Compare__package">Compare package</div>
                             </div>
                           )
-                        })}
+                        })} */}
+
+                        <div className="checked__jobs" >
+                          <nav className="">
+                            <Checkbox onChange={onChange} checked={tittleJob.proServices} >proServices</Checkbox>
+                          </nav>
+                          <nav>
+                            <Checkbox onChange={onChange} checked={tittleJob.onlineSellers} >onlineSellers</Checkbox>
+                          </nav>
+                          <nav>
+                            <Checkbox onChange={onChange} checked={tittleJob.localSellers}>localSellers</Checkbox>
+                          </nav>
+                          <nav>
+                            <Checkbox onChange={onChange} checked={tittleJob.deliveryTime}>deliveryTime</Checkbox>
+                          </nav>
+                          <nav>
+                            <Checkbox onChange={onChange} checked={tittleJob.status}>status</Checkbox>
+                          </nav>
+                          <Button onClick={() => {
+                            const thongTinDat = new ThongTinDat();
+                            thongTinDat._id = props.match.params.id;
+                            thongTinDat.price = tittleJob.price;
+                            console.log("Id", thongTinDat._id)
+                            thongTinDat.name = tittleJob.name;
+                            thongTinDat.image = tittleJob.image;
+                            thongTinDat.localSellers = tittleJob.localSellers;
+                            thongTinDat.proServices = tittleJob.proServices;
+                            thongTinDat.onlineSellers = tittleJob.onlineSellers;
+                            thongTinDat.deliveryTime = tittleJob.deliveryTime;
+                            thongTinDat.status = tittleJob.status;
+
+                            thongTinDat.taiKhoanNguoiDat = tittleJob.usersBooking;
+                            console.log("thongtindat", thongTinDat);
+                            dispatch(actDatCongViec(props.match.params.id));
+
+                          }}
+                            block >
+                            <span className="mr-10">Continue (${tittleJob.price})</span>
+
+                          </Button>
+                          <div className="Compare__package">Compare package</div>
+                        </div>
+
+
                       </div>
                     </div>
                     <div id="content-2">
@@ -237,7 +303,7 @@ export default function DetailJobs(props) {
               <div className="Web__Developer">Web Developer
               </div>
               <span className="Star__comment">
-                {tittleJob?.map((job, index) => {
+                {/* {tittleJob?.map((job, index) => {
                   return (
                     <span key={index} className="">
                       <StarFilled />
@@ -249,7 +315,7 @@ export default function DetailJobs(props) {
                       <span className="rating">{job.rating}</span>
                     </span>
                   )
-                })}
+                })} */}
               </span>
               <div className="contact"> <button>Contact me</button>
               </div>
@@ -282,7 +348,7 @@ export default function DetailJobs(props) {
           <div>{commentJob?.map((item, index) => {
             return (
               <div key={index}>{item.user.skill?.map((kynang, index) => {
-                return(
+                return (
                   <div>{kynang}</div>
                 )
               })}</div>

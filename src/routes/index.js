@@ -3,6 +3,7 @@ import FiverrDetail from "containers/client/FiverrDetail/FiverrDetail";
 import Home from "containers/client/Home/Home";
 import UserInformation from "containers/client/UserInformation/UserInformation"
 import Login from "containers/shared/LoginFiverr/Login";
+import Register from "containers/shared/Register/Register";
 // import ListJobCategories from "containers/client/ListJobCategories/ListJobCategories";
 // import ListJobs from "containers/client/ListJobs/ListJobs";
 export const clientRoutes = [
@@ -28,13 +29,18 @@ export const clientRoutes = [
     exact: false,
   },
   {
-    path: "/2",
+    path: "/login/:id",
     component: UserInformation,
     exact: false,
   },
   {
     path: "/login",
     component: Login,
+    exact: false,
+  },
+  {
+    path: "/register",
+    component: Register,
     exact: false,
   },
 
