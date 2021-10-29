@@ -1,7 +1,40 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { NavLink } from "react-router-dom";
 import "./Header.scss";
+import { actFetchListTypeJobs } from "./module/actions";
 
 export default function Header() {
+  const dispatch = useDispatch();
+  const { listTypeJobs } = useSelector((state) => state.TypeJobsReducer);
+  console.log(listTypeJobs);
+  useEffect(() => {
+    dispatch(actFetchListTypeJobs());
+  }, []);
+  const renderListTypeJobs = () => {
+    return listTypeJobs.map((job, index) => {
+      const { _id, name, subTypeJobs } = job;
+      return (
+        <li className="menu-item" key={index}>
+          <NavLink className="menu-link" to={`/list-jobs/${_id}`}>
+            {name}
+          </NavLink>
+          <ul className="menu-panel">
+            {subTypeJobs.map((subJob, index) => {
+              const { _id, name } = subJob;
+              return (
+                <li className="panel-item" key={index}>
+                  <NavLink className="panel-link" to={`/list-jobs/${_id}`}>
+                    {name}
+                  </NavLink>
+                </li>
+              );
+            })}
+          </ul>
+        </li>
+      );
+    });
+  };
   return (
     <div className="header">
       <header className="header-package row">
@@ -96,106 +129,7 @@ export default function Header() {
       </header>
       <div className="header-category">
         <nav className="category-menu">
-          <ul className="menu row">
-            <li className="menu-item">
-              <a href="..." className="menu-link">
-                Graphics & Design
-              </a>
-            </li>
-            <li className="menu-item">
-              <a href="..." className="menu-link">
-                Digital Marketing
-              </a>
-              <ul className="menu-panel">
-                <li className="panel-item">
-                  <a href="..." className="panel-link">
-                    Social Media Marketing
-                  </a>
-                </li>
-                <li className="panel-item">
-                  <a href="..." className="panel-link">
-                    Social Media Marketing
-                  </a>
-                </li>
-                <li className="panel-item">
-                  <a href="..." className="panel-link">
-                    Social Media Marketing
-                  </a>
-                </li>
-                <li className="panel-item">
-                  <a href="..." className="panel-link">
-                    Social Media Marketing
-                  </a>
-                </li>
-                <li className="panel-item">
-                  <a href="...." className="panel-link">
-                    Social Media Marketing
-                  </a>
-                </li>
-                <li className="panel-item">
-                  <a href="..." className="panel-link">
-                    Social Media Marketing
-                  </a>
-                </li>
-                <li className="panel-item">
-                  <a href="..." className="panel-link">
-                    Social Media Marketing
-                  </a>
-                </li>
-                <li className="panel-item">
-                  <a href="..." className="panel-link">
-                    Social Media Marketing
-                  </a>
-                </li>
-                <li className="panel-item">
-                  <a href="..." className="panel-link">
-                    Social Media Marketing
-                  </a>
-                </li>
-                <li className="panel-item">
-                  <a href="..." className="panel-link">
-                    Social Media Marketing
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li className="menu-item">
-              <a href="...." className="menu-link">
-                Writing & Translation
-              </a>
-            </li>
-            <li className="menu-item">
-              <a href="..." className="menu-link">
-                Video & Animation
-              </a>
-            </li>
-            <li className="menu-item">
-              <a href="..." className="menu-link">
-                Music & Audio
-              </a>
-            </li>
-            <li className="menu-item">
-              <a href="..." className="menu-link">
-                Programming & Tech
-              </a>
-            </li>
-            <li className="menu-item">
-              <a href="..." className="menu-link">
-                Data
-                <span>NEW</span>
-              </a>
-            </li>
-            <li className="menu-item">
-              <a href="..." className="menu-link">
-                Business
-              </a>
-            </li>
-            <li className="menu-item">
-              <a href="..." className="menu-link">
-                Lifestyle
-              </a>
-            </li>
-          </ul>
+          <ul className="menu row">{renderListTypeJobs()}</ul>
         </nav>
       </div>
     </div>

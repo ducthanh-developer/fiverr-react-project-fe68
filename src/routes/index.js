@@ -9,7 +9,12 @@ export const clientRoutes = [
     exact: true,
   },
   {
-    path: "/list-jobs",
+    path: "/home",
+    component: Home,
+    exact: true,
+  },
+  {
+    path: "/list-jobs/:typeId",
     component: ListJobs,
     exact: true,
   },
