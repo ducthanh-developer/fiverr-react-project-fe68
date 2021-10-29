@@ -1,7 +1,7 @@
 import { FETCH__REGISTER__FAIL, FETCH__REGISTER__SUCCESS } from "./type";
 
 const initialState = {
-  registerUser: null,
+  registerUser: {},
   loading: false,
   error: null,
 };

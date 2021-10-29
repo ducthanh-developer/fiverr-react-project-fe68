@@ -20,7 +20,7 @@ import axios from "axios";
 const callApiPut = (
   endpoint = null,
   data = null,
-  headers="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTQ2MDAzODZhMDgwMDAwMWMxODdlMTEiLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTYzNDM4OTg5M30.LsTI3ZiINW2Cgv2RbV2cjX3GB-wplWUQUOAO6vH8vzw"
+  headers="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTdhOWM2ZDA3ZmUwMTAwMWNhYmNhMzciLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTYzNTQ3MTc3NH0.IeqqcL4yQcRJXbQWGuN_1mcv1A-MvIuGK3-OkopCMhg"
 ) => {
   return axios({
     url: `/${endpoint}`,

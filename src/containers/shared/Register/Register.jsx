@@ -1,152 +1,157 @@
 import React from 'react'
-import { UserOutlined, LockOutlined } from '@ant-design/icons';
-
-import { useDispatch,useSelector  } from 'react-redux';
-import { Form, Input, Button } from 'antd';
+import { useFormik } from 'formik';
+import { useDispatch, useSelector } from 'react-redux';
 import { actRegister } from './modules/action,';
 
-export default function Register() {
+export default function Register(props) {
     const dispatch = useDispatch();
     const { registerUser } = useSelector(
         state => state.registerReducer
-      );
-      console.log("useSelector",registerUser )
-    const onFinish = values => {
-        console.log('Received values of form: ', values);
-        dispatch(actRegister(values))
-    };
+    );
+    console.log("registerUser", registerUser)
+
+    const formik = useFormik({
+        initialValues: {
+            first_name: '',
+            last_name: '',
+            email: '',
+            password: '',
+            phone: '',
+            skill: '',
+            certification: '',
+            birthday: '',
+            gender: '',
+            type: '',
+        },
+        onSubmit: (values) => {
+            console.log("values", values);
+            dispatch(actRegister(values));
+        }
+    })
     return (
         <div>
-            <Form
-                name="normal_login"
-                className="login-form"
-                onFinish={onFinish}
-                style={{ width: '500px' }}
-                validateTrigger="onBlur"
-            >
-                <Form.Item
-                    name="first_name"
-                    rules={[
-                        {
-                            required: true,
-                            message: 'Please input your Username!',
-                        },
-                    ]}
-                >
-                    <Input
-                        prefix={<UserOutlined className="site-form-item-icon" />}
-                        placeholder="first_name"
+            <div className="login-wrapper my-auto">
+                <h1 className="login-title">Đăng Ký</h1>
+                <form onSubmit={formik.handleSubmit}>
+                    <div className="form-group">
+                        <label>first_name</label>
+                        <input
+                            type="text"
+                            name="first_name"
+                            onChange={formik.handleChange}
+                            className="form-control"
+                            placeholder="Nhập vào first_name"
+                            required
+                        />
+                    </div>
+                    <div className="form-group mb-4">
+                        <label>last_name</label>
+                        <input
+                            type="text"
+                            name="last_name"
+                            className="form-control"
+                            placeholder="Nhập vào last_name"
+                            onChange={formik.handleChange}
+                            required
+                        />
+                    </div>
+                    <div className="form-group mb-4">
+                        <label>email</label>
+                        <input
+                            type="email"
+                            name="email"
+                            className="form-control"
+                            placeholder="Nhập vào email"
+                            onChange={formik.handleChange}
+                            required
+                        />
+                    </div>
+                    <div className="form-group mb-4">
+                        <label>password</label>
+                        <input
+                            type="password"
+                            name="password"
+                            className="form-control"
+                            placeholder="Nhập vào password"
+                            onChange={formik.handleChange}
+                            required
+                        />
+                    </div>
+                    <div className="form-group mb-4">
+                        <label>Số điện thoại</label>
+                        <input
+                            type="text"
+                            name="phone"
+                            className="form-control"
+                            placeholder="Nhập vào số điện thoại"
+                            onChange={formik.handleChange}
+                            required
+                        />
+                    </div>
+                    <div className="form-group mb-4">
+                        <label>skill</label>
+                        <input
+                            type="text"
+                            name="skill"
+                            className="form-control"
+                            placeholder="Nhập skill"
+                            onChange={formik.handleChange}
+                            required
+                        />
+                    </div>
+                    <div className="form-group mb-4">
+                        <label>certification</label>
+                        <input
+                            type="text"
+                            name="certification"
+                            className="form-control"
+                            placeholder="Nhập certification"
+                            onChange={formik.handleChange}
+                            required
+                        />
+                    </div>
+                    <div className="form-group mb-4">
+                        <label>birthday</label>
+                        <input
+                            type="text"
+                            name="birthday"
+                            className="form-control"
+                            placeholder="Nhập birthday"
+                            onChange={formik.handleChange}
+                            required
+                        />
+                    </div>
+                    <div className="form-group mb-4">
+                        <label>gender</label>
+                        <input
+                            type="text"
+                            name="gender"
+                            className="form-control"
+                            placeholder="Nhập gender"
+                            onChange={formik.handleChange}
+                            required
+                        />
+                    </div>
+                    <div className="form-group mb-4">
+                        <label>type</label>
+                        <input
+                            type="text"
+                            name="type"
+                            className="form-control"
+                            placeholder="Nhập type"
+                            onChange={formik.handleChange}
+                            required
+                        />
+                    </div>
+                    <input
+                        name="login"
+                        id="login"
+                        className="btn btn-block login-btn"
+                        type="submit"
+                        value="Đăng ký"
                     />
-                </Form.Item>
-                <Form.Item
-                    name="last_name"
-                    rules={[
-                        {
-                            required: true,
-                            message: 'Please input your Password!',
-                        },
-                    ]}
-                >
-                    <Input
-                        prefix={<LockOutlined className="site-form-item-icon" />}
-                        type="last_name"
-                        placeholder="last_name"
-                    />
-                </Form.Item>
-                <Form.Item
-                    name="email"
-                    rules={[
-                        {
-                            required: true,
-                            message: 'Please input your Password!',
-                        },
-                    ]}
-                >
-                    <Input
-                        prefix={<LockOutlined className="site-form-item-icon" />}
-                        type="email"
-                        placeholder="email"
-                    />
-                </Form.Item>
-                <Form.Item
-                    name="password"
-                    rules={[
-                        {
-                            required: true,
-                            message: 'Please input your Password!',
-                        },
-                    ]}
-                >
-                    <Input
-                        prefix={<LockOutlined className="site-form-item-icon" />}
-                        type="password"
-                        placeholder="Password"
-                    />
-                </Form.Item>
-                <Form.Item
-                    name="phone"
-                    rules={[
-                        {
-                            required: true,
-                            message: 'Please input your Password!',
-                        },
-                    ]} >
-                    <Input
-                        prefix={<LockOutlined className="site-form-item-icon" />}
-                        type="phone"
-                        placeholder="phone"/>
-                </Form.Item>
-                {/* <Form.Item
-                    name="skill"
-                    rules={[
-                        {
-                            required: true,
-                            message: 'Please input your Password!',
-                        },
-                    ]} >
-                    <Input
-                        prefix={<LockOutlined className="site-form-item-icon" />}
-                        type="skill"
-                        placeholder="skill"/>
-                </Form.Item>
-                <Form.Item
-                    name="certification"
-                    rules={[
-                        {
-                            required: true,
-                            message: 'Please input your Password!',
-                        },
-                    ]} >
-                    <Input
-                        prefix={<LockOutlined className="site-form-item-icon" />}
-                        type="certification"
-                        placeholder="certification"/>
-                </Form.Item>
-                <Form.Item
-                    name="birthday"
-                    rules={[
-                        {
-                            required: true,
-                            message: 'Please input your Password!',
-                        },
-                    ]} >
-                    <Input
-                        prefix={<LockOutlined className="site-form-item-icon" />}
-                        type="birthday"
-                        placeholder="birthday"/>
-                </Form.Item> */}
-                <Form.Item>
-                    <Button
-                        type="primary"
-                        htmlType="submit"
-                        className="login-form-button"
-                    >
-                        Register
-                    </Button>
-                    Or <a href="">register now!</a>
-                </Form.Item>
-            </Form>
-
+                </form>
+            </div>
         </div>
     )
 }

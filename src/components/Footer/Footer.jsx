@@ -13,19 +13,19 @@ export default function Footer() {
                 <div className="column-content">
                   <ul>
                     <li>
-                      <a href="...">Graphics &amp; Design</a>
+                      <a href="..">Graphics &amp; Design</a>
                     </li>
                     <li>
-                      <a href="...">Digital Marketing</a>
+                      <a href="..">Digital Marketing</a>
                     </li>
                     <li>
-                      <a href="...">Writing &amp; Translation</a>
+                      <a href="..">Writing &amp; Translation</a>
                     </li>
                     <li>
-                      <a href="....">Video &amp; Animation</a>
+                      <a href="..">Video &amp; Animation</a>
                     </li>
                     <li>
-                      <a href="...">Music &amp; Audio</a>
+                      <a href="..">Music &amp; Audio</a>
                     </li>
                     <li>
                       <a href="/categories/programming-tech">
@@ -33,16 +33,16 @@ export default function Footer() {
                       </a>
                     </li>
                     <li>
-                      <a href="...">Data</a>
+                      <a href="..">Data</a>
                     </li>
                     <li>
-                      <a href="...">Business</a>
+                      <a href="..">Business</a>
                     </li>
                     <li>
-                      <a href="...">Lifestyle</a>
+                      <a href="..">Lifestyle</a>
                     </li>
                     <li>
-                      <a href="...">Sitemap</a>
+                      <a href="..">Sitemap</a>
                     </li>
                   </ul>
                 </div>
@@ -54,19 +54,19 @@ export default function Footer() {
                 <div className="column-content">
                   <ul>
                     <li>
-                      <a href="...">Careers</a>
+                      <a href="..">Careers</a>
                     </li>
                     <li>
-                      <a href="...">Press &amp; News</a>
+                      <a href="..">Press &amp; News</a>
                     </li>
                     <li>
-                      <a href="...">Partnerships</a>
+                      <a href="..">Partnerships</a>
                     </li>
                     <li>
-                      <a href="...">Privacy Policy</a>
+                      <a href="..">Privacy Policy</a>
                     </li>
                     <li>
-                      <a href="...">Terms of Service</a>
+                      <a href="..">Terms of Service</a>
                     </li>
                     <li>
                       <a href="/categories/programming-tech">
@@ -74,7 +74,7 @@ export default function Footer() {
                       </a>
                     </li>
                     <li>
-                      <a href="...">Investor Relations</a>
+                      <a href="..">Investor Relations</a>
                     </li>
                   </ul>
                 </div>
@@ -86,16 +86,16 @@ export default function Footer() {
                 <div className="column-content">
                   <ul>
                     <li>
-                      <a href="...">Help &amp; Support</a>
+                      <a href="..">Help &amp; Support</a>
                     </li>
                     <li>
-                      <a href="...">Trust &amp; Safety</a>
+                      <a href="..">Trust &amp; Safety</a>
                     </li>
                     <li>
-                      <a href="...">Selling on Fiverr</a>
+                      <a href="..">Selling on Fiverr</a>
                     </li>
                     <li>
-                      <a href="...">Buying on Fiverr</a>
+                      <a href="..">Buying on Fiverr</a>
                     </li>
                   </ul>
                 </div>
@@ -107,31 +107,31 @@ export default function Footer() {
                 <div className="column-content">
                   <ul>
                     <li>
-                      <a href="...">Events</a>
+                      <a href="..">Events</a>
                     </li>
                     <li>
-                      <a href="...">Blog</a>
+                      <a href="..">Blog</a>
                     </li>
                     <li>
-                      <a href="...">Forum</a>
+                      <a href="..">Forum</a>
                     </li>
                     <li>
-                      <a href="...">Community Standards</a>
+                      <a href="..">Community Standards</a>
                     </li>
                     <li>
-                      <a href="...">Podcast</a>
+                      <a href="..">Podcast</a>
                     </li>
                     <li>
                       <a href="/categories/programming-tech">Affiliates</a>
                     </li>
                     <li>
-                      <a href="...">Invite a Friend</a>
+                      <a href="..">Invite a Friend</a>
                     </li>
                     <li>
-                      <a href="...">Become a Seller</a>
+                      <a href="..">Become a Seller</a>
                     </li>
                     <li>
-                      <a href="...">
+                      <a href="..">
                         Fiverr Elevate
                         <p>Exclusive Benefits</p>
                       </a>
@@ -146,42 +146,42 @@ export default function Footer() {
                 <div className="column-content">
                   <ul>
                     <li>
-                      <a href="...">Fiverr Business</a>
+                      <a href="..">Fiverr Business</a>
                     </li>
                     <li>
-                      <a href="...">Fiverr Pro</a>
+                      <a href="..">Fiverr Pro</a>
                     </li>
                     <li>
-                      <a href="...">Fiverr Studios</a>
+                      <a href="..">Fiverr Studios</a>
                     </li>
                     <li>
-                      <a href="...">Fiverr Logo Maker</a>
+                      <a href="..">Fiverr Logo Maker</a>
                     </li>
                     <li>
-                      <a href="...">Fiverr Guides</a>
+                      <a href="..">Fiverr Guides</a>
                     </li>
                     <li>
                       <a href="/categories/programming-tech">Get Inspired</a>
                     </li>
                     <li>
-                      <a href="...">
+                      <a href="..">
                         ClearVoiced
                         <p>Content Marketing</p>
                       </a>
                     </li>
                     <li>
-                      <a href="...">
+                      <a href="..">
                         AND CO<p>Invoice Software</p>
                       </a>
                     </li>
                     <li>
-                      <a href="...">
+                      <a href="..">
                         Learn
                         <p>Online Courses</p>
                       </a>
                     </li>
                     <li>
-                      <a href="...">Working Not Working</a>
+                      <a href="..">Working Not Working</a>
                     </li>
                   </ul>
                 </div>
@@ -211,7 +211,7 @@ export default function Footer() {
             <div className="bottom-right row">
               <ul className="social row">
                 <li>
-                  <a href="...">
+                  <a href="..">
                     <span style={{ width: 20, height: 20 }}>
                       <svg
                         width={20}
@@ -225,7 +225,7 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a href="...">
+                  <a href="..">
                     <span style={{ width: 20, height: 20 }}>
                       <svg
                         width={20}
@@ -239,7 +239,7 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a href="...">
+                  <a href="..">
                     <svg
                       width={21}
                       height={20}
@@ -251,7 +251,7 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a href="...">
+                  <a href="..">
                     <span style={{ width: 20, height: 20 }}>
                       <svg
                         width={20}
@@ -265,7 +265,7 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a href="...">
+                  <a href="..">
                     <span style={{ width: 20, height: 20 }}>
                       <svg
                         width={20}
@@ -309,7 +309,10 @@ export default function Footer() {
                   </button>
                 </div>
                 <button className="button-accessibility">
-                  <span style={{ width: 32, height: 32 }} className='button-icon'>
+                  <span
+                    style={{ width: 32, height: 32 }}
+                    className="button-icon"
+                  >
                     <svg
                       width={32}
                       height={32}

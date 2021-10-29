@@ -1,6 +1,9 @@
+import Dashboard from "containers/admin/Dashboard/Dashboard";
 import DetailJobs from "containers/client/DetailJobs/DetailJobs";
 import FiverrDetail from "containers/client/FiverrDetail/FiverrDetail";
 import Home from "containers/client/Home/Home";
+import ListJobs from "containers/client/ListJobs/ListJobs";
+// import ListJobs from "containers/client/ListJobs/ListJobs";
 import UserInformation from "containers/client/UserInformation/UserInformation"
 import Login from "containers/shared/LoginFiverr/Login";
 import Register from "containers/shared/Register/Register";
@@ -18,11 +21,7 @@ export const clientRoutes = [
     exact: true,
 
   },
-  // {
-  //   path: "/list-jobs",
-  //   component: ListJobs,
-  //   exact: true,
-  // },
+ 
   {
     path: "/fiverr/:id",
     component: DetailJobs,
@@ -43,12 +42,18 @@ export const clientRoutes = [
     component: Register,
     exact: false,
   },
-
-  // {
-  //   path: "/job-categories",
-  //   component: ListJobCategories,
-  //   exact: true,
-  // },
+  {
+    path: "/list-jobs",
+    component: ListJobs,
+    exact: false,
+  },
 ];
 
-export const adminRoutes = [];
+export const adminRoutes = [
+    {
+    path: "/admin",
+    component: Dashboard,
+    exact: false,
+  },
+
+];

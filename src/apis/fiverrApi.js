@@ -9,9 +9,12 @@ const fiverrApi = {
     return callApi(`jobs`);
 
   },
+  fetchListJobsApi(){
+    return callApi(`jobs`);
+  },
   //detailJobs
   fetchTittleFiverrApi(jobId) {
-    return callApi(`jobs/${jobId}?`);
+    return callApi(`jobs/${jobId}`);
   },
   fetchBookingJob(jobId, thongTinDat = new ThongTinDat()) {
     return callApiPatch(`jobs/booking/${jobId}`);
@@ -40,5 +43,4 @@ const fiverrApi = {
     return callApiPost(`auth/signup`,register)
   }
 }
-
 export default fiverrApi;

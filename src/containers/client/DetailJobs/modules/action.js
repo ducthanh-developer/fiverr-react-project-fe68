@@ -17,7 +17,7 @@ export const actLayCommentSuccess = (commentJob) => ({
 
 export const actGetJobTittle= (jobId) => {
   console.log("jobId", jobId);
-  return(dispatch)=>{
+  return (dispatch)=>{
     fiverrApi
     .fetchTittleFiverrApi(jobId)
     .then(result=>{

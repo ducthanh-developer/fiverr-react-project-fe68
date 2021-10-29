@@ -5,9 +5,7 @@ import Product from "./Product/Product";
 import Testimonial from "./Testimonial/Testimonial";
 import Selling from "./Selling/Selling";
 import Marketplace from "./Marketplace/Marketplace";
-// import UserInformation from "../UserInformation/UserInformation";
-import ListJobCategories from "../ListJobCategories/ListJobCategories";
-// import Test from "../UserInformation/Test";
+
 
 export default function Home() {
   return (
@@ -26,13 +24,7 @@ export default function Home() {
 
       {/* Marketplace */}
       <Marketplace />
-      {/* <DetailJobs/> */}
-      {/* <BookingJob/> */}
-      {/* <UserInformation/> */}
-      <ListJobCategories/>
-      {/* <Upload/> */}
-     {/* <ModalForm/> */}
-     {/* <Test/> */}
+     
     </main>
   );
 }

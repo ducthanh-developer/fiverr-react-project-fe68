@@ -33,8 +33,6 @@ export default function FiverrDetail(props) {
               <Meta title={job.name} description="www.instagram.com" />
             </Card>,
             </Link>
-           
-           
           </div>
         )
       })}

@@ -16,11 +16,10 @@ export default function Login(props) {
   const onFinish = values => {
     console.log('Received values of form: ', values);
     dispatch(actLogin(values, history));
-    
+
   };
 
   if (loading) return <Loader />;
-
   return !currentUser ? (
     <>
       <h3>Login</h3>
@@ -76,7 +75,7 @@ export default function Login(props) {
             >
               Log in
             </Button>
-            Or <a href="">register now!</a>
+            Or <a href="...">register now!</a>
           </Form.Item>
         </Form>
       </div>

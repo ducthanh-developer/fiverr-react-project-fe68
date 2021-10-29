@@ -5,6 +5,8 @@ import fiverrDetailJobReducer from 'containers/client/FiverrDetail/module/reduce
 import tittleJobReducer from 'containers/client/DetailJobs/modules/reducer'
 import    userListJobsReducer from 'containers/client/UserInformation/modules/reducer'
 import authReducer from "containers/shared/LoginFiverr/modules/reducer";
+import { JobReducer } from "containers/client/ListJobs/module/reducer";
+
 import registerReducer from 'containers/shared/Register/modules/reducer'
 // import historyBokingJobReducer from "containers/client/UserInformation/HistoryJobs/modules/reducer"
 import { composeWithDevTools } from 'redux-devtools-extension';
@@ -16,6 +18,8 @@ const rootReducer = combineReducers({
   userListJobsReducer,
   authReducer,
   registerReducer,
+  JobReducer,
+
   // historyBokingJobReducer,
   // bookingJobReducer,
 });

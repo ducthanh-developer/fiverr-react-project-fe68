@@ -9,7 +9,7 @@ const ImgUpload = ({
 }) =>
     <label htmlFor="photo-upload" className="custom-file-upload fas">
         <div className="img-wrap img-upload" >
-            <img for="photo-upload" src={src} />
+            <img for="photo-upload" src={src} alt="..." />
         </div>
         <input id="photo-upload" type="file" onChange={onChange} />
     </label>
@@ -24,7 +24,7 @@ const Profile = ({
         <form onSubmit={onSubmit}>
             <label className="custom-file-upload fas">
                 <div className="img-wrap" >
-                    <img for="photo-upload" src={src} />
+                    <img for="photo-upload" src={src}  alt="..."/>
                 </div>
             </label>
             <div className="name">{name}</div>
