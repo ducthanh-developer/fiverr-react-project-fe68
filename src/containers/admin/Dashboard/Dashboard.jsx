@@ -71,7 +71,7 @@ export default function Dashboard() {
                                     <div className="widget-content-wrapper">
                                         <div className="widget-content-left">
                                             <div className="btn-group">
-                                                <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" className="p-0 btn" href="...">
+                                                <a data-toggle="dropdown" aria-expanded="false" className="p-0 btn" href="...">
                                                     <img width={42} className="rounded-circle" src="assets/images/avatars/1.jpg" alt="..." />
                                                     <i className="fa fa-angle-down ml-2 opacity-8" />
                                                 </a>
@@ -432,7 +432,9 @@ export default function Dashboard() {
                         <div className="app-main__inner">
                             fffffffffffffffffffffffffffffffffffffffffffffffffffffffff
                         </div>
-                    </div></div></div>
+                    </div>
+                </div>
+            </div>
 
         </div>
     )

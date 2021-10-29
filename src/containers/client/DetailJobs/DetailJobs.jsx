@@ -18,10 +18,14 @@ export default function DetailJobs(props) {
   console.log("tittleJob", tittleJob);
 
   console.log("commentJob", commentJob);
+
+  const { id } = props.match.params
   useEffect(() => {
-    dispatch(actGetJobTittle(props.match.params.id));
-    dispatch(actGetComment(props.match.params.id))
-  }, []);
+    
+    dispatch(actGetJobTittle(id));
+    dispatch(actGetComment(id));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dispatch]);
 
 
   const settings = {

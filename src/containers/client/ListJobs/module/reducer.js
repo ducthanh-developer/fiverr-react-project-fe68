@@ -1,4 +1,4 @@
-import { Job } from "core/models/Job";
+import { Job } from "_core/models/Job";
 import { SET_LIST_JOBS } from "./types";
 
 const initialState = {

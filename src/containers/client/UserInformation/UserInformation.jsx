@@ -12,13 +12,14 @@ export default function UserInformation(props) {
     const dispatch = useDispatch();
     const { userJobs, historyJobs } = useSelector((state) => state.userListJobsReducer);
     console.log("gg", userJobs);
-
     console.log("historyJobs", historyJobs);
     useEffect(() => {
-        dispatch(actGetUserListJobs(props.match.params.id));
-        dispatch(actHistoryJobsUser(props.match.params.id));
-
-    }, []);
+        const jobId =props.match.params.id;
+        const jobUserId= props.match.params.id;;
+        dispatch(actGetUserListJobs(jobId));
+        dispatch(actHistoryJobsUser(jobUserId));
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [dispatch]);
 
 
     const [isShow, setIsShow] = React.useState(true);
