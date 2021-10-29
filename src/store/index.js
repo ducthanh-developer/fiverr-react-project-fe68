@@ -6,10 +6,10 @@ import tittleJobReducer from 'containers/client/DetailJobs/modules/reducer'
 import    userListJobsReducer from 'containers/client/UserInformation/modules/reducer'
 import authReducer from "containers/shared/LoginFiverr/modules/reducer";
 import { JobReducer } from "containers/client/ListJobs/module/reducer";
-
+import { TypeJobsReducer } from "components/Header/module/reducer";
+import { composeWithDevTools } from "redux-devtools-extension";
 import registerReducer from 'containers/shared/Register/modules/reducer'
 // import historyBokingJobReducer from "containers/client/UserInformation/HistoryJobs/modules/reducer"
-import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from "redux-thunk";
 
 const rootReducer = combineReducers({
@@ -19,7 +19,7 @@ const rootReducer = combineReducers({
   authReducer,
   registerReducer,
   JobReducer,
-
+  TypeJobsReducer,
   // historyBokingJobReducer,
   // bookingJobReducer,
 });

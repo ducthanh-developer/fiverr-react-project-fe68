@@ -1,3 +1,4 @@
+import fiverrApi from "apis/fiverrApi";
 import React from "react";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
@@ -10,7 +11,6 @@ export default function ListJobs(props) {
   useEffect(() => {
     dispatch(actFetchListJobs());
   }, []);
-  console.log(listJobs);
   const renderListJobs = () => {
     return listJobs.map((job, index) => (
       <div className="col-sm-3 card-layout" key={index}>
@@ -18,14 +18,14 @@ export default function ListJobs(props) {
           <a href=".." className="media">
             <img
               className="w-100"
-              src="./images/ListJobs/a5945e0c694538f4e36215017d623873aac3ce67.jpg"
+              src="../images/ListJobs/a5945e0c694538f4e36215017d623873aac3ce67.jpg"
               alt="Description"
             />
           </a>
           <div className="seller-info row">
             <div className="seller-image">
               <img
-                src="./images/ListJobs/JPEG_20201030_153457_4491597895407383130.jpg"
+                src="../images/ListJobs/JPEG_20201030_153457_4491597895407383130.jpg"
                 alt=".."
               />
             </div>
