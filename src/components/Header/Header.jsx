@@ -1,12 +1,18 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import "./Header.scss";
 import { actFetchListTypeJobs } from "./module/actions";
+import { actLogout } from "containers/shared/LoginFiverr/modules/action";
+import { Menu, Dropdown, Button } from "antd";
 
 export default function Header() {
   const dispatch = useDispatch();
   const { listTypeJobs } = useSelector((state) => state.TypeJobsReducer);
+  const { currentUser } = useSelector((state) => state.authReducer);
+  const logOut = () => {
+    dispatch(actLogout());
+  };
   console.log(listTypeJobs);
   useEffect(() => {
     dispatch(actFetchListTypeJobs());
@@ -115,14 +121,26 @@ export default function Header() {
               </a>
             </li>
             <li className="nav-item">
-              <a href="..." className="nav-link">
-                Sing In
-              </a>
-            </li>
-            <li className="nav-item">
-              <a href="..." className="nav-link nav-link--btn">
-                Join
-              </a>
+              {currentUser == null ? (
+                <Link to="/login" className="nav-link nav-link--btn">
+                  Join
+                </Link>
+              ) : (
+                <nav>
+                  <li className="nav-item">
+                    <Link
+                      className="dropdown-item"
+                      href="#"
+                      to={`/login/${currentUser.user._id}`}
+                    >
+                      Profile
+                    </Link>
+                  </li>
+                  <a className="dropdown-item" href="..." onClick={logOut}>
+                    Logout
+                  </a>
+                </nav>
+              )}
             </li>
           </ul>
         </nav>

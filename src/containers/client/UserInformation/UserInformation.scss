@@ -1,0 +1,231 @@
+.user__information {
+    background-color: #f7f7f7;
+    .user__information__content {
+        max-width: 1302px;
+        .card-1 {
+            margin-top: 50px;
+            .btn__profile {
+                width: 338px;
+                margin-left: 28px;
+                border: 1px solid black;
+                color: black;
+                font-weight: 600;
+            }
+            hr {
+                margin-left: 25px;
+                width: 338px;
+            }
+            .from__item {
+                /* We first create a flex layout context */
+                display: flex;
+
+                flex-flow: row wrap;
+                list-style: none;
+                .flex-item-from {
+                    margin-top: 20px;
+                    margin-left: 30px;
+                    color: #0e0e0f;
+                    font-size: 16px;
+                    font-weight: 700;
+                }
+                .flex-item-vietnam {
+                    text-align: center;
+                    margin-top: 20px;
+                    margin-left: 231px;
+                    color: #00698c;
+                    font-size: 14px;
+                    font-weight: 500;
+                    .unAddSkill {
+                        margin-left: 62px;
+                    }
+                }
+                .flex-item-time {
+                    margin-left: 168px;
+                    margin-top: 13px;
+                    color: #00698c;
+                    font-size: 14px;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
+
+.card-1 {
+    position: relative;
+    width: 395px;
+    height: 450px;
+    background: #fff;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.card-1:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.card-2 {
+    position: relative;
+    width: 395px;
+    height: auto;
+    background: #fff;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    margin-bottom: 50px;
+    margin-top: 15px;
+    hr {
+        margin-left: 14px;
+        margin-top: 50px;
+        width: 332px;
+    }
+    .Description {
+        /* We first create a flex layout context */
+        display: flex;
+        flex-flow: row wrap;
+        list-style: none;
+        .flex-item-1 {
+            margin-top: 20px;
+            margin-left: 30px;
+            color: #0e0e0f;
+            font-size: 16px;
+            font-weight: 700;
+        }
+        .flex-item-2 {
+            text-align: center;
+            margin-top: 20px;
+            margin-left: 143px;
+            color: #00698c;
+            font-size: 14px;
+            font-weight: 500;
+            .add__skill {
+                margin-left: 67px;
+            }
+        }
+    }
+    .done__add__skill {
+        .skill{
+            text-align: center;
+            border: 1px solid;
+            border-radius: 31px;
+            width: 64px;
+            margin-left: 148px;
+            margin-top: 10px;
+        }
+       
+    }
+}
+
+.user__information__right {
+    .car__done__create {
+        border-radius: 10px;
+        margin-top: 50px;
+        width: 772px;
+        height: 141px;
+        padding: 20px 20px 20px 20px;
+        margin-bottom: 30px;
+        .Buying {
+            font-size: 18px;
+            img {
+                margin-right: 10px;
+                width: 50px;
+                margin-left: 25px;
+            }
+            b {
+                font-weight: 600;
+                line-height: 10px;
+                font-size: 17px;
+            }
+        }
+
+        .questions {
+            margin-left: 90px;
+            font-weight: 500;
+            font-size: 15px;
+            margin-top: -10px;
+        }
+        .industry {
+            margin-left: 90px;
+            font-weight: 500;
+            font-size: 15px;
+            color: #1dbf73;
+        }
+    }
+    .create__new__gif {
+        height: 70px;
+        width: 772px;
+        padding: 20px 20px 20px 20px;
+        .Gigs {
+            font-size: 17px;
+        }
+    }
+}
+//
+
+.history__job__booking {
+    margin-top: 30px;
+    width: 772px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    .bookingName{
+       .name{
+           margin-bottom: 30px;
+       }
+    }
+}
+
+
+
+.AddFormSkill {
+    width: 337px;
+    margin-left: -180px;
+    height: 194px;
+    background-color: rgba(120, 111, 111, 0.061);
+    border-radius: 3px;
+
+    input {
+        margin-top: 20px;
+        height: 40px;
+    }
+    .ant-select-selector {
+        height: 440px;
+    }
+    .ant-form-item-control-input {
+        width: 317px;
+        margin-left: 10px;
+        margin-top: -9px;
+    }
+    .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+        height: 42px;
+        position: relative;
+        border: 1px solid #d9d9d9;
+        background-color: #fff;
+        border-radius: 2px;
+        transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+    .add__skill__button {
+        hr {
+            margin-top: -7px;
+            margin-right: 9px;
+            font-weight: bold;
+        }
+    }
+    .btn__add__skkil {
+        width: 140px;
+        margin-top: -4px;
+    }
+    .btn__cancle__skkil {
+        background-color: #fff;
+        width: 140px;
+        margin-top: -4px;
+        color: black;
+        font-weight: 500;
+        border: 1px solid rgba(49, 25, 25, 0.075);
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
+    }
+}

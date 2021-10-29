@@ -1,6 +1,6 @@
 import { SET_LIST_TYPE_JOBS } from "./types";
 
-const { TypeJob } = require("core/models/TypeJob");
+const { TypeJob } = require("_core/models/TypeJob");
 
 const innitialState = {
   listTypeJobs: [new TypeJob()],
