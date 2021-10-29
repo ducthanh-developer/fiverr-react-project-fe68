@@ -2,7 +2,9 @@ import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import PageNotFound from 'containers/shared/PageNotFound/PageNotFound';
 import ClientLayout from 'layouts/ClientLayout';
-import {  clientRoutes } from 'routes';
+import {  adminRoutes, clientRoutes } from 'routes';
+import AdminLayout from 'layouts/AdminLayout';
+import UserInformation from 'containers/client/UserInformation/UserInformation';
 
 function App() {
   const renderRoutes = (routes, Layout) => {
@@ -24,7 +26,8 @@ function App() {
       <Router>
         <Switch>
           {renderRoutes(clientRoutes, ClientLayout)}
-          {/* {renderRoutes(adminRoutes, AdminLayout)} */}
+          {renderRoutes(adminRoutes, AdminLayout)}
+          <Route path="/login/:id" component={UserInformation} />
           <Route path="*" component={PageNotFound} />
         </Switch>
       </Router>

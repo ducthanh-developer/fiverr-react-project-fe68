@@ -1,7 +1,17 @@
+import { Link } from "react-router-dom";
 import React from "react";
-import "./Header.scss";
-
+import { useDispatch, useSelector } from "react-redux"; import "./Header.scss";
+import { actLogout } from "containers/shared/LoginFiverr/modules/action";
+import { Menu, Dropdown, Button } from 'antd';
 export default function Header() {
+  const dispatch = useDispatch();
+  const { currentUser } = useSelector(state => state.authReducer);
+  console.log("object, currentUser", currentUser);
+
+  const logOut = () => {
+    dispatch(actLogout());
+  };
+
   return (
     <div className="header">
       <header className="header-package row">
@@ -82,14 +92,15 @@ export default function Header() {
               </a>
             </li>
             <li className="nav-item">
-              <a href="..." className="nav-link">
-                Sing In
-              </a>
-            </li>
-            <li className="nav-item">
-              <a href="..." className="nav-link nav-link--btn">
+              {currentUser == null ? <Link to="/login" className="nav-link nav-link--btn">
                 Join
-              </a>
+              </Link> : <nav>
+                <li className="nav-item">
+                <Link className="dropdown-item" href="#" to={`/login/${currentUser.user._id}`}>Profile</Link>
+                </li>
+                <a className="dropdown-item" href="..." onClick={logOut}>Logout</a>
+              </nav>
+              }
             </li>
           </ul>
         </nav>
