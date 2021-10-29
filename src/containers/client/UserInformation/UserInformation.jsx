@@ -1,13 +1,10 @@
 import React, { useEffect, } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { actFetchAddUserInformation, actGetUserListJobs, actHistoryJobsUser } from "./modules/action";
-// import actHistoryJobsUser from 'containers/client/UserInformation/HistoryJobs/modules/action'
 import { useFormik } from 'formik';
-// import "../UserInformation/AddFormSkill.scss"
-import LoadImg from './LoadImg'
 import "../UserInformation/UserInformation.scss"
 import { Form, Input,Card } from 'antd';
-
+// import LoadImg from '../UserInformation/UploadImgUser/LoadImg'
 export default function UserInformation(props) {
     const { Meta } = Card;
 
@@ -20,7 +17,10 @@ export default function UserInformation(props) {
     useEffect(() => {
         dispatch(actGetUserListJobs(props.match.params.id));
         dispatch(actHistoryJobsUser(props.match.params.id));
+
     }, []);
+
+
     const [isShow, setIsShow] = React.useState(true);
     const handleClick = () => {
         setIsShow(!isShow);
@@ -45,7 +45,8 @@ export default function UserInformation(props) {
                 <div className="row">
                     <div className="col-12 col-md-12 col-lg-5">
                         <div className=" card card-1 ">
-                            <LoadImg />
+                            {/* <LoadImg /> */}
+                            {/* <LoadImg/> */}
                             <h6 className="name__profile text-center">{userJobs.email}</h6>
                             <button className="btn btn__profile">Preview Public Model</button>
                             <hr></hr>
@@ -82,7 +83,7 @@ export default function UserInformation(props) {
                                                             onSubmitCapture={formik.handleSubmit}
                                                             labelCol={{ span: 4 }}
                                                             wrapperCol={{ span: 14 }}
-                                                            layout="horizontal" >
+                                                           >
                                                             <Form.Item label="" >
                                                                 <Input name="skill"
                                                                     onChange={formik.handleChange}

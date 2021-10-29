@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import "../UserInformation/Upload.scss"
 
-
-
 const ImgUpload = ({
     onChange,
     src

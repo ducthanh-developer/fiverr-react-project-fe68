@@ -7,7 +7,6 @@ import { ThongTinDat, User } from "_core/models/ThongTinDat";
 const fiverrApi = {
   fetchAllJobFiverrApi() {
     return callApi(`jobs`);
-
   },
   fetchListJobsApi(){
     return callApi(`jobs`);
@@ -35,6 +34,9 @@ const fiverrApi = {
   //historyJobs
   fetchHistoryJobBookingApi() {
     return callApi(`jobs/by-user`)
+  },
+  fetchUploadImg(formData){
+    return callApi(`users/upload-avatar`, formData)
   },
   loginApi(user) {
     return callApiPost(`auth/signin`, user)

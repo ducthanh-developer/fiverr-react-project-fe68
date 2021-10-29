@@ -14,6 +14,10 @@ export const actLayDanhSachCongViecNguoiDung = (userJobs) => ({
   payload: userJobs,
 });
 
+export const actLayDanhSachCongViecNguoiDungFail = (error) => ({
+  type: FETCH_USER_LIST_JOBS_SUCCESS,
+  payload: error,
+});
 
 export const actFetchHistorySuccess=(historyJobs) => {
   return{
@@ -43,6 +47,7 @@ export const actFetchAddUserInformation = (values) => {
       alert("Thêm Thành Công")
 
     } catch (error) {
+      dispatch(actLayDanhSachCongViecNguoiDungFail())
       console.log(error.response?.data);
     }
   };

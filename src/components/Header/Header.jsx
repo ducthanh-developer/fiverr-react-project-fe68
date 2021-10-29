@@ -2,7 +2,10 @@ import { Link } from "react-router-dom";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux"; import "./Header.scss";
 import { actLogout } from "containers/shared/LoginFiverr/modules/action";
-import { Menu, Dropdown, Button } from 'antd';
+// import { Menu, Dropdown, Button } from 'antd';
+
+
+
 export default function Header() {
   const dispatch = useDispatch();
   const { currentUser } = useSelector(state => state.authReducer);
