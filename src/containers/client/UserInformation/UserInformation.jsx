@@ -1,30 +1,65 @@
-import React, { useEffect, } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { actFetchAddUserInformation, actGetUserListJobs, actHistoryJobsUser } from "./modules/action";
+import { actFetchAddUserInformation, actGetUserListJobs, actHistoryJobsUser, actUploadImg } from "./modules/action";
 import { useFormik } from 'formik';
 import "../UserInformation/UserInformation.scss"
-import { Form, Input,Card } from 'antd';
-// import LoadImg from '../UserInformation/UploadImgUser/LoadImg'
+import { Form, Input, Card } from 'antd';
+// import React, { useState } from 'react';
+import { Upload } from 'antd';
+import ImgCrop from 'antd-img-crop';
 export default function UserInformation(props) {
     const { Meta } = Card;
-
     console.log("props", props);
     const dispatch = useDispatch();
     const { userJobs, historyJobs } = useSelector((state) => state.userListJobsReducer);
     console.log("gg", userJobs);
     console.log("historyJobs", historyJobs);
+    const id = props.match.params.id;
     useEffect(() => {
-        const jobId =props.match.params.id;
-        const jobUserId= props.match.params.id;;
-        dispatch(actGetUserListJobs(jobId));
-        dispatch(actHistoryJobsUser(jobUserId));
-        // eslint-disable-next-line react-hooks/exhaustive-deps
+        // const jobId = props.match.params.id;
+        // const jobUserId = props.match.params.id;;
+        dispatch(actGetUserListJobs(id));
+        dispatch(actHistoryJobsUser(id));
     }, [dispatch]);
 
+    const [fileList, setFileList] = useState([
+        {
+            uid: '-1',
+            name: 'image.png',
+            status: 'done',
+            // url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+        },
+    ]);
+
+    const onChange = ({ fileList: newFileList }) => {
+        setFileList(newFileList);
+        console.log("object,", newFileList);
+        dispatch(actUploadImg(newFileList))
+    };
+
+    // const onPreview = async file => {
+    //     let src = file.url;
+    //     if (!src) {
+    //         src = await new Promise(resolve => {
+    //             const reader = new FileReader();
+    //             reader.readAsDataURL(file.originFileObj);
+    //             reader.onload = () => resolve(reader.result);
+    //         });
+    //     }
+    // };
+
+    
 
     const [isShow, setIsShow] = React.useState(true);
+
+    const [show, setShow] = React.useState(true);
+
     const handleClick = () => {
         setIsShow(!isShow);
+    };
+    
+    const handleClick1 = () => {
+        setShow(!show);
     };
     const Typography = (props) => {
         return <p>{props.children}</p>;
@@ -36,7 +71,6 @@ export default function UserInformation(props) {
         },
         onSubmit: (values) => {
             console.log("values", values);
-
             dispatch(actFetchAddUserInformation(props.match.params.id, values));
         }
     })
@@ -48,6 +82,18 @@ export default function UserInformation(props) {
                         <div className=" card card-1 ">
                             {/* <LoadImg /> */}
                             {/* <LoadImg/> */}
+                            <ImgCrop rotate>
+                                <Upload
+                                    // action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+                                    listType="picture-card"
+                                    fileList={fileList}
+                                    onChange={onChange}
+                                    >
+                                    {/* dispatch(actUploadImg(formData)); */}
+
+                                    {fileList.length < 1 && '+ Upload'}
+                                </Upload>
+                            </ImgCrop>
                             <h6 className="name__profile text-center">{userJobs.email}</h6>
                             <button className="btn btn__profile">Preview Public Model</button>
                             <hr></hr>
@@ -71,7 +117,7 @@ export default function UserInformation(props) {
                                 <hr></hr>
                                 <ul className="flex Description ">
                                     <li className="flex-item-1">Skill</li>
-                                    <li className="flex-item-2">
+                                    <li className="flex-item-2" >
                                         <>
                                             <div onClick={handleClick} className="add__skill">AddSkill</div>
                                             {isShow ?
@@ -84,26 +130,23 @@ export default function UserInformation(props) {
                                                             onSubmitCapture={formik.handleSubmit}
                                                             labelCol={{ span: 4 }}
                                                             wrapperCol={{ span: 14 }}
-                                                           >
+                                                        >
                                                             <Form.Item label="" >
                                                                 <Input name="skill"
                                                                     onChange={formik.handleChange}
                                                                     value={formik.values.skill} />
                                                             </Form.Item>
-                                                            {/* <Form.Item label="" >
-                                                                <Select>
-                                                                    <Select.Option value="demo">Demo</Select.Option>
-                                                                </Select>
-                                                            </Form.Item> */}
+                                                    
                                                             <div className="row add__skill__button">
                                                                 <hr></hr>
 
                                                                 <div className="col-6">
                                                                     <button className="btn btn__cancle__skkil">Cancel</button>
                                                                 </div>
-                                                                <Form.Item label="Tac vụ"  >
-                                                                    <button type="submit" className="btn btn-default" value=""> Thêm</button>
-                                                                </Form.Item>
+                                                                <div className="col-6">
+                                                                <button type="submit" className="btn btn-success" value=""> Thêm</button>
+                                                                </div>
+                                                                
                                                             </div>
                                                         </Form>
                                                     </Typography>
@@ -112,24 +155,25 @@ export default function UserInformation(props) {
                                         </>
                                     </li>
                                 </ul>
-                                <div className="done__add__skill">
-                                    {userJobs.skill?.map((skill, index) => {
+                                {/* <div className="done__add__skill">
+                                    {userJobs.certification?.map((certification, index) => {
                                         return (
-                                            <div key={index} className="skill">{skill}</div>
+                                            <div key={index} className="skill">{certification}</div>
                                         )
                                     })}
-                                </div>
+                                </div> */}
                                 <hr></hr>
                                 <ul className="flex Description ">
-                                    <li className="flex-item-1">Skill</li>
-                                    <li className="flex-item-2">
-                                        <>
-                                            <div className="add__skill" onClick={handleClick}>Toggle</div>
-                                            {isShow ?
+                                    <li className="flex-item-1">certification</li>
+                                    <li className="flex-item-2"onClick={handleClick1} >certification</li>                              
+
+                                        <div>
+                                            {/* <div className="add__certification" onClick={handleClick}>certification</div> */}
+                                            {show ?
                                                 <>
                                                 </>
                                                 :
-                                                <div className="AddFormSkill card">
+                                                <div className="addform__certification card">
                                                     <Typography>
                                                         <Form
                                                             onSubmitCapture={formik.handleSubmit}
@@ -160,8 +204,7 @@ export default function UserInformation(props) {
                                                     </Typography>
                                                 </div>
                                             }
-                                        </>
-                                    </li>
+                                        </div>
                                     <div className="done__add__skill">
                                         {userJobs.certification?.map((skill, index) => {
                                             return (
@@ -221,17 +264,17 @@ export default function UserInformation(props) {
                                                 <Card
                                                     hoverable
                                                     style={{ width: 740 }}
-                                                
+
                                                 >
                                                     <div className="row">
                                                         <div className="col-3">
-                                                        <img alt="example" src={booking.image} style={{ width:150 }}/>
+                                                            <img alt="example" src={booking.image} style={{ width: 150 }} />
                                                         </div>
                                                         <div className="col-9">
-                                                        <Meta title={booking.name} description="www.instagram.com" />
+                                                            <Meta title={booking.name} description="www.instagram.com" />
                                                         </div>
                                                     </div>
-                                                   
+
                                                 </Card>,
                                             </div>
                                         )
@@ -243,7 +286,6 @@ export default function UserInformation(props) {
                 </div>
             </div>
         </div>
-
     )
 }
 

@@ -16,17 +16,13 @@ export default function DetailJobs(props) {
   const dispatch = useDispatch();
   const { tittleJob, commentJob } = useSelector((state) => state.tittleJobReducer);
   console.log("tittleJob", tittleJob);
-
   console.log("commentJob", commentJob);
 
   const { id } = props.match.params
   useEffect(() => {
-    
     dispatch(actGetJobTittle(id));
     dispatch(actGetComment(id));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
-
 
   const settings = {
     dots: true,

@@ -38,8 +38,8 @@ const fiverrApi = {
   fetchHistoryJobBookingApi() {
     return callApi(`jobs/by-user`);
   },
-  fetchUploadImg(formData){
-    return callApi(`users/upload-avatar`, formData)
+  fetchUploadImgApi(formData){
+    return callApiPost(`users/upload-avatar`, formData)
   },
   loginApi(user) {
     return callApiPost(`auth/signin`, user);
@@ -47,5 +47,10 @@ const fiverrApi = {
   registerAPi(register) {
     return callApiPost(`auth/signup`, register);
   },
+
+  //API ADMIN
+  fetchListUser(user) {
+    return callApi('users')
+  }
 };
 export default fiverrApi;

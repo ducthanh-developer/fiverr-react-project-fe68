@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from 'react';
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { Upload } from 'antd';
+import ImgCrop from 'antd-img-crop';
+
 import "./ListJobs.scss";
 import { actFetchListJobs } from "./module/actions";
 export default function ListJobs(props) {
@@ -13,11 +16,6 @@ export default function ListJobs(props) {
   }, [dispatch]);
   const renderListJobs = () => {
     return listJobs.map((job, index) => (
-      // <Link to={`/list-jobs/${job._id}`}>
-
-
-      // </Link>
-
       <div className="col-sm-3 card-layout" key={index}>
         <Link to={`/list-jobs/${job._id}`}>
           <div className="card-wrapper">

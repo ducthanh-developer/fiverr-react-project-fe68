@@ -73,9 +73,9 @@
     width: 395px;
     height: auto;
     background: #fff;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    // box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    // box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    // box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     margin-bottom: 50px;
     margin-top: 15px;
@@ -104,12 +104,13 @@
             font-size: 14px;
             font-weight: 500;
             .add__skill {
+                margin-bottom: 15px;
                 margin-left: 67px;
             }
         }
     }
     .done__add__skill {
-        .skill{
+        .skill {
             text-align: center;
             border: 1px solid;
             border-radius: 31px;
@@ -117,7 +118,6 @@
             margin-left: 148px;
             margin-top: 10px;
         }
-       
     }
 }
 
@@ -172,24 +172,75 @@
     width: 772px;
     padding-top: 10px;
     padding-bottom: 10px;
-    .bookingName{
-       .name{
-           margin-bottom: 30px;
-       }
+    .bookingName {
+        .name {
+            margin-bottom: 30px;
+        }
     }
 }
-
-
 
 .AddFormSkill {
     width: 337px;
     margin-left: -180px;
     height: 194px;
-    background-color: rgba(120, 111, 111, 0.061);
+    background-color: rgba(32, 24, 24, 0.061);
     border-radius: 3px;
-
+    box-shadow: none;
     input {
         margin-top: 20px;
+        border-radius: 4px;
+        height: 40px;
+    }
+    .ant-select-selector {
+        height: 440px;
+    }
+    .ant-form-item-control-input {
+        width: 317px;
+        margin-left: 10px;
+        margin-top: -9px;
+    }
+    .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+        height: 42px;
+        position: relative;
+        border: 1px solid #d9d9d9;
+        background-color: #fff;
+        border-radius: 2px;
+        transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+    .add__skill__button {
+        hr {
+            margin-top: -7px;
+            margin-right: 9px;
+            font-weight: bold;
+        }
+    }
+    .btn__add__skkil {
+        width: 140px;
+        margin-top: -4px;
+    }
+    .btn__cancle__skkil {
+        background-color: #fff;
+        width: 140px;
+        margin-top: -4px;
+        color: black;
+        font-weight: 500;
+        border: 1px solid rgba(49, 25, 25, 0.075);
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
+    }
+}
+
+.addform__certification {
+    width: 337px;
+    margin-top: 10px;
+    margin-left: 30px;
+    height: 194px;
+    background-color: rgba(32, 24, 24, 0.061);
+    border-radius: 3px;
+    box-shadow: none;
+    margin-bottom: 100px;
+    input {
+        margin-top: 20px;
+        border-radius: 4px;
         height: 40px;
     }
     .ant-select-selector {
