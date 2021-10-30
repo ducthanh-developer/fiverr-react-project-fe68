@@ -4,7 +4,9 @@ import { NavLink, Link } from "react-router-dom";
 import "./Header.scss";
 import { actFetchListTypeJobs } from "./module/actions";
 import { actLogout } from "containers/shared/LoginFiverr/modules/action";
-import { Menu, Dropdown, Button } from "antd";
+// import { Menu, Dropdown, Button } from 'antd';
+
+
 
 export default function Header() {
   const dispatch = useDispatch();
@@ -16,7 +18,7 @@ export default function Header() {
   console.log(listTypeJobs);
   useEffect(() => {
     dispatch(actFetchListTypeJobs());
-  }, []);
+  }, [dispatch]);
   const renderListTypeJobs = () => {
     return listTypeJobs.map((job, index) => {
       const { _id, name, subTypeJobs } = job;
@@ -120,6 +122,7 @@ export default function Header() {
                 Become a Seller
               </a>
             </li>
+            
             <li className="nav-item">
               {currentUser == null ? (
                 <Link to="/login" className="nav-link nav-link--btn">

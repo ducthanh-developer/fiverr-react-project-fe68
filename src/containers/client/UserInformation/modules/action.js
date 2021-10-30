@@ -1,6 +1,6 @@
 import fiverrApi from "apis/fiverrApi";
 // import { FETCH__HISTORY__JOBS__SUCCESS } from "../HistoryJobs/modules/type";
-import { FETCH_USER_LIST_JOBS_SUCCESS,FETCH__HISTORY__JOBS__SUCCESS } from "./type";
+import { FETCH_USER_LIST_JOBS_SUCCESS,FETCH__HISTORY__JOBS__SUCCESS, FETCH__UPLOAD__SUCCESS } from "./type";
 
 
 // export const actLayCongViecChiTiet = (tittleJob) => ({
@@ -14,11 +14,22 @@ export const actLayDanhSachCongViecNguoiDung = (userJobs) => ({
   payload: userJobs,
 });
 
+export const actLayDanhSachCongViecNguoiDungFail = (error) => ({
+  type: FETCH_USER_LIST_JOBS_SUCCESS,
+  payload: error,
+});
 
 export const actFetchHistorySuccess=(historyJobs) => {
   return{
       type: FETCH__HISTORY__JOBS__SUCCESS,
       payload:historyJobs,
+  }
+}
+
+export const actUploadImgSuccess=(uploadImg) => {
+  return{
+      type: FETCH__UPLOAD__SUCCESS,
+      payload:uploadImg,
   }
 }
 export const actGetUserListJobs = (userId) => {
@@ -43,6 +54,7 @@ export const actFetchAddUserInformation = (values) => {
       alert("Thêm Thành Công")
 
     } catch (error) {
+      dispatch(actLayDanhSachCongViecNguoiDungFail())
       console.log(error.response?.data);
     }
   };
@@ -54,6 +66,18 @@ export const actHistoryJobsUser =()=>{
       .fetchHistoryJobBookingApi()
       .then(response=>{
           dispatch(actFetchHistorySuccess(response.data))
+      })
+      .catch(error=>{console.log("errrhhh", error.response?.data);})
+  }
+}
+
+
+export const actUploadImg=(formData)=>{
+  return (dispatch)=>{
+      fiverrApi
+      .fetchUploadImgApi(formData)
+      .then(response=>{
+          dispatch(actUploadImgSuccess(response.data))
       })
       .catch(error=>{console.log("errrhhh", error.response?.data);})
   }

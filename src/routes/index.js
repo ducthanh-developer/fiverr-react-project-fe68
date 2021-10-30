@@ -1,6 +1,6 @@
 import Dashboard from "containers/admin/Dashboard/Dashboard";
 import DetailJobs from "containers/client/DetailJobs/DetailJobs";
-import FiverrDetail from "containers/client/FiverrDetail/FiverrDetail";
+// import FiverrDetail from "containers/client/FiverrDetail/FiverrDetail";
 import Home from "containers/client/Home/Home";
 import ListJobs from "containers/client/ListJobs/ListJobs";
 // import ListJobs from "containers/client/ListJobs/ListJobs";
@@ -20,19 +20,19 @@ export const clientRoutes = [
     component: Home,
     exact: true,
   },
-  {
-    path: "/list-jobs/:typeId",
-    component: ListJobs,
-    exact: true,
-  },
+  // {
+  //   path: "/list-jobs/:typeId",
+  //   component: ListJobs,
+  //   exact: true,
+  // },
+
+  // {
+  //   path: "/fiverr",
+  //   component: FiverrDetail,
+  // },
 
   {
-    path: "/fiverr",
-    component: FiverrDetail,
-  },
-
-  {
-    path: "/fiverr/:id",
+    path: "/list-jobs/:id",
     component: DetailJobs,
     exact: false,
   },

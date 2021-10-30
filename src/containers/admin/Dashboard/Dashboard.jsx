@@ -1,4 +1,5 @@
 import React from 'react'
+import UserManagerment from '../UserManagement/UserManagerment'
 
 export default function Dashboard() {
     return (
@@ -21,7 +22,7 @@ export default function Dashboard() {
                         <div>
                             <button type="button" className="hamburger hamburger--elastic mobile-toggle-nav">
                                 <span className="hamburger-box">
-                                    <span className="hamburger-inner" />
+                                    <span className="hamburger-inner"/>
                                 </span>
                             </button>
                         </div>
@@ -71,7 +72,7 @@ export default function Dashboard() {
                                     <div className="widget-content-wrapper">
                                         <div className="widget-content-left">
                                             <div className="btn-group">
-                                                <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" className="p-0 btn" href="...">
+                                                <a data-toggle="dropdown" aria-expanded="false" className="p-0 btn" href="...">
                                                     <img width={42} className="rounded-circle" src="assets/images/avatars/1.jpg" alt="..." />
                                                     <i className="fa fa-angle-down ml-2 opacity-8" />
                                                 </a>
@@ -105,121 +106,7 @@ export default function Dashboard() {
                         </div>
                     </div>
                 </div>
-                <div className="ui-theme-settings">
-                    <button type="button" id="TooltipDemo" className="btn-open-options btn btn-warning">
-                        <i className="fa fa-cog fa-w-16 fa-spin fa-2x" />
-                    </button>
-                    <div className="theme-settings__inner">
-                        <div className="scrollbar-container">
-                            <div className="theme-settings__options-wrapper">
-                                <h3 className="themeoptions-heading">Layout Options
-                                </h3>
-                                <div className="p-3">
-                                    <ul className="list-group">
-                                        <li className="list-group-item">
-                                            <div className="widget-content p-0">
-                                                <div className="widget-content-wrapper">
-                                                    <div className="widget-content-left mr-3">
-                                                        <div className="switch has-switch switch-container-class" data-class="fixed-header">
-                                                            <div className="switch-animate switch-on">
-                                                                <input type="checkbox" defaultChecked data-toggle="toggle" data-onstyle="success" />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div className="widget-content-left">
-                                                        <div className="widget-heading">Fixed Header
-                                                        </div>
-                                                        <div className="widget-subheading">Makes the header top fixed, always
-                                                            visible!
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li className="list-group-item">
-                                            <div className="widget-content p-0">
-                                                <div className="widget-content-wrapper">
-                                                    <div className="widget-content-left mr-3">
-                                                        <div className="switch has-switch switch-container-class" data-class="fixed-sidebar">
-                                                            <div className="switch-animate switch-on">
-                                                                <input type="checkbox" defaultChecked data-toggle="toggle" data-onstyle="success" />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div className="widget-content-left">
-                                                        <div className="widget-heading">Fixed Sidebar
-                                                        </div>
-                                                        <div className="widget-subheading">Makes the sidebar left fixed, always
-                                                            visible!
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li className="list-group-item">
-                                            <div className="widget-content p-0">
-                                                <div className="widget-content-wrapper">
-                                                    <div className="widget-content-left mr-3">
-                                                        <div className="switch has-switch switch-container-class" data-class="fixed-footer">
-                                                            <div className="switch-animate switch-off">
-                                                                <input type="checkbox" data-toggle="toggle" data-onstyle="success" />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div className="widget-content-left">
-                                                        <div className="widget-heading">Fixed Footer
-                                                        </div>
-                                                        <div className="widget-subheading">Makes the app footer bottom fixed, always
-                                                            visible!
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <h3 className="themeoptions-heading">
-                                    <div>
-                                        Header Options
-                                    </div>
-                                    <button type="button" className="btn-pill btn-shadow btn-wide ml-auto btn btn-focus btn-sm switch-header-cs-class" data-class>
-                                        Restore Default
-                                    </button>
-                                </h3>
-                                {/*  */}
-                                <h3 className="themeoptions-heading">
-                                    <div>Sidebar Options</div>
-                                    <button type="button" className="btn-pill btn-shadow btn-wide ml-auto btn btn-focus btn-sm switch-sidebar-cs-class" data-class>
-                                        Restore Default
-                                    </button>
-                                </h3>
-                                <h3 className="themeoptions-heading">
-                                    <div>Main Content Options</div>
-                                    <button type="button" className="btn-pill btn-shadow btn-wide ml-auto active btn btn-focus btn-sm">Restore Default
-                                    </button>
-                                </h3>
-                                <div className="p-3">
-                                    <ul className="list-group">
-                                        <li className="list-group-item">
-                                            <h5 className="pb-2">Page Section Tabs
-                                            </h5>
-                                            <div className="theme-settings-swatches">
-                                                <div role="group" className="mt-2 btn-group">
-                                                    <button type="button" className="btn-wide btn-shadow btn-primary btn btn-secondary switch-theme-class" data-class="body-tabs-line">
-                                                        Line
-                                                    </button>
-                                                    <button type="button" className="btn-wide btn-shadow btn-primary active btn btn-secondary switch-theme-class" data-class="body-tabs-shadow">
-                                                        Shadow
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+               
                 <div className="app-main">
                     <div className="app-sidebar sidebar-shadow">
                         <div className="app-header__logo">
@@ -430,9 +317,11 @@ export default function Dashboard() {
                     </div>
                     <div className="app-main__outer">
                         <div className="app-main__inner">
-                            fffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+                                <UserManagerment/>
                         </div>
-                    </div></div></div>
+                    </div>
+                </div>
+            </div>
 
         </div>
     )

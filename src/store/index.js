@@ -1,7 +1,7 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
-import fiverrDetailJobReducer from 'containers/client/FiverrDetail/module/reducer';
+// import fiverrDetailJobReducer from 'containers/client/FiverrDetail/module/reducer';
 import tittleJobReducer from 'containers/client/DetailJobs/modules/reducer'
 import    userListJobsReducer from 'containers/client/UserInformation/modules/reducer'
 import authReducer from "containers/shared/LoginFiverr/modules/reducer";
@@ -13,7 +13,7 @@ import registerReducer from 'containers/shared/Register/modules/reducer'
 import thunk from "redux-thunk";
 
 const rootReducer = combineReducers({
-  fiverrDetailJobReducer,
+  // fiverrDetailJobReducer,
   tittleJobReducer,
   userListJobsReducer,
   authReducer,
