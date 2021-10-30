@@ -1,4 +1,5 @@
 import callApi from "utils/callApi";
+import callApiDelete from "utils/callApiDelete";
 import callApiPatch from "utils/callApiPatch";
 import callApiPost from "utils/callApiPost";
 import callApiPut from "utils/callApiPut";
@@ -14,10 +15,7 @@ const fiverrApi = {
   fetchTittleFiverrApi(jobId) {
     return callApi(`jobs/${jobId}?`);
   },
-  //detailJobs
-  // fetchDetailFiverrApi(jobId) {
-  //   return callApi(`jobs/${jobId}`);
-  // },
+ 
   fetchBookingJob(jobId, thongTinDat = new ThongTinDat()) {
     return callApiPatch(`jobs/booking/${jobId}`);
   },
@@ -44,13 +42,21 @@ const fiverrApi = {
   loginApi(user) {
     return callApiPost(`auth/signin`, user);
   },
+
   registerAPi(register) {
     return callApiPost(`auth/signup`, register);
   },
 
   //API ADMIN
-  fetchListUser(user) {
+  fetchListUser() {
     return callApi('users')
+  },
+  deleteUser(idUser){
+    return callApiDelete(`users/${idUser}`)
+
+  },
+  createUser(){
+    return callApiPost(``)
   }
 };
 export default fiverrApi;

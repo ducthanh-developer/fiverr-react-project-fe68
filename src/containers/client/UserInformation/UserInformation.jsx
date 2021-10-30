@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { actFetchAddUserInformation, actGetUserListJobs, actHistoryJobsUser, actUploadImg } from "./modules/action";
+import { actFetchAddUserInformation, actGetUserListJobs, actHistoryJobsUser,  } from "./modules/action";
 import { useFormik } from 'formik';
 import "../UserInformation/UserInformation.scss"
 import { Form, Input, Card } from 'antd';
 // import React, { useState } from 'react';
-import { Upload } from 'antd';
-import ImgCrop from 'antd-img-crop';
 export default function UserInformation(props) {
     const { Meta } = Card;
     console.log("props", props);
@@ -22,33 +20,21 @@ export default function UserInformation(props) {
         dispatch(actHistoryJobsUser(id));
     }, [dispatch]);
 
-    const [fileList, setFileList] = useState([
-        {
-            uid: '-1',
-            name: 'image.png',
-            status: 'done',
-            // url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
-        },
-    ]);
+    // const [fileList, setFileList] = useState([
+    //     {
+    //         uid: '-1',
+    //         name: 'image.png',
+    //         status: 'done',
+    //         // url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+    //     },
+    // ]);
 
-    const onChange = ({ fileList: newFileList }) => {
-        setFileList(newFileList);
-        console.log("object,", newFileList);
-        dispatch(actUploadImg(newFileList))
-    };
-
-    // const onPreview = async file => {
-    //     let src = file.url;
-    //     if (!src) {
-    //         src = await new Promise(resolve => {
-    //             const reader = new FileReader();
-    //             reader.readAsDataURL(file.originFileObj);
-    //             reader.onload = () => resolve(reader.result);
-    //         });
-    //     }
+    // const onChange = ({ fileList: newFileList }) => {
+    //     setFileList(newFileList);
+    //     console.log("object,", newFileList);
+    //     dispatch(actUploadImg(newFileList))
     // };
 
-    
 
     const [isShow, setIsShow] = React.useState(true);
 
@@ -82,18 +68,16 @@ export default function UserInformation(props) {
                         <div className=" card card-1 ">
                             {/* <LoadImg /> */}
                             {/* <LoadImg/> */}
-                            <ImgCrop rotate>
+                            {/* <ImgCrop rotate>
                                 <Upload
-                                    // action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
                                     listType="picture-card"
                                     fileList={fileList}
                                     onChange={onChange}
                                     >
-                                    {/* dispatch(actUploadImg(formData)); */}
 
                                     {fileList.length < 1 && '+ Upload'}
                                 </Upload>
-                            </ImgCrop>
+                            </ImgCrop> */}
                             <h6 className="name__profile text-center">{userJobs.email}</h6>
                             <button className="btn btn__profile">Preview Public Model</button>
                             <hr></hr>
