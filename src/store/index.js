@@ -9,6 +9,7 @@ import { JobReducer } from "containers/client/ListJobs/module/reducer";
 import { TypeJobsReducer } from "components/Header/module/reducer";
 import { composeWithDevTools } from "redux-devtools-extension";
 import registerReducer from 'containers/shared/Register/modules/reducer'
+import listUserReducer from 'containers/admin/UserManagement/module/reducer'
 // import historyBokingJobReducer from "containers/client/UserInformation/HistoryJobs/modules/reducer"
 import thunk from "redux-thunk";
 
@@ -20,6 +21,7 @@ const rootReducer = combineReducers({
   registerReducer,
   JobReducer,
   TypeJobsReducer,
+  listUserReducer,
   // historyBokingJobReducer,
   // bookingJobReducer,
 });
