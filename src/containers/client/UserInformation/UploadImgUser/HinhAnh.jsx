@@ -278,20 +278,39 @@
 // //       )
 // //     }
 // //   }
-
 import React from 'react'
-import { useDispatch } from 'react-redux';
 
 export default function HinhAnh() {
-    const dispatch = useDispatch();
-    const uploadImage = (file) => {
-        const formData = new FormData()
-        formData.append("file", file[0])
-        formData.append("upload", "dddd")
-    }
     return (
         <div>
-            <input type="file" onChange={(event) => { uploadImage(event.target.files) }} />
+            
         </div>
     )
 }
+
+// import axios from 'axios';
+// import React from 'react'
+// import { useState } from 'react';
+// import { useDispatch } from 'react-redux';
+// import { actUploadImg } from '../modules/action';
+
+// export default function HinhAnh() {
+//     const dispatch = useDispatch();
+//     const [ imageSelect, setImagesSelectes] = useState()
+//     const uploadImage = (file) => {
+//         const formData = new FormData()
+//         formData.append("file",imageSelect)
+//         formData.append("upload", "dddd")
+//         axios.post(
+//             'https://fiverr.cybersoft.edu.vn/api/users/upload-avatar', formData, 
+//         ).then((response) => {console.log(response);})
+//         .catch((err) => {console.log(err);})
+//     }
+//     return (
+        
+//         <div>
+//             <input type="file" onChange={(event) => { setImagesSelectes(event.target.files[0]) }} />
+//             <button onClick={uploadImage}>Upload</button>
+//         </div>
+//     )
+// }

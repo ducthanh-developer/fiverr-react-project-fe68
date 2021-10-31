@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { actFetchAddUserInformation, actGetUserListJobs, actHistoryJobsUser, } from "./modules/action";
 import { useFormik } from 'formik';
-import { Form, Input, Radio, DatePicker, InputNumber, Switch, Card } from "antd";
+import { Form, Input, Card } from "antd";
 
 import "../UserInformation/UserInformation.scss"
 export default function UserInformation(props) {
@@ -14,7 +14,6 @@ export default function UserInformation(props) {
     console.log("historyJobs", historyJobs);
     const id = props.match.params.id;
     useEffect(() => {
-        ;
         dispatch(actGetUserListJobs(id));
         dispatch(actHistoryJobsUser(id));
     }, [dispatch]);
@@ -38,12 +37,17 @@ export default function UserInformation(props) {
             skill: '',
             certification: '',
         },
+        adfd: {
+            skill: '',
+            certification: '',
+        },
         onSubmit: (values) => {
             console.log("values", values);
             dispatch(actFetchAddUserInformation(props.match.params.id, values));
         }
     })
 
+    
 
     
     return (
@@ -52,10 +56,8 @@ export default function UserInformation(props) {
                 <div className="row">
                     <div className="col-12 col-md-12 col-lg-5">
                         <div className=" card card-1 ">
-                            <Form>
-                                
-                            </Form>
-                            {/* <LoadImg /> */}
+                           {/* muon goi nó vô đây thì sao */}
+                           <AddSkill/>
 
                             <h6 className="name__profile text-center">{userJobs.email}</h6>
                             <button className="btn btn__profile">Preview Public Model</button>
@@ -203,9 +205,7 @@ export default function UserInformation(props) {
                                             <div key={index} className="h-full flex items-center p-4 rounded-lg">
                                                 <Card
                                                     hoverable
-                                                    style={{ width: 740 }}
-
-                                                >
+                                                    style={{ width: 740 }}>
                                                     <div className="row">
                                                         <div className="col-3">
                                                             <img alt="example" src={booking.image} style={{ width: 150 }} />
@@ -239,3 +239,25 @@ export default function UserInformation(props) {
 
 
 
+
+ export   function AddSkill(props) {
+    const formik = useFormik({
+        initialValues: {
+            skill: '',
+            certification: '',
+        },
+        adfd: {
+            skill: '',
+            certification: '',
+        },
+        onSubmit: (values) => {
+            console.log("values", values);
+            // dispatch(actFetchAddUserInformation(props.match.params.id, values));
+        }
+    })
+    return (
+        <div>
+            ffgfg
+        </div>
+    )
+}
