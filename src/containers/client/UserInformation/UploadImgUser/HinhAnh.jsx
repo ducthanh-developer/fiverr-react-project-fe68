@@ -1,8 +1,5 @@
 import React, { Component } from 'react'
-import "../UserInformation/Upload.scss"
-
-
-
+// import "../../UserInformation/UploadImgUser/HinhAnh.scss"
 const ImgUpload = ({
     onChange,
     src
@@ -44,7 +41,7 @@ const Edit = ({
         </form>
     </div>
 
-export default class Upload extends Component {
+export default class HinhAnh extends Component {
     state = {
         file: '',
         imagePreviewUrl: 'https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true',

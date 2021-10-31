@@ -119,6 +119,7 @@ export default function Header() {
                 Become a Seller
               </a>
             </li>
+            
             <li className="nav-item">
               {currentUser == null ? (
                 <Link to="/login" className="nav-link nav-link--btn">

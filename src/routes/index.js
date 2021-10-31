@@ -28,7 +28,7 @@ export const clientRoutes = [
     exact: true,
   },
   {
-    path: "/fiverr/:id",
+    path: "/list-jobs/:id",
     component: DetailJobs,
     exact: false,
   },

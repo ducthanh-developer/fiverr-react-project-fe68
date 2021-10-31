@@ -1,13 +1,13 @@
 import axios from "axios";
 
-const callApiPost = (
+const callApiDelete = (
   endpoint = null,
   data = null,
-  headers="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTdhOWM2ZDA3ZmUwMTAwMWNhYmNhMzciLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTYzNTU1MzE1N30.xmbYXAmvOPFag2oHyIGsPEKM3eoR3JX-kukiYvImbZU"
+  headers="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTdhOWM2ZDA3ZmUwMTAwMWNhYmNhMzciLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTYzNTQ3MTc3NH0.IeqqcL4yQcRJXbQWGuN_1mcv1A-MvIuGK3-OkopCMhg"
 ) => {
   return axios({
     url: `/${endpoint}`,
-    method: "POST",
+    method: "DELETE",
     data,
     headers: {
       token: `${headers}`,
@@ -17,4 +17,4 @@ const callApiPost = (
   });
 };
 
-export default callApiPost;
+export default callApiDelete;
