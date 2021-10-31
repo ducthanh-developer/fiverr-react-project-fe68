@@ -22,6 +22,7 @@ const fiverrApi = {
   fetchListJobByTypeApi(typeId){
     return callApi(`jobs/by-type?type=${typeId}&skip=0&llimit=10`)
   },
+  // api 23
   fetchDetailFiverrApi(jobId) {
     return callApi(`jobs/${jobId}`);
   },

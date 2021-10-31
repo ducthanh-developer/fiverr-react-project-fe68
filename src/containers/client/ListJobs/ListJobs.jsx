@@ -17,7 +17,7 @@ export default function ListJobs(props) {
       return (
         <div className="col-sm-3 card-layout" key={index}>
           <div className="card-wrapper">
-            <NavLink to={`/fiverr/${_id}`} className="media">
+            <NavLink to={`/detail-jobs/${_id}`} className="media">
               <img
                 className="w-100"
                 src="../images/ListJobs/a5945e0c694538f4e36215017d623873aac3ce67.jpg"
@@ -41,7 +41,7 @@ export default function ListJobs(props) {
               </div>
             </div>
             <h3 className="seller-title">
-              <NavLink to={`/fiverr/${_id}`}>
+              <NavLink to={`/detail-jobs/${_id}`}>
                 {name}
               </NavLink>
             </h3>
