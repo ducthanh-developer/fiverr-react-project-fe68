@@ -28,7 +28,7 @@ export const clientRoutes = [
     exact: true,
   },
   {
-    path: "/list-jobs/:id",
+    path: "/detail-jobs/:jobId",
     component: DetailJobs,
     exact: false,
   },
@@ -45,11 +45,6 @@ export const clientRoutes = [
   {
     path: "/register",
     component: Register,
-    exact: false,
-  },
-  {
-    path: "/list-jobs",
-    component: ListJobs,
     exact: false,
   },
 ];
