@@ -1,14 +1,12 @@
-import Dashboard from "containers/admin/Dashboard/Dashboard";
+import AddUser from "containers/admin/UserManagement/AddUser/AddUser";
+import EditUser from "containers/admin/UserManagement/EditUser/EditUser";
+import UserManagerment from "containers/admin/UserManagement/UserManagerment";
 import DetailJobs from "containers/client/DetailJobs/DetailJobs";
-// import FiverrDetail from "containers/client/FiverrDetail/FiverrDetail";
 import Home from "containers/client/Home/Home";
 import ListJobs from "containers/client/ListJobs/ListJobs";
-// import ListJobs from "containers/client/ListJobs/ListJobs";
 import UserInformation from "containers/client/UserInformation/UserInformation";
 import Login from "containers/shared/LoginFiverr/Login";
 import Register from "containers/shared/Register/Register";
-// import ListJobCategories from "containers/client/ListJobCategories/ListJobCategories";
-// import ListJobs from "containers/client/ListJobs/ListJobs";
 export const clientRoutes = [
   {
     path: "/",
@@ -20,16 +18,6 @@ export const clientRoutes = [
     component: Home,
     exact: true,
   },
-  // {
-  //   path: "/list-jobs/:typeId",
-  //   component: ListJobs,
-  //   exact: true,
-  // },
-
-  // {
-  //   path: "/fiverr",
-  //   component: FiverrDetail,
-  // },
 
   {
     path: "/list-jobs/:id",
@@ -60,8 +48,18 @@ export const clientRoutes = [
 
 export const adminRoutes = [
   {
-    path: "/admin",
-    component: Dashboard,
+    path: "/admin/user-managerment",
+    component: UserManagerment,
+    exact: true,
+  },
+  {
+    path: "/admin/user-managerment/adduser",
+    component: AddUser,
+    exact: false,
+  },
+  {
+    path: "/admin/user-managerment/edit/:id",
+    component: EditUser,
     exact: false,
   },
 ];

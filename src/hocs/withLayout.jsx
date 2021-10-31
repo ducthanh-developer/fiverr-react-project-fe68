@@ -5,7 +5,7 @@ const withLayout = WrappedComponent => {
   return ({ component: Component, ...rest }) => (
     <Route
       {...rest}
-      render={routeProps => (
+      render={(routeProps) => (
         <WrappedComponent>
           <Component {...routeProps} />
         </WrappedComponent>

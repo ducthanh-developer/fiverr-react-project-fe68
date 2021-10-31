@@ -1,5 +1,6 @@
 import React from 'react'
-import UserManagerment from '../UserManagement/UserManagerment'
+import { Link } from 'react-router-dom'
+
 
 export default function Dashboard() {
     return (
@@ -22,7 +23,7 @@ export default function Dashboard() {
                         <div>
                             <button type="button" className="hamburger hamburger--elastic mobile-toggle-nav">
                                 <span className="hamburger-box">
-                                    <span className="hamburger-inner"/>
+                                    <span className="hamburger-inner" />
                                 </span>
                             </button>
                         </div>
@@ -106,7 +107,7 @@ export default function Dashboard() {
                         </div>
                     </div>
                 </div>
-               
+
                 <div className="app-main">
                     <div className="app-sidebar sidebar-shadow">
                         <div className="app-header__logo">
@@ -135,14 +136,16 @@ export default function Dashboard() {
                                     <li>
                                         <a href="...">
                                             <i className="metismenu-icon pe-7s-diamond" />
-                                            Elements
+                                            UserManagerment
                                             <i className="metismenu-state-icon pe-7s-angle-down caret-left" />
                                         </a>
                                         <ul>
                                             <li>
                                                 <a href="elements-buttons-standard.html">
                                                     <i className="metismenu-icon" />
-                                                    Buttons
+                                                    <Link to="/admin/user-managerment/adduser">
+                                                        AddUser
+                                                    </Link>
                                                 </a>
                                             </li>
                                             <li>
@@ -317,8 +320,9 @@ export default function Dashboard() {
                     </div>
                     <div className="app-main__outer">
                         <div className="app-main__inner">
-                            
-                                <UserManagerment/>
+
+                            {/* <UserManagerment/>
+                                <AddUser/> */}
                         </div>
                     </div>
                 </div>

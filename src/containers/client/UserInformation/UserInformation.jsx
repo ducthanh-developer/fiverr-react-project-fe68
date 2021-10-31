@@ -4,7 +4,6 @@ import { actFetchAddUserInformation, actGetUserListJobs, actHistoryJobsUser,  } 
 import { useFormik } from 'formik';
 import "../UserInformation/UserInformation.scss"
 import { Form, Input, Card } from 'antd';
-// import React, { useState } from 'react';
 export default function UserInformation(props) {
     const { Meta } = Card;
     console.log("props", props);
@@ -13,28 +12,10 @@ export default function UserInformation(props) {
     console.log("gg", userJobs);
     console.log("historyJobs", historyJobs);
     const id = props.match.params.id;
-    useEffect(() => {
-        // const jobId = props.match.params.id;
-        // const jobUserId = props.match.params.id;;
+    useEffect(() => {;
         dispatch(actGetUserListJobs(id));
         dispatch(actHistoryJobsUser(id));
     }, [dispatch]);
-
-    // const [fileList, setFileList] = useState([
-    //     {
-    //         uid: '-1',
-    //         name: 'image.png',
-    //         status: 'done',
-    //         // url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
-    //     },
-    // ]);
-
-    // const onChange = ({ fileList: newFileList }) => {
-    //     setFileList(newFileList);
-    //     console.log("object,", newFileList);
-    //     dispatch(actUploadImg(newFileList))
-    // };
-
 
     const [isShow, setIsShow] = React.useState(true);
 
@@ -67,17 +48,7 @@ export default function UserInformation(props) {
                     <div className="col-12 col-md-12 col-lg-5">
                         <div className=" card card-1 ">
                             {/* <LoadImg /> */}
-                            {/* <LoadImg/> */}
-                            {/* <ImgCrop rotate>
-                                <Upload
-                                    listType="picture-card"
-                                    fileList={fileList}
-                                    onChange={onChange}
-                                    >
-
-                                    {fileList.length < 1 && '+ Upload'}
-                                </Upload>
-                            </ImgCrop> */}
+                           
                             <h6 className="name__profile text-center">{userJobs.email}</h6>
                             <button className="btn btn__profile">Preview Public Model</button>
                             <hr></hr>
@@ -139,13 +110,7 @@ export default function UserInformation(props) {
                                         </>
                                     </li>
                                 </ul>
-                                {/* <div className="done__add__skill">
-                                    {userJobs.certification?.map((certification, index) => {
-                                        return (
-                                            <div key={index} className="skill">{certification}</div>
-                                        )
-                                    })}
-                                </div> */}
+                                
                                 <hr></hr>
                                 <ul className="flex Description ">
                                     <li className="flex-item-1">certification</li>
@@ -225,22 +190,7 @@ export default function UserInformation(props) {
                         <div className=" history__job__booking">
                             <div className="row">
                                 <div className="  col-9 bookingName" >
-                                    {/* {historyJobs.bookingJob?.map((booking, index) => {
-                                        return (
-                                            <div className="h-full flex items-center p-4 rounded-lg">
-                                                <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://npm-assets.fiverrcdn.com/assets/@fiverr-private/business_blocks/office-building.7ac5061.gif" />
-                                                <div className="flex-grow">
-                                                    <h2 className="text-pink-500 title-font font-medium text-2xl">{booking.name}</h2>
-                                                    \                                                    <p><span className="font-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe debitis laudantium deleniti in adipisci! Blanditiis rerum est alias architecto ipsum incidunt necessitatibus iure doloremque fuga nostrum, officiis culpa commodi quidem.
-                                                        Illo officia neque repudiandae fugit sed ullam voluptatibus? Laborum et tempore explicabo quisquam assumenda officiis odit laudantium. Soluta consequuntur praesentium, quia, eius labore ipsa repudiandae, architecto officiis quas corporis doloribus?</span> fdfd  </p>
-                                                    <p>
-                                                        <span className="font-bold">Tên rạp:</span>  dfd - <span className="font-bold">Ghế:</span>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        )
-                                    })} */}
-
+                                   
 
                                     {historyJobs.bookingJob?.map((booking, index) => {
                                         return (
