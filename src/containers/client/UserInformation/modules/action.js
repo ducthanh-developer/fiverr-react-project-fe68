@@ -76,9 +76,7 @@ export const actUploadImg=(formData)=>{
   return (dispatch)=>{
       fiverrApi
       .fetchUploadImgApi(formData)
-      .then(response=>{
-          dispatch(actUploadImgSuccess(response.data))
-      })
+     
       .catch(error=>{console.log("errrhhh", error.response?.data);})
   }
 }

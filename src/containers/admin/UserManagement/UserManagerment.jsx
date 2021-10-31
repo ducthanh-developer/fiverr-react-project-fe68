@@ -95,7 +95,7 @@ export default function UserManagerment() {
   const data = userList;
   return (
     <div>
-      <Link className="nav-link searchText" to="/admin/user-managerment/adduser">
+      <Link className="nav-link searchText" to="/admin/user-managerment/add">
         Thêm Phim
       </Link>
 

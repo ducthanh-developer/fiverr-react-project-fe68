@@ -65,8 +65,6 @@ export const actDetailUser =(idUser)=>{
   }
 }
 
-// het thong bao loi do chua// roi thai. còn cái add thì k cần truyen id vô action đung k. nó tu bat
-
 
 export  const  actEditUser =(values, idUser)=>{
   console.log("idUseriii", idUser)

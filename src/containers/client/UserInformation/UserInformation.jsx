@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { actFetchAddUserInformation, actGetUserListJobs, actHistoryJobsUser,  } from "./modules/action";
+import { actFetchAddUserInformation, actGetUserListJobs, actHistoryJobsUser, } from "./modules/action";
 import { useFormik } from 'formik';
+import { Form, Input, Radio, DatePicker, InputNumber, Switch, Card } from "antd";
+
 import "../UserInformation/UserInformation.scss"
-import { Form, Input, Card } from 'antd';
 export default function UserInformation(props) {
     const { Meta } = Card;
     console.log("props", props);
@@ -12,7 +13,8 @@ export default function UserInformation(props) {
     console.log("gg", userJobs);
     console.log("historyJobs", historyJobs);
     const id = props.match.params.id;
-    useEffect(() => {;
+    useEffect(() => {
+        ;
         dispatch(actGetUserListJobs(id));
         dispatch(actHistoryJobsUser(id));
     }, [dispatch]);
@@ -24,7 +26,7 @@ export default function UserInformation(props) {
     const handleClick = () => {
         setIsShow(!isShow);
     };
-    
+
     const handleClick1 = () => {
         setShow(!show);
     };
@@ -41,14 +43,20 @@ export default function UserInformation(props) {
             dispatch(actFetchAddUserInformation(props.match.params.id, values));
         }
     })
+
+
+    
     return (
         <div className="user__information">
             <div className="container user__information__content ">
                 <div className="row">
                     <div className="col-12 col-md-12 col-lg-5">
                         <div className=" card card-1 ">
+                            <Form>
+                                
+                            </Form>
                             {/* <LoadImg /> */}
-                           
+
                             <h6 className="name__profile text-center">{userJobs.email}</h6>
                             <button className="btn btn__profile">Preview Public Model</button>
                             <hr></hr>
@@ -91,7 +99,7 @@ export default function UserInformation(props) {
                                                                     onChange={formik.handleChange}
                                                                     value={formik.values.skill} />
                                                             </Form.Item>
-                                                    
+
                                                             <div className="row add__skill__button">
                                                                 <hr></hr>
 
@@ -99,9 +107,9 @@ export default function UserInformation(props) {
                                                                     <button className="btn btn__cancle__skkil">Cancel</button>
                                                                 </div>
                                                                 <div className="col-6">
-                                                                <button type="submit" className="btn btn-success" value=""> Thêm</button>
+                                                                    <button type="submit" className="btn btn-success" value=""> Thêm</button>
                                                                 </div>
-                                                                
+
                                                             </div>
                                                         </Form>
                                                     </Typography>
@@ -110,50 +118,50 @@ export default function UserInformation(props) {
                                         </>
                                     </li>
                                 </ul>
-                                
+
                                 <hr></hr>
                                 <ul className="flex Description ">
                                     <li className="flex-item-1">certification</li>
-                                    <li className="flex-item-2"onClick={handleClick1} >certification</li>                              
+                                    <li className="flex-item-2" onClick={handleClick1} >certification</li>
 
-                                        <div>
-                                            {/* <div className="add__certification" onClick={handleClick}>certification</div> */}
-                                            {show ?
-                                                <>
-                                                </>
-                                                :
-                                                <div className="addform__certification card">
-                                                    <Typography>
-                                                        <Form
-                                                            onSubmitCapture={formik.handleSubmit}
-                                                            labelCol={{ span: 4 }}
-                                                            wrapperCol={{ span: 14 }}
-                                                            layout="horizontal" >
-                                                            <Form.Item label="">
-                                                                <Input name="certification"
-                                                                    onChange={formik.handleChange}
-                                                                    value={formik.values.certification} />
-                                                            </Form.Item>
-                                                            {/* <Form.Item label="" >
+                                    <div>
+                                        {/* <div className="add__certification" onClick={handleClick}>certification</div> */}
+                                        {show ?
+                                            <>
+                                            </>
+                                            :
+                                            <div className="addform__certification card">
+                                                <Typography>
+                                                    <Form
+                                                        onSubmitCapture={formik.handleSubmit}
+                                                        labelCol={{ span: 4 }}
+                                                        wrapperCol={{ span: 14 }}
+                                                        layout="horizontal" >
+                                                        <Form.Item label="">
+                                                            <Input name="certification"
+                                                                onChange={formik.handleChange}
+                                                                value={formik.values.certification} />
+                                                        </Form.Item>
+                                                        {/* <Form.Item label="" >
                                                             <Select>
                                                                 <Select.Option value="demo">Demo</Select.Option>
                                                             </Select>
                                                         </Form.Item> */}
-                                                            <div className="row add__skill__button">
-                                                                <hr></hr>
+                                                        <div className="row add__skill__button">
+                                                            <hr></hr>
 
-                                                                <div className="col-6">
-                                                                    <button className="btn btn__cancle__skkil">Cancel</button>
-                                                                </div>
-                                                                <div className="col-6">
-                                                                    <button className="btn btn-success btn__add__skkil" type="submit">Add</button>
-                                                                </div>
+                                                            <div className="col-6">
+                                                                <button className="btn btn__cancle__skkil">Cancel</button>
                                                             </div>
-                                                        </Form>
-                                                    </Typography>
-                                                </div>
-                                            }
-                                        </div>
+                                                            <div className="col-6">
+                                                                <button className="btn btn-success btn__add__skkil" type="submit">Add</button>
+                                                            </div>
+                                                        </div>
+                                                    </Form>
+                                                </Typography>
+                                            </div>
+                                        }
+                                    </div>
                                     <div className="done__add__skill">
                                         {userJobs.certification?.map((skill, index) => {
                                             return (
@@ -190,8 +198,6 @@ export default function UserInformation(props) {
                         <div className=" history__job__booking">
                             <div className="row">
                                 <div className="  col-9 bookingName" >
-                                   
-
                                     {historyJobs.bookingJob?.map((booking, index) => {
                                         return (
                                             <div key={index} className="h-full flex items-center p-4 rounded-lg">

@@ -1,15 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  Form,
-  Input,
-  Radio,
-  DatePicker,
-  Switch,
-} from 'antd';
+import { Form, Input, Radio, DatePicker, Switch, } from 'antd';
 import { useFormik } from 'formik';
 import moment from 'moment';
-import {  actDetailUser, actEditUser } from '../module/action';
+import { actDetailUser, actEditUser } from '../module/action';
 
 function EditUser(props) {
   const dispatch = useDispatch();
@@ -22,23 +16,23 @@ function EditUser(props) {
   const [componentSize, setComponentSize] = useState('default');
   const formik = useFormik({
     initialValues: {
-        _id: detailUser._id,
-        name:detailUser.name,
-        email: detailUser?.email,
-        password: detailUser?.password,
-        phone: detailUser?.phone,
-        birthday: detailUser.birthday,
-        gender: detailUser.gender,
-        role: detailUser.role,
-        skill: detailUser.skill,
-        certification: detailUser.certification,
-        bookingJob: detailUser.bookingJob
+      _id: detailUser._id,
+      name: detailUser.name,
+      email: detailUser?.email,
+      password: detailUser?.password,
+      phone: detailUser?.phone,
+      birthday: detailUser.birthday,
+      gender: detailUser.gender,
+      role: detailUser.role,
+      skill: detailUser.skill,
+      certification: detailUser.certification,
+      bookingJob: detailUser.bookingJob
     },
     onSubmit: (values) => {
-      console.log("values",values);
+      console.log("values", values);
       let { id } = props.match.params;
-      dispatch(actEditUser(values,id ))
-       
+      dispatch(actEditUser(values, id))
+
     }
   })
   const handleChangeDatePicker = (value) => {
@@ -46,7 +40,6 @@ function EditUser(props) {
     console.log(birthday);
     formik.setFieldValue('birthday', birthday)
   }
-
   const onFormLayoutChange = ({ size }) => {
     setComponentSize(size);
   };
@@ -73,28 +66,23 @@ function EditUser(props) {
             <Radio.Button value="large">Large</Radio.Button>
           </Radio.Group>
         </Form.Item>
-        <Form.Item label=" name" style={{marginTop: "80px"}} >
-          <Input name="name" 
-          onChange={formik.handleChange}
-          value={formik.values.name}/>
+        <Form.Item label=" name" style={{ marginTop: "80px" }} >
+          <Input name="name" onChange={formik.handleChange} value={formik.values.name} />
         </Form.Item>
         <Form.Item label="email">
           <Input name="email" onChange={formik.handleChange} value={formik.values.email} />
         </Form.Item>
         <Form.Item label="password" >
-          <Input name="password" onChange={formik.handleChange}  value={formik.values.password} />
+          <Input name="password" onChange={formik.handleChange} value={formik.values.password} />
         </Form.Item>
         <Form.Item label="phone" >
-          <Input name="phone" onChange={formik.handleChange} value={formik.values.phone}/>
+          <Input name="phone" onChange={formik.handleChange} value={formik.values.phone} />
         </Form.Item>
         <Form.Item label="birthday">
           <DatePicker format="DD/MM/YYYY" onChange={handleChangeDatePicker} value={moment(formik.values.birthday)} />
         </Form.Item>
         <Form.Item label=" gender ">
-          <Switch name="gender" 
-            onChange={(value) => {
-              formik.setFieldValue("gender", value);
-            }}
+          <Switch name="gender" onChange={(value) => { formik.setFieldValue("gender", value);}}
             checked={formik.values.gender} />
         </Form.Item>
         <Form.Item label="Tac vụ">

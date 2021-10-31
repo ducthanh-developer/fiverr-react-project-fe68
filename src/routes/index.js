@@ -53,7 +53,7 @@ export const adminRoutes = [
     exact: true,
   },
   {
-    path: "/admin/user-managerment/adduser",
+    path: "/admin/user-managerment/add",
     component: AddUser,
     exact: false,
   },

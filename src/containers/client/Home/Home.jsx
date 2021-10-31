@@ -5,6 +5,7 @@ import Product from "./Product/Product";
 import Testimonial from "./Testimonial/Testimonial";
 import Selling from "./Selling/Selling";
 import Marketplace from "./Marketplace/Marketplace";
+import HinhAnh from "../UserInformation/UploadImgUser/HinhAnh";
 // import LoadImg from "../UserInformation/UploadImgUser/HinhAnh";
 
 
@@ -26,6 +27,7 @@ export default function Home() {
       {/* Marketplace */}
       <Marketplace />
       {/* <LoadImg/> */}
+      <HinhAnh/>
      
     </main>
   );

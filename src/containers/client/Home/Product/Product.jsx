@@ -64,9 +64,9 @@ const settings = {
     {
       breakpoint: 600,
       settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2,
-        initialSlide: 2,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        initialSlide: 1,
       },
     },
     {
@@ -85,9 +85,9 @@ export default function Product() {
       <h2>Popular professional services</h2>
       <Slider {...settings}>
         <div className="img__time">
-          <NavLink className="nav-link hhh" to="/fiverr" style={{ width: '290px' }}>
-            <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741678/logo-design-2x.png" alt="..." />
-          </NavLink>
+        <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741678/logo-design-2x.png" alt="..." />
+          {/* <div className="nav-link img-1" to="/fiverr" style={{ width: '290px' }}>
+          </div> */}
         </div>
         <div>
           <img

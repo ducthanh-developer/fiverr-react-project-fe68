@@ -143,7 +143,7 @@ export default function Dashboard() {
                                             <li>
                                                 <a href="elements-buttons-standard.html">
                                                     <i className="metismenu-icon" />
-                                                    <Link to="/admin/user-managerment/adduser">
+                                                    <Link to="/admin/user-managerment/add">
                                                         AddUser
                                                     </Link>
                                                 </a>
@@ -321,8 +321,7 @@ export default function Dashboard() {
                     <div className="app-main__outer">
                         <div className="app-main__inner">
 
-                            {/* <UserManagerment/>
-                                <AddUser/> */}
+                           
                         </div>
                     </div>
                 </div>
