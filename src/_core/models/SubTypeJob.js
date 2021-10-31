@@ -1,13 +1,6 @@
-export class SubType {
-  name = null;
-  status = null;
-  __v = null;
-  _id = null;
-}
-
-export class Job {
+export class SubTypeJob {
+  deleteAt = null;
   deliveryTime = null;
-  image = null;
   localSellers = null;
   name = null;
   onlineSellers = null;
@@ -15,9 +8,9 @@ export class Job {
   proServices = null;
   rating = null;
   status = null;
-  subType = [new SubType()];
+  subType = null;
   type = null;
-  usersBooking = null;
+  userCreated = null;
   __v = null;
   _id = null;
 }

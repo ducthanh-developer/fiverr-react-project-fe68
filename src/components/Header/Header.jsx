@@ -4,7 +4,7 @@ import { NavLink, Link } from "react-router-dom";
 import "./Header.scss";
 import { actFetchListTypeJobs } from "./module/actions";
 import { actLogout } from "containers/shared/LoginFiverr/modules/action";
-import { Menu, Dropdown, Button } from "antd";
+// import { Menu, Dropdown, Button } from "antd";
 
 export default function Header() {
   const dispatch = useDispatch();
@@ -13,24 +13,23 @@ export default function Header() {
   const logOut = () => {
     dispatch(actLogout());
   };
-  console.log(listTypeJobs);
   useEffect(() => {
     dispatch(actFetchListTypeJobs());
-  }, []);
+  }, [dispatch]);
   const renderListTypeJobs = () => {
     return listTypeJobs.map((job, index) => {
       const { _id, name, subTypeJobs } = job;
       return (
         <li className="menu-item" key={index}>
-          <NavLink className="menu-link" to={`/list-jobs/${_id}`}>
+          <NavLink className="menu-link" to={`/list-job-categories/${_id}`}>
             {name}
           </NavLink>
           <ul className="menu-panel">
             {subTypeJobs.map((subJob, index) => {
-              const { _id, name } = subJob;
+              const { name } = subJob;
               return (
                 <li className="panel-item" key={index}>
-                  <NavLink className="panel-link" to={`/list-jobs/${_id}`}>
+                  <NavLink className="panel-link" to={`/list-jobs`}>
                     {name}
                   </NavLink>
                 </li>

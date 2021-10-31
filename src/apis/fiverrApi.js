@@ -5,13 +5,22 @@ import callApiPut from "utils/callApiPut";
 import { ThongTinDat, User } from "_core/models/ThongTinDat";
 
 const fiverrApi = {
+  // api 20
   fetchListJobsApi() {
     return callApi("jobs");
   },
+  // api 14
   fetchListTypeJobsApi() {
     return callApi("type-jobs");
   },
-  //detailJobs
+  // api 17
+  fetchTypeJobDetailApi(typeId){ 
+    return callApi(`type-jobs/${typeId}`)
+  },
+  // api 25
+  fetchListJobByTypeApi(typeId){
+    return callApi(`jobs/by-type?type=${typeId}&skip=0&llimit=10`)
+  },
   fetchDetailFiverrApi(jobId) {
     return callApi(`jobs/${jobId}`);
   },

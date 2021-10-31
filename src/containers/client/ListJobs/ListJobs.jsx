@@ -1,8 +1,8 @@
-import fiverrApi from "apis/fiverrApi";
 import React from "react";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
+import { NavLink } from "react-router-dom";
 import "./ListJobs.scss";
 import { actFetchListJobs } from "./module/actions";
 export default function ListJobs(props) {
@@ -10,73 +10,78 @@ export default function ListJobs(props) {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(actFetchListJobs());
-  }, []);
+  }, [dispatch]);
   const renderListJobs = () => {
-    return listJobs.map((job, index) => (
-      <div className="col-sm-3 card-layout" key={index}>
-        <div className="card-wrapper">
-          <a href=".." className="media">
-            <img
-              className="w-100"
-              src="../images/ListJobs/a5945e0c694538f4e36215017d623873aac3ce67.jpg"
-              alt="Description"
-            />
-          </a>
-          <div className="seller-info row">
-            <div className="seller-image">
+    return listJobs.map((job, index) => {
+      const { _id,name,price,rating } = job;
+      return (
+        <div className="col-sm-3 card-layout" key={index}>
+          <div className="card-wrapper">
+            <NavLink to={`/fiverr/${_id}`} className="media">
               <img
-                src="../images/ListJobs/JPEG_20201030_153457_4491597895407383130.jpg"
-                alt=".."
+                className="w-100"
+                src="../images/ListJobs/a5945e0c694538f4e36215017d623873aac3ce67.jpg"
+                alt="Description"
               />
-            </div>
-            <div className="seller-identifiers">
-              <div className="seller-name">
-                <a href="..">rajnishbaldha</a>
-              </div>
-              <div className="seller-level">
-                <span>Level 2 Seller</span>
-              </div>
-            </div>
-          </div>
-          <h3 className="seller-title">
-            <a href="..">I will edit html and css on your webpage</a>
-          </h3>
-          <div className="content-info">
-            <div className="rating-wrapper">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 1792 1792"
-                width={15}
-                height={15}
-              >
-                <path
-                  fill="currentColor"
-                  d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z"
+            </NavLink>
+            <div className="seller-info row">
+              <div className="seller-image">
+                <img
+                  src="../images/ListJobs/JPEG_20201030_153457_4491597895407383130.jpg"
+                  alt=".."
                 />
-              </svg>
-              5.0
-              <span>(840)</span>
+              </div>
+              <div className="seller-identifiers">
+                <div className="seller-name">
+                  <a href="..">rajnishbaldha</a>
+                </div>
+                <div className="seller-level">
+                  <span>Level 2 Seller</span>
+                </div>
+              </div>
             </div>
-          </div>
-          <div className="seller-footer row">
-            <div className="icon-heart">
-              <svg
-                width={16}
-                height={16}
-                viewBox="0 0 16 16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M14.4469 1.95625C12.7344 0.496875 10.1875 0.759375 8.61561 2.38125L7.99999 3.01562L7.38436 2.38125C5.81561 0.759375 3.26561 0.496875 1.55311 1.95625C-0.409388 3.63125 -0.512513 6.6375 1.24374 8.45312L7.29061 14.6969C7.68124 15.1 8.31561 15.1 8.70624 14.6969L14.7531 8.45312C16.5125 6.6375 16.4094 3.63125 14.4469 1.95625Z" />
-              </svg>
+            <h3 className="seller-title">
+              <NavLink to={`/fiverr/${_id}`}>
+                {name}
+              </NavLink>
+            </h3>
+            <div className="content-info">
+              <div className="rating-wrapper">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 1792 1792"
+                  width={15}
+                  height={15}
+                >
+                  <path
+                    fill="currentColor"
+                    d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z"
+                  />
+                </svg>
+                {rating}.0
+                <span>(840)</span>
+              </div>
             </div>
-            <a href=".." className="price">
-              <small>Starting at</small>
-              <span>$15</span>
-            </a>
+            <div className="seller-footer row">
+              <div className="icon-heart">
+                <svg
+                  width={16}
+                  height={16}
+                  viewBox="0 0 16 16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M14.4469 1.95625C12.7344 0.496875 10.1875 0.759375 8.61561 2.38125L7.99999 3.01562L7.38436 2.38125C5.81561 0.759375 3.26561 0.496875 1.55311 1.95625C-0.409388 3.63125 -0.512513 6.6375 1.24374 8.45312L7.29061 14.6969C7.68124 15.1 8.31561 15.1 8.70624 14.6969L14.7531 8.45312C16.5125 6.6375 16.4094 3.63125 14.4469 1.95625Z" />
+                </svg>
+              </div>
+              <a href=".." className="price">
+                <small>Starting at</small>
+                <span>${price}</span>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-    ));
+      );
+    });
   };
   return (
     <div className="list-jobs">
