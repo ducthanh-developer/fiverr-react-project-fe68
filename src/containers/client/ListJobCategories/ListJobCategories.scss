@@ -59,11 +59,12 @@
     }
   }
   .list-wrapper {
+    width: 100%;
     max-width: 1400px;
     margin: 0 auto;
     padding: 32px 32px 64px;
-    justify-content: space-between;
     flex-direction: row;
+    justify-content: space-between;
     flex-wrap: nowrap;
     .side-menu {
       display: block;
@@ -84,6 +85,9 @@
     }
     .main-content {
       max-width: 1008px;
+      width: 100%;
+      flex-direction: row;
+      height: fit-content;
       .medium {
         color: #222325;
         display: block;

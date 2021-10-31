@@ -1,12 +1,52 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import "./ListJobCategories.scss";
+import { actFetchListJobByType, actFetchTypeJobDetail } from "./module/actions";
 
-export default function ListJobCategories() {
+export default function ListJobCategories(props) {
+  const dispatch = useDispatch();
+  const { jobDetail } = useSelector((state) => state.JobDetailReducer);
+  const { listTypeJob } = useSelector((state) => state.SubTypeJobReducder);
+  const typeId = props.match.params.typeId;
+  useEffect(() => {
+    dispatch(actFetchTypeJobDetail(typeId));
+    dispatch(actFetchListJobByType(typeId));
+  }, [dispatch, typeId]);
+  const { subTypeJobs, name } = jobDetail;
+  console.log(listTypeJob);
+  const renderSubTypeJobs = () => {
+    return subTypeJobs.map((subType, index) => {
+      const { name } = subType;
+      return (
+        <li key={index}>
+          <a href="..">{name}</a>
+        </li>
+      );
+    });
+  };
+  const renderListJobByTpe = () => {
+    return listTypeJob.map((job, index) => {
+      const {name} = job;
+      return (
+        <a href=".." className="medium col-sm-4" key={index}>
+          <span className="image-wrapper">
+            <img
+              src="../images/ListJobs/desktop_programming_and_tech_wordpress.jpg"
+              className="w-100"
+              alt=".."
+            />
+          </span>
+          {name}
+        </a>
+      );
+    });
+  };
   return (
     <div className="category-page">
       <div className="header-category-page">
         <div className="flex-center row">
-          <h1 className="title">Programming &amp; Tech</h1>
+          <h1 className="title">{name}</h1>
           <p className="subtitle">
             Get all the technical bells and whistles without paying for a
             programming degree
@@ -30,79 +70,11 @@ export default function ListJobCategories() {
       </div>
       <div className="list-wrapper row">
         <ul className="side-menu">
-          <li className="selected-category">Programming &amp; Tech</li>
-          <li>
-            <a href="..">WordPress</a>
-          </li>
-          <li>
-            <a href="..">Website Builders &amp; CMS</a>
-          </li>
-          <li>
-            <a href="..">E-Commerce Development</a>
-          </li>
-          <li>
-            <a href="..">Game Development</a>
-          </li>
-          <li>
-            <a href="..">Development for Streamers</a>
-          </li>
-          <li>
-            <a href="..">Mobile Apps</a>
-          </li>
-          <li>
-            <a href="..">Web Programming</a>
-          </li>
-          <li>
-            <a href="..">Desktop Applications</a>
-          </li>
-          <li>
-            <a href="..">Online Coding Lessons</a>
-          </li>
-          <li>
-            <a href="..">Chatbots</a>
-          </li>
+          <li className="selected-category">{name}</li>
+          {renderSubTypeJobs()}
         </ul>
         <div className="main-content row">
-          <a href=".." className="medium col-sm-4">
-            <span className="image-wrapper">
-              <img
-                src="./images/ListJobs/desktop_programming_and_tech_wordpress.jpg"
-                className="w-100"
-                alt=".."
-              />
-            </span>
-            WordPress
-          </a>
-          <a href=".." className="medium col-sm-4">
-            <span className="image-wrapper">
-              <img
-                src="./images/ListJobs/desktop_programming_and_tech_wordpress.jpg"
-                className="w-100"
-                alt=".."
-              />
-            </span>
-            Website Builders &amp; CMS
-          </a>
-          <a href=".." className="medium col-sm-4">
-            <span className="image-wrapper">
-              <img
-                src="./images/ListJobs/desktop_programming_and_tech_wordpress.jpg"
-                alt=".."
-                className="w-100"
-              />
-            </span>
-            E-Commerce Development
-          </a>
-          <a href=".." className="medium col-sm-4">
-            <span className="image-wrapper">
-              <img
-                src="./images/ListJobs/desktop_programming_and_tech_wordpress.jpg"
-                alt=".."
-                className="w-100"
-              />
-            </span>
-            WordPress
-          </a>
+          {renderListJobByTpe()}
         </div>
       </div>
       <footer className="footer">
