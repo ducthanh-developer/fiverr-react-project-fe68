@@ -7,13 +7,12 @@ const actRegisterSuccess = (registerUser) => ({
 });
 
 
-export const actRegister = (history, register) => {
+export const actRegister = (history, register, values) => {
   return async (dispatch) => {
     try {
-      const result = await fiverrApi.registerAPi(register);
+      const result = await fiverrApi.registerAPi(register, values);
 
       console.log("result ", result);
-      dispatch(actRegisterSuccess(result.data));
     } catch (error) {
       console.log("sai", error.response?.data);
     }

@@ -1,10 +1,11 @@
 import React from 'react';
+import { useHistory, Redirect } from 'react-router-dom';
 import { Form, Input, Button } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { actLogin } from '../../shared/LoginFiverr/modules/action';
 import Loader from 'components/Loader/Loader';
-import { useHistory, Redirect } from 'react-router-dom';
+import "../LoginFiverr/Login.scss"
 
 export default function Login(props) {
   const history = useHistory();
@@ -21,7 +22,7 @@ export default function Login(props) {
 
   if (loading) return <Loader />;
   return !currentUser ? (
-    <>
+    <div className="car  login">
       <h3>Login</h3>
       {error && <div className="alert alert-danger">{error}</div>}
       <div
@@ -79,7 +80,7 @@ export default function Login(props) {
           </Form.Item>
         </Form>
       </div>
-    </>
+    </div>
   ) : (
     <Redirect to="/" />
   );

@@ -52,7 +52,6 @@ export const actFetchAddUserInformation = (values) => {
       console.log("actionvalueshhh", values)
       console.log("dta", data);
       alert("Thêm Thành Công")
-
     } catch (error) {
       dispatch(actLayDanhSachCongViecNguoiDungFail())
       console.log(error.response?.data);

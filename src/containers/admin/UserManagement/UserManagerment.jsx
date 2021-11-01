@@ -65,7 +65,6 @@ export default function UserManagerment() {
       dataIndex: "hành động",
       multiple: 3,
 
-      //<EditOutlined />
       render: ( text,user) => {
         return <div key={text}>
           <NavLink className="bg-dark text-white hhhhh" to={`/Admin/user-managerment/edit/${user._id}`} >

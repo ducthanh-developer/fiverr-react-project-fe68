@@ -22,6 +22,7 @@ const rootReducer = combineReducers({
   JobReducer,
   TypeJobsReducer,
   listUserReducer,
+  
   // historyBokingJobReducer,
   // bookingJobReducer,
 });
