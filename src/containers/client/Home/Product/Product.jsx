@@ -1,6 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
-import {  NavLink } from 'react-router-dom';
+import {  Link } from 'react-router-dom';
 
 import "./Product.scss";
 function SampleNextArrow(props) {
@@ -81,6 +81,7 @@ const settings = {
 
 export default function Product() {
   return (
+    <Link to="/list-jobs" >
     <div className=" container Product__content">
       <h2>Popular professional services</h2>
       <Slider {...settings}>
@@ -133,5 +134,7 @@ export default function Product() {
         </div>
       </Slider>
     </div>
+    </Link>
+    
   );
 }

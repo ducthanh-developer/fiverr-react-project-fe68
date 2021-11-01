@@ -9,3 +9,4 @@ export const FETCH__USER__FAIL = "FETCH__USER__FAIL"
 
 export const FETCH__EDIT__USER__SUCCESS = "FETCH__EDIT__EDIT__SUCCESS"
 export const FETCH__EDIT__USER__FAIL = "FETCH__EDIT__USER__FAIL"
+

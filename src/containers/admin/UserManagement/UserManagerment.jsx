@@ -1,15 +1,19 @@
-import React, { useEffect, Fragment } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import {  Link, NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { Table } from 'antd';
+import { Input } from "antd";
+
 import { actDeleteUser, actListUserAdmin } from "./module/action";
 import {
   EditOutlined,
   DeleteOutlined,
+  SearchOutlined,
   CalendarOutlined,
 } from "@ant-design/icons";
-
 export default function UserManagerment() {
+  const { Search } = Input;
+
   const dispatch = useDispatch();
   const { userList } = useSelector(state => state.listUserReducer)
   console.log("userList", userList);
@@ -65,14 +69,14 @@ export default function UserManagerment() {
       dataIndex: "hành động",
       multiple: 3,
 
-      render: ( text,user) => {
+      render: (text, user) => {
         return <div key={text}>
           <NavLink className="bg-dark text-white hhhhh" to={`/Admin/user-managerment/edit/${user._id}`} >
             <i className="btn-xoa-sua-showtime">
               <EditOutlined />
             </i>
           </NavLink>
-          <span width={200} onClick className=" bg-dark ml-2" 
+          <span width={200} onClick className=" bg-dark ml-2"
             onClick={() => {
               if (window.confirm('Are you sure you want to delete' + user._id)) {
                 dispatch(actDeleteUser(user._id));
@@ -87,17 +91,27 @@ export default function UserManagerment() {
               <CalendarOutlined />
             </i>
           </NavLink>
-        </div>        
+        </div>
       },
     },
   ];
+  const onSearch = values => {
+    console.log(values);
+    dispatch(actListUserAdmin(values));
+  }
+
   const data = userList;
   return (
     <div>
       <Link className="nav-link searchText" to="/admin/user-managerment/add">
         Thêm Phim
       </Link>
-
+      <Search
+        className="mt-5 searchText"
+        placeholder="pls search:"
+        enterButton={<SearchOutlined />}
+        onSearch={onSearch}
+        size="small"></Search>
       <Table columns={columns} dataSource={data} />
     </div>
   )

@@ -15,18 +15,18 @@ const fiverrApi = {
     return callApi("type-jobs");
   },
   // api 17
-  fetchTypeJobDetailApi(typeId){ 
+  fetchTypeJobDetailApi(typeId) {
     return callApi(`type-jobs/${typeId}`)
   },
   // api 25
-  fetchListJobByTypeApi(typeId){
+  fetchListJobByTypeApi(typeId) {
     return callApi(`jobs/by-type?type=${typeId}&skip=0&llimit=10`)
   },
   // api 23
   fetchDetailFiverrApi(jobId) {
     return callApi(`jobs/${jobId}`);
   },
- 
+
   fetchBookingJob(jobId, thongTinDat = new ThongTinDat()) {
     return callApiPatch(`jobs/booking/${jobId}`);
   },
@@ -47,7 +47,7 @@ const fiverrApi = {
   fetchHistoryJobBookingApi() {
     return callApi(`jobs/by-user`);
   },
-  fetchUploadImgApi(formData){
+  fetchUploadImgApi(formData) {
     return callApiPost(`users/upload-avatar`, formData)
   },
   loginApi(user) {
@@ -59,21 +59,28 @@ const fiverrApi = {
   },
 
   //API ADMIN
-  fetchListUser() {
+  fetchListUser(nameUser = '') {
+    if (nameUser !== "".trim()) {
+      return callApi(`users/pagination-search?name=${nameUser}&skip=0&limit=2`)
+    }
     return callApi('users')
   },
-  deleteUser(idUser){
+  deleteUser(idUser) {
     return callApiDelete(`users/${idUser}`)
 
   },
-  createUserApi(){
-    return callApiPost(`users`)
-  }, 
-  detailUserApi(idUser){
+  createUserApi(clientData) {
+    return callApiPost(`users`, clientData)
+  },
+  detailUserApi(idUser) {
     return callApi(`users/${idUser}`)
   },
-  editUserApi(idUser){
+  editUserApi(idUser) {
     return callApiPut(`users/${idUser}`)
+  },
+  searchUser(nameUser) {
+    return callApi(`users/pagination-search?name=${nameUser}&skip=0&limit=2`)
   }
 };
 export default fiverrApi;
+

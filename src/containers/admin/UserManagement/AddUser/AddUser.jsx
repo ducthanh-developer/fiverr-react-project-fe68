@@ -13,7 +13,7 @@ import { actAddUser } from '../module/action';
 function AddUser(props) {
   const dispatch = useDispatch();
   const [componentSize, setComponentSize] = useState('default');
-  console.log('hello AddMovie');
+  console.log('hello ');
   const formik = useFormik({
     initialValues: {
         name: '',
@@ -48,7 +48,7 @@ function AddUser(props) {
     setComponentSize(size);
   };
   return (
-    <>
+    <div className="AddUser">
       <Form
         onSubmitCapture={formik.handleSubmit}
         labelCol={{
@@ -90,13 +90,11 @@ function AddUser(props) {
         <Form.Item label=" gender ">
           <Switch name="gender" onChange={handleChangeSwitch('gender')} />
         </Form.Item>
-        
-       
         <Form.Item label="Tac vụ">
           <button type="submit" className="btn btn-default" value=""> Thêm</button>
         </Form.Item>
       </Form>
-    </>
+    </div>
   );
 };
 export default AddUser;

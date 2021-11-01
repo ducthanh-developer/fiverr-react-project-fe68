@@ -19,6 +19,7 @@ export default function DetailJobs(props) {
   console.log("commentJob", commentJob);
 
   const { jobId } = props.match.params
+  console.log("jobId", jobId);
   useEffect(() => {
     dispatch(actGetJobTittle(jobId));
     dispatch(actGetComment(jobId));
@@ -43,20 +44,6 @@ export default function DetailJobs(props) {
                 <span className="Seller">Top Rated Seller</span>
                 <span className="Level">Level 2 Seller  </span>|
                 <span className="Star">
-                  {/* {tittleJob?.map((job, index) => {
-                    return (
-                      <span key={index} className="">
-                        <StarFilled />
-                        <StarFilled />
-                        <StarFilled />
-                        <StarFilled />
-                        <StarFilled />
-                        <StarFilled />/
-                        <span className="rating">{job.rating}</span>
-                        <span className="name">{job.name}</span>
-                      </span>
-                    )
-                  })} */}
                   <span className="">
                     <StarFilled />
                     <StarFilled />
@@ -78,18 +65,7 @@ export default function DetailJobs(props) {
               </div>
             </div>
             <hr></hr>
-            {/* {tittleJob?.map((Detial, index) => {
-              return (
-                <div key={index}>
-                  <Slider {...settings}>
-                    <div>
-                      <img alt="example" src={Detial.image} style={{ width: 590 }} />
-                    </div>
-
-                  </Slider>
-                </div>
-              )
-            })} */}
+           
             <div >
               <Slider {...settings}>
                 <div>
@@ -120,14 +96,6 @@ export default function DetailJobs(props) {
                             Basic
                           </div>
                           <div className="col-2 ">
-                            {/* {tittleJob?.map((Detial, index) => {
-                              return (
-                                <div key={index} className="price">
-                                  {Detial.price}$
-                                </div>
-                              )
-                            })} */}
-
                             <div className="price">
                               {tittleJob.price}$
                             </div>
@@ -146,51 +114,7 @@ export default function DetailJobs(props) {
                             1 revisions
                           </div>
                         </div>
-                        {/* {tittleJob?.map((job, index) => {
-                          return (
-                            <div className="checked__jobs" key={index}>
-                              <nav className="">
-                                <Checkbox onChange={onChange} checked={job.proServices} >proServices</Checkbox>
-                              </nav>
-                              <nav>
-                                <Checkbox onChange={onChange} checked={job.onlineSellers} >onlineSellers</Checkbox>
-                              </nav>
-                              <nav>
-                                <Checkbox onChange={onChange} checked={job.localSellers}>localSellers</Checkbox>
-                              </nav>
-                              <nav>
-                                <Checkbox onChange={onChange} checked={job.deliveryTime}>deliveryTime</Checkbox>
-                              </nav>
-                              <nav>
-                                <Checkbox onChange={onChange} checked={job.status}>status</Checkbox>
-                              </nav>
-                              <Button onClick={() => {
-                                const thongTinDat = new ThongTinDat();
-                                thongTinDat._id = props.match.params.id;
-                                thongTinDat.price = job.price;
-                                console.log("Id", thongTinDat._id)
-                                thongTinDat.name = job.name;
-                                thongTinDat.image = job.image;
-                                thongTinDat.localSellers = job.localSellers;
-                                thongTinDat.proServices = job.proServices;
-                                thongTinDat.onlineSellers = job.onlineSellers;
-                                thongTinDat.deliveryTime = job.deliveryTime;
-                                thongTinDat.status = job.status;
-
-                                thongTinDat.taiKhoanNguoiDat = job.usersBooking;
-                                console.log("thongtindat", thongTinDat);
-                                dispatch(actDatCongViec(props.match.params.id));
-
-                              }}
-                                block >
-                                <span className="mr-10">Continue (${job.price})</span>
-
-                              </Button>
-                              <div className="Compare__package">Compare package</div>
-                            </div>
-                          )
-                        })} */}
-
+                       
                         <div className="checked__jobs" >
                           <nav className="">
                             <Checkbox onChange={onChange} checked={tittleJob.proServices} >proServices</Checkbox>
@@ -219,20 +143,16 @@ export default function DetailJobs(props) {
                             thongTinDat.onlineSellers = tittleJob.onlineSellers;
                             thongTinDat.deliveryTime = tittleJob.deliveryTime;
                             thongTinDat.status = tittleJob.status;
-
                             thongTinDat.taiKhoanNguoiDat = tittleJob.usersBooking;
                             console.log("thongtindat", thongTinDat);
-                            dispatch(actDatCongViec(props.match.params.id));
+                            dispatch(actDatCongViec(props.match.params.jobId));
 
                           }}
                             block >
                             <span className="mr-10">Continue (${tittleJob.price})</span>
-
                           </Button>
                           <div className="Compare__package">Compare package</div>
                         </div>
-
-
                       </div>
                     </div>
                     <div id="content-2">

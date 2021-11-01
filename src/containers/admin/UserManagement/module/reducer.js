@@ -1,10 +1,11 @@
-import { FETCH__EDIT__USER__FAIL, FETCH__EDIT__USER__SUCCESS, FETCH__LIST__USER__FAIL, FETCH__LIST__USER__SUCCESS } from "./type";
+import { FETCH__EDIT__USER__FAIL, FETCH__EDIT__USER__SUCCESS, FETCH__LIST__USER__FAIL, FETCH__LIST__USER__SUCCESS, } from "./type";
 
 
 const innitialState = {
   userList: [],
   error: null,
   detailUser: [],
+  searchUser: [],
 };
 
  const listUserReducer = (state = innitialState, { type, payload }) => {
@@ -25,6 +26,7 @@ const innitialState = {
       state.error = payload;
       return { ...state };
     }
+    
     default:
       return state;
   }

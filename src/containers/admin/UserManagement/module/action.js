@@ -1,16 +1,15 @@
 import fiverrApi from 'apis/fiverrApi';
-import { FETCH__EDIT__USER__FAIL, FETCH__EDIT__USER__SUCCESS, FETCH__LIST__USER__SUCCESS } from './type';
+import { FETCH__EDIT__USER__FAIL, FETCH__EDIT__USER__SUCCESS, FETCH__LIST__USER__SUCCESS, SEARCH__USER_SUCCESS } from './type';
 
 const actListUserSuccess = (userList) => ({
   type: FETCH__LIST__USER__SUCCESS,
   payload: userList,
 });
 
-
-export const actListUserAdmin = () => {
+export const actListUserAdmin = (nameUser="") => {
   return async (dispatch) => {
     try {
-      const result = await fiverrApi.fetchListUser();
+      const result = await fiverrApi.fetchListUser(nameUser);
 
       console.log("result ", result);
       dispatch(actListUserSuccess(result.data));
@@ -33,12 +32,12 @@ export const actDeleteUser = (idUser) => {
 };
 
 
-export const actAddUser =(values, )=>{
+export const actAddUser =(values )=>{
   console.log("object, ", values)
   return async (dispatch) => {
     try {
       const response = await fiverrApi.createUserApi(values);
-      console.log("resultddddd ", response.data);
+      console.log("valuesAction ", response.data);
       alert("Thêm Thành Công")
     } catch (error) {
       console.log("sai", error.response?.data);
@@ -68,10 +67,12 @@ export const actDetailUser =(idUser)=>{
 
 export  const  actEditUser =(values, idUser)=>{
   console.log("idUseriii", idUser)
-  console.log("values action", values)
+  // console.log("values action", values)
   return async(dispatch)=>{
       try{
-          let res = await fiverrApi.editUserApi(idUser);
+          let res = await fiverrApi.editUserApi(idUser, values);
+          console.log("values action", values)
+
           console.log('res', res.data)
           alert("Cập nhât thành công");
 

@@ -1,7 +1,7 @@
 .user__information {
     background-color: #f7f7f7;
     .user__information__content {
-        max-width: 1302px;
+       max-width: 1400px;
         .card-1 {
             margin-top: 50px;
             .btn__profile {
@@ -16,7 +16,6 @@
                 width: 338px;
             }
             .from__item {
-                /* We first create a flex layout context */
                 display: flex;
 
                 flex-flow: row wrap;
@@ -53,24 +52,15 @@
 
 .card-1 {
     position: relative;
-    width: 395px;
-    height: 450px;
+    width: 455px;
+    height: auto;
     background: #fff;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-.card-1:hover {
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .card-2 {
+    border: 1px solid rgba(206, 200, 200, 0.769);
     position: relative;
-    width: 395px;
+    width: 455px;
     height: auto;
     background: #fff;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -79,14 +69,14 @@
     hr {
         margin-left: 14px;
         margin-top: 50px;
-        width: 332px;
+        width: 392px;
     }
     .Description {
         display: flex;
         flex-flow: row wrap;
         list-style: none;
         .flex-item-1 {
-            margin-top: 20px;
+            margin-top: 40px;
             margin-left: 30px;
             color: #0e0e0f;
             font-size: 16px;
@@ -94,8 +84,8 @@
         }
         .flex-item-2 {
             text-align: center;
-            margin-top: 20px;
-            margin-left: 143px;
+            margin-top: 40px;
+            margin-left: 193px;
             color: #00698c;
             font-size: 14px;
             font-weight: 500;
@@ -153,26 +143,40 @@
         }
     }
     .create__new__gif {
-        height: 70px;
-        width: 772px;
-        padding: 20px 20px 20px 20px;
+        height: 90px;
+        width: 767px;
+        padding: 26px 20px 20px 20px;
+        border: 1px solid #9f9ca26b; 
         .Gigs {
             font-size: 17px;
+        }
+        .button__gif {
+            button {
+                height: 43px;
+                width: 156px;
+                margin-top: -5px;
+            }
+        }
+    }
+    .history__job__booking {
+        margin-top: 30px;
+        margin-left: 0px;
+        border-radius: 4px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        .bookingName {
+            .name {
+                margin-bottom: 30px;
+            }
+            .ant-card-bordered {
+                width: 770px;
+                margin-left: -35px;
+                border-radius: 4px;
+            }
         }
     }
 }
 
-.history__job__booking {
-    margin-top: 30px;
-    width: 772px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    .bookingName {
-        .name {
-            margin-bottom: 30px;
-        }
-    }
-}
 
 .AddFormSkill {
     width: 337px;
@@ -275,3 +279,227 @@
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
     }
 }
+.upload__avatar{
+    .ant-input
+    {
+        top: 10px;
+        
+        position: absolute
+    }
+    .img_select{
+        position:relative;
+    }
+
+}
+
+
+
+@media (max-width: 1400px) {
+    .user__information__right {
+        .car__done__create {
+            border-radius: 10px;
+            margin-top: 50px;
+            width: 672px;
+            height: 141px;
+            padding: 20px 20px 20px 20px;
+            margin-bottom: 30px;
+            .Buying {
+                font-size: 18px;
+                img {
+                    margin-right: 10px;
+                    width: 50px;
+                    margin-left: 25px;
+                }
+                b {
+                    font-weight: 600;
+                    line-height: 10px;
+                    font-size: 17px;
+                }
+            }
+
+            .questions {
+                margin-left: 90px;
+                font-weight: 500;
+                font-size: 15px;
+                margin-top: -10px;
+            }
+            .industry {
+                margin-left: 90px;
+                font-weight: 500;
+                font-size: 15px;
+                color: #1dbf73;
+            }
+        }
+        .create__new__gif {
+            height: 70px;
+            width: 672px;
+            padding: 20px 20px 20px 20px;
+            .Gigs {
+                font-size: 17px;
+            }
+
+            .button__gif {
+                button {
+                    width: 155px;
+                    height: 44px;
+                    margin-top: -7px;
+                }
+            }
+        }
+    }
+
+    .history__job__booking {
+        margin-top: 30px;
+        border-radius: 4px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        .bookingName {
+            .name {
+                margin-bottom: 30px;
+            }
+            .ant-card-bordered {
+                width: 670px !important;
+                border-radius: 4px;
+            }
+        }
+    }
+}
+// class="ant-card ant-card-bordered ant-card-hoverable"
+
+@media (max-width: 1392px) {
+    card-1 {
+        position: relative;
+        width: 455px;
+        height: auto;
+        background: #fff;
+    }
+    
+    .card-2 {
+        border: 1px solid rgba(206, 200, 200, 0.769);
+        position: relative;
+        width: 455px;
+        height: auto;
+        background: #fff;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        margin-bottom: 50px;
+        margin-top: 15px;
+        hr {
+            margin-left: 14px;
+            margin-top: 50px;
+            width: 392px;
+        }
+        .Description {
+            display: flex;
+            flex-flow: row wrap;
+            list-style: none;
+            .flex-item-1 {
+                margin-top: 40px;
+                margin-left: 30px;
+                color: #0e0e0f;
+                font-size: 16px;
+                font-weight: 700;
+            }
+            .flex-item-2 {
+                text-align: center;
+                margin-top: 40px;
+                margin-left: 193px;
+                color: #00698c;
+                font-size: 14px;
+                font-weight: 500;
+                .add__skill {
+                    margin-bottom: 15px;
+                    margin-left: 67px;
+                }
+            }
+        }
+        .done__add__skill {
+            .skill {
+                text-align: center;
+                border: 1px solid;
+                border-radius: 31px;
+                width: 64px;
+                margin-left: 148px;
+                margin-top: 10px;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 1392px) {
+    .user__information__right {
+        margin-left: 90px;
+
+        .car__done__create {
+            border-radius: 10px;
+            margin-top: 50px;
+            width: 442px;
+            border:none;
+            height: 151px;
+            padding: 20px 20px 20px 20px;
+            margin-bottom: 30px;
+            .Buying {
+                font-size: 18px;
+                img {
+                    margin-right: 10px;
+                    width: 30px;
+                    margin-left: 25px;
+                }
+                b {
+                    font-weight: 600;
+                    line-height: 10px;
+                    font-size: 14px;
+                }
+            }
+
+            .questions {
+                // margin-left: 90px;
+                font-weight: 500;
+                font-size: 15px;
+                margin-top: -10px;
+            }
+            .industry {
+                margin-left: 90px;
+                font-weight: 500;
+                font-size: 15px;
+                color: #1dbf73;
+            }
+        }
+        .create__new__gif {
+            height: 120px;
+            width: 442px;
+            padding: 20px 20px 20px 20px;
+            .Gigs {
+                font-size: 17px;
+            }
+
+            .button__gif {
+                button {
+                    width: 105px;
+                    height: 54px;
+                    margin-top: -7px;
+                }
+            }
+        }
+    }
+
+    .history__job__booking {
+        margin-top: 30px;
+        margin-left: 0px;
+        border-radius: 4px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        .bookingName {
+            .name {
+                margin-bottom: 30px;
+            }
+            .ant-card-bordered {
+                width: 442px !important;
+                height: 120px;
+                // margin-left: -35px;
+                border-radius: 4px;
+            }
+        }
+    }
+}
+// class="ant-card ant-card-bordered ant-card-hoverable"
