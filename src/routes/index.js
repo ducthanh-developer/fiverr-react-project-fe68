@@ -3,6 +3,7 @@ import EditUser from "containers/admin/UserManagement/EditUser/EditUser";
 import UserManagerment from "containers/admin/UserManagement/UserManagerment";
 import DetailJobs from "containers/client/DetailJobs/DetailJobs";
 import Home from "containers/client/Home/Home";
+import ListJobCategories from "containers/client/ListJobCategories/ListJobCategories";
 import ListJobs from "containers/client/ListJobs/ListJobs";
 import UserInformation from "containers/client/UserInformation/UserInformation";
 import Login from "containers/shared/LoginFiverr/Login";
@@ -20,7 +21,17 @@ export const clientRoutes = [
   },
 
   {
-    path: "/list-jobs/:id",
+    path: "/list-jobs",
+    component: ListJobs,
+    exact: true,
+  },
+  {
+    path: "/list-job-categories/:typeId",
+    component: ListJobCategories,
+    exact: true,
+  },
+  {
+    path: "/detail-jobs/:jobId",
     component: DetailJobs,
     exact: false,
   },
@@ -37,11 +48,6 @@ export const clientRoutes = [
   {
     path: "/register",
     component: Register,
-    exact: false,
-  },
-  {
-    path: "/list-jobs",
-    component: ListJobs,
     exact: false,
   },
 ];

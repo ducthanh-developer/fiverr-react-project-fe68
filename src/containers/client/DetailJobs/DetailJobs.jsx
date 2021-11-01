@@ -18,11 +18,11 @@ export default function DetailJobs(props) {
   console.log("tittleJob", tittleJob);
   console.log("commentJob", commentJob);
 
+  const { jobId } = props.match.params
   useEffect(() => {
-    const { id } = props.match.params
-    dispatch(actGetJobTittle(id));
-    dispatch(actGetComment(id));
-  }, [dispatch]);
+    dispatch(actGetJobTittle(jobId));
+    dispatch(actGetComment(jobId));
+  }, [dispatch, jobId]);
 
   const settings = {
     dots: true,

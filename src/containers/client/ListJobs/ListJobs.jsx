@@ -1,10 +1,8 @@
-import React from 'react';
+import React from "react";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
-
-
+import { NavLink } from "react-router-dom";
 import "./ListJobs.scss";
 import { actFetchListJobs } from "./module/actions";
 export default function ListJobs(props) {
@@ -14,17 +12,18 @@ export default function ListJobs(props) {
     dispatch(actFetchListJobs());
   }, [dispatch]);
   const renderListJobs = () => {
-    return listJobs.map((job, index) => (
-      <div className="col-sm-3 card-layout" key={index}>
-        <Link to={`/list-jobs/${job._id}`}>
+    return listJobs.map((job, index) => {
+      const { _id,name,price,rating } = job;
+      return (
+        <div className="col-sm-3 card-layout" key={index}>
           <div className="card-wrapper">
-            <a href=".." className="media">
+            <NavLink to={`/detail-jobs/${_id}`} className="media">
               <img
                 className="w-100"
                 src="../images/ListJobs/a5945e0c694538f4e36215017d623873aac3ce67.jpg"
                 alt="Description"
               />
-            </a>
+            </NavLink>
             <div className="seller-info row">
               <div className="seller-image">
                 <img
@@ -42,7 +41,9 @@ export default function ListJobs(props) {
               </div>
             </div>
             <h3 className="seller-title">
-              <a href="..">I will edit html and css on your webpage</a>
+              <NavLink to={`/detail-jobs/${_id}`}>
+                {name}
+              </NavLink>
             </h3>
             <div className="content-info">
               <div className="rating-wrapper">
@@ -57,7 +58,7 @@ export default function ListJobs(props) {
                     d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z"
                   />
                 </svg>
-                5.0
+                {rating}.0
                 <span>(840)</span>
               </div>
             </div>
@@ -74,14 +75,13 @@ export default function ListJobs(props) {
               </div>
               <a href=".." className="price">
                 <small>Starting at</small>
-                <span>$15</span>
+                <span>${price}</span>
               </a>
             </div>
           </div>
-        </Link>
-      </div>
-
-    ));
+        </div>
+      );
+    });
   };
   return (
     <div className="list-jobs">
