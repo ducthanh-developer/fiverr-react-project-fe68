@@ -17,7 +17,7 @@ export default function Register(props) {
             email: '',
             password: '',
             phone: '',
-            skill: '',
+            skill: [],
             certification: '',
             birthday: '',
             gender: '',

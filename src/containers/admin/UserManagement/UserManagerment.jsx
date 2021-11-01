@@ -15,7 +15,6 @@ export default function UserManagerment() {
   console.log("userList", userList);
   useEffect(() => {
     dispatch(actListUserAdmin())
-
   }, [dispatch]);
 
   const columns = [
@@ -23,7 +22,7 @@ export default function UserManagerment() {
       title: 'Name',
       dataIndex: 'name',
       key: 'name',
-      render: text => <a>{text}</a>,
+      render: text => <a href="1" className="">{text}</a>,
       width: 150,
     },
     {
@@ -66,15 +65,14 @@ export default function UserManagerment() {
       dataIndex: "hành động",
       multiple: 3,
 
-      //<EditOutlined />
-      render: (index, user) => {
-        return <Fragment>
-          <NavLink className="bg-dark text-white hhhhh" to={`/Admin/MovieManager/EditMovie/${user._id}`} >
+      render: ( text,user) => {
+        return <div key={text}>
+          <NavLink className="bg-dark text-white hhhhh" to={`/Admin/user-managerment/edit/${user._id}`} >
             <i className="btn-xoa-sua-showtime">
               <EditOutlined />
             </i>
           </NavLink>
-          <span width={200} onClick className=" bg-dark ml-2" to=""key={index}
+          <span width={200} onClick className=" bg-dark ml-2" 
             onClick={() => {
               if (window.confirm('Are you sure you want to delete' + user._id)) {
                 dispatch(actDeleteUser(user._id));
@@ -89,15 +87,14 @@ export default function UserManagerment() {
               <CalendarOutlined />
             </i>
           </NavLink>
-        </Fragment>
+        </div>        
       },
     },
   ];
-
   const data = userList;
   return (
     <div>
-      <Link className="nav-link searchText" to="/Admin/MovieManager/AddMovie">
+      <Link className="nav-link searchText" to="/admin/user-managerment/add">
         Thêm Phim
       </Link>
 

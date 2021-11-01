@@ -1,4 +1,6 @@
-import Dashboard from "containers/admin/Dashboard/Dashboard";
+import AddUser from "containers/admin/UserManagement/AddUser/AddUser";
+import EditUser from "containers/admin/UserManagement/EditUser/EditUser";
+import UserManagerment from "containers/admin/UserManagement/UserManagerment";
 import DetailJobs from "containers/client/DetailJobs/DetailJobs";
 import Home from "containers/client/Home/Home";
 import ListJobCategories from "containers/client/ListJobCategories/ListJobCategories";
@@ -17,6 +19,7 @@ export const clientRoutes = [
     component: Home,
     exact: true,
   },
+
   {
     path: "/list-jobs",
     component: ListJobs,
@@ -51,8 +54,18 @@ export const clientRoutes = [
 
 export const adminRoutes = [
   {
-    path: "/admin",
-    component: Dashboard,
+    path: "/admin/user-managerment",
+    component: UserManagerment,
+    exact: true,
+  },
+  {
+    path: "/admin/user-managerment/add",
+    component: AddUser,
+    exact: false,
+  },
+  {
+    path: "/admin/user-managerment/edit/:id",
+    component: EditUser,
     exact: false,
   },
 ];

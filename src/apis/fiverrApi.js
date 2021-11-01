@@ -66,8 +66,14 @@ const fiverrApi = {
     return callApiDelete(`users/${idUser}`)
 
   },
-  createUser(){
-    return callApiPost(``)
+  createUserApi(){
+    return callApiPost(`users`)
+  }, 
+  detailUserApi(idUser){
+    return callApi(`users/${idUser}`)
+  },
+  editUserApi(idUser){
+    return callApiPut(`users/${idUser}`)
   }
 };
 export default fiverrApi;

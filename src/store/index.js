@@ -25,6 +25,9 @@ const rootReducer = combineReducers({
   JobDetailReducer,
   SubTypeJobReducder,
   listUserReducer,
+  
+  // historyBokingJobReducer,
+  // bookingJobReducer,
 });
 
 const persistConfig = {

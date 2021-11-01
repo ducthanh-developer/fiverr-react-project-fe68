@@ -52,7 +52,6 @@ export const actFetchAddUserInformation = (values) => {
       console.log("actionvalueshhh", values)
       console.log("dta", data);
       alert("Thêm Thành Công")
-
     } catch (error) {
       dispatch(actLayDanhSachCongViecNguoiDungFail())
       console.log(error.response?.data);
@@ -76,9 +75,7 @@ export const actUploadImg=(formData)=>{
   return (dispatch)=>{
       fiverrApi
       .fetchUploadImgApi(formData)
-      .then(response=>{
-          dispatch(actUploadImgSuccess(response.data))
-      })
+     
       .catch(error=>{console.log("errrhhh", error.response?.data);})
   }
 }
