@@ -5,6 +5,15 @@ export class SubType {
   _id = null;
 }
 
+export class Type {
+  subTypeJobs = [];
+  deleteAt = null;
+  _id = null;
+  name = null;
+  status = null;
+  __v = null;
+}
+
 export class Job {
   deliveryTime = null;
   image = null;
@@ -16,7 +25,7 @@ export class Job {
   rating = null;
   status = null;
   subType = [new SubType()];
-  type = null;
+  type = new Type();
   usersBooking = null;
   __v = null;
   _id = null;
