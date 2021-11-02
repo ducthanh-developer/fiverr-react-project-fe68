@@ -33,7 +33,7 @@ function AddUser(props) {
     }
   })
   const handleChangeDatePicker = (value) => {
-    let birthday = moment(value).format('DD/MM/YYYY')
+    let birthday = moment(value).format('YYYY/MM/DD')
     console.log(birthday);
     formik.setFieldValue('birthday', birthday)
   }
