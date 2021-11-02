@@ -11,6 +11,7 @@ export default function UserInformation(props) {
     console.log("props", props);
     const dispatch = useDispatch();
     const { userJobs, historyJobs } = useSelector((state) => state.userListJobsReducer);
+    console.log("userJOb", userJobs);
     console.log("historyJobs", historyJobs);
     const idUser = props.match.params.id;
     useEffect(() => {
@@ -48,8 +49,10 @@ export default function UserInformation(props) {
                 <div className="row">
                     <div className="col-6 col-md-6 col-lg-5">
                         <div className=" card card-1 ">
+                           
                             {/* <LoadImg /> */}
                             <AddSkil path={props} />
+                            {/* <img src={userJobs.avatar} alt="" /> */}
                             <h6 className="name__profile text-center">{userJobs.email}</h6>
                             <button className="btn btn__profile">Preview Public Model</button>
                             <hr></hr>
@@ -227,10 +230,10 @@ export function AddSkil(props) {
     const { userJobs, historyJobs } = useSelector((state) => state.userListJobsReducer);
     console.log("ggggg", userJobs);
     console.log("historyJobs", historyJobs);
-    const id = props.path.match.params.id;
+    const idJOb = props.path.match.params.id;
     useEffect(() => {
-        dispatch(actGetUserListJobs(id));
-    }, [dispatch]);
+        dispatch(actGetUserListJobs(idJOb));
+    }, [dispatch,idJOb]);
 
     const [imgSrc, setImgSrc] = useState("");
 
@@ -302,7 +305,7 @@ export function AddSkil(props) {
 
                     </Form.Item>
                     <Form.Item label="Tac vụ">
-                        <button type="submit" className="btn btn-default" value="">
+                        <button type="submit" className="btn btn-default tacvu" value="">
                             updtae
                         </button>
                     </Form.Item>

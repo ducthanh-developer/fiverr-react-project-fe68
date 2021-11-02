@@ -12,7 +12,6 @@ function AdminLayout(props) {
           <Dashboard />
         </div>
         <div className="col-9 admin" >
-
           {props.children}
         </div>
       </div>

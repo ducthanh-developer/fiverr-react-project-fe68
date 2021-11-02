@@ -65,13 +65,11 @@ export default function DetailJobs(props) {
               </div>
             </div>
             <hr></hr>
-           
             <div >
               <Slider {...settings}>
                 <div>
                   <img alt="example" src={tittleJob.image} style={{ width: 590 }} />
                 </div>
-
               </Slider>
             </div>
           </div>

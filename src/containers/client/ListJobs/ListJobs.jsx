@@ -7,6 +7,7 @@ import "./ListJobs.scss";
 import { actFetchListJobs } from "./module/actions";
 export default function ListJobs(props) {
   const { listJobs } = useSelector((state) => state.JobReducer);
+  console.log("listJobs", listJobs);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(actFetchListJobs());

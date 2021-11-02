@@ -3,7 +3,7 @@ import axios from "axios";
 const callApiPost = (
   endpoint = null,
   data = null,
-  headers="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTdhOWM2ZDA3ZmUwMTAwMWNhYmNhMzciLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTYzNTU5NDI0MX0.kxSRfcC94vMgSSVl9YC3NjaIun1ZVREbP1xrZlFrnlQ"
+  headers = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTdhOWM2ZDA3ZmUwMTAwMWNhYmNhMzciLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTYzNTU5NDI0MX0.kxSRfcC94vMgSSVl9YC3NjaIun1ZVREbP1xrZlFrnlQ"
 ) => {
   return axios({
     url: `/${endpoint}`,
