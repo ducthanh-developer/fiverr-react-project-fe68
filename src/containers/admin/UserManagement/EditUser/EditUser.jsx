@@ -9,12 +9,14 @@ function EditUser(props) {
   const dispatch = useDispatch();
   const { detailUser } = useSelector((state) => state.listUserReducer);
   console.log("editUser", detailUser);
+      let { id } = props.match.params;
+
   useEffect(() => {
-    let { id } = props.match.params;
     dispatch(actDetailUser(id));
   }, [dispatch]);
   const [componentSize, setComponentSize] = useState('default');
   const formik = useFormik({
+    enableReinitialize: true,
     initialValues: {
       _id: detailUser._id,
       name: detailUser.name,

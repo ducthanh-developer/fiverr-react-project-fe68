@@ -1,22 +1,23 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { actFetchAddUserInformation, actGetUserListJobs, actHistoryJobsUser, } from "./modules/action";
+import { actFetchAddUserInformation, actGetUserListJobs, actHistoryJobsUser, actUploadImg, } from "./modules/action";
 import { useFormik } from 'formik';
 import "../UserInformation/UserInformation.scss"
 import { Form, Input, Card } from 'antd';
+import { useState } from "react";
+
 export default function UserInformation(props) {
     const { Meta } = Card;
     console.log("props", props);
     const dispatch = useDispatch();
     const { userJobs, historyJobs } = useSelector((state) => state.userListJobsReducer);
-    console.log("gg", userJobs);
+    console.log("userJOb", userJobs);
     console.log("historyJobs", historyJobs);
-    const id = props.match.params.id;
+    const idUser = props.match.params.id;
     useEffect(() => {
-        ;
-        dispatch(actGetUserListJobs(id));
-        dispatch(actHistoryJobsUser(id));
-    }, [dispatch]);
+        dispatch(actGetUserListJobs(idUser));
+        dispatch(actHistoryJobsUser(idUser));
+    }, [dispatch, idUser]);
 
     const [isShow, setIsShow] = React.useState(true);
 
@@ -42,15 +43,16 @@ export default function UserInformation(props) {
             dispatch(actFetchAddUserInformation(props.match.params.id, values));
         }
     })
-
     return (
         <div className="user__information">
             <div className="container user__information__content ">
                 <div className="row">
-                    <div className="col-12 col-md-12 col-lg-5">
+                    <div className="col-6 col-md-6 col-lg-5">
                         <div className=" card card-1 ">
+                           
                             {/* <LoadImg /> */}
                             <AddSkil path={props} />
+                            {/* <img src={userJobs.avatar} alt="" /> */}
                             <h6 className="name__profile text-center">{userJobs.email}</h6>
                             <button className="btn btn__profile">Preview Public Model</button>
                             <hr></hr>
@@ -86,8 +88,7 @@ export default function UserInformation(props) {
                                                             layout="horizontal"
                                                             onSubmitCapture={formik.handleSubmit}
                                                             labelCol={{ span: 4 }}
-                                                            wrapperCol={{ span: 14 }}
-                                                        >
+                                                            wrapperCol={{ span: 14 }}>
                                                             <Form.Item label="" >
                                                                 <Input name="skill"
                                                                     onChange={formik.handleChange}
@@ -161,7 +162,7 @@ export default function UserInformation(props) {
                             </div>
                         </div>
                     </div>
-                    <div className="col-12 col-md-12 col-lg-6 user__information__right">
+                    <div className="col-7 col-md-6 col-lg-7 user__information__right">
                         <div className="card car__done__create">
                             <div className="Buying">
                                 <img src="https://npm-assets.fiverrcdn.com/assets/@fiverr-private/business_blocks/office-building.7ac5061.gif" alt="" />
@@ -177,7 +178,7 @@ export default function UserInformation(props) {
 
                                     It seems that you don't have any active Gigs. Get selling!
                                 </div>
-                                <div className="col-3">
+                                <div className="col-3 button__gif">
                                     <button type="submit" className="btn btn-success">Create  a new gif</button>
                                 </div>
                             </div>
@@ -186,14 +187,11 @@ export default function UserInformation(props) {
                         <div className=" history__job__booking">
                             <div className="row">
                                 <div className="  col-9 bookingName" >
-
-
                                     {historyJobs.bookingJob?.map((booking, index) => {
                                         return (
                                             <div key={index} className="h-full flex items-center p-4 rounded-lg">
                                                 <Card
                                                     hoverable
-                                                    style={{ width: 740 }}
 
                                                 >
                                                     <div className="row">
@@ -222,79 +220,99 @@ export default function UserInformation(props) {
 
 
 export function AddSkil(props) {
+    console.log("propsAddSill", props);
     const dispatch = useDispatch();
-    const [isShow, setIsShow] = React.useState(true);
-    const [show, setShow] = React.useState(true);
+    // const handleChangeInputNumber = (name) => {
+    //     return (value) => {
+    //         formik.setFieldValue(name, value);
+    //     };
+    // };
+    const { userJobs, historyJobs } = useSelector((state) => state.userListJobsReducer);
+    console.log("ggggg", userJobs);
+    console.log("historyJobs", historyJobs);
+    const idJOb = props.path.match.params.id;
+    useEffect(() => {
+        dispatch(actGetUserListJobs(idJOb));
+    }, [dispatch,idJOb]);
 
-    const handleClick = () => {
-        setIsShow(!isShow);
-    };
-
-    const handleClick1 = () => {
-        setShow(!show);
-    };
-    const Typography = (props) => {
-        return <p>{props.children}</p>;
-    }
+    const [imgSrc, setImgSrc] = useState("");
 
     const formik = useFormik({
         initialValues: {
-            name:'',
-            email: '',
-            phone: '',
-            birthday:'',
-            gender: true,
-            role: 'ADMIN',
-            skill: '',
-            certification: ''
+            avatar: null,
         },
         onSubmit: (values) => {
-            console.log("values", values);
-            dispatch(actFetchAddUserInformation(props.path.match.params.id, values));
+            console.log("thong tin", values);
+            let formData = new FormData();
+            formData.append("File", formik.avatar.name);
+            console.log("formData", formData.get("avatar"));
+            for (let key in values) {
+                if (key !== "avatar") {
+                    formData.append(key, values[key]);
+                    console.log("object",values[key]);
+                } else {
+                    if (values.avatar !== null) {
+                        formData.append("file", values.avatar, values.avatar.name);
+                    }
+                }
+            }
+            console.log("alo ");
+            dispatch(actUploadImg(formData));
+            console.log("form", formData);
         }
     })
+    const handleChangeFile = (e) => {
+        let file = e.target.files[0];
+        if (
+            file.type === "image/jpg" ||
+            file.type === "image/jpeg" ||
+            file.type === "image/gif" ||
+            file.type === "image/png"
+        ) {
+            let reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = (e) => {
+                console.log(e.target.result);
+                setImgSrc(e.target.result);
+                formik.setFieldValue("avatar", file);
+            };
+            console.log("file", file);
+        }
+    };
+
     console.log("propsAdd", props);
     return (
-        <>
-            <ul className="flex Description ">
-                <li className="flex-item-1">certification</li>
-                <li className="flex-item-2" onClick={handleClick1} >certification</li>
+        <div className="upload__avatar">
+            <Form
+                onSubmitCapture={formik.handleSubmit}
+                labelCol={{
+                    span: 4,
+                }}
+                wrapperCol={{
+                    span: 14,
+                }}
 
-                <div>
-                    {show ?
-                        <>
-                        </>
-                        :
-                        <div className="addform__certification card">
-                            <Typography>
-                                <Form
-                                    onSubmitCapture={formik.handleSubmit}
-                                    labelCol={{ span: 4 }}
-                                    wrapperCol={{ span: 14 }}
-                                    layout="horizontal" >
-                                    <Form.Item label="">
-                                        <Input name="skill"
-                                            onChange={formik.handleChange}
-                                            value={formik.values.skill} />
-                                    </Form.Item>
-                                  
-                                    <div className="row add__skill__button">
-                                        <hr></hr>
+                initialValues={{}} >
+                <div className="select">
+                    <Form.Item >
+                        <img
+                            className="img_select"
+                            src={imgSrc === "" ? userJobs.avatar : imgSrc}
+                            alt=""
+                            width={150}
+                            height={150} />
+                        <Input type="file" onChange={handleChangeFile} />
 
-                                        <div className="col-6">
-                                            <button className="btn btn__cancle__skkil">Cancel</button>
-                                        </div>
-                                        <div className="col-6">
-                                            <button className="btn btn-success btn__add__skkil" type="submit">Add</button>
-                                        </div>
-                                    </div>
-                                </Form>
-                            </Typography>
-                        </div>
-                    }
+                    </Form.Item>
+                    <Form.Item label="Tac vụ">
+                        <button type="submit" className="btn btn-default tacvu" value="">
+                            updtae
+                        </button>
+                    </Form.Item>
                 </div>
-            </ul>
-        </>
+
+            </Form>
+        </div>
 
     )
 }

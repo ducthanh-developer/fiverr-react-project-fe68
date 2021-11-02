@@ -1,7 +1,3 @@
-
-
-
-
 import React from 'react'
 import "./Carousel.scss"
 import { Input, Space } from 'antd';
@@ -34,7 +30,7 @@ function Carousel() {
             </div>
             <div className="Sliders__search ">
                 <div className="Sliders__search__item">
-                    <h1>Find the perfect <span>freelance</span></h1>
+                    <h1>Find the perfect <i>freelance</i></h1>
                     <h1>services for your business</h1>               </div>
                 <Space direction="vertical">
                     <div className="">

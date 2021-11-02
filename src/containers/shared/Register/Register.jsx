@@ -1,14 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react';
 import { useFormik } from 'formik';
-import { useDispatch, useSelector } from 'react-redux';
+import moment from 'moment'; import { useDispatch } from 'react-redux';
 import { actRegister } from './modules/action,';
+import {
+    Form,
+    Input,
+    DatePicker,
+    Switch,
+} from 'antd';
 
 export default function Register(props) {
     const dispatch = useDispatch();
-    const { registerUser } = useSelector(
-        state => state.registerReducer
-    );
-    console.log("registerUser", registerUser)
+    // const { registerUser } = useSelector(
+    //     state => state.registerReducer
+    // );
+    // console.log("registerUser", registerUser)
+    const [componentSize, setComponentSize] = useState('default');
 
     const formik = useFormik({
         initialValues: {
@@ -18,140 +25,84 @@ export default function Register(props) {
             password: '',
             phone: '',
             skill: [],
-            certification: '',
+            certification: [],
             birthday: '',
-            gender: '',
+            gender: true,
             type: '',
         },
-        onSubmit: (values) => {
-            console.log("values", values);
-            dispatch(actRegister(values));
+        onSubmit: (value) => {
+            console.log("values", value);
+            dispatch(actRegister(value));
         }
     })
+
+    const handleChangeDatePicker = (value) => {
+        let birthday = moment(value).format('YYYY/MM/DD')
+        console.log(birthday);
+        formik.setFieldValue('birthday', birthday)
+    }
+
+    const handleChangeSwitch = (name) => {
+        return (value) => {
+            formik.setFieldValue(name, value);
+        }
+    }
+
+    const onFormLayoutChange = ({ size }) => {
+        setComponentSize(size);
+    };
+
     return (
         <div>
-            <div className="login-wrapper my-auto">
-                <h1 className="login-title">Đăng Ký</h1>
-                <form onSubmit={formik.handleSubmit}>
-                    <div className="form-group">
-                        <label>first_name</label>
-                        <input
-                            type="text"
-                            name="first_name"
-                            onChange={formik.handleChange}
-                            className="form-control"
-                            placeholder="Nhập vào first_name"
-                            required
-                        />
-                    </div>
-                    <div className="form-group mb-4">
-                        <label>last_name</label>
-                        <input
-                            type="text"
-                            name="last_name"
-                            className="form-control"
-                            placeholder="Nhập vào last_name"
-                            onChange={formik.handleChange}
-                            required
-                        />
-                    </div>
-                    <div className="form-group mb-4">
-                        <label>email</label>
-                        <input
-                            type="email"
-                            name="email"
-                            className="form-control"
-                            placeholder="Nhập vào email"
-                            onChange={formik.handleChange}
-                            required
-                        />
-                    </div>
-                    <div className="form-group mb-4">
-                        <label>password</label>
-                        <input
-                            type="password"
-                            name="password"
-                            className="form-control"
-                            placeholder="Nhập vào password"
-                            onChange={formik.handleChange}
-                            required
-                        />
-                    </div>
-                    <div className="form-group mb-4">
-                        <label>Số điện thoại</label>
-                        <input
-                            type="text"
-                            name="phone"
-                            className="form-control"
-                            placeholder="Nhập vào số điện thoại"
-                            onChange={formik.handleChange}
-                            required
-                        />
-                    </div>
-                    <div className="form-group mb-4">
-                        <label>skill</label>
-                        <input
-                            type="text"
-                            name="skill"
-                            className="form-control"
-                            placeholder="Nhập skill"
-                            onChange={formik.handleChange}
-                            required
-                        />
-                    </div>
-                    <div className="form-group mb-4">
-                        <label>certification</label>
-                        <input
-                            type="text"
-                            name="certification"
-                            className="form-control"
-                            placeholder="Nhập certification"
-                            onChange={formik.handleChange}
-                            required
-                        />
-                    </div>
-                    <div className="form-group mb-4">
-                        <label>birthday</label>
-                        <input
-                            type="text"
-                            name="birthday"
-                            className="form-control"
-                            placeholder="Nhập birthday"
-                            onChange={formik.handleChange}
-                            required
-                        />
-                    </div>
-                    <div className="form-group mb-4">
-                        <label>gender</label>
-                        <input
-                            type="text"
-                            name="gender"
-                            className="form-control"
-                            placeholder="Nhập gender"
-                            onChange={formik.handleChange}
-                            required
-                        />
-                    </div>
-                    <div className="form-group mb-4">
-                        <label>type</label>
-                        <input
-                            type="text"
-                            name="type"
-                            className="form-control"
-                            placeholder="Nhập type"
-                            onChange={formik.handleChange}
-                            required
-                        />
-                    </div>
-                    <input
-                        name="login"
-                        id="login"
-                        className="btn btn-block login-btn"
-                        type="submit"
-                        value="Đăng ký"
-                    />
-                </form>
-            </div>
+            
+            <Form
+                onSubmitCapture={formik.handleSubmit}
+                labelCol={{
+                    span: 4,
+                }}
+                wrapperCol={{
+                    span: 14,
+                }}
+                layout="horizontal"
+                initialValues={{
+                    size: componentSize,
+                }}
+                onValuesChange={onFormLayoutChange}
+                size={componentSize}>
+                <Form.Item label=" first_name" style={{ marginTop: "80px" }} >
+                    <Input name="first_name" onChange={formik.handleChange} />
+                </Form.Item>
+                <Form.Item label=" last_name" >
+                    <Input name="last_name" onChange={formik.handleChange} />
+                </Form.Item>
+                <Form.Item label="email">
+                    <Input name="email" onChange={formik.handleChange} />
+                </Form.Item>
+                <Form.Item label="password" >
+                    <Input name="password" onChange={formik.handleChange} />
+                </Form.Item>
+                <Form.Item label="phone" >
+                    <Input name="phone" onChange={formik.handleChange} />
+                </Form.Item>
+                <Form.Item label="skill" >
+                    <Input name="skill" onChange={formik.handleChange} />
+                </Form.Item>
+                <Form.Item label="type" >
+                    <Input name="type" onChange={formik.handleChange} />
+                </Form.Item>
+                <Form.Item label="certification" >
+                    <Input name="certification" onChange={formik.handleChange} />
+                </Form.Item>
+                <Form.Item label="birthday">
+                    <DatePicker format="DD/MM/YYYY" onChange={handleChangeDatePicker} />
+                </Form.Item>
+                <Form.Item label=" gender ">
+                    <Switch name="gender" onChange={handleChangeSwitch('gender')} />
+                </Form.Item>
+                <Form.Item label="Tac vụ">
+                    <button type="submit" className="btn btn-default" value=""> Thêm</button>
+                </Form.Item>
+            </Form>
         </div>
     )
 }
