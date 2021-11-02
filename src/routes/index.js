@@ -1,3 +1,4 @@
+import JobManagement from "containers/admin/JobManagement/JobManagement";
 import AddUser from "containers/admin/UserManagement/AddUser/AddUser";
 import EditUser from "containers/admin/UserManagement/EditUser/EditUser";
 import UserManagerment from "containers/admin/UserManagement/UserManagerment";
@@ -54,8 +55,13 @@ export const clientRoutes = [
 
 export const adminRoutes = [
   {
-    path: "/admin/user-managerment",
+    path: "/admin",
     component: UserManagerment,
+    exact: true,
+  },
+  {
+    path: "/admin/job-management",
+    component: JobManagement,
     exact: true,
   },
   {
