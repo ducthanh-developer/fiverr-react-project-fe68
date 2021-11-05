@@ -70,7 +70,7 @@ export const adminRoutes = [
     exact: false,
   },
   {
-    path: "/admin/user-managerment/edit/:id",
+    path: "/admin/user-managerment/edit/:idUser",
     component: EditUser,
     exact: false,
   },

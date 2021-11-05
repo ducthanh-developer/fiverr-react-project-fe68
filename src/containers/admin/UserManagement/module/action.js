@@ -1,5 +1,5 @@
 import fiverrApi from 'apis/fiverrApi';
-import { FETCH__EDIT__USER__FAIL, FETCH__EDIT__USER__SUCCESS, FETCH__LIST__USER__SUCCESS, SEARCH__USER_SUCCESS } from './type';
+import { FETCH__EDIT__USER__FAIL, FETCH__EDIT__USER__SUCCESS, FETCH__LIST__USER__SUCCESS } from './type';
 
 const actListUserSuccess = (userList) => ({
   type: FETCH__LIST__USER__SUCCESS,

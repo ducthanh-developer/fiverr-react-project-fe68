@@ -8,11 +8,9 @@ import { useState } from "react";
 
 export default function UserInformation(props) {
     const { Meta } = Card;
-    console.log("props", props);
     const dispatch = useDispatch();
     const { userJobs, historyJobs } = useSelector((state) => state.userListJobsReducer);
-    console.log("userJOb", userJobs);
-    console.log("historyJobs", historyJobs);
+    
     const idUser = props.match.params.id;
     useEffect(() => {
         dispatch(actGetUserListJobs(idUser));
@@ -45,11 +43,10 @@ export default function UserInformation(props) {
     })
     return (
         <div className="user__information">
-            <div className="container user__information__content ">
+            <div className="container-fluid user__information__content ">
                 <div className="row">
-                    <div className="col-6 col-md-6 col-lg-5">
+                    <div className="col-6 col-md-5 col-lg-5">
                         <div className=" card card-1 ">
-                           
                             {/* <LoadImg /> */}
                             <AddSkil path={props} />
                             {/* <img src={userJobs.avatar} alt="" /> */}
@@ -210,9 +207,18 @@ export default function UserInformation(props) {
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
+            <div className=" ">
+            <ul className="flex container">
+                <li className="flex-item">1</li>
+                <li className="flex-item">2</li>
+
+            </ul>
+            </div>
+            
         </div>
     )
 }
@@ -227,13 +233,12 @@ export function AddSkil(props) {
     //         formik.setFieldValue(name, value);
     //     };
     // };
-    const { userJobs, historyJobs } = useSelector((state) => state.userListJobsReducer);
-    console.log("ggggg", userJobs);
-    console.log("historyJobs", historyJobs);
+    const { userJobs } = useSelector((state) => state.userListJobsReducer);
+   
     const idJOb = props.path.match.params.id;
     useEffect(() => {
         dispatch(actGetUserListJobs(idJOb));
-    }, [dispatch,idJOb]);
+    }, [dispatch, idJOb]);
 
     const [imgSrc, setImgSrc] = useState("");
 
@@ -242,23 +247,19 @@ export function AddSkil(props) {
             avatar: null,
         },
         onSubmit: (values) => {
-            console.log("thong tin", values);
             let formData = new FormData();
-            formData.append("File", formik.avatar.name);
-            console.log("formData", formData.get("avatar"));
+            formData.append("avatar", formik.avatar.name);
+            console.log("formDatafdfdfgf", formData.get("avatar"));
             for (let key in values) {
-                if (key !== "avatar") {
+                if (key !== 'avatar') {
                     formData.append(key, values[key]);
-                    console.log("object",values[key]);
                 } else {
-                    if (values.avatar !== null) {
-                        formData.append("file", values.avatar, values.avatar.name);
-                    }
+                    formData.append('avatar', values.avatar, values.avatar.name)
                 }
             }
             console.log("alo ");
             dispatch(actUploadImg(formData));
-            console.log("form", formData);
+
         }
     })
     const handleChangeFile = (e) => {

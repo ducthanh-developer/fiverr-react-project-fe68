@@ -22,21 +22,21 @@ export default function Login(props) {
 
   if (loading) return <Loader />;
   return !currentUser ? (
-    <div className="car  login">
-      <h3>Login</h3>
-      {error && <div className="alert alert-danger">{error}</div>}
+    <div className="login">
+      {error && <div className="alert  thongbao  ">{error}</div>}
       <div
         style={{
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
         }}
+        className=" card login__content"
       >
         <Form
           name="normal_login"
           className="login-form"
           onFinish={onFinish}
-          style={{ width: '500px' }}
+          style={{ width: '400px' }}
           validateTrigger="onBlur"
         >
           <Form.Item
@@ -70,7 +70,6 @@ export default function Login(props) {
           </Form.Item>
           <Form.Item>
             <Button
-              type="primary"
               htmlType="submit"
               className="login-form-button"
             >
@@ -84,4 +83,5 @@ export default function Login(props) {
   ) : (
     <Redirect to="/" />
   );
+  
 }
