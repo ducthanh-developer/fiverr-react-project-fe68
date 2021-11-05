@@ -85,9 +85,17 @@ const fiverrApi = {
     return callApi(`users/pagination-search?name=${nameUser}&skip=0&limit=2`)
   },
   //type-jobs
-  fetchListTypeJobApi(){
+  fetchListTypeJobApi() {
     return callApi(`type-jobs`)
-
+  },
+  createListTypeJobApi(jobType) {
+    return callApiPost(`type-jobs`, jobType)
+  },
+  detailTypeJobApi(typeJobId) {
+    return callApi(`type-jobs/${typeJobId}`)
+  },
+  editTypeJobApi(typeJobId) {
+    return callApiPut(`type-jobs/${typeJobId}`)
   }
 };
 export default fiverrApi;

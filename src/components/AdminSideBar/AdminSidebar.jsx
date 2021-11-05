@@ -40,7 +40,7 @@ export default function AdminSidebar() {
               </ul>
             </li>
             <li>
-              <a>
+              <a href="..">
                 <i className="metismenu-icon pe-7s-car" />
                 Jobs
                 <i className="metismenu-state-icon pe-7s-angle-down caret-left" />
@@ -54,7 +54,23 @@ export default function AdminSidebar() {
               </ul>
             </li>
             <li>
+              <a href="..">
+                <i className="metismenu-icon pe-7s-car" />
+                TypeJob
+                <i className="metismenu-state-icon pe-7s-angle-down caret-left" />
+              </a>
+              <ul>
+                <li>
+                  <NavLink to="/admin/type-job">
+                    <i className="metismenu-icon"></i>Type Job
+                  </NavLink>
+                </li>
+              </ul>
+            </li>
+            <li>
+
               <a href="tables-regular.html">
+
                 <i className="metismenu-icon pe-7s-display2" />
                 Tables
               </a>

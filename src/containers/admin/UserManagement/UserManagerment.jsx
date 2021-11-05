@@ -103,7 +103,7 @@ export default function UserManagerment() {
   return (
     <div>
       <Link className="nav-link searchText" to="/admin/user-managerment/add">
-        Thêm Phim
+        Thêm 
       </Link>
       <Search
         className="mt-5 searchText"
