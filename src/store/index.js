@@ -1,8 +1,8 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
-import tittleJobReducer from 'containers/client/DetailJobs/modules/reducer'
-import userListJobsReducer from 'containers/client/UserInformation/modules/reducer'
+import tittleJobReducer from "containers/client/DetailJobs/modules/reducer";
+import userListJobsReducer from "containers/client/UserInformation/modules/reducer";
 import authReducer from "containers/shared/LoginFiverr/modules/reducer";
 import registerReducer from "containers/shared/Register/modules/reducer";
 import { JobReducer } from "containers/client/ListJobs/module/reducer";
@@ -12,7 +12,8 @@ import {
   JobDetailReducer,
   SubTypeJobReducder,
 } from "containers/client/ListJobCategories/module/module";
-import listUserReducer from 'containers/admin/UserManagement/module/reducer'
+import { JobManagementReducer } from "containers/admin/JobManagement/module/reducer";
+import listUserReducer from "containers/admin/UserManagement/module/reducer";
 import thunk from "redux-thunk";
 
 const rootReducer = combineReducers({
@@ -25,7 +26,7 @@ const rootReducer = combineReducers({
   JobDetailReducer,
   SubTypeJobReducder,
   listUserReducer,
-  
+  JobManagementReducer,
   // historyBokingJobReducer,
   // bookingJobReducer,
 });
