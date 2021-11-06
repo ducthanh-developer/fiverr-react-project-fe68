@@ -66,6 +66,7 @@ export const actDetailTypeJob = (typeJobId) => {
 }
 
 export const actEditTypeJob =(values, typeJobId) => {
+    console.log("typeJobId", typeJobId);
     console.log("values action", values)
 
     return async(dispatch)=>{

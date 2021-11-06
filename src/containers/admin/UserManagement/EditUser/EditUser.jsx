@@ -18,7 +18,7 @@ function EditUser(props) {
   const formik = useFormik({
     enableReinitialize: true,
     initialValues: {
-      _id: detailUser._id,
+      _id: detailUser?._id,
       name: detailUser.name,
       email: detailUser?.email,
       password: detailUser?.password,
@@ -32,8 +32,8 @@ function EditUser(props) {
     },
     onSubmit: (values) => {
       console.log("values", values);
-      let { id } = props.match.params;
-      dispatch(actEditUser(values, id))
+      let { idUser } = props.match.params;
+      dispatch(actEditUser(values, idUser))
 
     }
   })

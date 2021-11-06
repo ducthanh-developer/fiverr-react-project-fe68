@@ -14,21 +14,23 @@ export default function EditTypeJob(props) {
     const { detailTypeJob } = useSelector(state => state.typeJobsReducer)
     console.log("detailTypeJob, ", detailTypeJob);
     useEffect(() => {
-      dispatch(actDetailTypeJob(props.match.params.typeId));
-    }, [dispatch]);    
+        dispatch(actDetailTypeJob(props.match.params.typeId));
+    }, [dispatch]);
     const [componentSize, setComponentSize] = useState('default');
     console.log('hello ');
     const formik = useFormik({
         enableReinitialize: true,
         initialValues: {
-            _id: detailTypeJob?._id,
             name: detailTypeJob?.name,
-            subTypeJobs: detailTypeJob?.subTypeJobs,
+            _id: detailTypeJob?._id,
+            // subTypeJobs: detailTypeJob?.subTypeJobs,
             status: detailTypeJob?.status,
         },
         onSubmit: (values) => {
             console.log(values);
-            dispatch(actEditTypeJob(values))
+            let { typeId } = props.match.params;
+            dispatch(actEditTypeJob(values, typeId))
+            console.log("tyjobId", typeId);
         }
     })
 
@@ -61,11 +63,11 @@ export default function EditTypeJob(props) {
                     <Form.Item label=" name" style={{ marginTop: "80px" }} value={formik.values.name} >
                         <Input name="name" onChange={formik.handleChange} />
                     </Form.Item>
-                    <Form.Item label=" subTypeJobs" >
+                    {/* <Form.Item label=" subTypeJobs" >
                         <Input name="subTypeJobs" onChange={formik.handleChange} value={formik.values.subTypeJobs} />
-                    </Form.Item>
+                    </Form.Item> */}
                     <Form.Item label=" status ">
-                        <Switch name="status" onChange={handleChangeSwitch('status')} value={formik.values.status}  />
+                        <Switch name="status" onChange={handleChangeSwitch('status')} value={formik.values.status} />
                     </Form.Item>
                     <Form.Item label="Tac vụ">
                         <button type="submit" className="btn btn-default" value=""> Thêm</button>

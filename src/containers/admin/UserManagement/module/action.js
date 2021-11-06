@@ -66,8 +66,8 @@ export const actDetailUser =(idUser)=>{
 
 
 export  const  actEditUser =(values, idUser)=>{
-  console.log("idUseriii", idUser)
-  // console.log("values action", values)
+  console.log("idUseriii",idUser )
+  console.log("values action", values)
   return async(dispatch)=>{
       try{
           let res = await fiverrApi.editUserApi(idUser, values);
