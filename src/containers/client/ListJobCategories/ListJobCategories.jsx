@@ -9,7 +9,6 @@ export default function ListJobCategories(props) {
   const { jobDetail } = useSelector((state) => state.JobDetailReducer);
   const { listTypeJob } = useSelector((state) => state.SubTypeJobReducder);
   const typeId = props.match.params.typeId;
-  
   useEffect(() => {
     dispatch(actFetchTypeJobDetail(typeId));
     dispatch(actFetchListJobByType(typeId));

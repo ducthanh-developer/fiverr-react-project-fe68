@@ -11,6 +11,7 @@ import Login from "containers/shared/LoginFiverr/Login";
 import Register from "containers/shared/Register/Register";
 import TypeJobManagement from "containers/admin/TypeJobManagement/TypeJobManagement";
 import AddTypeJob from "containers/admin/TypeJobManagement/Add/AddTypeJob";
+import EditTypeJob from "containers/admin/TypeJobManagement/Edit/EditTypeJob";
 export const clientRoutes = [
   {
     path: "/",
@@ -79,11 +80,18 @@ export const adminRoutes = [
   {
     path: "/admin/type-job",
     component: TypeJobManagement,
-    exact: false,
+    exact: true,
   },
   {
-    path: "/admin/type-job/add-type-job",
+    path: "/admin/type-job/add",
     component: AddTypeJob,
     exact: false,
   },
+  {
+    path: "/admin/type-job/edit/:typeId",
+    component: EditTypeJob,
+    exact: false,
+  },
+  
+  
 ];

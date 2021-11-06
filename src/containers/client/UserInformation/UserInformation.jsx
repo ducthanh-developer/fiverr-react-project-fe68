@@ -10,7 +10,7 @@ export default function UserInformation(props) {
     const { Meta } = Card;
     const dispatch = useDispatch();
     const { userJobs, historyJobs } = useSelector((state) => state.userListJobsReducer);
-    
+
     const idUser = props.match.params.id;
     useEffect(() => {
         dispatch(actGetUserListJobs(idUser));
@@ -212,13 +212,13 @@ export default function UserInformation(props) {
                 </div>
             </div>
             <div className=" ">
-            <ul className="flex container">
-                <li className="flex-item">1</li>
-                <li className="flex-item">2</li>
+                <ul className="flex container">
+                    <li className="flex-item">1</li>
+                    <li className="flex-item">2</li>
 
-            </ul>
+                </ul>
             </div>
-            
+
         </div>
     )
 }
@@ -226,15 +226,11 @@ export default function UserInformation(props) {
 
 
 export function AddSkil(props) {
-    console.log("propsAddSill", props);
     const dispatch = useDispatch();
-    // const handleChangeInputNumber = (name) => {
-    //     return (value) => {
-    //         formik.setFieldValue(name, value);
-    //     };
-    // };
+
     const { userJobs } = useSelector((state) => state.userListJobsReducer);
-   
+    // const { currentUser } = useSelector(state => state.authReduce);
+    // console.log("current", currentUser);
     const idJOb = props.path.match.params.id;
     useEffect(() => {
         dispatch(actGetUserListJobs(idJOb));

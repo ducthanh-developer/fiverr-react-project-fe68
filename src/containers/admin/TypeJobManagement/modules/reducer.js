@@ -9,7 +9,7 @@ const initialState = {
     listTypeJob: [],
     errors: "",
     addJobType: [],
-    detailTypeJob: [],
+    detailTypeJob: null,
 }
 
 const typeJobsReducer = (state = initialState, { type, payload }) => {

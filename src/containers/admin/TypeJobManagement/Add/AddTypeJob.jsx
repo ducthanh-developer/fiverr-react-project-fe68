@@ -3,12 +3,11 @@ import { useDispatch } from 'react-redux'
 import {
     Form,
     Input,
-    DatePicker,
     Switch,
 } from 'antd';
 import { useFormik } from 'formik';
-import moment from 'moment';
 import { actAddTypeJob } from '../modules/action';
+
 export default function AddTypeJob() {
     const dispatch = useDispatch();
     const [componentSize, setComponentSize] = useState('default');

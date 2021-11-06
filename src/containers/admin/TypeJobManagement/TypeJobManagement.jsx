@@ -28,15 +28,17 @@ export default function TypeJobManagement() {
     {
       title: 'subTypeJobs',
       key: 'subTypeJobs',
-      width: 300,
+      width: 500,
       render: () => (
         <span>
           <Badge status="success" />
           {listTypeJob?.map((mia, index) => {
             return (
-              <div>{mia.subTypeJobs?.map((itemJob, index) => {
+              <div key={index} >{mia.subTypeJobs?.map((itemJob, index) => {
                 return (
-                  <div key={index}>{itemJob.name}</div>
+                  <div></div>
+                  // <div key={index} style={{width: 500}}>{itemJob.name}</div>
+                  
                 )
               })}</div>
             )
@@ -48,10 +50,10 @@ export default function TypeJobManagement() {
 
     {
       title: "Action",
-      render: (text, job) => {
+      render: (index, job) => {
         return (
-          <Fragment>
-            <NavLink to="/" className="mr-3 text-success">
+          <Fragment key={index}>
+            <NavLink to={`/admin/type-job/edit/${job._id}`} className="mr-3 text-success">
               <EditOutlined />
             </NavLink>
             <NavLink to="/" className="text-danger">
@@ -70,7 +72,7 @@ export default function TypeJobManagement() {
   return (
     <div>
 
-      <Link className="nav-link " to="/admin/type-job/add-type-job">
+      <Link className="nav-link " to="/admin/type-job/add">
         Thêm
       </Link>
       <Table columns={columns} dataSource={data} onChange={onChange} />
