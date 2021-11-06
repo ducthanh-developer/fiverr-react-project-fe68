@@ -10,6 +10,8 @@ export default function UserInformation(props) {
     const { Meta } = Card;
     const dispatch = useDispatch();
     const { userJobs, historyJobs } = useSelector((state) => state.userListJobsReducer);
+    // const { currentUser } = useSelector((state) => state.authReducer);
+    // console.log("current", currentUser);
 
     const idUser = props.match.params.id;
     useEffect(() => {
@@ -229,8 +231,8 @@ export function AddSkil(props) {
     const dispatch = useDispatch();
 
     const { userJobs } = useSelector((state) => state.userListJobsReducer);
-    // const { currentUser } = useSelector(state => state.authReduce);
-    // console.log("current", currentUser);
+    const { currentUser } = useSelector((state) => state.authReducer);
+    console.log("current", currentUser);
     const idJOb = props.path.match.params.id;
     useEffect(() => {
         dispatch(actGetUserListJobs(idJOb));
@@ -241,18 +243,14 @@ export function AddSkil(props) {
     const formik = useFormik({
         initialValues: {
             avatar: null,
+            token: currentUser?.token,
         },
         onSubmit: (values) => {
+           
             let formData = new FormData();
-            formData.append("avatar", formik.avatar.name);
+            formData.append("avatar", values.avatar, values.avatar.name);
             console.log("formDatafdfdfgf", formData.get("avatar"));
-            for (let key in values) {
-                if (key !== 'avatar') {
-                    formData.append(key, values[key]);
-                } else {
-                    formData.append('avatar', values.avatar, values.avatar.name)
-                }
-            }
+
             console.log("alo ");
             dispatch(actUploadImg(formData));
 
@@ -260,23 +258,13 @@ export function AddSkil(props) {
     })
     const handleChangeFile = (e) => {
         let file = e.target.files[0];
-        if (
-            file.type === "image/jpg" ||
-            file.type === "image/jpeg" ||
-            file.type === "image/gif" ||
-            file.type === "image/png"
-        ) {
-            let reader = new FileReader();
-            reader.readAsDataURL(file);
-            reader.onload = (e) => {
-                console.log(e.target.result);
-                setImgSrc(e.target.result);
-                formik.setFieldValue("avatar", file);
-            };
-            console.log("file", file);
-        }
+        let reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = (e) => {
+            setImgSrc(e.target.result);
+        };
+        formik.setFieldValue("avatar", file);
     };
-
     console.log("propsAdd", props);
     return (
         <div className="upload__avatar">

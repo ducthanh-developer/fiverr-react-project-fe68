@@ -7,11 +7,11 @@ import fiverrApi from 'apis/fiverrApi';
 // });
 
 
-export const actRegister = (  value) => {
+export const actRegister = (value, history) => {
   console.log("valuesAcionRegister", value);
   return async (dispatch) => {
     try {
-      const result = await fiverrApi.registerAPi( value);
+      const result = await fiverrApi.registerAPi(value);
 
       console.log("result ", result.data);
     } catch (error) {

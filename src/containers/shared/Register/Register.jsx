@@ -11,10 +11,6 @@ import {
 import "../Register/Register.scss"
 export default function Register(props) {
     const dispatch = useDispatch();
-    // const { registerUser } = useSelector(
-    //     state => state.registerReducer
-    // );
-    // console.log("registerUser", registerUser)
     const [componentSize, setComponentSize] = useState('default');
 
     const formik = useFormik({
@@ -59,7 +55,6 @@ export default function Register(props) {
         }}>
             <div className="register__content">
                 <Form
-                    style={{ width: '600px' }}
                     onSubmitCapture={formik.handleSubmit}
                     labelCol={{
                         span: 4,
