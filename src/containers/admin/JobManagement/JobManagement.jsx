@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { actFetchListJobs } from "containers/client/ListJobs/module/actions";
 import { Fragment } from "react";
 import { NavLink } from "react-router-dom";
+import { actDeleteJob } from "./module/actions";
 export default function JobManagement() {
   const { listJobs } = useSelector((state) => state.JobReducer);
 
@@ -20,11 +21,6 @@ export default function JobManagement() {
   const onSearch = (value) => console.log(value);
 
   const columns = [
-    {
-      title: "ID",
-      dataIndex: "_id",
-      sorter: (a, b) => a._id - b._id,
-    },
     {
       title: "Name Job",
       dataIndex: "name",
@@ -90,7 +86,12 @@ export default function JobManagement() {
       filterSearch: true,
     },
     {
-      title: "Type",
+      title: "Image",
+      render: (text, job) => {
+        return (
+          <img src={job.image} alt="Image" style={{ maxWidth: "100px" }} />
+        );
+      },
     },
     {
       title: "Action",
@@ -100,9 +101,18 @@ export default function JobManagement() {
             <NavLink to="/" className="mr-3 text-success">
               <EditOutlined />
             </NavLink>
-            <NavLink to="/" className="text-danger">
+            <span
+              style={{ cursor: "pointer" }}
+              to="/"
+              className="text-danger"
+              onClick={() => {
+                if (window.confirm("Bạn có chắc chắn muốn xóa phim")) {
+                  dispatch(actDeleteJob(job._id));
+                }
+              }}
+            >
               <DeleteOutlined />
-            </NavLink>
+            </span>
           </Fragment>
         );
       },
@@ -111,13 +121,13 @@ export default function JobManagement() {
 
   const data = listJobs;
 
-  function onChange(pagination, filters, sorter, extra) {
-    console.log("params", pagination, filters, sorter, extra);
-  }
+  function onChange(pagination, filters, sorter, extra) {}
   return (
     <div>
       <h3>List Jobs</h3>
-      <Button className="mb-3">Add Job</Button>
+      <NavLink to="/admin/job-management/add-job">
+        <Button className="mb-3">Add Job</Button>
+      </NavLink>
       <Search
         className="mb-3"
         placeholder="input search text"
@@ -126,7 +136,12 @@ export default function JobManagement() {
         size="large"
         onSearch={onSearch}
       />
-      <Table columns={columns} dataSource={data} onChange={onChange} />
+      <Table
+        columns={columns}
+        dataSource={data}
+        onChange={onChange}
+        rowKey={"_id"}
+      />
     </div>
   );
 }

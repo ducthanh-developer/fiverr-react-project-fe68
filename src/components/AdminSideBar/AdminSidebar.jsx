@@ -50,6 +50,9 @@ export default function AdminSidebar() {
                   <NavLink to="/admin/job-management">
                     <i className="metismenu-icon"></i>List Jobs
                   </NavLink>
+                  <NavLink to="/admin/job-management/add-job">
+                    <i className="metismenu-icon"></i>Add Job
+                  </NavLink>
                 </li>
               </ul>
             </li>
