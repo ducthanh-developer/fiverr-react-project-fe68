@@ -12,13 +12,20 @@ const actLoginFail = error => ({
 });
 
 export const actLogin = (user, history) => {
+  console.log("user", user);
   return dispatch => {
     fiverrApi
     .loginApi(user)
       .then(response => {
         dispatch(actLoginSuccess(response.data));
         console.log(response.data)
-        history.push('/');
+        if (response.data.user.role === "ADMIN") {
+          history.push("/admin");
+        } else {
+          history.push("/");
+        }
+        console.log("OK 200 Login");
+        console.log("object", response.data?.user.role);
       })
       .catch(error => {
         dispatch(actLoginFail('Unable to login!'));

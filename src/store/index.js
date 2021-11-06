@@ -12,8 +12,8 @@ import {
   JobDetailReducer,
   SubTypeJobReducder,
 } from "containers/client/ListJobCategories/module/module";
-import { JobManagementReducer } from "containers/admin/JobManagement/module/reducer";
-import listUserReducer from "containers/admin/UserManagement/module/reducer";
+import listUserReducer from 'containers/admin/UserManagement/module/reducer'
+import typeJobsReducer from 'containers/admin/TypeJobManagement/modules/reducer';
 import thunk from "redux-thunk";
 
 const rootReducer = combineReducers({
@@ -26,9 +26,8 @@ const rootReducer = combineReducers({
   JobDetailReducer,
   SubTypeJobReducder,
   listUserReducer,
-  JobManagementReducer,
-  // historyBokingJobReducer,
-  // bookingJobReducer,
+  //admin
+  typeJobsReducer,
 });
 
 const persistConfig = {

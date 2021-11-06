@@ -1,17 +1,33 @@
 import React from 'react';
-import { Route } from 'react-router';
+import { useSelector } from 'react-redux';
+import { Redirect, Route } from 'react-router';
 
-const withLayout = WrappedComponent => {
-  return ({ component: Component, ...rest }) => (
-    <Route
-      {...rest}
-      render={(routeProps) => (
-        <WrappedComponent>
-          <Component {...routeProps} />
-        </WrappedComponent>
-      )}
-    />
-  );
+const withLayout = (WrappedComponent) => {
+  return ({ component: Component, isPrivate, ...rest }) => {
+    console.log("isPrivate", isPrivate);
+
+    const { currentUser } = useSelector((state) => state.authReducer);
+
+    const content = (
+      <Route
+        {...rest}
+        render={(routeProps) => (
+          <WrappedComponent>
+            <Component {...routeProps} />
+          </WrappedComponent>
+        )}
+      />
+    );
+    if (isPrivate) {
+      if (currentUser) {
+        return content;
+      } else {
+        return <Redirect to="/Login" />;
+      }
+    }
+    return content;
+  };
 };
+
 
 export default withLayout;

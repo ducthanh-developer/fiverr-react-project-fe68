@@ -7,7 +7,10 @@ import { ThongTinDat, User } from "_core/models/ThongTinDat";
 
 const fiverrApi = {
   // api 20
-  fetchListJobsApi() {
+  fetchListJobsApi(jobName = "") {
+    if (jobName !== ''.trim()) {
+      callApi(`jobs/by-name?name=${jobName}`);
+    }
     return callApi("jobs");
   },
   // api 14
@@ -93,7 +96,21 @@ const fiverrApi = {
     return callApiPut(`users/${idUser}`);
   },
   searchUser(nameUser) {
-    return callApi(`users/pagination-search?name=${nameUser}&skip=0&limit=2`);
+    return callApi(`users/pagination-search?name=${nameUser}&skip=0&limit=2`)
   },
+  //type-jobs
+  fetchListTypeJobApi() {
+    return callApi(`type-jobs`)
+  },
+  createListTypeJobApi(jobType) {
+    return callApiPost(`type-jobs`, jobType)
+  },
+  detailTypeJobApi(typeJobId) {
+    return callApi(`type-jobs/${typeJobId}`)
+  },
+  editTypeJobApi(typeJobId) {
+    return callApiPut(`type-jobs/${typeJobId}`)
+  }
+  
 };
 export default fiverrApi;

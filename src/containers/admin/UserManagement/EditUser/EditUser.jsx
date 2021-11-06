@@ -9,16 +9,16 @@ function EditUser(props) {
   const dispatch = useDispatch();
   const { detailUser } = useSelector((state) => state.listUserReducer);
   console.log("editUser", detailUser);
-      let { id } = props.match.params;
+      let { idUser } = props.match.params;
 
   useEffect(() => {
-    dispatch(actDetailUser(id));
-  }, [dispatch]);
+    dispatch(actDetailUser(idUser));
+  }, [dispatch, idUser]);
   const [componentSize, setComponentSize] = useState('default');
   const formik = useFormik({
     enableReinitialize: true,
     initialValues: {
-      _id: detailUser._id,
+      _id: detailUser?._id,
       name: detailUser.name,
       email: detailUser?.email,
       password: detailUser?.password,
@@ -32,8 +32,8 @@ function EditUser(props) {
     },
     onSubmit: (values) => {
       console.log("values", values);
-      let { id } = props.match.params;
-      dispatch(actEditUser(values, id))
+      let { idUser } = props.match.params;
+      dispatch(actEditUser(values, idUser))
 
     }
   })

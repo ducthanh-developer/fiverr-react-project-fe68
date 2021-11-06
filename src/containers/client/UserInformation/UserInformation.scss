@@ -1,7 +1,7 @@
 .user__information {
     background-color: #f7f7f7;
     .user__information__content {
-        max-width: 1400px;
+        max-width: 85%;
         .card-1 {
             margin-top: 50px;
             .btn__profile {
@@ -52,20 +52,21 @@
 
 .card-1 {
     position: relative;
-    width: 455px;
+    width: 450px;
     height: auto;
     background: #fff;
+    box-shadow: none;
 }
-
 .card-2 {
     border: 1px solid rgba(206, 200, 200, 0.769);
     position: relative;
-    width: 455px;
+    width: 450px;
     height: auto;
     background: #fff;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     margin-bottom: 50px;
-    margin-top: 15px;
+    margin-top: 25px;
+    box-shadow: none;
     hr {
         margin-left: 14px;
         margin-top: 50px;
@@ -109,12 +110,14 @@
 
 .user__information__right {
     .car__done__create {
-        border-radius: 10px;
+        border-radius: 1px;
         margin-top: 50px;
-        width: 772px;
+        width: 810px;
         height: 141px;
         padding: 20px 20px 20px 20px;
         margin-bottom: 30px;
+        border: 1px solid rgba(206, 200, 200, 0.769);
+        box-shadow: none;
         .Buying {
             font-size: 18px;
             img {
@@ -144,7 +147,7 @@
     }
     .create__new__gif {
         height: 90px;
-        width: 767px;
+        width: 810px;
         padding: 26px 20px 20px 20px;
         border: 1px solid #9f9ca26b;
         .Gigs {
@@ -164,14 +167,16 @@
         border-radius: 4px;
         padding-top: 10px;
         padding-bottom: 10px;
+
         .bookingName {
             .name {
                 margin-bottom: 30px;
             }
             .ant-card-bordered {
-                width: 770px;
+                width: 810px;
                 margin-left: -35px;
                 border-radius: 4px;
+                border: 1px solid rgba(206, 200, 200, 0.769);
             }
         }
     }
@@ -292,20 +297,22 @@
         margin-top: 70px;
         margin-left: 130px;
     }
-    .tacvu{
+    .tacvu {
         margin-top: 100px;
     }
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1496px) {
     .user__information__right {
         .car__done__create {
-            border-radius: 10px;
+            border-radius: 1px;
             margin-top: 50px;
-            width: 672px;
+            width: 710px;
             height: 141px;
             padding: 20px 20px 20px 20px;
             margin-bottom: 30px;
+            border: 1px solid rgba(206, 200, 200, 0.769);
+            box-shadow: none;
             .Buying {
                 font-size: 18px;
                 img {
@@ -334,128 +341,70 @@
             }
         }
         .create__new__gif {
-            height: 70px;
-            width: 672px;
-            padding: 20px 20px 20px 20px;
+            height: 90px;
+            width: 710px;
+            padding: 26px 20px 20px 20px;
+            border: 1px solid #9f9ca26b;
             .Gigs {
                 font-size: 17px;
             }
-
             .button__gif {
                 button {
-                    width: 155px;
-                    height: 44px;
-                    margin-top: -7px;
+                    height: 43px;
+                    width: 156px;
+                    margin-top: -5px;
                 }
             }
         }
-    }
+        .history__job__booking {
+            margin-top: 30px;
+            margin-left: 0px;
+            border-radius: 4px;
+            padding-top: 10px;
+            padding-bottom: 10px;
 
-    .history__job__booking {
-        margin-top: 30px;
-        border-radius: 4px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        .bookingName {
-            .name {
-                margin-bottom: 30px;
-            }
-            .ant-card-bordered {
-                width: 670px !important;
-                border-radius: 4px;
-            }
-        }
-    }
-}
-// class="ant-card ant-card-bordered ant-card-hoverable"
-
-@media (max-width: 1392px) {
-    card-1 {
-        position: relative;
-        width: 455px;
-        height: auto;
-        background: #fff;
-    }
-
-    .card-2 {
-        border: 1px solid rgba(206, 200, 200, 0.769);
-        position: relative;
-        width: 455px;
-        height: auto;
-        background: #fff;
-        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-        margin-bottom: 50px;
-        margin-top: 15px;
-        hr {
-            margin-left: 14px;
-            margin-top: 50px;
-            width: 392px;
-        }
-        .Description {
-            display: flex;
-            flex-flow: row wrap;
-            list-style: none;
-            .flex-item-1 {
-                margin-top: 40px;
-                margin-left: 30px;
-                color: #0e0e0f;
-                font-size: 16px;
-                font-weight: 700;
-            }
-            .flex-item-2 {
-                text-align: center;
-                margin-top: 40px;
-                margin-left: 193px;
-                color: #00698c;
-                font-size: 14px;
-                font-weight: 500;
-                .add__skill {
-                    margin-bottom: 15px;
-                    margin-left: 67px;
+            .bookingName {
+                .name {
+                    margin-bottom: 30px;
                 }
-            }
-        }
-        .done__add__skill {
-            .skill {
-                text-align: center;
-                border: 1px solid;
-                border-radius: 31px;
-                width: 64px;
-                margin-left: 148px;
-                margin-top: 10px;
+                .ant-card-bordered {
+                    width: 710px;
+                    margin-left: -35px;
+                    border-radius: 4px;
+                    border: 1px solid rgba(206, 200, 200, 0.769);
+                }
             }
         }
     }
 }
 
-@media (max-width: 1392px) {
+@media (max-width: 1400px) {
     .user__information__right {
-        margin-left: 90px;
-
         .car__done__create {
-            border-radius: 10px;
+            border-radius: 1px;
             margin-top: 50px;
-            width: 442px;
-            border: none;
-            height: 151px;
+            width: 670px;
+            height: 141px;
             padding: 20px 20px 20px 20px;
             margin-bottom: 30px;
+            border: 1px solid rgba(206, 200, 200, 0.769);
+            box-shadow: none;
             .Buying {
                 font-size: 18px;
                 img {
                     margin-right: 10px;
-                    width: 30px;
+                    width: 50px;
                     margin-left: 25px;
                 }
                 b {
                     font-weight: 600;
                     line-height: 10px;
-                    font-size: 14px;
+                    font-size: 17px;
                 }
             }
 
             .questions {
-                // margin-left: 90px;
+                margin-left: 90px;
                 font-weight: 500;
                 font-size: 15px;
                 margin-top: -10px;
@@ -468,40 +417,608 @@
             }
         }
         .create__new__gif {
-            height: 120px;
-            width: 442px;
-            padding: 20px 20px 20px 20px;
+            height: 90px;
+            width: 670px;
+            padding: 26px 20px 20px 20px;
+            border: 1px solid #9f9ca26b;
             .Gigs {
                 font-size: 17px;
             }
-
             .button__gif {
                 button {
-                    width: 105px;
-                    height: 54px;
-                    margin-top: -7px;
+                    height: 43px;
+                    width: 156px;
+                    margin-top: -5px;
+                }
+            }
+        }
+        .history__job__booking {
+            margin-top: 30px;
+            margin-left: 0px;
+            border-radius: 4px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+
+            .bookingName {
+                .name {
+                    margin-bottom: 30px;
+                }
+                .ant-card-bordered {
+                    width: 670px;
+                    margin-left: -35px;
+                    border-radius: 4px;
+                    border: 1px solid rgba(206, 200, 200, 0.769);
                 }
             }
         }
     }
+}
 
-    .history__job__booking {
-        margin-top: 30px;
-        margin-left: 0px;
-        border-radius: 4px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        .bookingName {
-            .name {
-                margin-bottom: 30px;
-            }
-            .ant-card-bordered {
-                width: 442px !important;
-                height: 120px;
-                // margin-left: -35px;
-                border-radius: 4px;
-            }
-        }
+@media (max-width: 1480px) {
+    .user__information__content {
+        max-width: 95% !important;
+        display: block;
     }
 }
-// class="ant-card ant-card-bordered ant-card-hoverable"
+
+// @media (max-width: 1480px) {
+//     .user__information__right {
+//         .car__done__create {
+//             width: 792px;
+//         }
+//         .create__new__gif {
+//             width: 792px;
+//             .Gigs {
+//                 font-size: 17px;
+//             }
+//             .button__gif {
+//                 button {
+//                     width: 155px;
+//                     height: 44px;
+//                     margin-top: -7px;
+//                 }
+//             }
+//         }
+//     }
+
+//     .history__job__booking {
+//         .bookingName {
+//             .ant-card-bordered {
+//                 width: 792px !important;
+//                 border-radius: 4px;
+//             }
+//         }
+//     }
+// }
+
+// @media (max-width: 1480px) {
+//     .user__information__right {
+//         .car__done__create {
+//             width: 792px;
+//         }
+//         .create__new__gif {
+//             width: 792px;
+//             .Gigs {
+//                 font-size: 17px;
+//             }
+//             .button__gif {
+//                 button {
+//                     width: 155px;
+//                     height: 44px;
+//                     margin-top: -7px;
+//                 }
+//             }
+//         }
+//     }
+
+//     .history__job__booking {
+//         .bookingName {
+//             .ant-card-bordered {
+//                 width: 792px !important;
+//                 border-radius: 4px;
+//             }
+//         }
+//     }
+// }
+// @media (max-width: 1438px) {
+//     .user__information__right {
+//         .car__done__create {
+//             width: 742px;
+//         }
+//         .create__new__gif {
+//             width: 742px;
+//             .button__gif {
+//                 button {
+//                     width: 155px;
+//                     height: 44px;
+//                     margin-top: -7px;
+//                 }
+//             }
+//         }
+//     }
+//     .history__job__booking {
+//         .bookingName {
+//             .ant-card-bordered {
+//                 width: 742px !important;
+//                 border-radius: 4px;
+//             }
+//         }
+//     }
+// }
+
+// @media (max-width: 1418px) {
+//     .user__information__right {
+//         .car__done__create {
+//             width: 752px;
+//         }
+//         .create__new__gif {
+//             width: 752px;
+//             .button__gif {
+//                 button {
+//                     width: 155px;
+//                     height: 44px;
+//                     margin-top: -7px;
+//                 }
+//             }
+//         }
+//     }
+
+//     .history__job__booking {
+//         .bookingName {
+//             .ant-card-bordered {
+//                 width: 752px !important;
+//                 border-radius: 4px;
+//             }
+//         }
+//     }
+// }
+
+// @media (max-width: 1448px) {
+//     .user__information__right {
+//         .car__done__create {
+//             width: 762px;
+//         }
+//         .create__new__gif {
+//             width: 672px;
+//             .button__gif {
+//                 button {
+//                     width: 155px;
+//                     height: 44px;
+//                     margin-top: -7px;
+//                 }
+//             }
+//         }
+//     }
+
+//     .history__job__booking {
+//         .bookingName {
+//             .ant-card-bordered {
+//                 width: 672px !important;
+//                 border-radius: 4px;
+//             }
+//         }
+//     }
+// }
+
+// @media (max-width: 1408px) {
+//     .user__information__right {
+//         .car__done__create {
+//             width: 760px;
+//         }
+//         .create__new__gif {
+//             width: 760px;
+//             .button__gif {
+//                 button {
+//                     width: 155px;
+//                     height: 44px;
+//                     margin-top: -7px;
+//                 }
+//             }
+//         }
+//     }
+
+//     .history__job__booking {
+//         .bookingName {
+//             .ant-card-bordered {
+//                 width: 760px !important;
+//                 border-radius: 4px;
+//             }
+//         }
+//     }
+// }
+
+// @media (max-width: 1300px) {
+//     .user__information__right {
+//         .car__done__create {
+//             width: 752px;
+//         }
+//         .create__new__gif {
+//             width: 752px;
+//         }
+//     }
+
+//     .history__job__booking {
+//         .bookingName {
+//             .ant-card-bordered {
+//                 width: 752px !important;
+//                 border-radius: 4px;
+//             }
+//         }
+//     }
+// }
+
+// @media (max-width: 1366px) {
+//     .user__information__right {
+//         .car__done__create {
+//             width: 732px;
+//         }
+//         .create__new__gif {
+//             width: 672px;
+//         }
+//     }
+
+//     .history__job__booking {
+//         .bookingName {
+//             .ant-card-bordered {
+//                 width: 670px !important;
+//                 border-radius: 4px;
+//             }
+//         }
+//     }
+// }
+
+// @media (max-width: 1380px) {
+//     .user__information__right {
+//         .car__done__create {
+//             width: 732px;
+//         }
+//         .create__new__gif {
+//             width: 732px;
+//         }
+//     }
+
+//     .history__job__booking {
+//         .bookingName {
+//             .ant-card-bordered {
+//                 width: 670px !important;
+//                 border-radius: 4px;
+//             }
+//         }
+//     }
+// }
+
+// @media (max-width: 1312px) {
+//     .user__information__right {
+//         .car__done__create {
+//             width: 632px;
+//             margin-left: 30px;
+//         }
+//         .create__new__gif {
+//             width: 632px;
+//             margin-left: 30px;
+//         }
+//     }
+
+//     .history__job__booking {
+//         .bookingName {
+//             .ant-card-bordered {
+//                 width: 632px !important;
+//                 margin-left: 30px;
+//                 border-radius: 4px;
+//             }
+//         }
+//     }
+// }
+
+// @media (max-width: 1226px) {
+//     .user__information__right {
+//         .car__done__create {
+//             width: 522px;
+//         }
+//         .create__new__gif {
+//             width: 522px;
+//             .Gigs {
+//                 font-size: 17px;
+//             }
+//             .button__gif {
+//                 button {
+//                     width: 135px;
+//                     height: 45px;
+//                     margin-top: -7px;
+//                     margin-left: -30px;
+//                 }
+//             }
+//         }
+//     }
+
+//     .history__job__booking {
+//         .bookingName {
+//             .ant-card-hoverable {
+//                 width: 522px !important;
+//                 border-radius: 4px;
+//                 margin-left: -0px!important; ;
+//             }
+//         }
+//     }
+// }
+
+// @media (max-width: 1212px) {
+//     .user__information__right {
+//         .car__done__create {
+//             width: 522px;
+//         }
+//         .create__new__gif {
+//             width: 522px;
+//             .Gigs {
+//                 font-size: 17px;
+//             }
+//             .button__gif {
+//                 button {
+//                     width: 135px;
+//                     height: 45px;
+//                     margin-top: -7px;
+//                     margin-left: -30px;
+//                 }
+//             }
+//         }
+//     }
+
+//     .history__job__booking {
+//         .bookingName {
+//             .ant-card-hoverable {
+//                 width: 522px !important;
+//                 border-radius: 4px;
+//                 margin-left: -0px!important; ;
+//             }
+//         }
+//     }
+// }
+// @media (max-width: 1190px) {
+//     .user__information__right {
+//         .car__done__create {
+//             width: 500px;
+//         }
+//         .create__new__gif {
+//             width: 500px;
+//             .Gigs {
+//                 font-size: 17px;
+//             }
+//             .button__gif {
+//                 button {
+//                     width: 135px;
+//                     height: 45px;
+//                     margin-top: -7px;
+//                     margin-left: -30px;
+//                 }
+//             }
+//         }
+//     }
+
+//     .history__job__booking {
+//         .bookingName {
+//             .ant-card-hoverable {
+//                 width: 500px !important;
+//                 border-radius: 4px;
+//                 margin-left: -0px!important; ;
+//             }
+//         }
+//     }
+// }
+
+// @media (max-width: 992px) {
+//     .user__information__right {
+//         .car__done__create {
+//             width: 432px;
+//             margin-left: 30px;
+//         }
+//         .create__new__gif {
+//             width: 432px;
+//             .Gigs {
+//                 font-size: 17px;
+//             }
+//             .button__gif {
+//                 button {
+//                     width: 105px;
+//                     height: 44px;
+//                     margin-top: -7px;
+//                 }
+//             }
+//         }
+//     }
+
+//     .history__job__booking {
+//         .bookingName {
+//             .ant-card-hoverable {
+//                 width: 432px !important;
+//                 border-radius: 4px;
+//             }
+//         }
+//     }
+// }
+
+// @media (max-width: 1000px) {
+//     .user__information__right {
+//         .car__done__create {
+//             width: 485px;
+//             margin-left: 30px;
+//         }
+//         .create__new__gif {
+//             width: 485px;
+//             .Gigs {
+//                 font-size: 17px;
+//             }
+//             .button__gif {
+//                 button {
+//                     width: 105px;
+//                     height: 44px;
+//                     margin-top: -7px;
+//                 }
+//             }
+//         }
+//     }
+//     .history__job__booking {
+//         .bookingName {
+//             .ant-card-hoverable {
+//                 width: 485px !important;
+//                 border-radius: 4px;
+//             }
+//         }
+//     }
+// }
+
+// @media (max-width: 992px) {
+//     .user__information__right {
+//         .car__done__create {
+//             width: 488px;
+//             margin-left: 30px;
+//         }
+//         .create__new__gif {
+//             width: 488px;
+//             .Gigs {
+//                 font-size: 17px;
+//             }
+//             .button__gif {
+//                 button {
+//                     width: 105px;
+//                     height: 44px;
+//                     margin-top: -7px;
+//                 }
+//             }
+//         }
+//     }
+//     .history__job__booking {
+//         .bookingName {
+//             .ant-card-hoverable {
+//                 width: 458px !important;
+//                 border-radius: 4px;
+//             }
+//         }
+//     }
+// }
+
+// @media (max-width:852px) {
+//     .user__information__right {
+//         .car__done__create {
+//             width: 308px;
+//             margin-left: 30px;
+//         }
+//         .create__new__gif {
+//             width: 358px;
+//             .Gigs {
+//                 font-size: 17px;
+//             }
+//             .button__gif {
+//                 button {
+//                     width: 105px;
+//                     height: 44px;
+//                     margin-top: -7px;
+//                 }
+//             }
+//         }
+//     }
+//     .history__job__booking {
+//         .bookingName {
+//             .ant-card-hoverable {
+//                 width: 358px !important;
+//                 border-radius: 4px;
+//             }
+//         }
+//     }
+// }
+
+// @media (max-width:540px) {
+//     .user__information__right {
+//         .car__done__create {
+//             width: 208px;
+//             margin-left: 30px;
+//         }
+//         .create__new__gif {
+//             width: 208px;
+//             .Gigs {
+//                 font-size: 17px;
+//             }
+//             .button__gif {
+//                 button {
+//                     width: 105px;
+//                     height: 44px;
+//                     margin-top: -7px;
+//                 }
+//             }
+//         }
+//     }
+//     .history__job__booking {
+//         .bookingName {
+//             .ant-card-hoverable {
+//                 width: 208px !important;
+//                 border-radius: 4px;
+//             }
+//         }
+//     }
+// }
+
+// @media (max-width: 1496px) {
+//     .container-fluid {
+//         .card-1,
+//         .card-2 {
+//             margin-left: -90px;
+//             width: 550px;
+//         }
+//     }
+// }
+
+// @media (max-width: 1476px) {
+//     .container-fluid {
+//         .card-1,
+//         .card-2 {
+//             width: 530px;
+//         }
+//     }
+// }
+// @media (max-width: 1436px) {
+//     .container-fluid {
+//         .card-1,
+//         .card-2 {
+//             margin-left: -90px;
+//             width: 500px;
+//         }
+//     }
+// }
+
+// @media (max-width: 1396px) {
+//     .container-fluid {
+//         .card-1,
+//         .card-2 {
+//             margin-left: -70px;
+//             width: 430px;
+//         }
+//     }
+// }
+// @media (max-width: 1096px) {
+//     .container-fluid {
+//         .card-1,
+//         .card-2 {
+//             margin-left: -70px;
+//             width: 400px;
+//         }
+//     }
+// }
+
+// @media (max-width: 992px) {
+//     .container-fluid {
+//         .card-1,
+//         .card-2 {
+//             width: 380px;
+//             margin-left: -45px;
+//         }
+//     }
+// }
+
+// @media (max-width: 5402px) {
+//     .container-fluid {
+//         .card-1,
+//         .card-2 {
+//             width: 380px;
+//             margin-left: -45px;
+//         }
+//     }
+// }
