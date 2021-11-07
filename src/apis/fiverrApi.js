@@ -8,10 +8,10 @@ import { ThongTinDat, User } from "_core/models/ThongTinDat";
 const fiverrApi = {
   // api 20
   fetchListJobsApi(jobName = "") {
-    if (jobName !== ''.trim()) {
-      callApi(`jobs/by-name?name=${jobName}`);
+    if (jobName == "") {
+      return callApi("jobs");
     }
-    return callApi("jobs");
+    return callApi(`jobs/by-name?name=${jobName}`);
   },
   // api 14
   fetchListTypeJobsApi() {
@@ -44,6 +44,10 @@ const fiverrApi = {
   // api 30
   addJobImageApi(jobId, formData) {
     return callApiPost(`jobs/upload-image/${jobId}`, formData);
+  },
+  // api 22
+  editJobApi(jobId, jobInfo) {
+    return callApiPut(`jobs/${jobId}`, jobInfo);
   },
   fetchBookingJob(jobId, thongTinDat = new ThongTinDat()) {
     return callApiPatch(`jobs/booking/${jobId}`);
