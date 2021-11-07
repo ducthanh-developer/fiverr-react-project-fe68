@@ -1,12 +1,210 @@
 .login {
-    margin-top: 55px;
-    box-shadow: 0 14px 28px rgb(0 0 0 / 25%), 0 10px 10px rgb(0 0 0 / 22%);
-    box-shadow: 0 14px 28px rgb(0 0 0 / 25%), 0 10px 10px rgb(0 0 0 / 22%);
-    box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
-    width: 34%;
-    text-align: center;
-    margin-left: 32%;
-    box-sizing: border-box;
-    margin-bottom: 125px;
-    height: 300px;
+    background-color: #28a74514;
+    height: 800px;
+
+    .login__content {
+        .ant-form-horizontal {
+            margin-top: 200px;
+            width: 500px;
+            background-color: white;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            margin-bottom: 130px;
+            height: 500px;
+        }
+        .login__form__item {
+            margin-top: 70px;
+        }
+    }
+    .thongbao {
+        font-size: 17px;
+        font-weight: bold;
+        color: black;
+    }
+    .login-form-button {
+        margin-top: 50px;
+        width: 103px;
+        background: #3d443ecb;
+        color: white;
+        height: 39px;
+        border-radius: 2px;
+        margin-left: 50px;
+    }
+    .ant-input-affix-wrapper {
+        width: 90%;
+        height: 50px;
+        margin-left: 25px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .login__content {
+        .ant-form-horizontal {
+            margin-top: 30px;
+            width: 500px !important;
+            background-color: white;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            height: 500px;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .login__content {
+        .ant-form-horizontal {
+            margin-top: 130px;
+            width: 400px !important;
+            background-color: white;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            height: 500px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .login {
+    }
+}
+@media (max-width: 576px) {
+    .login {
+        .login__content {
+            .ant-form-horizontal {
+                margin-top: 130px;
+                width: 300px !important;
+                background-color: white;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                margin-bottom: 30px;
+                height: 500px;
+            }
+        }
+    }
+    @media (max-width: 506px) {
+        .login {
+            .login__content {
+                margin-left: 40px !important;
+                width: 359px !important;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-top: 70px;
+                padding-bottom: 141px;
+                padding-left: -9px;
+                height: 444px;
+                margin-bottom: 333px;
+            }
+            .login-form {
+                width: 230px !important;
+            }
+        }
+    }
+    @media (max-width: 506px) {
+        .login {
+            .login__content {
+                .ant-form-horizontal {
+                    margin-top: 300px !important;
+                    width: 500px;
+                    background-color: white;
+                    padding-top: 20px;
+                    padding-bottom: 20px;
+                    padding-left: 20px;
+                    margin-bottom: 30px;
+                    height: 500px;
+                }
+            }
+            .thongbao {
+                font-size: 17px;
+                font-weight: bold;
+                color: black;
+            }
+            .login-form-button {
+                margin-top: 10px;
+                width: 103px;
+                background: #28a745;
+                color: white;
+                height: 39px;
+                border-radius: 5px;
+            }
+            .ant-input-affix-wrapper {
+                width: 90%;
+                height: 50px;
+            }
+        }
+    }
+
+    @media (max-width: 406px) {
+        .login {
+            .login__content {
+                .ant-form-horizontal {
+                    margin-top: 300px !important;
+                    width: 400px;
+                    background-color: white;
+                    padding-top: 20px;
+                    padding-bottom: 20px;
+                    padding-left: 20px;
+                    margin-bottom: 30px;
+                    height: 500px;
+                    margin-right: 60px !important;
+                }
+            }
+            .thongbao {
+                font-size: 17px;
+                font-weight: bold;
+                color: black;
+            }
+            .login-form-button {
+                margin-top: 10px;
+                width: 103px;
+                background: #28a745;
+                color: white;
+                height: 30px !important;
+                border-radius: 5px;
+                margin-left: 10px;
+            }
+            .ant-input-affix-wrapper {
+                width: 90%;
+                height: 30px !important;
+                margin-right: 50px !important;
+            }
+        }
+    }
+}
+
+@media (max-width: 306px) {
+    .login {
+        .login__content {
+            .ant-form-horizontal {
+                margin-top: 300px !important;
+                width: 200px;
+                background-color: white;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                margin-bottom: 30px;
+                height: 500px;
+                margin-right: 100px !important;
+            }
+        }
+        .thongbao {
+            font-size: 17px;
+            font-weight: bold;
+            color: black;
+        }
+        .login-form-button {
+            margin-top: 10px;
+            width: 103px;
+            background: #28a745;
+            color: white;
+            height: 30px !important;
+            border-radius: 5px;
+        }
+        .ant-input-affix-wrapper {
+            width: 90%;
+            height: 30px !important;
+            margin-right: 50px !important;
+        }
+    }
 }

@@ -6,7 +6,7 @@ import { actFetchListTypeJobs } from "./module/actions";
 import { actLogout } from "containers/shared/LoginFiverr/modules/action";
 // import { Menu, Dropdown, Button } from "antd";
 
-export default function Header() {
+export default function Header(props) {
   const dispatch = useDispatch();
   const { listTypeJobs } = useSelector((state) => state.TypeJobsReducer);
   const { currentUser } = useSelector((state) => state.authReducer);
@@ -136,9 +136,9 @@ export default function Header() {
                       Profile
                     </Link>
                   </li>
-                  <a className="dropdown-item" href="..." onClick={logOut}>
+                  <Link className="dropdown-item" href="..." onClick={logOut} to="/Login">
                     Logout
-                  </a>
+                  </Link>
                 </nav>
               )}
             </li>

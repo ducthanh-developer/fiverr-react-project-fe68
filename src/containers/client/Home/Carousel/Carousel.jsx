@@ -1,10 +1,19 @@
 import React from 'react'
+import {  useSelector,useDispatch } from "react-redux";
 import "./Carousel.scss"
 import { Input, Space } from 'antd';
+import { actFetchListJobs } from 'containers/client/ListJobs/module/actions';
 
 function Carousel() {
+    
+  const dispatch = useDispatch();
+  const { userList } = useSelector(state => state.listUserReducer)
+  console.log("userList", userList);
     const { Search } = Input;
-    const onSearch = value => console.log(value);
+    const onSearch = values => {
+        console.log(values);
+        dispatch(actFetchListJobs(values));
+      }    
     return (
         <div>
             <div id="carouselExampleControls" className="carousel carousel__content  " data-ride="carousel">
@@ -41,7 +50,6 @@ function Carousel() {
                             enterButton="Search"
                             size="large"
                             onSearch={onSearch}
-
                         />
                     </div>
                 </Space>,

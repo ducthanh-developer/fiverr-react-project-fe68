@@ -1,7 +1,7 @@
 import fiverrApi from "apis/fiverrApi";
 import { SET_LIST_JOBS } from "./types";
 
-export const actFetchListJobs = (jobName = '') => {
+export const actFetchListJobs = (jobName = "") => {
   return async (dispatch) => {
     try {
       const result = await fiverrApi.fetchListJobsApi(jobName);

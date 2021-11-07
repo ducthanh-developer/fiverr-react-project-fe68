@@ -16,7 +16,6 @@ export default function UserManagerment() {
 
   const dispatch = useDispatch();
   const { userList } = useSelector(state => state.listUserReducer)
-  console.log("userList", userList);
   useEffect(() => {
     dispatch(actListUserAdmin())
   }, [dispatch]);
@@ -78,7 +77,7 @@ export default function UserManagerment() {
           </NavLink>
           <span width={200} onClick className=" bg-dark ml-2"
             onClick={() => {
-              if (window.confirm('Are you sure you want to delete' + user._id)) {
+              if(window.confirm('Are you sure you want to delete' + user._id)) {
                 dispatch(actDeleteUser(user._id));
               }
             }} >
@@ -104,7 +103,7 @@ export default function UserManagerment() {
   return (
     <div>
       <Link className="nav-link searchText" to="/admin/user-managerment/add">
-        Thêm Phim
+        Thêm 
       </Link>
       <Search
         className="mt-5 searchText"

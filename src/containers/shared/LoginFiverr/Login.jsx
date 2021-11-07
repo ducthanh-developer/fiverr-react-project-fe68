@@ -22,66 +22,73 @@ export default function Login(props) {
 
   if (loading) return <Loader />;
   return !currentUser ? (
-    <div className="car  login">
-      <h3>Login</h3>
-      {error && <div className="alert alert-danger">{error}</div>}
+    <div className="login">
       <div
         style={{
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
         }}
+        className="   login__content"
       >
         <Form
           name="normal_login"
           className="login-form"
           onFinish={onFinish}
-          style={{ width: '500px' }}
           validateTrigger="onBlur"
         >
-          <Form.Item
-            name="email"
-            rules={[
-              {
-                required: true,
-                message: 'Please input your Username!',
-              },
-            ]}
-          >
-            <Input
-              prefix={<UserOutlined className="site-form-item-icon" />}
-              placeholder="email"
-            />
-          </Form.Item>
-          <Form.Item
-            name="password"
-            rules={[
-              {
-                required: true,
-                message: 'Please input your Password!',
-              },
-            ]}
-          >
-            <Input
-              prefix={<LockOutlined className="site-form-item-icon" />}
-              type="password"
-              placeholder="Password"
-            />
-          </Form.Item>
-          <Form.Item>
-            <Button
-              type="primary"
-              htmlType="submit"
-              className="login-form-button"
+          {error && <div className="alert  thongbao  ">{error}</div>}
+          <div className="login__form__item">
+            <Form.Item
+              name="email"
+              rules={[
+                {
+                  required: true,
+                  message: 'Please input your Username!',
+                },
+              ]}
             >
-              Log in
-            </Button>
-            Or <a href="...">register now!</a>
-          </Form.Item>
+              <Input
+                prefix={<UserOutlined className="site-form-item-icon" />}
+                placeholder="email"
+              />
+            </Form.Item>
+            <Form.Item
+              name="password"
+              rules={[
+                {
+                  required: true,
+                  message: 'Please input your Password!',
+                },
+              ]}
+            >
+              <Input
+                prefix={<LockOutlined className="site-form-item-icon" />}
+                type="password"
+                placeholder="Password"
+              />
+            </Form.Item>
+            <Form.Item>
+              <div className="row">
+                <div className="col-6">
+                  <Button
+                    htmlType="submit"
+                    className="login-form-button"
+                  >
+                    Log in
+                  </Button>
+                </div>
+                <div className="col-6">
+                  Or <a href="...">register now!</a>
+                </div>
+              </div>
+            </Form.Item>
+          </div>
         </Form>
       </div>
     </div>
   ) : (
     <Redirect to="/" />
   );
+
 }
