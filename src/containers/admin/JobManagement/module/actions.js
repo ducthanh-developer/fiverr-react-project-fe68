@@ -40,7 +40,7 @@ export const actAddNewJob = (job, formData) => {
         type: ADD_NEW_JOB,
         payload: result.data,
       });
-      dispatch(actAddJobImage(result.data._id, formData))
+      dispatch(actAddJobImage(result.data._id, formData));
       alert("thêm thành công");
     } catch (errors) {
       console.log(errors);
@@ -58,3 +58,27 @@ export const actDeleteJob = (jobId) => {
     }
   };
 };
+
+export const actEditJob = (jobId, jobInfo, formData) => {
+  return async (dispatch) => {
+    try {
+      const result = await fiverrApi.editJobApi(jobId, jobInfo);
+      dispatch(actFetchListJobs());
+      dispatch(actAddJobImage(jobId, formData));
+      alert('thay đổi thành công');
+    } catch (errors) {
+      console.log(errors);
+    }
+  };
+};
+
+export const actSearchJob = (jobName) => {
+  return async (dispatch) => {
+    try {
+      const result = await fiverrApi.searchJobApi(jobName);
+      
+    } catch (errors) {
+      console.log(errors);
+    }
+  };
+}

@@ -1,4 +1,5 @@
 import AddJob from "containers/admin/JobManagement/AddJob/AddJob";
+import EditJob from "containers/admin/JobManagement/EditJob/EditJob";
 import JobManagement from "containers/admin/JobManagement/JobManagement";
 import AddUser from "containers/admin/UserManagement/AddUser/AddUser";
 import EditUser from "containers/admin/UserManagement/EditUser/EditUser";
@@ -68,6 +69,11 @@ export const adminRoutes = [
   {
     path: "/admin/job-management/add-job",
     component: AddJob,
+    exact: true,
+  },
+  {
+    path: "/admin/job-management/edit-job/:jobId",
+    component: EditJob,
     exact: true,
   },
   {

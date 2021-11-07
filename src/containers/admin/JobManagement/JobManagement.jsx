@@ -18,50 +18,16 @@ export default function JobManagement() {
 
   const { Search } = Input;
 
-  const onSearch = (value) => console.log(value);
+  const onSearch = (value) => {
+    console.log(value);
+    dispatch(actFetchListJobs(value));
+  };
 
   const columns = [
     {
       title: "Name Job",
       dataIndex: "name",
-      filters: [
-        {
-          text: "Joe",
-          value: "Joe",
-        },
-        {
-          text: "Category 1",
-          value: "Category 1",
-          children: [
-            {
-              text: "Yellow",
-              value: "Yellow",
-            },
-            {
-              text: "Pink",
-              value: "Pink",
-            },
-          ],
-        },
-        {
-          text: "Category 2",
-          value: "Category 2",
-          children: [
-            {
-              text: "Green",
-              value: "Green",
-            },
-            {
-              text: "Black",
-              value: "Black",
-            },
-          ],
-        },
-      ],
-      filterMode: "tree",
-      filterSearch: true,
-      onFilter: (value, record) => record.name.includes(value),
-      sorter: (a, b) => a.name - b.name,
+      sorter: (a, b) => a.name.localeCompare(b.name),
       sortDirections: ["ascend", "descend"],
     },
     {
@@ -98,7 +64,10 @@ export default function JobManagement() {
       render: (text, job) => {
         return (
           <Fragment>
-            <NavLink to="/" className="mr-3 text-success">
+            <NavLink
+              to={`/admin/job-management/edit-job/${job._id}`}
+              className="mr-3 text-success"
+            >
               <EditOutlined />
             </NavLink>
             <span
