@@ -5,15 +5,20 @@
         .card-1 {
             margin-top: 50px;
             .btn__profile {
-                width: 338px;
+                width: 380px;
                 margin-left: 28px;
                 border: 1px solid black;
                 color: black;
                 font-weight: 600;
+                margin-top: 10px;
+            }
+            .btn__profile:hover {
+                background-color: rgb(12, 62, 142);
+                color: white;
             }
             hr {
                 margin-left: 25px;
-                width: 338px;
+                width: 378px;
             }
             .from__item {
                 display: flex;
@@ -92,7 +97,7 @@
             font-weight: 500;
             .add__skill {
                 margin-bottom: 15px;
-                margin-left: 67px;
+                margin-left: 167px;
             }
         }
     }
@@ -102,8 +107,89 @@
             border: 1px solid;
             border-radius: 31px;
             width: 64px;
-            margin-left: 148px;
+            margin-left: 108px;
             margin-top: 10px;
+        }
+    }
+}
+
+//addSkill
+.card-2 {
+    height: auto !important;
+    .Description {
+        display: flex;
+        flex-flow: row wrap;
+        list-style: none;
+        .flex-item-3 {
+            margin-top: 40px;
+            margin-left: 30px;
+            color: #0e0e0f;
+            font-size: 16px;
+            font-weight: 700;
+        }
+        .flex-item-4 {
+            text-align: center;
+            margin-top: 40px;
+            margin-left: 293px;
+            color: #00698c;
+            font-size: 14px;
+            font-weight: 500;
+            .add__skill {
+                margin-bottom: 15px;
+                margin-left: 167px;
+            }
+        }
+    }
+
+    .AddFormSkill {
+        width: 387px;
+        margin-left: 29px;
+        height: 194px;
+        background-color: rgba(32, 24, 24, 0.061);
+        border-radius: 3px;
+        box-shadow: none;
+        margin-top: 20px;
+        input {
+            margin-top: 20px;
+            border-radius: 4px;
+            height: 40px;
+        }
+        .ant-select-selector {
+            height: 440px;
+        }
+        .ant-form-item-control-input {
+            width: 357px;
+            margin-left: 12px;
+            margin-top: -9px;
+        }
+        .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+            height: 42px;
+            position: relative;
+            border: 1px solid #d9d9d9;
+            background-color: #fff;
+            border-radius: 2px;
+            transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+        .add__skill__button {
+            hr {
+                margin-top: -7px;
+                margin-right: 15px;
+                font-weight: bold;
+            }
+        }
+        .btn__add__skill {
+            width: 150px !important;
+            margin-top: -4px;
+            height: 37px;
+        }
+        .btn__cancle__skkil {
+            background-color: #fff;
+            width: 160px;
+            margin-top: -4px;
+            color: black;
+            font-weight: 500;
+            border: 1px solid rgba(49, 25, 25, 0.075);
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
         }
     }
 }
@@ -182,58 +268,8 @@
     }
 }
 
-.AddFormSkill {
-    width: 337px;
-    margin-left: -180px;
-    height: 194px;
-    background-color: rgba(32, 24, 24, 0.061);
-    border-radius: 3px;
-    box-shadow: none;
-    input {
-        margin-top: 20px;
-        border-radius: 4px;
-        height: 40px;
-    }
-    .ant-select-selector {
-        height: 440px;
-    }
-    .ant-form-item-control-input {
-        width: 317px;
-        margin-left: 10px;
-        margin-top: -9px;
-    }
-    .ant-select:not(.ant-select-customize-input) .ant-select-selector {
-        height: 42px;
-        position: relative;
-        border: 1px solid #d9d9d9;
-        background-color: #fff;
-        border-radius: 2px;
-        transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-    }
-    .add__skill__button {
-        hr {
-            margin-top: -7px;
-            margin-right: 9px;
-            font-weight: bold;
-        }
-    }
-    .btn__add__skkil {
-        width: 140px;
-        margin-top: -4px;
-    }
-    .btn__cancle__skkil {
-        background-color: #fff;
-        width: 140px;
-        margin-top: -4px;
-        color: black;
-        font-weight: 500;
-        border: 1px solid rgba(49, 25, 25, 0.075);
-        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
-    }
-}
-
 .addform__certification {
-    width: 337px;
+    width: 387px;
     margin-top: 10px;
     margin-left: 30px;
     height: 194px;
@@ -250,7 +286,7 @@
         height: 440px;
     }
     .ant-form-item-control-input {
-        width: 317px;
+        width: 357px;
         margin-left: 10px;
         margin-top: -9px;
     }
@@ -270,7 +306,7 @@
         }
     }
     .btn__add__skkil {
-        width: 140px;
+        width: 160px;
         margin-top: -4px;
     }
     .btn__cancle__skkil {
@@ -283,36 +319,42 @@
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
     }
 }
+
 .upload__avatar {
-    .ant-input {
-        left: 100px;
-        // top: 200px;
-        border: none;
-        margin-bottom: 10px;
-        // position: absolute;
-    }
     .img_select {
-        border-radius: 76px;
+        width: 150px;
+        height: 150px;
+        font-size: 3em;
+        border-radius: 176px;
         position: relative;
         margin-top: 70px;
-        margin-left: 130px;
+        margin-left: 140px;
+    }
+    .file {
+        height: 35px;
+        width: 78px;
+        margin-left: 156px;
+        margin-top: 20px;
     }
     .tacvu {
-        margin-top: 100px;
+        margin-left: 140px;
+        /* color: #f5deb312; */
+        border: 1px;
+        background: #7ea587;
+        color: white;
+        border-radius: 29px;
+        height: 41px;
+        width: 131px;
+        margin-bottom: 20px;
+        margin-top: 20px;
     }
 }
 
 @media (max-width: 1496px) {
     .user__information__right {
         .car__done__create {
-            border-radius: 1px;
-            margin-top: 50px;
             width: 710px;
-            height: 141px;
-            padding: 20px 20px 20px 20px;
-            margin-bottom: 30px;
-            border: 1px solid rgba(206, 200, 200, 0.769);
-            box-shadow: none;
+
             .Buying {
                 font-size: 18px;
                 img {
@@ -454,6 +496,43 @@
     }
 }
 
+@media (max-width: 1300px) {
+    .user__information__right {
+        .car__done__create {
+            width: 600px !important;
+        }
+        .create__new__gif {
+            height: 90px;
+            width: 600px;
+            padding: 26px 20px 20px 20px;
+            border: 1px solid #9f9ca26b;
+            .Gigs {
+                font-size: 17px;
+            }
+            .button__gif {
+                button {
+                    height: 43px;
+                    width: 130px !important;
+                    margin-top: -5px;
+                }
+            }
+        }
+        .history__job__booking {
+            .bookingName {
+                .name {
+                    margin-bottom: 30px;
+                }
+                .ant-card-bordered {
+                    width: 600px !important;
+                    margin-left: -35px;
+                    border-radius: 4px;
+                    border: 1px solid rgba(206, 200, 200, 0.769);
+                }
+            }
+        }
+    }
+}
+
 @media (max-width: 1480px) {
     .user__information__content {
         max-width: 95% !important;
@@ -461,564 +540,201 @@
     }
 }
 
-// @media (max-width: 1480px) {
-//     .user__information__right {
-//         .car__done__create {
-//             width: 792px;
-//         }
-//         .create__new__gif {
-//             width: 792px;
-//             .Gigs {
-//                 font-size: 17px;
-//             }
-//             .button__gif {
-//                 button {
-//                     width: 155px;
-//                     height: 44px;
-//                     margin-top: -7px;
-//                 }
-//             }
-//         }
-//     }
+@media (max-width: 1300px) {
+    .user__information__content {
+        max-width: 95% !important;
+        display: block;
+    }
+}
 
-//     .history__job__booking {
-//         .bookingName {
-//             .ant-card-bordered {
-//                 width: 792px !important;
-//                 border-radius: 4px;
-//             }
-//         }
-//     }
-// }
+@media (max-width: 1200px) {
+    .card-1,
+    .card-2 {
+        width: 400px !important;
+        margin-left: -10px !important;
+    }
+}
 
-// @media (max-width: 1480px) {
-//     .user__information__right {
-//         .car__done__create {
-//             width: 792px;
-//         }
-//         .create__new__gif {
-//             width: 792px;
-//             .Gigs {
-//                 font-size: 17px;
-//             }
-//             .button__gif {
-//                 button {
-//                     width: 155px;
-//                     height: 44px;
-//                     margin-top: -7px;
-//                 }
-//             }
-//         }
-//     }
+@media (max-width: 992px) {
+    .card-1,
+    .card-2 {
+        width: 350px !important;
+        margin-left: -10px !important;
+    }
+}
 
-//     .history__job__booking {
-//         .bookingName {
-//             .ant-card-bordered {
-//                 width: 792px !important;
-//                 border-radius: 4px;
-//             }
-//         }
-//     }
-// }
-// @media (max-width: 1438px) {
-//     .user__information__right {
-//         .car__done__create {
-//             width: 742px;
-//         }
-//         .create__new__gif {
-//             width: 742px;
-//             .button__gif {
-//                 button {
-//                     width: 155px;
-//                     height: 44px;
-//                     margin-top: -7px;
-//                 }
-//             }
-//         }
-//     }
-//     .history__job__booking {
-//         .bookingName {
-//             .ant-card-bordered {
-//                 width: 742px !important;
-//                 border-radius: 4px;
-//             }
-//         }
-//     }
-// }
+@media (max-width: 1200px) {
+    .addform__certification {
+        width: 337px !important;
+       
+        input {
+            margin-top: 20px;
+            border-radius: 4px;
+            height: 40px;
+        }
+        .ant-select-selector {
+            height: 440px;
+        }
+        .ant-form-item-control-input {
+            width: 307px !important;
+            margin-left: 10px;
+            margin-top: -9px;
+        }
+       
+        .add__skill__button {
+            hr {
+                margin-top: -7px;
+                margin-right: 19px;
+                font-weight: bold;
+            }
+        }
+        .btn__add__certification {
+            width: 135px;
+            margin-top: -4px;
+            font-size: 14px;
+        }
+        
+    }
+}
 
-// @media (max-width: 1418px) {
-//     .user__information__right {
-//         .car__done__create {
-//             width: 752px;
-//         }
-//         .create__new__gif {
-//             width: 752px;
-//             .button__gif {
-//                 button {
-//                     width: 155px;
-//                     height: 44px;
-//                     margin-top: -7px;
-//                 }
-//             }
-//         }
-//     }
+@media (max-width:1200px) {
+    
+    .card-2 {
+        .Description {
+            .flex-item-3 {
+                margin-top: 40px;
+                margin-left: 30px;
+                color: #0e0e0f;
+                font-size: 16px;
+                font-weight: 700;
+            }
+            .flex-item-4 {
+                margin-top: -5px !important;
+               
+                .add__skill {
+                    margin-bottom: 15px;
+                    margin-left: 167px;
+                }
+            }
+        }
+    
+        .AddFormSkill {
+            width: 340px;
+           
+            input {
+                margin-top: 20px;
+                border-radius: 4px;
+                height: 40px;
+            }
+           
+            .ant-form-item-control-input {
+                width: 307px;
+                margin-left: 12px;
+                margin-top: -9px;
+            }
+            .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+                height: 42px;
+                position: relative;
+                border: 1px solid #d9d9d9;
+                background-color: #fff;
+                border-radius: 2px;
+                transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+            }
+            .add__skill__button {
+                hr {
+                    margin-top: -7px;
+                    margin-right: 15px;
+                    font-weight: bold;
+                }
+            }
+            .btn__add__skill {
+                width: 140px !important;
+                margin-top: -4px;
+                height: 37px;
+            }
+            .btn__cancle__skkil {
+                background-color: #fff;
+                width: 160px;
+                margin-top: -4px;
+                color: black;
+                font-weight: 500;
+                border: 1px solid rgba(49, 25, 25, 0.075);
+                font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
+            }
+        }
+    }
+    
+    
+}
 
-//     .history__job__booking {
-//         .bookingName {
-//             .ant-card-bordered {
-//                 width: 752px !important;
-//                 border-radius: 4px;
-//             }
-//         }
-//     }
-// }
 
-// @media (max-width: 1448px) {
-//     .user__information__right {
-//         .car__done__create {
-//             width: 762px;
-//         }
-//         .create__new__gif {
-//             width: 672px;
-//             .button__gif {
-//                 button {
-//                     width: 155px;
-//                     height: 44px;
-//                     margin-top: -7px;
-//                 }
-//             }
-//         }
-//     }
 
-//     .history__job__booking {
-//         .bookingName {
-//             .ant-card-bordered {
-//                 width: 672px !important;
-//                 border-radius: 4px;
-//             }
-//         }
-//     }
-// }
-
-// @media (max-width: 1408px) {
-//     .user__information__right {
-//         .car__done__create {
-//             width: 760px;
-//         }
-//         .create__new__gif {
-//             width: 760px;
-//             .button__gif {
-//                 button {
-//                     width: 155px;
-//                     height: 44px;
-//                     margin-top: -7px;
-//                 }
-//             }
-//         }
-//     }
-
-//     .history__job__booking {
-//         .bookingName {
-//             .ant-card-bordered {
-//                 width: 760px !important;
-//                 border-radius: 4px;
-//             }
-//         }
-//     }
-// }
-
-// @media (max-width: 1300px) {
-//     .user__information__right {
-//         .car__done__create {
-//             width: 752px;
-//         }
-//         .create__new__gif {
-//             width: 752px;
-//         }
-//     }
-
-//     .history__job__booking {
-//         .bookingName {
-//             .ant-card-bordered {
-//                 width: 752px !important;
-//                 border-radius: 4px;
-//             }
-//         }
-//     }
-// }
-
-// @media (max-width: 1366px) {
-//     .user__information__right {
-//         .car__done__create {
-//             width: 732px;
-//         }
-//         .create__new__gif {
-//             width: 672px;
-//         }
-//     }
-
-//     .history__job__booking {
-//         .bookingName {
-//             .ant-card-bordered {
-//                 width: 670px !important;
-//                 border-radius: 4px;
-//             }
-//         }
-//     }
-// }
-
-// @media (max-width: 1380px) {
-//     .user__information__right {
-//         .car__done__create {
-//             width: 732px;
-//         }
-//         .create__new__gif {
-//             width: 732px;
-//         }
-//     }
-
-//     .history__job__booking {
-//         .bookingName {
-//             .ant-card-bordered {
-//                 width: 670px !important;
-//                 border-radius: 4px;
-//             }
-//         }
-//     }
-// }
-
-// @media (max-width: 1312px) {
-//     .user__information__right {
-//         .car__done__create {
-//             width: 632px;
-//             margin-left: 30px;
-//         }
-//         .create__new__gif {
-//             width: 632px;
-//             margin-left: 30px;
-//         }
-//     }
-
-//     .history__job__booking {
-//         .bookingName {
-//             .ant-card-bordered {
-//                 width: 632px !important;
-//                 margin-left: 30px;
-//                 border-radius: 4px;
-//             }
-//         }
-//     }
-// }
-
-// @media (max-width: 1226px) {
-//     .user__information__right {
-//         .car__done__create {
-//             width: 522px;
-//         }
-//         .create__new__gif {
-//             width: 522px;
-//             .Gigs {
-//                 font-size: 17px;
-//             }
-//             .button__gif {
-//                 button {
-//                     width: 135px;
-//                     height: 45px;
-//                     margin-top: -7px;
-//                     margin-left: -30px;
-//                 }
-//             }
-//         }
-//     }
-
-//     .history__job__booking {
-//         .bookingName {
-//             .ant-card-hoverable {
-//                 width: 522px !important;
-//                 border-radius: 4px;
-//                 margin-left: -0px!important; ;
-//             }
-//         }
-//     }
-// }
-
-// @media (max-width: 1212px) {
-//     .user__information__right {
-//         .car__done__create {
-//             width: 522px;
-//         }
-//         .create__new__gif {
-//             width: 522px;
-//             .Gigs {
-//                 font-size: 17px;
-//             }
-//             .button__gif {
-//                 button {
-//                     width: 135px;
-//                     height: 45px;
-//                     margin-top: -7px;
-//                     margin-left: -30px;
-//                 }
-//             }
-//         }
-//     }
-
-//     .history__job__booking {
-//         .bookingName {
-//             .ant-card-hoverable {
-//                 width: 522px !important;
-//                 border-radius: 4px;
-//                 margin-left: -0px!important; ;
-//             }
-//         }
-//     }
-// }
-// @media (max-width: 1190px) {
-//     .user__information__right {
-//         .car__done__create {
-//             width: 500px;
-//         }
-//         .create__new__gif {
-//             width: 500px;
-//             .Gigs {
-//                 font-size: 17px;
-//             }
-//             .button__gif {
-//                 button {
-//                     width: 135px;
-//                     height: 45px;
-//                     margin-top: -7px;
-//                     margin-left: -30px;
-//                 }
-//             }
-//         }
-//     }
-
-//     .history__job__booking {
-//         .bookingName {
-//             .ant-card-hoverable {
-//                 width: 500px !important;
-//                 border-radius: 4px;
-//                 margin-left: -0px!important; ;
-//             }
-//         }
-//     }
-// }
-
-// @media (max-width: 992px) {
-//     .user__information__right {
-//         .car__done__create {
-//             width: 432px;
-//             margin-left: 30px;
-//         }
-//         .create__new__gif {
-//             width: 432px;
-//             .Gigs {
-//                 font-size: 17px;
-//             }
-//             .button__gif {
-//                 button {
-//                     width: 105px;
-//                     height: 44px;
-//                     margin-top: -7px;
-//                 }
-//             }
-//         }
-//     }
-
-//     .history__job__booking {
-//         .bookingName {
-//             .ant-card-hoverable {
-//                 width: 432px !important;
-//                 border-radius: 4px;
-//             }
-//         }
-//     }
-// }
-
-// @media (max-width: 1000px) {
-//     .user__information__right {
-//         .car__done__create {
-//             width: 485px;
-//             margin-left: 30px;
-//         }
-//         .create__new__gif {
-//             width: 485px;
-//             .Gigs {
-//                 font-size: 17px;
-//             }
-//             .button__gif {
-//                 button {
-//                     width: 105px;
-//                     height: 44px;
-//                     margin-top: -7px;
-//                 }
-//             }
-//         }
-//     }
-//     .history__job__booking {
-//         .bookingName {
-//             .ant-card-hoverable {
-//                 width: 485px !important;
-//                 border-radius: 4px;
-//             }
-//         }
-//     }
-// }
-
-// @media (max-width: 992px) {
-//     .user__information__right {
-//         .car__done__create {
-//             width: 488px;
-//             margin-left: 30px;
-//         }
-//         .create__new__gif {
-//             width: 488px;
-//             .Gigs {
-//                 font-size: 17px;
-//             }
-//             .button__gif {
-//                 button {
-//                     width: 105px;
-//                     height: 44px;
-//                     margin-top: -7px;
-//                 }
-//             }
-//         }
-//     }
-//     .history__job__booking {
-//         .bookingName {
-//             .ant-card-hoverable {
-//                 width: 458px !important;
-//                 border-radius: 4px;
-//             }
-//         }
-//     }
-// }
-
-// @media (max-width:852px) {
-//     .user__information__right {
-//         .car__done__create {
-//             width: 308px;
-//             margin-left: 30px;
-//         }
-//         .create__new__gif {
-//             width: 358px;
-//             .Gigs {
-//                 font-size: 17px;
-//             }
-//             .button__gif {
-//                 button {
-//                     width: 105px;
-//                     height: 44px;
-//                     margin-top: -7px;
-//                 }
-//             }
-//         }
-//     }
-//     .history__job__booking {
-//         .bookingName {
-//             .ant-card-hoverable {
-//                 width: 358px !important;
-//                 border-radius: 4px;
-//             }
-//         }
-//     }
-// }
-
-// @media (max-width:540px) {
-//     .user__information__right {
-//         .car__done__create {
-//             width: 208px;
-//             margin-left: 30px;
-//         }
-//         .create__new__gif {
-//             width: 208px;
-//             .Gigs {
-//                 font-size: 17px;
-//             }
-//             .button__gif {
-//                 button {
-//                     width: 105px;
-//                     height: 44px;
-//                     margin-top: -7px;
-//                 }
-//             }
-//         }
-//     }
-//     .history__job__booking {
-//         .bookingName {
-//             .ant-card-hoverable {
-//                 width: 208px !important;
-//                 border-radius: 4px;
-//             }
-//         }
-//     }
-// }
-
-// @media (max-width: 1496px) {
-//     .container-fluid {
-//         .card-1,
-//         .card-2 {
-//             margin-left: -90px;
-//             width: 550px;
-//         }
-//     }
-// }
-
-// @media (max-width: 1476px) {
-//     .container-fluid {
-//         .card-1,
-//         .card-2 {
-//             width: 530px;
-//         }
-//     }
-// }
-// @media (max-width: 1436px) {
-//     .container-fluid {
-//         .card-1,
-//         .card-2 {
-//             margin-left: -90px;
-//             width: 500px;
-//         }
-//     }
-// }
-
-// @media (max-width: 1396px) {
-//     .container-fluid {
-//         .card-1,
-//         .card-2 {
-//             margin-left: -70px;
-//             width: 430px;
-//         }
-//     }
-// }
-// @media (max-width: 1096px) {
-//     .container-fluid {
-//         .card-1,
-//         .card-2 {
-//             margin-left: -70px;
-//             width: 400px;
-//         }
-//     }
-// }
-
-// @media (max-width: 992px) {
-//     .container-fluid {
-//         .card-1,
-//         .card-2 {
-//             width: 380px;
-//             margin-left: -45px;
-//         }
-//     }
-// }
-
-// @media (max-width: 5402px) {
-//     .container-fluid {
-//         .card-1,
-//         .card-2 {
-//             width: 380px;
-//             margin-left: -45px;
-//         }
-//     }
-// }
+@media (max-width:992px) {
+    
+    .card-2 {
+        .Description {
+            .flex-item-3 {
+                margin-top: 40px;
+                margin-left: 30px;
+                color: #0e0e0f;
+                font-size: 16px;
+                font-weight: 700;
+            }
+            .flex-item-4 {
+                margin-top: -5px !important;
+               
+                .add__skill {
+                    margin-bottom: 15px;
+                    margin-left: 167px;
+                }
+            }
+        }
+    
+        .AddFormSkill {
+            width: 340px;
+           
+            input {
+                margin-top: 20px;
+                border-radius: 4px;
+                height: 40px;
+            }
+           
+            .ant-form-item-control-input {
+                width: 307px;
+                margin-left: 12px;
+                margin-top: -9px;
+            }
+            .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+                height: 42px;
+                position: relative;
+                border: 1px solid #d9d9d9;
+                background-color: #fff;
+                border-radius: 2px;
+                transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+            }
+            .add__skill__button {
+                hr {
+                    margin-top: -7px;
+                    margin-right: 15px;
+                    font-weight: bold;
+                }
+            }
+            .btn__add__skill {
+                width: 140px !important;
+                margin-top: -4px;
+                height: 37px;
+            }
+            .btn__cancle__skkil {
+                background-color: #fff;
+                width: 160px;
+                margin-top: -4px;
+                color: black;
+                font-weight: 500;
+                border: 1px solid rgba(49, 25, 25, 0.075);
+                font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
+            }
+        }
+    }
+    
+    
+}

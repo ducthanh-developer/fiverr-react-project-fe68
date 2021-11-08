@@ -10,8 +10,7 @@ export default function UserInformation(props) {
     const { Meta } = Card;
     const dispatch = useDispatch();
     const { userJobs, historyJobs } = useSelector((state) => state.userListJobsReducer);
-    // const { currentUser } = useSelector((state) => state.authReducer);
-    // console.log("current", currentUser);
+    console.log("historyJobs", historyJobs);
 
     const idUser = props.match.params.id;
     useEffect(() => {
@@ -49,9 +48,7 @@ export default function UserInformation(props) {
                 <div className="row">
                     <div className="col-6 col-md-5 col-lg-5">
                         <div className=" card card-1 ">
-                            {/* <LoadImg /> */}
-                            <AddSkil path={props} />
-                            {/* <img src={userJobs.avatar} alt="" /> */}
+                            <UploadImgUser path={props} />
                             <h6 className="name__profile text-center">{userJobs.email}</h6>
                             <button className="btn btn__profile">Preview Public Model</button>
                             <hr></hr>
@@ -74,45 +71,42 @@ export default function UserInformation(props) {
                                 </ul>
                                 <hr></hr>
                                 <ul className="flex Description ">
-                                    <li className="flex-item-1">Skill</li>
-                                    <li className="flex-item-2" >
-                                        <>
-                                            <div onClick={handleClick} className="add__skill">AddSkill</div>
-                                            {isShow ?
-                                                <>
-                                                </>
-                                                : <div className="AddFormSkill card">
-                                                    <Typography>
-                                                        <Form
-                                                            layout="horizontal"
-                                                            onSubmitCapture={formik.handleSubmit}
-                                                            labelCol={{ span: 4 }}
-                                                            wrapperCol={{ span: 14 }}>
-                                                            <Form.Item label="" >
-                                                                <Input name="skill"
-                                                                    onChange={formik.handleChange}
-                                                                    value={formik.values.skill} />
-                                                            </Form.Item>
+                                    <li className="flex-item-3">Skill</li>
+                                    <li className="flex-item-4 add__skill" onClick={handleClick} >Add Skill</li>
+                                    <div>
+                                        {isShow ?
+                                            <>
+                                            </>
+                                            : <div className="AddFormSkill card">
+                                                <Typography>
+                                                    <Form
+                                                        layout="horizontal"
+                                                        onSubmitCapture={formik.handleSubmit}
+                                                        labelCol={{ span: 4 }}
+                                                        wrapperCol={{ span: 14 }}>
+                                                        <Form.Item label="" >
+                                                            <Input name="skill"
+                                                                onChange={formik.handleChange}
+                                                                value={formik.values.skill} />
+                                                        </Form.Item>
+                                                        <div className="row add__skill__button">
+                                                            <hr></hr>
 
-                                                            <div className="row add__skill__button">
-                                                                <hr></hr>
-
-                                                                <div className="col-6">
-                                                                    <button className="btn btn__cancle__skkil">Cancel</button>
-                                                                </div>
-                                                                <div className="col-6">
-                                                                    <button type="submit" className="btn btn-success" value=""> Thêm</button>
-                                                                </div>
-
+                                                            <div className="col-6">
+                                                                <button className="btn btn__cancle__skkil">Cancel</button>
                                                             </div>
-                                                        </Form>
-                                                    </Typography>
-                                                </div>
-                                            }
-                                        </>
-                                    </li>
-                                </ul>
+                                                            <div className="col-6">
+                                                                <button type="submit" className="btn btn-success btn__add__skill"> Thêm</button>
+                                                            </div>
 
+                                                        </div>
+                                                    </Form>
+                                                </Typography>
+                                            </div>
+                                        }
+                                    </div>
+
+                                </ul>
                                 <hr></hr>
                                 <ul className="flex Description ">
                                     <li className="flex-item-1">certification</li>
@@ -142,13 +136,13 @@ export default function UserInformation(props) {
                                                                 <button className="btn btn__cancle__skkil">Cancel</button>
                                                             </div>
                                                             <div className="col-6">
-                                                                <button className="btn btn-success btn__add__skkil" type="submit">Add</button>
+                                                                <button className="btn btn-success btn__add__certification
+                                                                " type="submit">Add certification</button>
                                                             </div>
                                                         </div>
                                                     </Form>
                                                 </Typography>
-                                            </div>
-                                        }
+                                            </div>}
                                     </div>
                                     <div className="done__add__skill">
                                         {userJobs.certification?.map((skill, index) => {
@@ -190,9 +184,7 @@ export default function UserInformation(props) {
                                         return (
                                             <div key={index} className="h-full flex items-center p-4 rounded-lg">
                                                 <Card
-                                                    hoverable
-
-                                                >
+                                                    hoverable>
                                                     <div className="row">
                                                         <div className="col-3">
                                                             <img alt="example" src={booking.image} style={{ width: 150 }} />
@@ -201,7 +193,6 @@ export default function UserInformation(props) {
                                                             <Meta title={booking.name} description="www.instagram.com" />
                                                         </div>
                                                     </div>
-
                                                 </Card>,
                                             </div>
                                         )
@@ -213,24 +204,19 @@ export default function UserInformation(props) {
                     </div>
                 </div>
             </div>
-            <div className=" ">
-                <ul className="flex container">
-                    <li className="flex-item">1</li>
-                    <li className="flex-item">2</li>
-
-                </ul>
-            </div>
-
         </div>
     )
 }
 
 
 
-export function AddSkil(props) {
+export function UploadImgUser(props) {
     const dispatch = useDispatch();
 
     const { userJobs } = useSelector((state) => state.userListJobsReducer);
+    console.log("object,", userJobs);
+    console.log("ava", userJobs.avatar);
+
     const { currentUser } = useSelector((state) => state.authReducer);
     console.log("current", currentUser);
     const idJOb = props.path.match.params.id;
@@ -241,29 +227,37 @@ export function AddSkil(props) {
     const [imgSrc, setImgSrc] = useState("");
 
     const formik = useFormik({
+        enableReinitialize: true,
         initialValues: {
             avatar: null,
             token: currentUser?.token,
         },
         onSubmit: (values) => {
-           
             let formData = new FormData();
             formData.append("avatar", values.avatar, values.avatar.name);
             console.log("formDatafdfdfgf", formData.get("avatar"));
-
             console.log("alo ");
             dispatch(actUploadImg(formData));
-
         }
     })
+
     const handleChangeFile = (e) => {
         let file = e.target.files[0];
-        let reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onload = (e) => {
-            setImgSrc(e.target.result);
-        };
-        formik.setFieldValue("avatar", file);
+        if (
+            file.type === "image/jpg" ||
+            file.type === "image/jpeg" ||
+            file.type === "image/gif" ||
+            file.type === "image/png"
+        ) {
+            let reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = (e) => {
+                console.log(e.target.result);
+                setImgSrc(e.target.result);
+                formik.setFieldValue("avatar", file);
+            };
+            console.log("file", file);
+        }
     };
     console.log("propsAdd", props);
     return (
@@ -275,27 +269,21 @@ export function AddSkil(props) {
                 }}
                 wrapperCol={{
                     span: 14,
-                }}
-
-                initialValues={{}} >
+                }} >
                 <div className="select">
-                    <Form.Item >
+                    <div className="">
                         <img
                             className="img_select"
                             src={imgSrc === "" ? userJobs.avatar : imgSrc}
-                            alt=""
-                            width={150}
-                            height={150} />
-                        <Input type="file" onChange={handleChangeFile} />
-
-                    </Form.Item>
-                    <Form.Item label="Tac vụ">
+                            alt="..." />
+                        <input type="file" onChange={handleChangeFile} className="file" />
+                    </div>
+                    <div>
                         <button type="submit" className="btn btn-default tacvu" value="">
-                            updtae
+                            Upload Img
                         </button>
-                    </Form.Item>
+                    </div>
                 </div>
-
             </Form>
         </div>
 
