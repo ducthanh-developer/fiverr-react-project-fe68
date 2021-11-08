@@ -63,7 +63,7 @@ export const actEditJob = (jobId, jobInfo, formData) => {
   return async (dispatch) => {
     try {
       const result = await fiverrApi.editJobApi(jobId, jobInfo);
-      dispatch(actFetchListJobs());
+      // dispatch(actFetchListJobs());
       dispatch(actAddJobImage(jobId, formData));
       alert('thay đổi thành công');
     } catch (errors) {
