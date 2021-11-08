@@ -3,19 +3,20 @@ import { Form, Input, Button, Radio, InputNumber, Switch, Select } from "antd";
 import { useFormik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
 import { actFetchListTypeJobs } from "components/Header/module/actions";
-import {
-  actAddNewJob,
-  actFetchListSubJob,
-} from "../module/actions";
-export default function AddJob(props) {
+import { actEditJob, actFetchListSubJob } from "../module/actions";
+import { actGetJobTittle } from "containers/client/DetailJobs/modules/action";
+export default function EditJob(props) {
   const [imgSrc, setImgSrc] = useState("");
   const dispatch = useDispatch();
   const { listTypeJobs } = useSelector((state) => state.TypeJobsReducer);
   const { listSubJob } = useSelector((state) => state.JobManagementReducer);
+  const { tittleJob } = useSelector((state) => state.tittleJobReducer);
+  const jobIdValue = props.match.params.jobId;
   useEffect(() => {
     dispatch(actFetchListTypeJobs());
     dispatch(actFetchListSubJob());
-  }, [dispatch]);
+    dispatch(actGetJobTittle(jobIdValue));
+  }, [dispatch, jobIdValue]);
   const [componentSize, setComponentSize] = useState("default");
 
   const onFormLayoutChange = ({ size }) => {
@@ -23,24 +24,29 @@ export default function AddJob(props) {
   };
 
   const formik = useFormik({
+    enableReinitialize: true,
     initialValues: {
       job: {
-        name: "",
-        rating: 0,
-        price: 0,
-        proServices: false,
-        localSellers: false,
-        onlineSellers: false,
-        deliveryTime: false,
-        type: null,
-        subType: null,
+        _id: tittleJob._id,
+        name: tittleJob.name,
+        rating: tittleJob.rating,
+        price: tittleJob.price,
+        proServices: tittleJob.proServices,
+        localSellers: tittleJob.localSellers,
+        onlineSellers: tittleJob.onlineSellers,
+        deliveryTime: tittleJob.deliveryTime,
+        type: tittleJob.type,
+        subType: tittleJob.subType,
       },
       image: null,
     },
     onSubmit: (values) => {
       let formData = new FormData();
-      formData.append("job", values.image, values.image.name);
-      dispatch(actAddNewJob(values.job, formData));
+      if (values.image !== null) {
+        formData.append("job", values.image, values.image.name);
+      }
+      dispatch(actEditJob(jobIdValue, values.job, formData));
+      console.log(values);
     },
   });
   const handleChangeSwitch = (name) => {
@@ -73,10 +79,7 @@ export default function AddJob(props) {
   const renderListSubType = () => {
     return listSubJob.map((job, index) => {
       const { _id, name, typeJob } = job;
-      if (
-        typeJob?._id == formik.getFieldProps("job.type").value ||
-        typeJob == formik.getFieldProps("job.type").value
-      ) {
+      if (typeJob?._id == formik.values.job.type._id) {
         return (
           <Select.Option value={_id} key={index}>
             {name}
@@ -85,7 +88,6 @@ export default function AddJob(props) {
       }
     });
   };
-
   return (
     <Fragment>
       <Form
@@ -103,7 +105,7 @@ export default function AddJob(props) {
         onValuesChange={onFormLayoutChange}
         size={componentSize}
       >
-        <h2 className="text-center">Add Job</h2>
+        <h2 className="text-center">Edit Job</h2>
         <Form.Item label="Form Size" name="size">
           <Radio.Group>
             <Radio.Button value="small">Small</Radio.Button>
@@ -112,56 +114,79 @@ export default function AddJob(props) {
           </Radio.Group>
         </Form.Item>
         <Form.Item label="Name">
-          <Input name="job.name" onChange={formik.handleChange} />
+          <Input
+            name="job.name"
+            onChange={formik.handleChange}
+            value={formik.values.job.name}
+          />
         </Form.Item>
         <Form.Item label="Type">
-          <Select onChange={handleChangeSwitch("job.type")}>
+          <Select
+            onChange={handleChangeSwitch("job.type")}
+            value={formik.values.job.type._id}
+          >
             {renderListTypeJob()}
           </Select>
         </Form.Item>
         <Form.Item label="Sub Type">
-          <Select onChange={handleChangeSwitch("job.subType")}>
+          <Select
+            onChange={handleChangeSwitch("job.subType")}
+            value={formik.values.job.subType._id}
+          >
             {renderListSubType()}
           </Select>
         </Form.Item>
         <Form.Item label="Price">
-          <InputNumber onChange={handleChangeSwitch("job.price")} min={1} />
+          <InputNumber
+            onChange={handleChangeSwitch("job.price")}
+            min={1}
+            value={formik.values.job.price}
+          />
         </Form.Item>
         <Form.Item label="Rating">
           <InputNumber
             onChange={handleChangeSwitch("job.rating")}
             min={1}
             max={10}
+            value={formik.values.job.rating}
           />
         </Form.Item>
         <Form.Item label="Image">
           <input type="file" onChange={handleChangeFile} />
-          {imgSrc == "" ? (
-            ""
-          ) : (
-            <img
-              style={{ maxWidth: "150px" }}
-              src={imgSrc}
-              alt="Image"
-              className="mt-3"
-            />
-          )}
+          <img
+            style={{ maxWidth: "150px" }}
+            src={imgSrc == "" ? tittleJob.image : imgSrc}
+            alt="Image"
+            className="mt-3"
+          />
         </Form.Item>
         <Form.Item label="Pro Services">
-          <Switch onChange={handleChangeSwitch("job.proServices")} />
+          <Switch
+            onChange={handleChangeSwitch("job.proServices")}
+            checked={formik.values.job.proServices}
+          />
         </Form.Item>
         <Form.Item label="Local Sellers">
-          <Switch onChange={handleChangeSwitch("job.localSellers")} />
+          <Switch
+            onChange={handleChangeSwitch("job.localSellers")}
+            checked={formik.values.job.localSellers}
+          />
         </Form.Item>
         <Form.Item label="Online Sellers">
-          <Switch onChange={handleChangeSwitch("job.onlineSellers")} />
+          <Switch
+            onChange={handleChangeSwitch("job.onlineSellers")}
+            checked={formik.values.job.onlineSellers}
+          />
         </Form.Item>
         <Form.Item label="Delivery Time">
-          <Switch onChange={handleChangeSwitch("job.deliveryTime")} />
+          <Switch
+            onChange={handleChangeSwitch("job.deliveryTime")}
+            checked={formik.values.job.deliveryTime}
+          />
         </Form.Item>
         <Form.Item label>
           <Button type="primary" htmlType="submit">
-            Add Job
+            Update
           </Button>
         </Form.Item>
       </Form>
