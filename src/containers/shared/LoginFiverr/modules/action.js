@@ -11,11 +11,11 @@ const actLoginFail = error => ({
   payload: error,
 });
 
-export const actLogin = (user, history) => {
-  console.log("user", user);
+export const actLogin = (userLogin, history) => {
+  console.log("user", userLogin);
   return dispatch => {
     fiverrApi
-    .loginApi(user)
+    .loginApi(userLogin)
       .then(response => {
         dispatch(actLoginSuccess(response.data));
         console.log(response.data)
@@ -24,8 +24,9 @@ export const actLogin = (user, history) => {
         } else {
           history.push("/");
         }
+        console.log("routehhhhhhhhh", response.data.user.role);
+
         console.log("OK 200 Login");
-        console.log("object", response.data?.user.role);
       })
       .catch(error => {
         dispatch(actLoginFail('Unable to login!'));

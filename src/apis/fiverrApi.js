@@ -72,8 +72,8 @@ const fiverrApi = {
   fetchUploadImgApi(formData,user, token) {
     return callApiPost(`users/upload-avatar`, formData, user ,token );
   },
-  loginApi(user) {
-    return callApiPost(`auth/signin`, user);
+  loginApi(userLogin) {
+    return callApiPost(`auth/signin`, userLogin);
   },
 
   registerAPi(register) {
