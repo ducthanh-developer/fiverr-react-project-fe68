@@ -71,9 +71,9 @@ export const actHistoryJobsUser = () => {
 }
 
 
-export const actUploadImg = (formData) => {
+export const actUploadImg = (formData, user, token) => {
   return (dispatch) => {
-    fiverrApi.fetchUploadImgApi(formData)
+    fiverrApi.fetchUploadImgApi(formData, user, token)
       .then(response => {
         dispatch(actUploadImgSuccess(response.data))
         console.log("result", response.data);

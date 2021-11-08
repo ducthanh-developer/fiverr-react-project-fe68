@@ -11,11 +11,12 @@ export default function UserInformation(props) {
     const dispatch = useDispatch();
     const { userJobs, historyJobs } = useSelector((state) => state.userListJobsReducer);
     console.log("historyJobs", historyJobs);
+    const { currentUser } = useSelector((state) => state.authReducer);
 
     const idUser = props.match.params.id;
     useEffect(() => {
         dispatch(actGetUserListJobs(idUser));
-        dispatch(actHistoryJobsUser(idUser));
+        dispatch(actHistoryJobsUser(currentUser.token));
     }, [dispatch, idUser]);
 
     const [isShow, setIsShow] = React.useState(true);
@@ -208,7 +209,7 @@ export default function UserInformation(props) {
     )
 }
 
-
+//day ne
 
 export function UploadImgUser(props) {
     const dispatch = useDispatch();
@@ -241,24 +242,16 @@ export function UploadImgUser(props) {
         }
     })
 
+    
     const handleChangeFile = (e) => {
         let file = e.target.files[0];
-        if (
-            file.type === "image/jpg" ||
-            file.type === "image/jpeg" ||
-            file.type === "image/gif" ||
-            file.type === "image/png"
-        ) {
-            let reader = new FileReader();
-            reader.readAsDataURL(file);
-            reader.onload = (e) => {
-                console.log(e.target.result);
-                setImgSrc(e.target.result);
-                formik.setFieldValue("avatar", file);
-            };
-            console.log("file", file);
-        }
-    };
+        let reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = (e) => {
+          setImgSrc(e.target.result);
+        };
+        formik.setFieldValue("avatar", file);
+      };
     console.log("propsAdd", props);
     return (
         <div className="upload__avatar">

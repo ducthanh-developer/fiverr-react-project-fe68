@@ -12,7 +12,9 @@ export default function EditTypeJob(props) {
     console.log("props", props);
     const dispatch = useDispatch();
     const { detailTypeJob } = useSelector(state => state.typeJobsReducer)
-    console.log("detailTypeJob, ", detailTypeJob);
+    const { currentUser } = useSelector((state) => state.authReducer);
+    // console.log("detailTypeJob, ", detailTypeJob);
+    console.log("currentUser", currentUser);
     useEffect(() => {
         dispatch(actDetailTypeJob(props.match.params.typeId));
     }, [dispatch]);
@@ -29,7 +31,7 @@ export default function EditTypeJob(props) {
         onSubmit: (values) => {
             console.log(values);
             let { typeId } = props.match.params;
-            dispatch(actEditTypeJob(values, typeId))
+            dispatch(actEditTypeJob(typeId, values, ));
             console.log("tyjobId", typeId);
         }
     })

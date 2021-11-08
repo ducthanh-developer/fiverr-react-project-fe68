@@ -143,10 +143,9 @@ export default function DetailJobs(props) {
                             thongTinDat.onlineSellers = tittleJob.onlineSellers;
                             thongTinDat.deliveryTime = tittleJob.deliveryTime;
                             thongTinDat.status = tittleJob.status;
-                            thongTinDat.taiKhoanNguoiDat = currentUser.user.name;
+                            thongTinDat.taiKhoanNguoiDat = currentUser?.token;
                             console.log("thongtindat", thongTinDat);
                             dispatch(actDatCongViec(props.match.params.jobId));
-
                           }}
                             block >
                             <span className="mr-10">Continue (${tittleJob.price})</span>
