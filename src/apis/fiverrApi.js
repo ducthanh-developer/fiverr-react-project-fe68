@@ -49,8 +49,9 @@ const fiverrApi = {
   editJobApi(jobId, jobInfo) {
     return callApiPut(`jobs/${jobId}`, jobInfo);
   },
-  fetchBookingJob(jobId, thongTinDat = new ThongTinDat()) {
-    return callApiPatch(`jobs/booking/${jobId}`);
+
+  fetchBookingJob(jobId, token) {
+    return callApiPatch(`jobs/booking/${jobId}`, null, token);
   },
   fetchCommentApi(jobId, user = new User()) {
     return callApi(`comments/by-job/${jobId}`);
