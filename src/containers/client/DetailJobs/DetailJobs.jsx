@@ -15,6 +15,8 @@ export default function DetailJobs(props) {
   }
   const dispatch = useDispatch();
   const { tittleJob, commentJob } = useSelector((state) => state.tittleJobReducer);
+  const { currentUser } = useSelector((state) => state.authReducer);
+
   console.log("tittleJob", tittleJob);
   console.log("commentJob", commentJob);
 
@@ -131,7 +133,7 @@ export default function DetailJobs(props) {
                           </nav>
                           <Button onClick={() => {
                             const thongTinDat = new ThongTinDat();
-                            thongTinDat._id = props.match.params.id;
+                            thongTinDat._id = props.match.params.jobId;
                             thongTinDat.price = tittleJob.price;
                             console.log("Id", thongTinDat._id)
                             thongTinDat.name = tittleJob.name;
@@ -141,10 +143,9 @@ export default function DetailJobs(props) {
                             thongTinDat.onlineSellers = tittleJob.onlineSellers;
                             thongTinDat.deliveryTime = tittleJob.deliveryTime;
                             thongTinDat.status = tittleJob.status;
-                            thongTinDat.taiKhoanNguoiDat = tittleJob.usersBooking;
+                            thongTinDat.taiKhoanNguoiDat = currentUser?.token;
                             console.log("thongtindat", thongTinDat);
                             dispatch(actDatCongViec(props.match.params.jobId));
-
                           }}
                             block >
                             <span className="mr-10">Continue (${tittleJob.price})</span>

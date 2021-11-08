@@ -65,13 +65,13 @@ export const actDetailTypeJob = (typeJobId) => {
     }
 }
 
-export const actEditTypeJob =(values, typeJobId) => {
+export const actEditTypeJob =(values, typeJobId, token) => {
     console.log("typeJobId", typeJobId);
     console.log("values action", values)
 
     return async(dispatch)=>{
         try{
-            let res = await fiverrApi.editTypeJobApi(typeJobId, values);
+            let res = await fiverrApi.editTypeJobApi(typeJobId, values, token);
             console.log('res', res.data)
             alert("Cập nhât thành công");
   

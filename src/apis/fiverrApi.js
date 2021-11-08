@@ -66,11 +66,11 @@ const fiverrApi = {
     return callApi(`jobs/by-user`);
   },
   //historyJobs
-  fetchHistoryJobBookingApi() {
+  fetchHistoryJobBookingApi(token) {
     return callApi(`jobs/by-user`);
   },
-  fetchUploadImgApi(formData) {
-    return callApiPost(`users/upload-avatar`, formData);
+  fetchUploadImgApi(formData,user, token) {
+    return callApiPost(`users/upload-avatar`, formData, user ,token );
   },
   loginApi(user) {
     return callApiPost(`auth/signin`, user);
@@ -96,8 +96,8 @@ const fiverrApi = {
   detailUserApi(idUser) {
     return callApi(`users/${idUser}`);
   },
-  editUserApi(idUser) {
-    return callApiPut(`users/${idUser}`);
+  editUserApi(idUser,user, token) {
+    return callApiPut(`users/${idUser}`,user ,token );
   },
   searchUser(nameUser) {
     return callApi(`users/pagination-search?name=${nameUser}&skip=0&limit=2`)
