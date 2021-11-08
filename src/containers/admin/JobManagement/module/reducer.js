@@ -6,7 +6,7 @@ const innitialState = {
   listSubJob: [new SubType()],
 };
 
-export const JobManagementReducer = (
+ const JobManagementReducer = (
   state = innitialState,
   { type, payload }
 ) => {
@@ -24,3 +24,4 @@ export const JobManagementReducer = (
       return state;
   }
 };
+ export default JobManagementReducer

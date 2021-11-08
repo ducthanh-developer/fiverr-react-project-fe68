@@ -6,7 +6,7 @@ const actListUserSuccess = (userList) => ({
   payload: userList,
 });
 
-export const actListUserAdmin = (nameUser="") => {
+export const actListUserAdmin = (nameUser = "") => {
   return async (dispatch) => {
     try {
       const result = await fiverrApi.fetchListUser(nameUser);
@@ -32,7 +32,7 @@ export const actDeleteUser = (idUser) => {
 };
 
 
-export const actAddUser =(values )=>{
+export const actAddUser = (values) => {
   console.log("object, ", values)
   return async (dispatch) => {
     try {
@@ -45,40 +45,40 @@ export const actAddUser =(values )=>{
   };
 }
 
-export const actDetailUser =(idUser)=>{
-  return dispatch=>{
-      fiverrApi.detailUserApi(idUser)
-      .then(res=>{
-          console.log(res, 'res editmovie')  
-          dispatch({
-              type: FETCH__EDIT__USER__SUCCESS,
-              payload: res.data,
-          })
-      }).catch(error=>{
-          console.log("sai ne", error.response.data)
-          dispatch({
-              type:FETCH__EDIT__USER__FAIL,
-              payload: error.response.data
-          })
+export const actDetailUser = (idUser) => {
+  return dispatch => {
+    fiverrApi.detailUserApi(idUser)
+      .then(res => {
+        console.log(res, 'res editmovie')
+        dispatch({
+          type: FETCH__EDIT__USER__SUCCESS,
+          payload: res.data,
+        })
+      }).catch(error => {
+        console.log("sai ne", error.response.data)
+        dispatch({
+          type: FETCH__EDIT__USER__FAIL,
+          payload: error.response.data
+        })
       })
   }
 }
 
 
-export  const  actEditUser =(values, idUser)=>{
-  console.log("idUseriii",idUser )
+export const actEditUser = (values, idUser) => {
+  console.log("idUseriii", idUser)
   console.log("values action", values)
-  return async(dispatch)=>{
-      try{
-          let res = await fiverrApi.editUserApi(idUser, values);
-          console.log("values action", values)
+  return async (dispatch) => {
+    try {
+      let res = await fiverrApi.editUserApi(idUser, values);
+      console.log("values action", values)
+      dispatch(actListUserAdmin())
+      console.log('res', res.data)
+      alert("Cập nhât thành công");
 
-          console.log('res', res.data)
-          alert("Cập nhât thành công");
+    } catch (error) {
+      console.log(error.response?.date)
 
-      }catch(error){
-          console.log(error.response?.date)
-
-      }
+    }
   }
 }
