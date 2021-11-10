@@ -3,48 +3,34 @@ import { Table, Input } from "antd";
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
 import { Button } from "antd/lib/radio";
 import { useDispatch, useSelector } from "react-redux";
-import { actFetchListJobs } from "containers/client/ListJobs/module/actions";
 import { Fragment } from "react";
 import { NavLink } from "react-router-dom";
-import { actDeleteJob } from "./module/actions";
-export default function JobManagement() {
-  const { listJobs } = useSelector((state) => state.JobReducer);
+import { actDeleteSubJob } from "./module/actions";
+import { actFetchListSubJob } from "../JobManagement/module/actions";
+export default function SubJobManagement() {
+  const { listSubJob } = useSelector((state) => state.JobManagementReducer);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(actFetchListJobs());
+    dispatch(actFetchListSubJob());
   }, [dispatch]);
 
   const { Search } = Input;
 
-  const onSearch = (value) => {
-    dispatch(actFetchListJobs(value));
-  };
+  const onSearch = (value) => {};
 
   const columns = [
     {
-      title: "Name Job",
+      title: "Name SubJob",
       dataIndex: "name",
       sorter: (a, b) => a.name.localeCompare(b.name),
       sortDirections: ["ascend", "descend"],
     },
     {
-      title: "Rate",
-      dataIndex: "rating",
+      title: "Type Job",
+      dataIndex: "typeJob",
       sorter: (a, b) => a.rating - b.rating,
-    },
-    {
-      title: "Price",
-      dataIndex: "price",
-    },
-    {
-      title: "Image",
-      render: (text, job) => {
-        return (
-          <img src={job.image} alt="Image" style={{ maxWidth: "100px" }} />
-        );
-      },
     },
     {
       title: "Action",
@@ -52,7 +38,7 @@ export default function JobManagement() {
         return (
           <Fragment>
             <NavLink
-              to={`/admin/job-management/edit-job/${job._id}`}
+              to={`/admin/subjob-management/edit-subjob/${job._id}`}
               className="mr-3 text-success"
             >
               <EditOutlined />
@@ -63,7 +49,7 @@ export default function JobManagement() {
               className="text-danger"
               onClick={() => {
                 if (window.confirm("Bạn có chắc chắn muốn xóa phim")) {
-                  dispatch(actDeleteJob(job._id));
+                  dispatch(actDeleteSubJob(job._id));
                 }
               }}
             >
@@ -75,13 +61,13 @@ export default function JobManagement() {
     },
   ];
 
-  const data = listJobs;
+  const data = listSubJob;
 
   function onChange(pagination, filters, sorter, extra) {}
   return (
     <div>
       <h3>List Jobs</h3>
-      <NavLink to="/admin/job-management/add-job">
+      <NavLink to="/admin/subjob-management/add-subjob">
         <Button className="mb-3">Add Job</Button>
       </NavLink>
       <Search

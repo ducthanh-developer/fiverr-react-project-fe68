@@ -71,49 +71,21 @@ export default function AdminSidebar() {
               </ul>
             </li>
             <li>
-
-              <a href="tables-regular.html">
-
+              <a href="..">
                 <i className="metismenu-icon pe-7s-display2" />
-                Tables
+                Sub Type Job
+                <i className="metismenu-state-icon pe-7s-angle-down caret-left" />
               </a>
-            </li>
-            <li className="app-sidebar__heading">Widgets</li>
-            <li>
-              <a href="dashboard-boxes.html">
-                <i className="metismenu-icon pe-7s-display2" />
-                Dashboard Boxes
-              </a>
-            </li>
-            <li className="app-sidebar__heading">Forms</li>
-            <li>
-              <a href="forms-controls.html">
-                <i className="metismenu-icon pe-7s-mouse"></i>Forms Controls
-              </a>
-            </li>
-            <li>
-              <a href="forms-layouts.html">
-                <i className="metismenu-icon pe-7s-eyedropper"></i>Forms Layouts
-              </a>
-            </li>
-            <li>
-              <a href="forms-validation.html">
-                <i className="metismenu-icon pe-7s-pendrive"></i>Forms
-                Validation
-              </a>
-            </li>
-            <li className="app-sidebar__heading">Charts</li>
-            <li>
-              <a href="charts-chartjs.html">
-                <i className="metismenu-icon pe-7s-graph2"></i>ChartJS
-              </a>
-            </li>
-            <li className="app-sidebar__heading">PRO Version</li>
-            <li>
-              <a href="..." target="_blank">
-                <i className="metismenu-icon pe-7s-graph2"></i>
-                Upgrade to PRO
-              </a>
+              <ul>
+                <li>
+                  <NavLink to="/admin/subjob-management">
+                    <i className="metismenu-icon"></i>List SubJobs
+                  </NavLink>
+                  <NavLink to="/admin/subjob-management/add-subjob">
+                    <i className="metismenu-icon"></i>Add SubJobs
+                  </NavLink>
+                </li>
+              </ul>
             </li>
           </ul>
         </div>

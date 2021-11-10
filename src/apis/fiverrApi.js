@@ -3,12 +3,12 @@ import callApiDelete from "utils/callApiDelete";
 import callApiPatch from "utils/callApiPatch";
 import callApiPost from "utils/callApiPost";
 import callApiPut from "utils/callApiPut";
-import { ThongTinDat, User } from "_core/models/ThongTinDat";
+import { User } from "_core/models/ThongTinDat";
 
 const fiverrApi = {
   // api 20
   fetchListJobsApi(jobName = "") {
-    if (jobName == "") {
+    if (jobName === "") {
       return callApi("jobs");
     }
     return callApi(`jobs/by-name?name=${jobName}`);
@@ -49,7 +49,22 @@ const fiverrApi = {
   editJobApi(jobId, jobInfo) {
     return callApiPut(`jobs/${jobId}`, jobInfo);
   },
-
+  // api 8
+  addSubJobApi(subJob) {
+    return callApiPost(`sub-type-jobs`, subJob);
+  },
+  // api 11
+  editSubJobApi(subJobId, subJob) {
+    return callApiPut(`sub-type-jobs/${subJobId}`, subJob);
+  },
+  // api 12
+  deleteSubJobApi(subJobId) {
+    return callApiDelete(`sub-type-jobs/${subJobId}`);
+  },
+  // api 10
+  fetchSubTypeJobApi(subjobId) {
+    return callApi(`sub-type-jobs/${subjobId}`);
+  },
   fetchBookingJob(jobId, token) {
     return callApiPatch(`jobs/booking/${jobId}`, null, token);
   },
@@ -70,8 +85,8 @@ const fiverrApi = {
   fetchHistoryJobBookingApi(token) {
     return callApi(`jobs/by-user`);
   },
-  fetchUploadImgApi(formData,user, token) {
-    return callApiPost(`users/upload-avatar`, formData, user ,token );
+  fetchUploadImgApi(formData, user, token) {
+    return callApiPost(`users/upload-avatar`, formData, user, token);
   },
   loginApi(user) {
     return callApiPost(`auth/signin`, user);
@@ -97,25 +112,24 @@ const fiverrApi = {
   detailUserApi(idUser) {
     return callApi(`users/${idUser}`);
   },
-  editUserApi(idUser,user, token) {
-    return callApiPut(`users/${idUser}`,user ,token );
+  editUserApi(idUser, user, token) {
+    return callApiPut(`users/${idUser}`, user, token);
   },
   searchUser(nameUser) {
-    return callApi(`users/pagination-search?name=${nameUser}&skip=0&limit=2`)
+    return callApi(`users/pagination-search?name=${nameUser}&skip=0&limit=2`);
   },
   //type-jobs
   fetchListTypeJobApi() {
-    return callApi(`type-jobs`)
+    return callApi(`type-jobs`);
   },
   createListTypeJobApi(jobType) {
-    return callApiPost(`type-jobs`, jobType)
+    return callApiPost(`type-jobs`, jobType);
   },
   detailTypeJobApi(typeJobId) {
-    return callApi(`type-jobs/${typeJobId}`)
+    return callApi(`type-jobs/${typeJobId}`);
   },
   editTypeJobApi(typeJobId) {
-    return callApiPut(`type-jobs/${typeJobId}`)
-  }
-  
+    return callApiPut(`type-jobs/${typeJobId}`);
+  },
 };
 export default fiverrApi;
