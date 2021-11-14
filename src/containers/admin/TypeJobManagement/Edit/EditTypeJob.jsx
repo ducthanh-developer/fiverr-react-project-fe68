@@ -23,8 +23,8 @@ export default function EditTypeJob(props) {
     const formik = useFormik({
         enableReinitialize: true,
         initialValues: {
-            name: detailTypeJob?.name,
             _id: detailTypeJob?._id,
+            name: detailTypeJob?.name,
             // subTypeJobs: detailTypeJob?.subTypeJobs,
             status: detailTypeJob?.status,
         },
@@ -62,7 +62,7 @@ export default function EditTypeJob(props) {
                     }}
                     onValuesChange={onFormLayoutChange}
                     size={componentSize}>
-                    <Form.Item label=" name" style={{ marginTop: "80px" }} value={formik.values.name} >
+                    <Form.Item label="name" style={{ marginTop: "80px" }} value={formik.values.name} >
                         <Input name="name" onChange={formik.handleChange} />
                     </Form.Item>
                     {/* <Form.Item label=" subTypeJobs" >

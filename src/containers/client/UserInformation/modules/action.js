@@ -9,9 +9,9 @@ import { FETCH_USER_LIST_JOBS_SUCCESS, FETCH__HISTORY__JOBS__SUCCESS, FETCH__UPL
 // });
 
 
-export const actLayDanhSachCongViecNguoiDung = (userJobs) => ({
+export const actLayDanhSachCongViecNguoiDung = (detailUser) => ({
   type: FETCH_USER_LIST_JOBS_SUCCESS,
-  payload: userJobs,
+  payload: detailUser,
 });
 
 export const actLayDanhSachCongViecNguoiDungFail = (error) => ({
@@ -45,24 +45,44 @@ export const actGetUserListJobs = (userId) => {
   }
 }
 
-export const actFetchAddUserInformation = (values) => {
+export const actFetchAddUserInformation = (values, idUser, token) => {
+  
   return async (dispatch) => {
     try {
-      let { data } = await fiverrApi.fetchAddUserInformation(values);
+      let { data } = await fiverrApi.fetchAddUserInformation(values, idUser, token);
       console.log("actionvalueshhh", values)
-      console.log("dta", data);
       alert("Thêm Thành Công")
+
+      console.log("dta", data);
     } catch (error) {
-      dispatch(actLayDanhSachCongViecNguoiDungFail())
       console.log(error.response?.data);
     }
   };
 };
 
-export const actHistoryJobsUser = () => {
+
+
+// export const actEditUser = (values, idUser) => {
+//   console.log("idUseriii", idUser)
+//   console.log("values action", values)
+//   return async (dispatch) => {
+//     try {
+//       let res = await fiverrApi.editUserApi(idUser, values);
+//       console.log("values action", values)
+//       dispatch(actGetUserListJobs())
+//       console.log('res', res.data)
+//       alert("Cập nhât thành công");
+
+//     } catch (error) {
+//       console.log(error.response?.date)
+
+//     }
+//   }
+// }
+export const actHistoryJobsUser = (token) => {
   return (dispatch) => {
     fiverrApi
-      .fetchHistoryJobBookingApi()
+      .fetchHistoryJobBookingApi(token)
       .then(response => {
         dispatch(actFetchHistorySuccess(response.data))
       })

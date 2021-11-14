@@ -9,8 +9,7 @@ import { useState } from "react";
 export default function UserInformation(props) {
     const { Meta } = Card;
     const dispatch = useDispatch();
-    const { userJobs, historyJobs } = useSelector((state) => state.userListJobsReducer);
-    console.log("historyJobs", historyJobs);
+    const { detailUser, historyJobs } = useSelector((state) => state.userListJobsReducer);
     const { currentUser } = useSelector((state) => state.authReducer);
 
     const idUser = props.match.params.id;
@@ -35,8 +34,10 @@ export default function UserInformation(props) {
     }
     const formik = useFormik({
         initialValues: {
-            skill: '',
-            certification: '',
+            skill: detailUser?.skill,
+            certification: detailUser?.certification,
+            token: currentUser?.token,
+
         },
         onSubmit: (values) => {
             console.log("values", values);
@@ -50,7 +51,7 @@ export default function UserInformation(props) {
                     <div className="col-6 col-md-5 col-lg-5">
                         <div className=" card card-1 ">
                             <UploadImgUser path={props} />
-                            <h6 className="name__profile text-center">{userJobs.email}</h6>
+                            <h6 className="name__profile text-center">{detailUser.email}</h6>
                             <button className="btn btn__profile">Preview Public Model</button>
                             <hr></hr>
                             <div>
@@ -146,7 +147,7 @@ export default function UserInformation(props) {
                                             </div>}
                                     </div>
                                     <div className="done__add__skill">
-                                        {userJobs.certification?.map((skill, index) => {
+                                        {detailUser.certification?.map((skill, index) => {
                                             return (
                                                 <div key={index} className="skill">{skill}</div>
                                             )
@@ -214,9 +215,9 @@ export default function UserInformation(props) {
 export function UploadImgUser(props) {
     const dispatch = useDispatch();
 
-    const { userJobs } = useSelector((state) => state.userListJobsReducer);
-    console.log("object,", userJobs);
-    console.log("ava", userJobs.avatar);
+    const { detailUser } = useSelector((state) => state.userListJobsReducer);
+    console.log("object,", detailUser);
+    console.log("ava", detailUser.avatar);
 
     const { currentUser } = useSelector((state) => state.authReducer);
     console.log("current", currentUser);
@@ -238,7 +239,7 @@ export function UploadImgUser(props) {
             formData.append("avatar", values.avatar, values.avatar.name);
             console.log("formDatafdfdfgf", formData.get("avatar"));
             console.log("alo ");
-            dispatch(actUploadImg(formData));
+            dispatch(actUploadImg(formData, currentUser?.token));
         }
     })
 
@@ -267,7 +268,7 @@ export function UploadImgUser(props) {
                     <div className="">
                         <img
                             className="img_select"
-                            src={imgSrc === "" ? userJobs.avatar : imgSrc}
+                            src={imgSrc === "" ? detailUser.avatar : imgSrc}
                             alt="..." />
                         <input type="file" onChange={handleChangeFile} className="file" />
                     </div>
