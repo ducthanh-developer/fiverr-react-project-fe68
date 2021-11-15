@@ -1,11 +1,9 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { Redirect, Route } from 'react-router';
+import React from "react";
+import { useSelector } from "react-redux";
+import { Redirect, Route } from "react-router";
 
 const withLayout = (WrappedComponent) => {
   return ({ component: Component, isPrivate, ...rest }) => {
-    console.log("isPrivate", isPrivate);
-
     const { currentUser } = useSelector((state) => state.authReducer);
 
     const content = (
@@ -28,6 +26,5 @@ const withLayout = (WrappedComponent) => {
     return content;
   };
 };
-
 
 export default withLayout;
