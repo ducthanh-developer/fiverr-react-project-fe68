@@ -5,18 +5,16 @@ import { Fragment } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
 
-
-import { actListTypeJob } from "./modules/action";
+import { actDeleteTypeJob, actListTypeJob } from "./modules/action";
 // import AddTypeJob from "./Add/AddTypeJob";
 
 export default function TypeJobManagement() {
   // const { Search } = Input;
 
   const dispatch = useDispatch();
-  const { listTypeJob } = useSelector(state => state.typeJobsReducer)
-  console.log("listTypeJob", listTypeJob);
+  const { listTypeJob } = useSelector((state) => state.typeJobsReducer);
   useEffect(() => {
-    dispatch(actListTypeJob())
+    dispatch(actListTypeJob());
   }, [dispatch]);
 
   const columns = [
@@ -26,23 +24,23 @@ export default function TypeJobManagement() {
       sorter: (a, b) => a.name - b.name,
     },
     {
-      title: 'subTypeJobs',
-      key: 'subTypeJobs',
+      title: "subTypeJobs",
+      key: "subTypeJobs",
       width: 500,
       render: () => (
         <span>
           <Badge status="success" />
           {listTypeJob?.map((mia, index) => {
             return (
-              <div key={index} >{mia.subTypeJobs?.map((itemJob, index) => {
-                return (
-                  <div></div>
-                  // <div key={index} style={{width: 500}}>{itemJob.name}</div>
-                  
-                )
-              })}</div>
-            )
-
+              <div key={index}>
+                {mia.subTypeJobs?.map((itemJob, index) => {
+                  return (
+                    <div></div>
+                    // <div key={index} style={{width: 500}}>{itemJob.name}</div>
+                  );
+                })}
+              </div>
+            );
           })}
         </span>
       ),
@@ -53,12 +51,22 @@ export default function TypeJobManagement() {
       render: (index, job) => {
         return (
           <Fragment key={index}>
-            <NavLink to={`/admin/type-job/edit/${job._id}`} className="mr-3 text-success">
+            <NavLink
+              to={`/admin/type-job/edit/${job._id}`}
+              className="mr-3 text-success"
+            >
               <EditOutlined />
             </NavLink>
-            <NavLink to="/" className="text-danger">
+            <span
+              className="text-danger"
+              style={{ cursor: "pointer" }}
+              onClick={() => {
+                window.confirm("Bạn có chắc chắn muốn xóa ?");
+                dispatch(actDeleteTypeJob(job._id));
+              }}
+            >
               <DeleteOutlined />
-            </NavLink>
+            </span>
           </Fragment>
         );
       },
@@ -71,7 +79,6 @@ export default function TypeJobManagement() {
   }
   return (
     <div>
-
       <Link className="nav-link " to="/admin/type-job/add">
         Thêm
       </Link>
@@ -79,5 +86,5 @@ export default function TypeJobManagement() {
 
       {/* <AddTypeJob /> */}
     </div>
-  )
+  );
 }
