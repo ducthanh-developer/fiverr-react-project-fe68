@@ -2,6 +2,8 @@
     background-color: #f7f7f7;
     .user__information__content {
         max-width: 85%;
+        margin: 0 auto;
+        // max-width: 85%;
         .card-1 {
             margin-top: 50px;
             .btn__profile {
@@ -225,7 +227,7 @@
             margin-top: -10px;
         }
         .industry {
-            margin-left: 90px;
+            // margin-left: 90px;
             font-weight: 500;
             font-size: 15px;
             color: #1dbf73;
@@ -350,82 +352,35 @@
     }
 }
 
-@media (max-width: 1496px) {
-    .user__information__right {
-        .car__done__create {
-            width: 710px;
-
-            .Buying {
-                font-size: 18px;
-                img {
-                    margin-right: 10px;
-                    width: 50px;
-                    margin-left: 25px;
-                }
-                b {
-                    font-weight: 600;
-                    line-height: 10px;
-                    font-size: 17px;
-                }
-            }
-
-            .questions {
-                margin-left: 90px;
-                font-weight: 500;
-                font-size: 15px;
-                margin-top: -10px;
-            }
-            .industry {
-                margin-left: 90px;
-                font-weight: 500;
-                font-size: 15px;
-                color: #1dbf73;
-            }
-        }
-        .create__new__gif {
-            height: 90px;
-            width: 710px;
-            padding: 26px 20px 20px 20px;
-            border: 1px solid #9f9ca26b;
-            .Gigs {
-                font-size: 17px;
-            }
-            .button__gif {
-                button {
-                    height: 43px;
-                    width: 156px;
-                    margin-top: -5px;
-                }
-            }
-        }
-        .history__job__booking {
-            margin-top: 30px;
-            margin-left: 0px;
-            border-radius: 4px;
-            padding-top: 10px;
-            padding-bottom: 10px;
-
-            .bookingName {
-                .name {
-                    margin-bottom: 30px;
-                }
-                .ant-card-bordered {
-                    width: 710px;
-                    margin-left: -35px;
-                    border-radius: 4px;
-                    border: 1px solid rgba(206, 200, 200, 0.769);
-                }
-            }
-        }
-    }
+.userInformation__item1 {
+    float: left;
+    width: 40%;
+}
+.userInformation__item2 {
+    float: left;
+    width: 60%;
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1496px) {
+    .user__information__content {
+        max-width: 95% !important;
+        margin: 0;
+    }
+
+    .userInformation__item1 {
+        float: left;
+        width: 40%;
+    }
+    .userInformation__item2 {
+        float: left;
+        width: 60%;
+    }
+
     .user__information__right {
         .car__done__create {
             border-radius: 1px;
             margin-top: 50px;
-            width: 670px;
+            width: 850px !important;
             height: 141px;
             padding: 20px 20px 20px 20px;
             margin-bottom: 30px;
@@ -452,7 +407,7 @@
                 margin-top: -10px;
             }
             .industry {
-                margin-left: 90px;
+                // margin-left: 90px;
                 font-weight: 500;
                 font-size: 15px;
                 color: #1dbf73;
@@ -460,7 +415,7 @@
         }
         .create__new__gif {
             height: 90px;
-            width: 670px;
+            width: 710px !important;
             padding: 26px 20px 20px 20px;
             border: 1px solid #9f9ca26b;
             .Gigs {
@@ -486,7 +441,7 @@
                     margin-bottom: 30px;
                 }
                 .ant-card-bordered {
-                    width: 670px;
+                    width: 810px;
                     margin-left: -35px;
                     border-radius: 4px;
                     border: 1px solid rgba(206, 200, 200, 0.769);
@@ -496,14 +451,61 @@
     }
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1396px) {
+    .user__information__content {
+        max-width: 95% !important;
+        margin: 0 auto;
+    }
+
+    .userInformation__item1 {
+        float: left;
+        width: 40%;
+    }
+    .userInformation__item2 {
+        float: left;
+        width: 60%;
+    }
+
     .user__information__right {
         .car__done__create {
-            width: 600px !important;
+            border-radius: 1px;
+            margin-top: 50px;
+            width: 750px !important;
+            height: 141px;
+            padding: 20px 20px 20px 20px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(206, 200, 200, 0.769);
+            box-shadow: none;
+            .Buying {
+                font-size: 18px;
+                img {
+                    margin-right: 10px;
+                    width: 50px;
+                    margin-left: 25px;
+                }
+                b {
+                    font-weight: 600;
+                    line-height: 10px;
+                    font-size: 17px;
+                }
+            }
+
+            .questions {
+                margin-left: 90px;
+                font-weight: 500;
+                font-size: 15px;
+                margin-top: -10px;
+            }
+            .industry {
+                // margin-left: 90px;
+                font-weight: 500;
+                font-size: 15px;
+                color: #1dbf73;
+            }
         }
         .create__new__gif {
             height: 90px;
-            width: 600px;
+            width: 710px !important;
             padding: 26px 20px 20px 20px;
             border: 1px solid #9f9ca26b;
             .Gigs {
@@ -512,18 +514,24 @@
             .button__gif {
                 button {
                     height: 43px;
-                    width: 130px !important;
+                    width: 156px;
                     margin-top: -5px;
                 }
             }
         }
         .history__job__booking {
+            margin-top: 30px;
+            margin-left: 0px;
+            border-radius: 4px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+
             .bookingName {
                 .name {
                     margin-bottom: 30px;
                 }
                 .ant-card-bordered {
-                    width: 600px !important;
+                    width: 810px;
                     margin-left: -35px;
                     border-radius: 4px;
                     border: 1px solid rgba(206, 200, 200, 0.769);
@@ -533,208 +541,195 @@
     }
 }
 
-@media (max-width: 1480px) {
+@media (max-width: 992px) {
     .user__information__content {
         max-width: 95% !important;
-        display: block;
+        margin: 0 auto;
+    }
+
+    .userInformation__item1 {
+        float: left;
+        width: 40%;
+    }
+    .userInformation__item2 {
+        float: left;
+        width: 60%;
+    }
+
+    .user__information__right {
+        .car__done__create {
+            border-radius: 1px;
+            margin-top: 50px;
+            width: 563px !important;
+            height: 161px !important;
+            padding: 20px 20px 20px 20px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(206, 200, 200, 0.769);
+            box-shadow: none;
+            .Buying {
+                font-size: 18px;
+                img {
+                    margin-right: 10px;
+                    width: 50px;
+                    margin-left: 25px;
+                }
+                b {
+                    font-weight: 600;
+                    line-height: 10px;
+                    font-size: 17px;
+                }
+            }
+
+            .questions {
+                margin-left: 90px;
+                font-weight: 500;
+                font-size: 15px;
+                margin-top: -10px;
+            }
+            .industry {
+                // margin-left: 90px;
+                font-weight: 500;
+                font-size: 15px;
+                color: #1dbf73;
+            }
+        }
+        .create__new__gif {
+            height: 120px !important;
+            width: 563px !important;
+            padding: 26px 20px 20px 20px;
+            border: 1px solid #9f9ca26b;
+            .Gigs {
+                font-size: 17px;
+            }
+            .button__gif {
+                button {
+                    font-size: 14px;
+                    height: 53px !important;
+                    width: 126px !important;
+                    margin-top: -5px;
+                }
+            }
+        }
+        .history__job__booking {
+            margin-top: 30px;
+            margin-left: 0px;
+            border-radius: 4px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+
+            .bookingName {
+                .name {
+                    margin-bottom: 30px;
+                }
+                .ant-card-bordered {
+                    width: 563px;
+                    margin-left: -35px;
+                    border-radius: 4px;
+                    border: 1px solid rgba(206, 200, 200, 0.769);
+                }
+            }
+        }
     }
 }
 
-@media (max-width: 1300px) {
+
+@media (max-width:768px) {
     .user__information__content {
         max-width: 95% !important;
-        display: block;
+        margin: 0 auto;
+    }
+
+    .userInformation__item1 {
+        float: left;
+        width: 40%;
+    }
+    .userInformation__item2 {
+        float: left;
+        width: 60%;
+    }
+
+    .user__information__right {
+        .car__done__create {
+            border-radius: 1px;
+            margin-top: 50px;
+            width: 463px !important;
+            height: 161px !important;
+            padding: 20px 20px 20px 20px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(206, 200, 200, 0.769);
+            box-shadow: none;
+            .Buying {
+                font-size: 18px;
+                img {
+                    margin-right: 10px;
+                    width: 50px;
+                    margin-left: 25px;
+                }
+                b {
+                    font-weight: 600;
+                    line-height: 10px;
+                    font-size: 17px;
+                }
+            }
+
+            .questions {
+                margin-left: 90px;
+                font-weight: 500;
+                font-size: 15px;
+                margin-top: -10px;
+            }
+            .industry {
+                // margin-left: 90px;
+                font-weight: 500;
+                font-size: 15px;
+                color: #1dbf73;
+            }
+        }
+        .create__new__gif {
+            height: 120px !important;
+            width: 463px !important;
+            padding: 26px 20px 20px 20px;
+            border: 1px solid #9f9ca26b;
+            .Gigs {
+                font-size: 17px;
+            }
+            .button__gif {
+                button {
+                    font-size: 14px;
+                    height: 53px !important;
+                    width: 126px !important;
+                    margin-top: -5px;
+                }
+            }
+        }
+        .history__job__booking {
+            margin-top: 30px;
+            margin-left: 0px;
+            border-radius: 4px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+
+            .bookingName {
+                .name {
+                    margin-bottom: 30px;
+                }
+                .ant-card-bordered {
+                    width: 463px !important;
+                    margin-left: -35px;
+                    border-radius: 4px;
+                    border: 1px solid rgba(206, 200, 200, 0.769);
+                }
+            }
+        }
     }
 }
 
-@media (max-width: 1200px) {
-    .card-1,
-    .card-2 {
-        width: 400px !important;
-        margin-left: -10px !important;
-    }
-}
 
 @media (max-width: 992px) {
-    .card-1,
-    .card-2 {
+
+    .card-1, .card-2{
         width: 350px !important;
-        margin-left: -10px !important;
     }
 }
 
-@media (max-width: 1200px) {
-    .addform__certification {
-        width: 337px !important;
-       
-        input {
-            margin-top: 20px;
-            border-radius: 4px;
-            height: 40px;
-        }
-        .ant-select-selector {
-            height: 440px;
-        }
-        .ant-form-item-control-input {
-            width: 307px !important;
-            margin-left: 10px;
-            margin-top: -9px;
-        }
-       
-        .add__skill__button {
-            hr {
-                margin-top: -7px;
-                margin-right: 19px;
-                font-weight: bold;
-            }
-        }
-        .btn__add__certification {
-            width: 135px;
-            margin-top: -4px;
-            font-size: 14px;
-        }
-        
-    }
-}
 
-@media (max-width:1200px) {
-    
-    .card-2 {
-        .Description {
-            .flex-item-3 {
-                margin-top: 40px;
-                margin-left: 30px;
-                color: #0e0e0f;
-                font-size: 16px;
-                font-weight: 700;
-            }
-            .flex-item-4 {
-                margin-top: -5px !important;
-               
-                .add__skill {
-                    margin-bottom: 15px;
-                    margin-left: 167px;
-                }
-            }
-        }
-    
-        .AddFormSkill {
-            width: 340px;
-           
-            input {
-                margin-top: 20px;
-                border-radius: 4px;
-                height: 40px;
-            }
-           
-            .ant-form-item-control-input {
-                width: 307px;
-                margin-left: 12px;
-                margin-top: -9px;
-            }
-            .ant-select:not(.ant-select-customize-input) .ant-select-selector {
-                height: 42px;
-                position: relative;
-                border: 1px solid #d9d9d9;
-                background-color: #fff;
-                border-radius: 2px;
-                transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-            }
-            .add__skill__button {
-                hr {
-                    margin-top: -7px;
-                    margin-right: 15px;
-                    font-weight: bold;
-                }
-            }
-            .btn__add__skill {
-                width: 140px !important;
-                margin-top: -4px;
-                height: 37px;
-            }
-            .btn__cancle__skkil {
-                background-color: #fff;
-                width: 160px;
-                margin-top: -4px;
-                color: black;
-                font-weight: 500;
-                border: 1px solid rgba(49, 25, 25, 0.075);
-                font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
-            }
-        }
-    }
-    
-    
-}
-
-
-
-@media (max-width:992px) {
-    
-    .card-2 {
-        .Description {
-            .flex-item-3 {
-                margin-top: 40px;
-                margin-left: 30px;
-                color: #0e0e0f;
-                font-size: 16px;
-                font-weight: 700;
-            }
-            .flex-item-4 {
-                margin-top: -5px !important;
-               
-                .add__skill {
-                    margin-bottom: 15px;
-                    margin-left: 167px;
-                }
-            }
-        }
-    
-        .AddFormSkill {
-            width: 340px;
-           
-            input {
-                margin-top: 20px;
-                border-radius: 4px;
-                height: 40px;
-            }
-           
-            .ant-form-item-control-input {
-                width: 307px;
-                margin-left: 12px;
-                margin-top: -9px;
-            }
-            .ant-select:not(.ant-select-customize-input) .ant-select-selector {
-                height: 42px;
-                position: relative;
-                border: 1px solid #d9d9d9;
-                background-color: #fff;
-                border-radius: 2px;
-                transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-            }
-            .add__skill__button {
-                hr {
-                    margin-top: -7px;
-                    margin-right: 15px;
-                    font-weight: bold;
-                }
-            }
-            .btn__add__skill {
-                width: 140px !important;
-                margin-top: -4px;
-                height: 37px;
-            }
-            .btn__cancle__skkil {
-                background-color: #fff;
-                width: 160px;
-                margin-top: -4px;
-                color: black;
-                font-weight: 500;
-                border: 1px solid rgba(49, 25, 25, 0.075);
-                font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
-            }
-        }
-    }
-    
-    
-}

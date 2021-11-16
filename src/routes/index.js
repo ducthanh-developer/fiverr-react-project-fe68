@@ -14,6 +14,9 @@ import Register from "containers/shared/Register/Register";
 import TypeJobManagement from "containers/admin/TypeJobManagement/TypeJobManagement";
 import AddTypeJob from "containers/admin/TypeJobManagement/Add/AddTypeJob";
 import EditTypeJob from "containers/admin/TypeJobManagement/Edit/EditTypeJob";
+import SubJobManagement from "containers/admin/SubJobManagement/SubJobManagement";
+import AddSubJob from "containers/admin/SubJobManagement/AddSubJob/AddSubJob";
+import EditSubJob from "containers/admin/SubJobManagement/EditSubJob/EditSubJob";
 export const clientRoutes = [
   {
     path: "/",
@@ -91,6 +94,21 @@ export const adminRoutes = [
     exact: true,
   },
   {
+    path: "/admin/subjob-management",
+    component: SubJobManagement,
+    exact: true,
+  },
+  {
+    path: "/admin/subjob-management/add-subjob",
+    component: AddSubJob,
+    exact: true,
+  },
+  {
+    path: "/admin/subjob-management/edit-subjob/:subjobId",
+    component: EditSubJob,
+    exact: true,
+  },
+  {
     path: "/admin/user-managerment/add",
     component: AddUser,
     exact: false,
@@ -123,7 +141,6 @@ export const adminRoutes = [
     component: EditTypeJob,
     exact: false,
     isPrivate: true,
-
   },
   
   

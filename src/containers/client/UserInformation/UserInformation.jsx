@@ -46,9 +46,9 @@ export default function UserInformation(props) {
     })
     return (
         <div className="user__information">
-            <div className="container-fluid user__information__content ">
+            <div className=" user__information__content">
                 <div className="row">
-                    <div className="col-6 col-md-5 col-lg-5">
+                    <div className=" userInformation__item1">
                         <div className=" card card-1 ">
                             <UploadImgUser path={props} />
                             <h6 className="name__profile text-center">{detailUser.email}</h6>
@@ -157,7 +157,7 @@ export default function UserInformation(props) {
                             </div>
                         </div>
                     </div>
-                    <div className="col-7 col-md-6 col-lg-7 user__information__right">
+                    <div className=" user__information__right  userInformation__item2">
                         <div className="card car__done__create">
                             <div className="Buying">
                                 <img src="https://npm-assets.fiverrcdn.com/assets/@fiverr-private/business_blocks/office-building.7ac5061.gif" alt="" />
