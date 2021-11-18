@@ -46,9 +46,9 @@ export default function UserInformation(props) {
     })
     return (
         <div className="user__information">
-            <div className=" user__information__content">
+            <div className=" container user__information__content">
                 <div className="row">
-                    <div className=" userInformation__item1">
+                    <div className="col-12 col-md-6 col-lg-4 userInformation__item1">
                         <div className=" card card-1 ">
                             <UploadImgUser path={props} />
                             <h6 className="name__profile text-center">{detailUser.email}</h6>
@@ -104,10 +104,8 @@ export default function UserInformation(props) {
                                                         </div>
                                                     </Form>
                                                 </Typography>
-                                            </div>
-                                        }
+                                            </div>}
                                     </div>
-
                                 </ul>
                                 <hr></hr>
                                 <ul className="flex Description ">
@@ -157,11 +155,12 @@ export default function UserInformation(props) {
                             </div>
                         </div>
                     </div>
-                    <div className=" user__information__right  userInformation__item2">
+                    <div className="col-12  col-md-6 col-lg-8 user__information__right  userInformation__item2">
                         <div className="card car__done__create">
                             <div className="Buying">
                                 <img src="https://npm-assets.fiverrcdn.com/assets/@fiverr-private/business_blocks/office-building.7ac5061.gif" alt="" />
-                                <b>Buying services for work? </b>  Get the best experience for your business
+                                <b>Buying services for work? </b>
+                                  <span>Get the best experience for your business</span>
                             </div>
                             <div className="questions">with 3 quick questions.</div>
                             <div className="industry">What’s your industry
@@ -170,7 +169,6 @@ export default function UserInformation(props) {
                         <div className="card create__new__gif">
                             <div className="row">
                                 <div className="col-9 Gigs">
-
                                     It seems that you don't have any active Gigs. Get selling!
                                 </div>
                                 <div className="col-3 button__gif">
@@ -178,7 +176,6 @@ export default function UserInformation(props) {
                                 </div>
                             </div>
                         </div>
-
                         <div className=" history__job__booking">
                             <div className="row">
                                 <div className="  col-9 bookingName" >
@@ -243,16 +240,16 @@ export function UploadImgUser(props) {
         }
     })
 
-    
+
     const handleChangeFile = (e) => {
         let file = e.target.files[0];
         let reader = new FileReader();
         reader.readAsDataURL(file);
         reader.onload = (e) => {
-          setImgSrc(e.target.result);
+            setImgSrc(e.target.result);
         };
         formik.setFieldValue("avatar", file);
-      };
+    };
     console.log("propsAdd", props);
     return (
         <div className="upload__avatar">

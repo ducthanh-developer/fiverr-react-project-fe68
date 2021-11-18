@@ -65,6 +65,10 @@ const fiverrApi = {
   fetchSubTypeJobApi(subjobId) {
     return callApi(`sub-type-jobs/${subjobId}`);
   },
+  // api 15
+  deleteTypeJobApi(typeJobId) {
+    return callApiDelete(`type-jobs/${typeJobId}`);
+  },
   fetchBookingJob(jobId, token) {
     return callApiPatch(`jobs/booking/${jobId}`, null, token);
   },
@@ -128,8 +132,8 @@ const fiverrApi = {
   detailTypeJobApi(typeJobId) {
     return callApi(`type-jobs/${typeJobId}`);
   },
-  editTypeJobApi(typeJobId) {
-    return callApiPut(`type-jobs/${typeJobId}`);
+  editTypeJobApi(typeJobId, typeJob) {
+    return callApiPut(`type-jobs/${typeJobId}`, typeJob);
   },
 };
 export default fiverrApi;

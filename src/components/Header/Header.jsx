@@ -93,7 +93,7 @@ export default function Header(props) {
                 Explore
               </a>
             </li>
-            <li className="nav-item">
+            <li className="nav-item language">
               <a href="..." className="nav-link">
                 <svg
                   width="18"
@@ -109,7 +109,7 @@ export default function Header(props) {
                 English
               </a>
             </li>
-            <li className="nav-item">
+            <li className="nav-item currency">
               <a href="..." className="nav-link">
                 $ USD
               </a>

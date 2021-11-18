@@ -64,7 +64,7 @@ export default function AddTypeJob() {
                     <Form.Item label=" status ">
                         <Switch name="status" onChange={handleChangeSwitch('status')} />
                     </Form.Item>
-                    <Form.Item label="Tac vụ">
+                    <Form.Item label="Tác vụ">
                         <button type="submit" className="btn btn-default" value=""> Thêm</button>
                     </Form.Item>
                 </Form>
