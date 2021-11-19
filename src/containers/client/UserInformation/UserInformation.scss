@@ -2,10 +2,11 @@
     background-color: #f7f7f7;
     .user__information__content {
         max-width: 85%;
+        margin: 0 auto;
         .card-1 {
             margin-top: 50px;
             .btn__profile {
-                width: 380px;
+                width: 87%;
                 margin-left: 28px;
                 border: 1px solid black;
                 color: black;
@@ -18,24 +19,24 @@
             }
             hr {
                 margin-left: 25px;
-                width: 378px;
+                width: 87%;
             }
             .from__item {
                 display: flex;
-
                 flex-flow: row wrap;
                 list-style: none;
                 .flex-item-from {
                     margin-top: 20px;
                     margin-left: 30px;
                     color: #0e0e0f;
-                    font-size: 16px;
+                    font-size: 14px;
                     font-weight: 700;
+                    margin-bottom: 10px;
                 }
                 .flex-item-vietnam {
                     text-align: center;
                     margin-top: 20px;
-                    margin-left: 231px;
+                    margin-left: 241px;
                     color: #00698c;
                     font-size: 14px;
                     font-weight: 500;
@@ -44,7 +45,7 @@
                     }
                 }
                 .flex-item-time {
-                    margin-left: 168px;
+                    margin-left: 185px;
                     margin-top: 13px;
                     color: #00698c;
                     font-size: 14px;
@@ -57,7 +58,7 @@
 
 .card-1 {
     position: relative;
-    width: 450px;
+    width: 100%;
     height: auto;
     background: #fff;
     box-shadow: none;
@@ -65,7 +66,7 @@
 .card-2 {
     border: 1px solid rgba(206, 200, 200, 0.769);
     position: relative;
-    width: 450px;
+    width: 100%;
     height: auto;
     background: #fff;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -75,7 +76,7 @@
     hr {
         margin-left: 14px;
         margin-top: 50px;
-        width: 392px;
+        width: 90%;
     }
     .Description {
         display: flex;
@@ -85,13 +86,14 @@
             margin-top: 40px;
             margin-left: 30px;
             color: #0e0e0f;
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 700;
+            margin-bottom: 10px;
         }
         .flex-item-2 {
             text-align: center;
-            margin-top: 40px;
-            margin-left: 193px;
+            margin-top: -25px;
+            margin-left: 253px;
             color: #00698c;
             font-size: 14px;
             font-weight: 500;
@@ -129,8 +131,8 @@
         }
         .flex-item-4 {
             text-align: center;
-            margin-top: 40px;
-            margin-left: 293px;
+            margin-top: -30px;
+            margin-left: 303px;
             color: #00698c;
             font-size: 14px;
             font-weight: 500;
@@ -141,8 +143,8 @@
         }
     }
 
-    .AddFormSkill {
-        width: 387px;
+    .add__form__Skill {
+        width: 97%;
         margin-left: 29px;
         height: 194px;
         background-color: rgba(32, 24, 24, 0.061);
@@ -158,7 +160,7 @@
             height: 440px;
         }
         .ant-form-item-control-input {
-            width: 357px;
+            width: 158%;
             margin-left: 12px;
             margin-top: -9px;
         }
@@ -172,15 +174,15 @@
         }
         .add__skill__button {
             hr {
+                width: 89%;
                 margin-top: -7px;
-                margin-right: 15px;
-                font-weight: bold;
             }
         }
         .btn__add__skill {
-            width: 150px !important;
+            width: 90%;
             margin-top: -4px;
-            height: 37px;
+            margin-left: 10px;
+            height: 35px;
         }
         .btn__cancle__skkil {
             background-color: #fff;
@@ -198,7 +200,7 @@
     .car__done__create {
         border-radius: 1px;
         margin-top: 50px;
-        width: 810px;
+        width: 100%;
         height: 141px;
         padding: 20px 20px 20px 20px;
         margin-bottom: 30px;
@@ -225,7 +227,6 @@
             margin-top: -10px;
         }
         .industry {
-            margin-left: 90px;
             font-weight: 500;
             font-size: 15px;
             color: #1dbf73;
@@ -233,7 +234,8 @@
     }
     .create__new__gif {
         height: 90px;
-        width: 810px;
+        width: 100%;
+        position: relative;
         padding: 26px 20px 20px 20px;
         border: 1px solid #9f9ca26b;
         .Gigs {
@@ -241,9 +243,7 @@
         }
         .button__gif {
             button {
-                height: 43px;
-                width: 156px;
-                margin-top: -5px;
+                position: absolute;
             }
         }
     }
@@ -259,7 +259,7 @@
                 margin-bottom: 30px;
             }
             .ant-card-bordered {
-                width: 810px;
+                width: 100%;
                 margin-left: -35px;
                 border-radius: 4px;
                 border: 1px solid rgba(206, 200, 200, 0.769);
@@ -269,7 +269,7 @@
 }
 
 .addform__certification {
-    width: 387px;
+    width: 90%;
     margin-top: 10px;
     margin-left: 30px;
     height: 194px;
@@ -286,7 +286,7 @@
         height: 440px;
     }
     .ant-form-item-control-input {
-        width: 357px;
+        width: 160%;
         margin-left: 10px;
         margin-top: -9px;
     }
@@ -300,18 +300,22 @@
     }
     .add__skill__button {
         hr {
+            width: 89%;
             margin-top: -7px;
-            margin-right: 9px;
-            font-weight: bold;
         }
     }
-    .btn__add__skkil {
-        width: 160px;
+
+    .btn__add__certification {
+        width: 130px;
+        height: 38px;
         margin-top: -4px;
+        font-size: 12px;
+        font-weight: 600;
     }
     .btn__cancle__skkil {
+        font-weight: 600;
         background-color: #fff;
-        width: 140px;
+        width: 134px;
         margin-top: -4px;
         color: black;
         font-weight: 500;
@@ -328,7 +332,7 @@
         border-radius: 176px;
         position: relative;
         margin-top: 70px;
-        margin-left: 140px;
+        margin-left: 120px;
     }
     .file {
         height: 35px;
@@ -350,391 +354,130 @@
     }
 }
 
-@media (max-width: 1496px) {
-    .user__information__right {
-        .car__done__create {
-            width: 710px;
-
-            .Buying {
-                font-size: 18px;
-                img {
-                    margin-right: 10px;
-                    width: 50px;
-                    margin-left: 25px;
-                }
-                b {
-                    font-weight: 600;
-                    line-height: 10px;
-                    font-size: 17px;
-                }
-            }
-
-            .questions {
-                margin-left: 90px;
-                font-weight: 500;
-                font-size: 15px;
-                margin-top: -10px;
-            }
-            .industry {
-                margin-left: 90px;
-                font-weight: 500;
-                font-size: 15px;
-                color: #1dbf73;
-            }
-        }
-        .create__new__gif {
-            height: 90px;
-            width: 710px;
-            padding: 26px 20px 20px 20px;
-            border: 1px solid #9f9ca26b;
-            .Gigs {
-                font-size: 17px;
-            }
-            .button__gif {
-                button {
-                    height: 43px;
-                    width: 156px;
-                    margin-top: -5px;
-                }
-            }
-        }
-        .history__job__booking {
-            margin-top: 30px;
-            margin-left: 0px;
-            border-radius: 4px;
-            padding-top: 10px;
-            padding-bottom: 10px;
-
-            .bookingName {
-                .name {
-                    margin-bottom: 30px;
-                }
-                .ant-card-bordered {
-                    width: 710px;
-                    margin-left: -35px;
-                    border-radius: 4px;
-                    border: 1px solid rgba(206, 200, 200, 0.769);
-                }
-            }
-        }
-    }
+.userInformation__item1 {
+    float: left;
+    width: 40%;
+}
+.userInformation__item2 {
+    float: left;
+    width: 60%;
 }
 
-@media (max-width: 1400px) {
-    .user__information__right {
-        .car__done__create {
-            border-radius: 1px;
-            margin-top: 50px;
-            width: 670px;
-            height: 141px;
-            padding: 20px 20px 20px 20px;
-            margin-bottom: 30px;
-            border: 1px solid rgba(206, 200, 200, 0.769);
-            box-shadow: none;
-            .Buying {
-                font-size: 18px;
-                img {
-                    margin-right: 10px;
-                    width: 50px;
-                    margin-left: 25px;
-                }
-                b {
-                    font-weight: 600;
-                    line-height: 10px;
-                    font-size: 17px;
-                }
-            }
-
-            .questions {
-                margin-left: 90px;
-                font-weight: 500;
-                font-size: 15px;
-                margin-top: -10px;
-            }
-            .industry {
-                margin-left: 90px;
-                font-weight: 500;
-                font-size: 15px;
-                color: #1dbf73;
-            }
-        }
-        .create__new__gif {
-            height: 90px;
-            width: 670px;
-            padding: 26px 20px 20px 20px;
-            border: 1px solid #9f9ca26b;
-            .Gigs {
-                font-size: 17px;
-            }
-            .button__gif {
-                button {
-                    height: 43px;
-                    width: 156px;
-                    margin-top: -5px;
-                }
-            }
-        }
-        .history__job__booking {
-            margin-top: 30px;
-            margin-left: 0px;
-            border-radius: 4px;
-            padding-top: 10px;
-            padding-bottom: 10px;
-
-            .bookingName {
-                .name {
-                    margin-bottom: 30px;
-                }
-                .ant-card-bordered {
-                    width: 670px;
-                    margin-left: -35px;
-                    border-radius: 4px;
-                    border: 1px solid rgba(206, 200, 200, 0.769);
-                }
-            }
-        }
-    }
-}
-
-@media (max-width: 1300px) {
-    .user__information__right {
-        .car__done__create {
-            width: 600px !important;
-        }
-        .create__new__gif {
-            height: 90px;
-            width: 600px;
-            padding: 26px 20px 20px 20px;
-            border: 1px solid #9f9ca26b;
-            .Gigs {
-                font-size: 17px;
-            }
-            .button__gif {
-                button {
-                    height: 43px;
-                    width: 130px !important;
-                    margin-top: -5px;
-                }
-            }
-        }
-        .history__job__booking {
-            .bookingName {
-                .name {
-                    margin-bottom: 30px;
-                }
-                .ant-card-bordered {
-                    width: 600px !important;
-                    margin-left: -35px;
-                    border-radius: 4px;
-                    border: 1px solid rgba(206, 200, 200, 0.769);
-                }
-            }
-        }
-    }
-}
-
-@media (max-width: 1480px) {
+@media (max-width: 1504px) {
     .user__information__content {
-        max-width: 95% !important;
-        display: block;
+        max-width: 100% !important;
+        margin: 0 auto;
+    }
+
+    .userInformation__item1 {
+        float: left;
+        width: 50%;
+    }
+    .userInformation__item2 {
+        float: left;
+        width: 50%;
     }
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 768px) {
     .user__information__content {
-        max-width: 95% !important;
-        display: block;
+        max-width: 100% !important;
+        margin: 0 auto;
+    }
+
+    .userInformation__item1 {
+        float: left;
+        width: 50%;
+    }
+    .userInformation__item2 {
+        float: left;
+        width: 50%;
     }
 }
 
-@media (max-width: 1200px) {
-    .card-1,
-    .card-2 {
-        width: 400px !important;
-        margin-left: -10px !important;
-    }
-}
+@media (max-width: 576px) {
+    .user__information__content {
+        max-width: 100% !important;
+        margin: 0 auto;
 
-@media (max-width: 992px) {
-    .card-1,
-    .card-2 {
-        width: 350px !important;
-        margin-left: -10px !important;
-    }
-}
-
-@media (max-width: 1200px) {
-    .addform__certification {
-        width: 337px !important;
-       
-        input {
-            margin-top: 20px;
-            border-radius: 4px;
-            height: 40px;
-        }
-        .ant-select-selector {
-            height: 440px;
-        }
-        .ant-form-item-control-input {
-            width: 307px !important;
-            margin-left: 10px;
-            margin-top: -9px;
-        }
-       
-        .add__skill__button {
-            hr {
-                margin-top: -7px;
-                margin-right: 19px;
-                font-weight: bold;
-            }
-        }
-        .btn__add__certification {
-            width: 135px;
-            margin-top: -4px;
-            font-size: 14px;
-        }
-        
-    }
-}
-
-@media (max-width:1200px) {
-    
-    .card-2 {
-        .Description {
-            .flex-item-3 {
-                margin-top: 40px;
-                margin-left: 30px;
-                color: #0e0e0f;
-                font-size: 16px;
-                font-weight: 700;
-            }
-            .flex-item-4 {
-                margin-top: -5px !important;
-               
-                .add__skill {
-                    margin-bottom: 15px;
-                    margin-left: 167px;
+        .card-2 {
+            height: auto !important;
+            .Description {
+                display: flex;
+                flex-flow: row wrap;
+                list-style: none;
+                .flex-item-3 {
+                    margin-top: 40px;
+                    margin-left: 30px;
+                    color: #0e0e0f;
+                    font-size: 16px;
+                    font-weight: 700;
+                }
+                .flex-item-4 {
+                    text-align: center;
+                    margin-top: -30px;
+                    margin-left: 303px;
+                    color: #00698c;
+                    font-size: 14px;
+                    font-weight: 500;
+                    .add__skill {
+                        margin-bottom: 15px;
+                        margin-left: 167px;
+                    }
                 }
             }
-        }
-    
-        .AddFormSkill {
-            width: 340px;
-           
-            input {
+
+            .add__form__Skill {
+                width: 97%;
+                margin-left: 29px;
+                height: 194px;
+                background-color: rgba(32, 24, 24, 0.061);
+                border-radius: 3px;
+                box-shadow: none;
                 margin-top: 20px;
-                border-radius: 4px;
-                height: 40px;
-            }
-           
-            .ant-form-item-control-input {
-                width: 307px;
-                margin-left: 12px;
-                margin-top: -9px;
-            }
-            .ant-select:not(.ant-select-customize-input) .ant-select-selector {
-                height: 42px;
-                position: relative;
-                border: 1px solid #d9d9d9;
-                background-color: #fff;
-                border-radius: 2px;
-                transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-            }
-            .add__skill__button {
-                hr {
-                    margin-top: -7px;
-                    margin-right: 15px;
-                    font-weight: bold;
+                input {
+                    margin-top: 20px;
+                    border-radius: 4px;
+                    height: 40px;
                 }
-            }
-            .btn__add__skill {
-                width: 140px !important;
-                margin-top: -4px;
-                height: 37px;
-            }
-            .btn__cancle__skkil {
-                background-color: #fff;
-                width: 160px;
-                margin-top: -4px;
-                color: black;
-                font-weight: 500;
-                border: 1px solid rgba(49, 25, 25, 0.075);
-                font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
+                .ant-select-selector {
+                    height: 440px;
+                }
+                .ant-form-item-control-input {
+                    width: 108% !important;
+                    margin-left: 12px;
+                    margin-top: -9px;
+                }
+                .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+                    height: 42px;
+                    position: relative;
+                    border: 1px solid #d9d9d9;
+                    background-color: #fff;
+                    border-radius: 2px;
+                    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+                }
+                .add__skill__button {
+                    hr {
+                        width: 89%;
+                        margin-top: -7px;
+                    }
+                }
+                .btn__add__skill {
+                    width: 90%;
+                    margin-top: -4px;
+                    margin-left: 10px;
+                    height: 35px;
+                }
+                .btn__cancle__skkil {
+                    background-color: #fff;
+                    width: 160px;
+                    margin-top: -4px;
+                    color: black;
+                    font-weight: 500;
+                    border: 1px solid rgba(49, 25, 25, 0.075);
+                    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
+                }
             }
         }
     }
-    
-    
-}
-
-
-
-@media (max-width:992px) {
-    
-    .card-2 {
-        .Description {
-            .flex-item-3 {
-                margin-top: 40px;
-                margin-left: 30px;
-                color: #0e0e0f;
-                font-size: 16px;
-                font-weight: 700;
-            }
-            .flex-item-4 {
-                margin-top: -5px !important;
-               
-                .add__skill {
-                    margin-bottom: 15px;
-                    margin-left: 167px;
-                }
-            }
-        }
-    
-        .AddFormSkill {
-            width: 340px;
-           
-            input {
-                margin-top: 20px;
-                border-radius: 4px;
-                height: 40px;
-            }
-           
-            .ant-form-item-control-input {
-                width: 307px;
-                margin-left: 12px;
-                margin-top: -9px;
-            }
-            .ant-select:not(.ant-select-customize-input) .ant-select-selector {
-                height: 42px;
-                position: relative;
-                border: 1px solid #d9d9d9;
-                background-color: #fff;
-                border-radius: 2px;
-                transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-            }
-            .add__skill__button {
-                hr {
-                    margin-top: -7px;
-                    margin-right: 15px;
-                    font-weight: bold;
-                }
-            }
-            .btn__add__skill {
-                width: 140px !important;
-                margin-top: -4px;
-                height: 37px;
-            }
-            .btn__cancle__skkil {
-                background-color: #fff;
-                width: 160px;
-                margin-top: -4px;
-                color: black;
-                font-weight: 500;
-                border: 1px solid rgba(49, 25, 25, 0.075);
-                font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
-            }
-        }
-    }
-    
-    
 }

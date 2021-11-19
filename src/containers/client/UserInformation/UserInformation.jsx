@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { actFetchAddUserInformation, actGetUserListJobs, actHistoryJobsUser, actUploadImg, } from "./modules/action";
+import { actDetailUserInformation, actFetchAddUserInformation, actHistoryJobsUser, actUploadImg, } from "./modules/action";
 import { useFormik } from 'formik';
 import "../UserInformation/UserInformation.scss"
 import { Form, Input, Card } from 'antd';
@@ -9,16 +9,17 @@ import { useState } from "react";
 export default function UserInformation(props) {
     const { Meta } = Card;
     const dispatch = useDispatch();
-    const { userJobs, historyJobs } = useSelector((state) => state.userListJobsReducer);
-    console.log("historyJobs", historyJobs);
+    const { detailUser, historyJobs } = useSelector((state) => state.userListJobsReducer);
     const { currentUser } = useSelector((state) => state.authReducer);
 
-    const idUser = props.match.params.id;
+    const userId = props.match.params.id;
     useEffect(() => {
-        dispatch(actGetUserListJobs(idUser));
-        dispatch(actHistoryJobsUser(currentUser.token));
-    }, [dispatch, idUser]);
-
+        dispatch(actDetailUserInformation(userId));
+        dispatch(actHistoryJobsUser(currentUser.token, userId));
+    }, [dispatch, userId]);
+    const onFormLayoutChange = ({ size }) => {
+        setComponentSize(size);
+    };
     const [isShow, setIsShow] = React.useState(true);
 
     const [show, setShow] = React.useState(true);
@@ -33,24 +34,39 @@ export default function UserInformation(props) {
     const Typography = (props) => {
         return <p>{props.children}</p>;
     }
+    const [setComponentSize] = useState('default');
+
     const formik = useFormik({
+        enableReinitialize: true,
         initialValues: {
-            skill: '',
-            certification: '',
+            _id: detailUser?._id,
+            name: detailUser.name,
+            email: detailUser?.email,
+            password: detailUser?.password,
+            phone: detailUser?.phone,
+            birthday: detailUser.birthday,
+            gender: detailUser.gender,
+            role: detailUser.role,
+            skill: detailUser.skill,
+            certification: detailUser.certification,
+            bookingJob: detailUser.bookingJob
         },
         onSubmit: (values) => {
             console.log("values", values);
-            dispatch(actFetchAddUserInformation(props.match.params.id, values));
+            console.log("idgggggggggggggg ", userId);
+            dispatch(actFetchAddUserInformation(userId, values));
         }
     })
+
+
     return (
         <div className="user__information">
-            <div className="container-fluid user__information__content ">
+            <div className=" container user__information__content">
                 <div className="row">
-                    <div className="col-6 col-md-5 col-lg-5">
+                    <div className="col-12 col-md-6 col-lg-4 userInformation__item1">
                         <div className=" card card-1 ">
                             <UploadImgUser path={props} />
-                            <h6 className="name__profile text-center">{userJobs.email}</h6>
+                            <h6 className="name__profile text-center">{detailUser.email}</h6>
                             <button className="btn btn__profile">Preview Public Model</button>
                             <hr></hr>
                             <div>
@@ -78,16 +94,16 @@ export default function UserInformation(props) {
                                         {isShow ?
                                             <>
                                             </>
-                                            : <div className="AddFormSkill card">
+                                            : <div className="add__form__Skill card">
                                                 <Typography>
                                                     <Form
                                                         layout="horizontal"
                                                         onSubmitCapture={formik.handleSubmit}
                                                         labelCol={{ span: 4 }}
-                                                        wrapperCol={{ span: 14 }}>
-                                                        <Form.Item label="" >
-                                                            <Input name="skill"
-                                                                onChange={formik.handleChange}
+                                                        wrapperCol={{ span: 14 }}
+                                                        onValuesChange={onFormLayoutChange}>
+                                                        <Form.Item  >
+                                                            <Input name="skill" onChange={formik.handleChange}
                                                                 value={formik.values.skill} />
                                                         </Form.Item>
                                                         <div className="row add__skill__button">
@@ -103,10 +119,8 @@ export default function UserInformation(props) {
                                                         </div>
                                                     </Form>
                                                 </Typography>
-                                            </div>
-                                        }
+                                            </div>}
                                     </div>
-
                                 </ul>
                                 <hr></hr>
                                 <ul className="flex Description ">
@@ -132,13 +146,11 @@ export default function UserInformation(props) {
 
                                                         <div className="row add__skill__button">
                                                             <hr></hr>
-
                                                             <div className="col-6">
                                                                 <button className="btn btn__cancle__skkil">Cancel</button>
                                                             </div>
                                                             <div className="col-6">
-                                                                <button className="btn btn-success btn__add__certification
-                                                                " type="submit">Add certification</button>
+                                                                <button className="btn btn-success btn__add__certification" type="submit">Add certification</button>
                                                             </div>
                                                         </div>
                                                     </Form>
@@ -146,7 +158,7 @@ export default function UserInformation(props) {
                                             </div>}
                                     </div>
                                     <div className="done__add__skill">
-                                        {userJobs.certification?.map((skill, index) => {
+                                        {detailUser.certification?.map((skill, index) => {
                                             return (
                                                 <div key={index} className="skill">{skill}</div>
                                             )
@@ -156,11 +168,12 @@ export default function UserInformation(props) {
                             </div>
                         </div>
                     </div>
-                    <div className="col-7 col-md-6 col-lg-7 user__information__right">
+                    <div className="col-12  col-md-6 col-lg-8 user__information__right  userInformation__item2">
                         <div className="card car__done__create">
                             <div className="Buying">
                                 <img src="https://npm-assets.fiverrcdn.com/assets/@fiverr-private/business_blocks/office-building.7ac5061.gif" alt="" />
-                                <b>Buying services for work? </b>  Get the best experience for your business
+                                <b>Buying services for work? </b>
+                                <span>Get the best experience for your business</span>
                             </div>
                             <div className="questions">with 3 quick questions.</div>
                             <div className="industry">What’s your industry
@@ -169,7 +182,6 @@ export default function UserInformation(props) {
                         <div className="card create__new__gif">
                             <div className="row">
                                 <div className="col-9 Gigs">
-
                                     It seems that you don't have any active Gigs. Get selling!
                                 </div>
                                 <div className="col-3 button__gif">
@@ -177,7 +189,6 @@ export default function UserInformation(props) {
                                 </div>
                             </div>
                         </div>
-
                         <div className=" history__job__booking">
                             <div className="row">
                                 <div className="  col-9 bookingName" >
@@ -214,15 +225,15 @@ export default function UserInformation(props) {
 export function UploadImgUser(props) {
     const dispatch = useDispatch();
 
-    const { userJobs } = useSelector((state) => state.userListJobsReducer);
-    console.log("object,", userJobs);
-    console.log("ava", userJobs.avatar);
+    const { detailUser } = useSelector((state) => state.userListJobsReducer);
+    console.log("object,", detailUser);
+    console.log("ava", detailUser.avatar);
 
     const { currentUser } = useSelector((state) => state.authReducer);
     console.log("current", currentUser);
     const idJOb = props.path.match.params.id;
     useEffect(() => {
-        dispatch(actGetUserListJobs(idJOb));
+        dispatch(actDetailUserInformation(idJOb));
     }, [dispatch, idJOb]);
 
     const [imgSrc, setImgSrc] = useState("");
@@ -238,20 +249,20 @@ export function UploadImgUser(props) {
             formData.append("avatar", values.avatar, values.avatar.name);
             console.log("formDatafdfdfgf", formData.get("avatar"));
             console.log("alo ");
-            dispatch(actUploadImg(formData));
+            dispatch(actUploadImg(formData, currentUser?.token));
         }
     })
 
-    
+
     const handleChangeFile = (e) => {
         let file = e.target.files[0];
         let reader = new FileReader();
         reader.readAsDataURL(file);
         reader.onload = (e) => {
-          setImgSrc(e.target.result);
+            setImgSrc(e.target.result);
         };
         formik.setFieldValue("avatar", file);
-      };
+    };
     console.log("propsAdd", props);
     return (
         <div className="upload__avatar">
@@ -267,7 +278,7 @@ export function UploadImgUser(props) {
                     <div className="">
                         <img
                             className="img_select"
-                            src={imgSrc === "" ? userJobs.avatar : imgSrc}
+                            src={imgSrc === "" ? detailUser.avatar : imgSrc}
                             alt="..." />
                         <input type="file" onChange={handleChangeFile} className="file" />
                     </div>

@@ -2,7 +2,7 @@ import { FETCH_USER_LIST_JOBS_FAIL, FETCH_USER_LIST_JOBS_SUCCESS, FETCH__HISTORY
 
 
 const initialState = {
-  userJobs:[],
+  detailUser:[],
   historyJobs:[],
   uploadImg: [],
   error: '',
@@ -11,7 +11,7 @@ const initialState = {
 const userListJobsReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case FETCH_USER_LIST_JOBS_SUCCESS:
-      state.userJobs = payload;
+      state.detailUser = payload;
       return { ...state, };
     case FETCH_USER_LIST_JOBS_FAIL:
       state.error = payload;

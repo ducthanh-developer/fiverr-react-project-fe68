@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink , Redirect} from "react-router-dom";
 import { Table } from 'antd';
 import { Input } from "antd";
 
@@ -16,6 +16,10 @@ export default function UserManagerment() {
 
   const dispatch = useDispatch();
   const { userList } = useSelector(state => state.listUserReducer)
+  const {  currentUser } = useSelector(
+    state => state.authReducer
+  );
+
   useEffect(() => {
     dispatch(actListUserAdmin())
   }, [dispatch]);
@@ -100,7 +104,8 @@ export default function UserManagerment() {
   }
 
   const data = userList;
-  return (
+  
+  return  currentUser.user.role==="ADMIN" ?(
     <div>
       <Link className="nav-link searchText" to="/admin/user-managerment/add">
         Thêm 
@@ -113,5 +118,7 @@ export default function UserManagerment() {
         size="small"></Search>
       <Table columns={columns} dataSource={data} />
     </div>
+  ): (
+    <Redirect to="/"/>
   )
 }
