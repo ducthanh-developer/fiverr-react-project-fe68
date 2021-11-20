@@ -71,7 +71,7 @@ export const adminRoutes = [
     path: "/admin",
     component: UserManagerment,
     exact: true,
-    isPrivate: true,
+    isPrivate: false,
 
   },
   {

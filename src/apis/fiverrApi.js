@@ -76,24 +76,24 @@ const fiverrApi = {
     return callApi(`comments/by-job/${jobId}`);
   },
   // userInformation
-  fetchUserListJobsApi(userId) {
-    return callApi(`users/${userId}`);
+  fetchUserListJobsApi(userId, ) {
+    return callApi(`users/${userId}`, );
   },
   fetchAddUserInformation(userId) {
     return callApiPut(`users/${userId}`);
   },
-  fetchListJobsBooking() {
-    return callApi(`jobs/by-user`);
+  fetchListJobsBooking(token) {
+    return callApi(`jobs/by-user`, null, token);
   },
   //historyJobs
   fetchHistoryJobBookingApi(token) {
-    return callApi(`jobs/by-user`);
+    return callApi(`jobs/by-user`,null, token);
   },
   fetchUploadImgApi(formData, user, token) {
     return callApiPost(`users/upload-avatar`, formData, user, token);
   },
-  loginApi(user) {
-    return callApiPost(`auth/signin`, user);
+  loginApi(userLogin) {
+    return callApiPost(`auth/signin`, userLogin);
   },
 
   registerAPi(register) {

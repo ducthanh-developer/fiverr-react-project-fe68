@@ -1,6 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
-import {  Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import "./Product.scss";
 function SampleNextArrow(props) {
@@ -82,59 +82,58 @@ const settings = {
 export default function Product() {
   return (
     <Link to="/list-jobs" >
-    <div className=" container Product__content">
-      <h2>Popular professional services</h2>
-      <Slider {...settings}>
-        <div className="img__time">
-        <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741678/logo-design-2x.png" alt="..." />
-          {/* <div className="nav-link img-1" to="/fiverr" style={{ width: '290px' }}>
-          </div> */}
-        </div>
-        <div>
-          <img
-            src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/ae11e2d45410b0eded7fba0e46b09dbd-1598561917003/wordpress-2x.png"
-            alt="..."
-          />
-        </div>
-        <div>
-          <img
-            src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741669/voiceover-2x.png"
-            alt="..."
-          />
-        </div>
-        <div>
-          <img
-            src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741663/animated-explainer-2x.png"
-            alt="..."
-          />
-        </div>
-        <div>
-          <img
-            src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741667/social-2x.png"
-            alt="..."
-          />
-        </div>
-        <div>
-          <img
-            src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/ae11e2d45410b0eded7fba0e46b09dbd-1598561917003/wordpress-2x.png"
-            alt="..."
-          />
-        </div>
-        <div>
-          <img
-            src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/ae11e2d45410b0eded7fba0e46b09dbd-1598561917003/wordpress-2x.png"
-            alt=""
-          />
-        </div>
-        <div>
-          <img
-            src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741674/translation-2x.png"
-            alt=""
-          />
-        </div>
-      </Slider>
-    </div>
+      <div className=" container Product__content">
+        <h2>Popular professional services</h2>
+        <Slider {...settings}>
+          <div className="img__time">
+            <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741678/logo-design-2x.png" alt="..." />
+
+          </div>
+          <div>
+            <img
+              src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/ae11e2d45410b0eded7fba0e46b09dbd-1598561917003/wordpress-2x.png"
+              alt="..."
+            />
+          </div>
+          <div>
+            <img
+              src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741669/voiceover-2x.png"
+              alt="..."
+            />
+          </div>
+          <div>
+            <img
+              src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741663/animated-explainer-2x.png"
+              alt="..."
+            />
+          </div>
+          <div>
+            <img
+              src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741667/social-2x.png"
+              alt="..."
+            />
+          </div>
+          <div>
+            <img
+              src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/ae11e2d45410b0eded7fba0e46b09dbd-1598561917003/wordpress-2x.png"
+              alt="..."
+            />
+          </div>
+          <div>
+            <img
+              src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/ae11e2d45410b0eded7fba0e46b09dbd-1598561917003/wordpress-2x.png"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741674/translation-2x.png"
+              alt=""
+            />
+          </div>
+        </Slider>
+      </div>
     </Link>
-    
+
   );
 }
