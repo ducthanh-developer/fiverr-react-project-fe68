@@ -40,7 +40,7 @@ export const actDetailUserInformation = (userId) => {
 
 // export const actFetchAddUserInformation = (values, userId) => {
 //   console.log("idbggggg", userId);
-  
+
 //   return async (dispatch) => {
 //     try {
 //       let { data } = await fiverrApi.fetchAddUserInformation(values, userId);
@@ -56,13 +56,13 @@ export const actDetailUserInformation = (userId) => {
 
 
 
-export const actFetchAddUserInformation = (values, userId) => {
+export const actFetchAddUserInformation = (values, userId, formData ) => {
   console.log("values action", values)
   return async (dispatch) => {
     try {
-      let res = await fiverrApi.fetchAddUserInformation( values, userId );
+      let res = await fiverrApi.fetchAddUserInformation(values, userId, formData);
       console.log("values action", values)
-    
+
       console.log('res', res.data)
       alert("Cập nhât thành công");
 
@@ -97,8 +97,9 @@ export const actHistoryJobsUser = (token) => {
       .fetchHistoryJobBookingApi(token)
       .then(response => {
         dispatch(actFetchHistorySuccess(response.data))
+        console.log("his,", response.data);
       })
-      .catch(error => { console.log("errrhhh", error.response?.data); })
+      .catch(error => { console.log("err", error.response?.data); })
   }
 }
 

@@ -105,7 +105,7 @@ export default function UserManagerment() {
 
   const data = userList;
   
-  return  currentUser.user.role==="ADMIN" ?(
+  return  currentUser.user.role==="CLIENT" ?(
     <div>
       <Link className="nav-link searchText" to="/admin/user-managerment/add">
         Thêm 
