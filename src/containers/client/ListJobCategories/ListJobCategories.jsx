@@ -2,20 +2,17 @@ import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import "./ListJobCategories.scss";
-import { actFetchListJobByType, actFetchTypeJobDetail } from "./module/actions";
+import {actFetchTypeJobDetail } from "./module/actions";
 
 export default function ListJobCategories(props) {
   const dispatch = useDispatch();
   const { jobDetail } = useSelector((state) => state.JobDetailReducer);
-  const { listTypeJob } = useSelector((state) => state.SubTypeJobReducder);
   const typeId = props.match.params.typeId;
   useEffect(() => {
     dispatch(actFetchTypeJobDetail(typeId));
-    dispatch(actFetchListJobByType(typeId));
   }, [dispatch, typeId]);
   const { subTypeJobs, name } = jobDetail;
-  console.log(listTypeJob);
-  const renderSubTypeJobs = () => {
+  const renderSubTypeJobsSideBar = () => {
     return subTypeJobs.map((subType, index) => {
       const { name } = subType;
       return (
@@ -25,11 +22,11 @@ export default function ListJobCategories(props) {
       );
     });
   };
-  const renderListJobByTpe = () => {
-    return listTypeJob.map((job, index) => {
-      const {name} = job;
+  const renderListJobByType = () => {
+    return subTypeJobs.map((subType, index) => {
+      const { name, _id } = subType;
       return (
-        <a href=".." className="medium col-sm-4" key={index}>
+        <a href={`/list-jobs/${_id}`} className="medium col-sm-4" key={index}>
           <span className="image-wrapper">
             <img
               src="../images/ListJobs/desktop_programming_and_tech_wordpress.jpg"
@@ -71,11 +68,9 @@ export default function ListJobCategories(props) {
       <div className="list-wrapper row">
         <ul className="side-menu">
           <li className="selected-category">{name}</li>
-          {renderSubTypeJobs()}
+          {renderSubTypeJobsSideBar()}
         </ul>
-        <div className="main-content row">
-          {renderListJobByTpe()}
-        </div>
+        <div className="main-content row">{renderListJobByType()}</div>
       </div>
       <footer className="footer">
         <div className="footer-wrapper row">

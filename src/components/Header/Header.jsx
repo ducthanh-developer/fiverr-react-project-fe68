@@ -26,10 +26,10 @@ export default function Header(props) {
           </NavLink>
           <ul className="menu-panel">
             {subTypeJobs.map((subJob, index) => {
-              const { name } = subJob;
+              const { name, _id } = subJob;
               return (
                 <li className="panel-item" key={index}>
-                  <NavLink className="panel-link" to={`/list-jobs`}>
+                  <NavLink className="panel-link" to={`/list-jobs/${_id}`}>
                     {name}
                   </NavLink>
                 </li>
