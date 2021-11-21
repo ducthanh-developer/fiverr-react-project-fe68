@@ -69,6 +69,10 @@ const fiverrApi = {
   deleteTypeJobApi(typeJobId) {
     return callApiDelete(`type-jobs/${typeJobId}`);
   },
+  // api 24
+  fetchListJobBySubTypeApi(subTypeId) {
+    return callApi(`jobs/by-sub-type?subType=${subTypeId}&skip=0&llimit=0`);
+  },
   fetchBookingJob(jobId, token) {
     return callApiPatch(`jobs/booking/${jobId}`, null, token);
   },
@@ -76,7 +80,7 @@ const fiverrApi = {
     return callApi(`comments/by-job/${jobId}`);
   },
   // userInformation
-  fetchUserListJobsApi(userId, ) {
+  fetchUserListJobsApi(userId) {
     return callApi(`users/${userId}`);
   },
   // fetchAddUserInformation(userId, user) {
@@ -91,7 +95,7 @@ const fiverrApi = {
   },
   //historyJobs
   fetchHistoryJobBookingApi(token) {
-    return callApi(`jobs/by-user`,null, token);
+    return callApi(`jobs/by-user`, null, token);
   },
   fetchUploadImgApi(formData, token) {
     return callApiPost(`users/upload-avatar`, formData, token);

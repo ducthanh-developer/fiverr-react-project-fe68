@@ -10,12 +10,10 @@ import { TypeJobsReducer } from "components/Header/module/reducer";
 import { composeWithDevTools } from "redux-devtools-extension";
 import {
   JobDetailReducer,
-  SubTypeJobReducder,
 } from "containers/client/ListJobCategories/module/module";
 import listUserReducer from "containers/admin/UserManagement/module/reducer";
 import typeJobsReducer from "containers/admin/TypeJobManagement/modules/reducer";
 import JobManagementReducer  from "containers/admin/JobManagement/module/reducer";
-// import JobManagementReducer from "containers/admin/JobManagement/module/reducer";
 import { SubJobManagementReducer } from "containers/admin/SubJobManagement/module/reducer";
 import thunk from "redux-thunk";
 
@@ -27,7 +25,6 @@ const rootReducer = combineReducers({
   JobReducer,
   TypeJobsReducer,
   JobDetailReducer,
-  SubTypeJobReducder,
   listUserReducer,
   //admin
   typeJobsReducer,

@@ -79,7 +79,7 @@ export default function EditJob(props) {
   const renderListSubType = () => {
     return listSubJob.map((job, index) => {
       const { _id, name, typeJob } = job;
-      if (typeJob?._id == formik.values.job.type._id) {
+      if (typeJob?._id == formik.values.job.type?._id) {
         return (
           <Select.Option value={_id} key={index}>
             {name}
@@ -123,7 +123,7 @@ export default function EditJob(props) {
         <Form.Item label="Type">
           <Select
             onChange={handleChangeSwitch("job.type")}
-            value={formik.values.job.type._id}
+            value={formik.values.job.type?._id}
           >
             {renderListTypeJob()}
           </Select>
@@ -131,7 +131,7 @@ export default function EditJob(props) {
         <Form.Item label="Sub Type">
           <Select
             onChange={handleChangeSwitch("job.subType")}
-            value={formik.values.job.subType._id}
+            value={formik.values.job.subType?._id}
           >
             {renderListSubType()}
           </Select>

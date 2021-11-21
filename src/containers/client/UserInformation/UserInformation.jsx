@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { actDetailUserInformation, actFetchAddUserInformation, actHistoryJobsUser, actUploadImg, } from "./modules/action";
-import { useFormik } from 'formik';
+import { useFormik, form } from 'formik';
 import "../UserInformation/UserInformation.scss"
 import { Form, Input, Card } from 'antd';
 import { useState } from "react";
@@ -36,7 +36,7 @@ export default function UserInformation(props) {
         return <p>{props.children}</p>;
     }
     const [setComponentSize] = useState('default');
-
+    const { values, touched, errors, handleChange, handleBlur, handleSubmit } = props;
     const formik = useFormik({
         enableReinitialize: true,
         initialValues: {
@@ -85,7 +85,7 @@ export default function UserInformation(props) {
                             {/* <UploadImgUser path={props} /> */}
                             {/* <h6 className="name__profile text-center">{detailUser.email}</h6>
                             <button className="btn btn__profile">Preview Public Model</button> */}
-                             <div className="learning">
+                            <div className="learning">
                                 <img src="../../images/UserInformation/userInformation_2.png" alt="" />
                             </div>
                             <div className="circle">
@@ -97,7 +97,7 @@ export default function UserInformation(props) {
                                 <button className="btn btn-success">Enroll Now</button>
                             </div>
                             <hr></hr>
-                            <div className="home__town">
+                            <div className="home__town add__form">
                                 <ul className="row home__town__one">
                                     <li className="flex-item-from">Certification</li>
                                     <li className="flex-item-vietnam" onClick={handleClick1}>Add New</li>
@@ -107,18 +107,17 @@ export default function UserInformation(props) {
                                             </>
                                             :
                                             <div className="addform__certification card">
-                                                <Typography>
+                                                <div>
                                                     <Form
                                                         onSubmitCapture={formik.handleSubmit}
                                                         labelCol={{ span: 4 }}
                                                         wrapperCol={{ span: 14 }}
                                                         layout="horizontal" >
-                                                        <Form.Item label="">
-                                                            <Input name="certification"
+                                                       
+                                                            <input name="certification"
                                                                 onChange={formik.handleChange}
                                                                 value={formik.values.certification} />
-                                                        </Form.Item>
-
+                                                      
                                                         <div className="row add__skill__button">
                                                             <hr></hr>
                                                             <div className="col-6">
@@ -129,13 +128,13 @@ export default function UserInformation(props) {
                                                             </div>
                                                         </div>
                                                     </Form>
-                                                </Typography>
+                                                </div>
                                             </div>}
                                     </div>
                                 </ul>
                                 <ul className="row  home__town__two">
                                     <li className="flex-item-member ">Skill</li>
-                                    <li className="flex-item-year" onClick={handleClick}>Add New</li>
+                                    <li className="flex-item-year" onClick={handleClick}>Add Skill</li>
                                     <div>
                                         {isShow ?
                                             <>
@@ -148,10 +147,15 @@ export default function UserInformation(props) {
                                                         labelCol={{ span: 4 }}
                                                         wrapperCol={{ span: 14 }}
                                                         onValuesChange={onFormLayoutChange}>
-                                                        <Form.Item  >
+                                                        {/* <Form.Item  >
                                                             <Input name="skill" onChange={formik.handleChange}
                                                                 value={formik.values.skill} />
-                                                        </Form.Item>
+                                                        </Form.Item> */}
+                                                        <form id="register" className="register" onSubmit={handleSubmit}>
+                                                            <input type="text" className="form-control" name="email" onChange={handleChange} />
+
+                                                            <button type="submit" className="btn-register">Register</button>
+                                                        </form>
                                                         <input type="text" />
                                                         <div className="row add__skill__button">
                                                             <hr></hr>
@@ -309,5 +313,6 @@ export function UploadImgUser(props) {
 
     )
 }
+
 
 

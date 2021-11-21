@@ -32,7 +32,7 @@ export const clientRoutes = [
   },
 
   {
-    path: "/list-jobs",
+    path: "/list-jobs/:subTypeId",
     component: ListJobs,
     exact: true,
     isPrivate: false,

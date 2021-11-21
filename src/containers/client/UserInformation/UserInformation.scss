@@ -73,6 +73,9 @@
                     }
                 }
             }
+            .add__form{
+                
+            }
         }
     }
 }
@@ -435,66 +438,66 @@
     }
 }
 
-@media (max-width: 1196px) {
-    .card-2 {
-        border: 1px solid rgba(206, 200, 200, 0.769);
-        position: relative;
-        width: 100%;
-        height: auto;
-        background: #fff;
-        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-        margin-bottom: 50px;
-        margin-top: 25px;
-        box-shadow: none;
-        hr {
-            margin-left: 14px;
-            margin-top: 50px;
-            width: 90%;
-        }
-        // .Description {
-        //     display: flex;
-        //     flex-flow: row wrap;
-        //     list-style: none;
-        //     justify-content: space-around;
-        //     .flex-item-1 {
-        //         color: #0e0e0f;
-        //         font-size: 14px;
-        //         font-weight: 700;
-        //         margin-bottom: 10px;
-        //     }
-        //     .flex-item-2 {
-        //         color: #00698c;
-        //         font-size: 14px;
-        //         font-weight: 500;
-        //         .add__skill {
-        //             margin-bottom: 15px;
-        //             margin-left: 167px;
-        //         }
-        //     }
-        // }
-        .done__add__skill {
-            .skill {
-                text-align: center;
-                border: 1px solid;
-                border-radius: 31px;
-                width: 64px;
-                margin-left: 108px;
-                margin-top: 10px;
-            }
-        }
-    }
+// @media (max-width: 1196px) {
+//     .card-2 {
+//         border: 1px solid rgba(206, 200, 200, 0.769);
+//         position: relative;
+//         width: 100%;
+//         height: auto;
+//         background: #fff;
+//         transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+//         margin-bottom: 50px;
+//         margin-top: 25px;
+//         box-shadow: none;
+//         hr {
+//             margin-left: 14px;
+//             margin-top: 50px;
+//             width: 90%;
+//         }
+//         // .Description {
+//         //     display: flex;
+//         //     flex-flow: row wrap;
+//         //     list-style: none;
+//         //     justify-content: space-around;
+//         //     .flex-item-1 {
+//         //         color: #0e0e0f;
+//         //         font-size: 14px;
+//         //         font-weight: 700;
+//         //         margin-bottom: 10px;
+//         //     }
+//         //     .flex-item-2 {
+//         //         color: #00698c;
+//         //         font-size: 14px;
+//         //         font-weight: 500;
+//         //         .add__skill {
+//         //             margin-bottom: 15px;
+//         //             margin-left: 167px;
+//         //         }
+//         //     }
+//         // }
+//         // .done__add__skill {
+//         //     .skill {
+//         //         text-align: center;
+//         //         border: 1px solid;
+//         //         border-radius: 31px;
+//         //         width: 64px;
+//         //         margin-left: 108px;
+//         //         margin-top: 10px;
+//         //     }
+//         // }
+//     }
 
-    .history__job__booking {
-        .bookingName {
-            .ant-card-bordered {
-                width: 155% !important;
-                margin-left: -35px;
-                border-radius: 4px;
-                border: 1px solid rgba(206, 200, 200, 0.769);
-            }
-        }
-    }
-}
+//     .history__job__booking {
+//         .bookingName {
+//             .ant-card-bordered {
+//                 width: 155% !important;
+//                 margin-left: -35px;
+//                 border-radius: 4px;
+//                 border: 1px solid rgba(206, 200, 200, 0.769);
+//             }
+//         }
+//     }
+// }
 
 @media (max-width: 992px) {
     .user__information__content {
@@ -566,113 +569,113 @@
         }
     }
 
-    .add__form__Skill {
-        width: 91% !important;
-        margin-left: 29px;
-        height: 194px;
-        background-color: rgba(32, 24, 24, 0.061);
-        border-radius: 3px;
-        box-shadow: none;
-        margin-top: 20px;
-        input {
-            margin-top: 20px;
-            border-radius: 4px;
-            height: 40px;
-        }
-        .ant-select-selector {
-            height: 440px;
-        }
-        .ant-form-item-control-input {
-            width: 155% !important ;
-            margin-left: 12px;
-            margin-top: -9px;
-        }
-        .ant-select:not(.ant-select-customize-input) .ant-select-selector {
-            height: 42px;
-            position: relative;
-            border: 1px solid #d9d9d9;
-            background-color: #fff;
-            border-radius: 2px;
-            transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-        }
-        .add__skill__button {
-            hr {
-                width: 89%;
-                margin-top: -7px;
-            }
-        }
-        .btn__add__skill {
-            width: 90%;
-            margin-top: -4px;
-            margin-left: 10px;
-            height: 35px;
-        }
-        .btn__cancle__skkil {
-            background-color: #fff;
-            width: 160px;
-            margin-top: -4px;
-            color: black;
-            font-weight: 500;
-            border: 1px solid rgba(49, 25, 25, 0.075);
-            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
-        }
+    // .add__form__Skill {
+    //     width: 91% !important;
+    //     margin-left: 29px;
+    //     height: 194px;
+    //     background-color: rgba(32, 24, 24, 0.061);
+    //     border-radius: 3px;
+    //     box-shadow: none;
+    //     margin-top: 20px;
+    //     input {
+    //         margin-top: 20px;
+    //         border-radius: 4px;
+    //         height: 40px;
+    //     }
+    //     .ant-select-selector {
+    //         height: 440px;
+    //     }
+    //     .ant-form-item-control-input {
+    //         width: 155% !important ;
+    //         margin-left: 12px;
+    //         margin-top: -9px;
+    //     }
+    //     .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    //         height: 42px;
+    //         position: relative;
+    //         border: 1px solid #d9d9d9;
+    //         background-color: #fff;
+    //         border-radius: 2px;
+    //         transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    //     }
+    //     .add__skill__button {
+    //         hr {
+    //             width: 89%;
+    //             margin-top: -7px;
+    //         }
+    //     }
+    //     .btn__add__skill {
+    //         width: 90%;
+    //         margin-top: -4px;
+    //         margin-left: 10px;
+    //         height: 35px;
+    //     }
+    //     .btn__cancle__skkil {
+    //         background-color: #fff;
+    //         width: 160px;
+    //         margin-top: -4px;
+    //         color: black;
+    //         font-weight: 500;
+    //         border: 1px solid rgba(49, 25, 25, 0.075);
+    //         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
+    //     }
+    // }
+
+    // .addform__certification {
+    //     width: 100%;
+    //     margin-top: 10px;
+    //     margin-left: 30px;
+    //     height: 194px;
+    //     background-color: rgba(32, 24, 24, 0.061);
+    //     border-radius: 3px;
+    //     box-shadow: none;
+    //     margin-bottom: 100px;
+    //     input {
+    //         margin-top: 20px;
+    //         border-radius: 4px;
+    //         height: 40px;
+    //     }
+    //     .ant-select-selector {
+    //         height: 440px;
+    //     }
+    //     .ant-form-item-control-input {
+    //         width: 93% !important;
+    //         margin-left: 10px;
+    //         margin-top: -9px;
+    //     }
+    //     .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    //         height: 42px;
+    //         position: relative;
+    //         border: 1px solid #d9d9d9;
+    //         background-color: #fff;
+    //         border-radius: 2px;
+    //         transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    //     }
+    //     .add__skill__button {
+    //         hr {
+    //             width: 89%;
+    //             margin-top: -7px;
+    //         }
+    //     }
+    //     .btn__add__certification {
+    //         width: 130px;
+    //         height: 38px;
+    //         margin-top: -4px;
+    //         font-size: 12px;
+    //         font-weight: 600;
+    //     }
+    //     .btn__cancle__skkil {
+    //         font-weight: 600;
+    //         background-color: #fff;
+    //         width: 134px;
+    //         margin-top: -4px;
+    //         color: black;
+    //         font-weight: 500;
+    //         border: 1px solid rgba(49, 25, 25, 0.075);
+    //         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
+    //     }
     }
 
-    .addform__certification {
-        width: 100%;
-        margin-top: 10px;
-        margin-left: 30px;
-        height: 194px;
-        background-color: rgba(32, 24, 24, 0.061);
-        border-radius: 3px;
-        box-shadow: none;
-        margin-bottom: 100px;
-        input {
-            margin-top: 20px;
-            border-radius: 4px;
-            height: 40px;
-        }
-        .ant-select-selector {
-            height: 440px;
-        }
-        .ant-form-item-control-input {
-            width: 93% !important;
-            margin-left: 10px;
-            margin-top: -9px;
-        }
-        .ant-select:not(.ant-select-customize-input) .ant-select-selector {
-            height: 42px;
-            position: relative;
-            border: 1px solid #d9d9d9;
-            background-color: #fff;
-            border-radius: 2px;
-            transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-        }
-        .add__skill__button {
-            hr {
-                width: 89%;
-                margin-top: -7px;
-            }
-        }
-        .btn__add__certification {
-            width: 130px;
-            height: 38px;
-            margin-top: -4px;
-            font-size: 12px;
-            font-weight: 600;
-        }
-        .btn__cancle__skkil {
-            font-weight: 600;
-            background-color: #fff;
-            width: 134px;
-            margin-top: -4px;
-            color: black;
-            font-weight: 500;
-            border: 1px solid rgba(49, 25, 25, 0.075);
-            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
-        }
-    }
-}
 @media (max-width: 768px) {
     .user__information__content {
         max-width: 100% !important;
