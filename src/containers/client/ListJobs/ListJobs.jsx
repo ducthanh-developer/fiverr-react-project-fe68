@@ -4,26 +4,22 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import "./ListJobs.scss";
-import { actFetchListJobs } from "./module/actions";
+import { actFetchListJobBySubType } from "./module/actions";
 export default function ListJobs(props) {
   const { listJobs } = useSelector((state) => state.JobReducer);
-  console.log("listJobs", listJobs);
   const dispatch = useDispatch();
+  const subTypeId = props.match.params.subTypeId;
   useEffect(() => {
-    dispatch(actFetchListJobs());
-  }, [dispatch]);
+    dispatch(actFetchListJobBySubType(subTypeId));
+  }, [dispatch, subTypeId]);
   const renderListJobs = () => {
     return listJobs.map((job, index) => {
-      const { _id,name,price,rating } = job;
+      const { _id, name, price, rating, image } = job;
       return (
         <div className="col-sm-3 card-layout" key={index}>
           <div className="card-wrapper">
             <NavLink to={`/detail-jobs/${_id}`} className="media">
-              <img
-                className="w-100"
-                src="../images/ListJobs/a5945e0c694538f4e36215017d623873aac3ce67.jpg"
-                alt="Description"
-              />
+              <img className="w-100" src={image} alt="Description" />
             </NavLink>
             <div className="seller-info row">
               <div className="seller-image">
@@ -42,9 +38,7 @@ export default function ListJobs(props) {
               </div>
             </div>
             <h3 className="seller-title">
-              <NavLink to={`/detail-jobs/${_id}`}>
-                {name}
-              </NavLink>
+              <NavLink to={`/detail-jobs/${_id}`}>{name}</NavLink>
             </h3>
             <div className="content-info">
               <div className="rating-wrapper">

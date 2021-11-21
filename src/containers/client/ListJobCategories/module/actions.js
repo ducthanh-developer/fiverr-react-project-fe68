@@ -15,16 +15,3 @@ export const actFetchTypeJobDetail = (typeId) => {
   };
 };
 
-export const actFetchListJobByType = (typeId) => {
-  return async (dispatch) => {
-    try {
-      const result = await fiverrApi.fetchListJobByTypeApi(typeId);
-      dispatch({
-        type: SET_LIST_JOB_BY_TYPE,
-        payload: result.data,
-      });
-    } catch (errors) {
-      console.log("Errors ", errors);
-    }
-  };
-};

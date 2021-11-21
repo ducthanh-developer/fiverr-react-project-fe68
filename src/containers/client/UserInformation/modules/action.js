@@ -60,7 +60,7 @@ export const actFetchAddUserInformation = (values, userId) => {
   console.log("values action", values)
   return async (dispatch) => {
     try {
-      let res = await fiverrApi.fetchAddUserInformation( values, userId );
+      let res = await fiverrApi.fetchAddUserInformation(values, userId);
       console.log("values action", values)
     
       console.log('res', res.data)

@@ -237,7 +237,7 @@ ul {
     border-bottom: 1px solid #e4e5e7;
     border-top: 1px solid #e4e5e7;
     height: 40px;
-    overflow: hidden;
+    // overflow: hidden;
     position: relative;
     .category-menu {
       max-width: 1400px;
@@ -441,5 +441,8 @@ ul {
   }
   .open-menu{
     left: 272px;
+  }
+  .header-category{
+    overflow: hidden;
   }
 }
