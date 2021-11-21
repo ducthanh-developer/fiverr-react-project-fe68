@@ -32,35 +32,22 @@ export const actDetailUserInformation = (userId) => {
       .fetchUserListJobsApi(userId)
       .then(result => {
         dispatch(actLayChiTietNguoiDungSucess(result.data))
-        console.log("result", result.data)
+        // console.log("result", result.data)
       })
       .catch(error => { console.log("errrhhh", error.response?.data); });
   }
 }
 
-// export const actFetchAddUserInformation = (values, userId) => {
-//   console.log("idbggggg", userId);
-
-//   return async (dispatch) => {
-//     try {
-//       let { data } = await fiverrApi.fetchAddUserInformation(values, userId);
-//       console.log("actionvalueshhh", values)
-//       alert("Thêm Thành Công")
-
-//       console.log("dta", data);
-//     } catch (error) {
-//       console.log(error.response?.data);
-//     }
-//   };
-// };
 
 
 
-export const actFetchAddUserInformation = (values, userId, formData ) => {
+export const actFetchAddUserInformation = (values, id) => {
   console.log("values action", values)
+  console.log("values id", id)
+
   return async (dispatch) => {
     try {
-      let res = await fiverrApi.fetchAddUserInformation(values, userId, formData);
+      let res = await fiverrApi.fetchAddUserInformation(values, id);
       console.log("values action", values)
 
       console.log('res', res.data)
@@ -74,43 +61,27 @@ export const actFetchAddUserInformation = (values, userId, formData ) => {
 }
 
 
-// export const actEditUser = (values, idUser) => {
-//   console.log("idUseriii", idUser)
-//   console.log("values action", values)
-//   return async (dispatch) => {
-//     try {
-//       let res = await fiverrApi.editUserApi(idUser, values);
-//       console.log("values action", values)
-//       dispatch(actGetUserListJobs())
-//       console.log('res', res.data)
-//       alert("Cập nhât thành công");
 
-//     } catch (error) {
-//       console.log(error.response?.date)
-
-//     }
-//   }
-// }
 export const actHistoryJobsUser = (token) => {
   return (dispatch) => {
     fiverrApi
       .fetchHistoryJobBookingApi(token)
       .then(response => {
         dispatch(actFetchHistorySuccess(response.data))
-        console.log("his,", response.data);
+        // console.log("his,", response.data);
       })
       .catch(error => { console.log("err", error.response?.data); })
   }
 }
 
 
-export const actUploadImg = (formData, user, token) => {
+export const actUploadImg = (formData, token) => {
   return (dispatch) => {
-    fiverrApi.fetchUploadImgApi(formData, user, token)
+    fiverrApi.fetchUploadImgApi(formData, token)
       .then(response => {
-        dispatch(actUploadImgSuccess(response.data))
-        console.log("result", response.data);
-        alert("Thêm Thành Công")
+        // dispatch(actUploadImgSuccess(response.data))
+        console.log("result", response);
+        // alert("Thêm Thành Công")
       })
 
       .catch(error => { console.log("errrhhh", error.response?.data); })

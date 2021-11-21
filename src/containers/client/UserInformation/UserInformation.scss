@@ -5,8 +5,13 @@
         margin: 0 auto;
         .card-1 {
             margin-top: 50px;
+            position: relative;
+            width: 100%;
+            height: auto;
+            background: #fff;
+            box-shadow: none;
             .btn__profile {
-                width: 87%;
+                width: 85%;
                 margin-left: 28px;
                 border: 1px solid black;
                 color: black;
@@ -19,7 +24,7 @@
             }
             hr {
                 margin-left: 25px;
-                width: 87%;
+                width: 85%;
             }
             .home__town {
                 .flex-item-vietnam {
@@ -28,144 +33,221 @@
                     font-weight: 500;
                     text-align: center;
                 }
-                .flex-item-time {
+
+                .flex-item-year {
+                    color: #00698c;
+                    font-size: 14px;
+                    font-weight: 500;
+                    text-align: center;
+                }
+                .home__town__one {
+                    max-width: 85%;
+                    margin: 0 auto;
+                    .flex-item-from {
+                        font-size: 16px;
+                        float: left;
+                        font-weight: 400;
+                        width: 80%;
+                        margin-bottom: 20px;
+                        color: #62646a;
+                    }
+                    .flex-item-vietnam {
+                        float: left;
+                        width: 20%;
+                    }
+                }
+                .home__town__two {
+                    max-width: 85%;
+                    margin: 0 auto;
+                    .flex-item-member {
+                        font-size: 16px;
+                        float: left;
+                        font-weight: 400;
+                        width: 80%;
+                        margin-bottom: 20px;
+                        color: #62646a;
+                    }
+                    .flex-item-year {
+                        float: left;
+                        width: 20%;
+                    }
                 }
             }
         }
     }
 }
+.card__bottom {
+    .learning {
+        img {
+            width: 27%;
+            margin-left: 28px;
+            margin-top: 20px;
+        }
+    }
+    .circle {
+        img {
+            font-weight: 600;
+            font-size: 25px;
+            width: 80%;
+            text-align: center;
+            margin-left: 52px;
+        }
+    }
+    .badges {
+        font-weight: 700;
+        font-size: 23px;
+        text-align: center;
+        margin-left: 10px;
+    }
+    .boost {
+        letter-spacing: 1px;
+        font-size: 18px;
+        text-align: center;
+    }
+    button {
+        margin-left: 31px;
+        width: 323px;
+        /* text-align: center; */
+        margin-top: 30px;
+        font-weight: 500;
+    }
+}
 
-.card-1 {
-    position: relative;
-    width: 100%;
-    height: auto;
-    background: #fff;
-    box-shadow: none;
-}
-.card-2 {
-    border: 1px solid rgba(206, 200, 200, 0.769);
-    position: relative;
-    width: 100%;
-    height: auto;
-    background: #fff;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    margin-bottom: 50px;
-    margin-top: 25px;
-    box-shadow: none;
-    hr {
-        margin-left: 14px;
-        margin-top: 50px;
-        width: 90%;
-    }
-    .description {
-        .description__one {
-        }
-        .description__two {
-            font-size: 12px;
-            text-align: center;
-        }
-    }
-    .description__add__certification {
-        .flex-item-1 {
-            font-size: 10 rem;
-            font-weight: 500;
-            text-align: center;
-        }
-        .flex-item-2 {
-            font-size: 10 rem;
-            text-align: center;
-            font-weight: 500;
-            .add__skill {
-                margin-bottom: 15px;
-                margin-left: 167px;
-            }
-        }
-    }
-    .done__add__skill {
-        .skill {
-            text-align: center;
-            border: 1px solid;
-            border-radius: 31px;
-            width: 64px;
-            margin-left: 108px;
-            margin-top: 10px;
-        }
-    }
-}
+// .card-2 {
+//     // border: 1px solid rgba(206, 200, 200, 0.769);
+//     // position: relative;
+//     // width: 100%;
+//     // height: auto;
+//     // background: #fff;
+//     // transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+//     // margin-bottom: 50px;
+//     margin-top: 25px;
+//     // box-shadow: none;
+//     hr {
+//         margin-left: 14px;
+//         margin-top: 50px;
+//         width: 90%;
+//     }
+//     .description__content {
+//         margin: 0 auto;
+//         max-width: 90%;
+//         .description__one {
+//             width: 80%;
+//             float: left;
+
+//         }
+//         .description__two {
+//             width: 20%;
+//             float: left;
+//         }
+//     }
+//     .description__add__certification {
+//         .flex-item-1 {
+//             font-size: 10 rem;
+//             font-weight: 500;
+//             text-align: center;
+//         }
+//         .flex-item-2 {
+//             font-size: 10 rem;
+//             text-align: center;
+//             font-weight: 500;
+//             .add__skill {
+//                 margin-bottom: 15px;
+//                 margin-left: 167px;
+//             }
+//         }
+//     }
+//     .done__add__skill {
+//         .skill {
+//             text-align: center;
+//             border: 1px solid;
+//             border-radius: 31px;
+//             width: 64px;
+//             margin-left: 108px;
+//             margin-top: 10px;
+//         }
+//     }
+// }
 
 //addSkill
-.card-2 {
-    height: auto !important;
-    .add__skill_content {
-        .flex-item-3 {
-            text-align: center;
-            color: #0e0e0f;
-            font-size: 15px;
-            font-weight: 700;
-        }
-        .flex-item-4 {
-            text-align: center;
-            color: #00698c;
-            font-size: 15px;
-            font-weight: 500;
-            .add__skill {
-                margin-bottom: 15px;
-                margin-left: 167px;
-            }
-        }
-    }
+// .card-2 {
+//     height: auto !important;
+//     .add__skill_content {
+//         max-width: 85%;
+//         margin: 0 auto;
+//         .flex-item-3 {
+//             float: left;
+//             width: 80%;
+//             // text-align: center;
+//             // color: #0e0e0f;
+//             // font-size: 15px;
+//             // font-weight: 700;
+//         }
+//         .flex-item-4 {
+//             float: left;
+//             width: 20%;
+//             // text-align: center;
+//             // color: #00698c;
+//             // font-size: 15px;
+//             // font-weight: 500;
+//             .add__skill {
+//                 margin-bottom: 15px;
+//                 margin-left: 167px;
+//             }
+//         }
+//     }
 
-    .add__form__Skill {
-        width: 111%;
-        margin-left: 29px;
-        height: 154px;
-        background-color: rgba(32, 24, 24, 0.061);
-        border-radius: 3px;
-        box-shadow: none;
-        margin-top: 20px;
-        input {
-            margin-top: 20px;
-            border-radius: 4px;
-            height: 40px;
-        }
-        .ant-select-selector {
-            height: 440px;
-        }
-        .ant-form-item-control-input {
-            width: 158%;
-            margin-left: 12px;
-            margin-top: -9px;
-        }
-        .ant-select:not(.ant-select-customize-input) .ant-select-selector {
-            height: 42px;
-            position: relative;
-            border: 1px solid #0a4c14b4;
-            background-color: #fff;
-            border-radius: 2px;
-            transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-        }
-        .add__skill__button {
-            hr {
-                width: 89%;
-                margin-top: -7px;
-            }
-        }
-        .btn__add__skill {
-            width: 100%;
-            margin-top: -4px;
-            height: 35px;
-        }
-        .btn__cancle__skkil {
-            background-color: #fff;
-            width: 135px;
-            margin-top: -4px;
-            color: black;
-            font-weight: 500;
-            border: 1px solid 1px solid #257537a1;
-            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
-        }
-    }
-}
+//     .add__form__Skill {
+//         width: 108%;
+//         margin-left: 29px;
+//         height: 154px;
+//         background-color: rgba(32, 24, 24, 0.061);
+//         border-radius: 3px;
+//         box-shadow: none;
+//         margin-top: 20px;
+//         input {
+//             margin-top: 20px;
+//             border-radius: 4px;
+//             height: 40px;
+//         }
+//         .ant-select-selector {
+//             height: 440px;
+//         }
+//         .ant-form-item-control-input {
+//             width: 158%;
+//             margin-left: 12px;
+//             margin-top: -9px;
+//         }
+//         .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+//             height: 42px;
+//             position: relative;
+//             border: 1px solid #0a4c14b4;
+//             background-color: #fff;
+//             border-radius: 2px;
+//             transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+//         }
+//         .add__skill__button {
+//             hr {
+//                 width: 89%;
+//                 margin-top: -7px;
+//             }
+//         }
+//         .btn__add__skill {
+//             width: 100%;
+//             margin-top: -4px;
+//             height: 35px;
+//         }
+//         .btn__cancle__skkil {
+//             background-color: #fff;
+//             width: 135px;
+//             margin-top: -4px;
+//             color: black;
+//             font-weight: 500;
+//             border: 1px solid 1px solid #257537a1;
+//             font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
+//         }
+//     }
+// }
 
 .user__information__right {
     .car__done__create {
@@ -247,9 +329,9 @@
 }
 
 .addform__certification {
-    width: 90%;
+    width: 87%;
     margin-top: 10px;
-    margin-left: 30px;
+    margin-left: 28px;
     height: 154px;
     background-color: rgba(32, 24, 24, 0.061);
     border-radius: 3px;
@@ -309,7 +391,6 @@
         border-radius: 176px;
         position: relative;
         margin-top: 70px;
-        // margin-left: 120px;
     }
     .file {
         height: 20%;
@@ -319,7 +400,6 @@
     }
     .tacvu {
         margin-left: 140px;
-        /* color: #f5deb312; */
         border: 1px;
         background: #7ea587;
         color: white;
@@ -371,27 +451,27 @@
             margin-top: 50px;
             width: 90%;
         }
-        .Description {
-            display: flex;
-            flex-flow: row wrap;
-            list-style: none;
-            justify-content: space-around;
-            .flex-item-1 {
-                color: #0e0e0f;
-                font-size: 14px;
-                font-weight: 700;
-                margin-bottom: 10px;
-            }
-            .flex-item-2 {
-                color: #00698c;
-                font-size: 14px;
-                font-weight: 500;
-                .add__skill {
-                    margin-bottom: 15px;
-                    margin-left: 167px;
-                }
-            }
-        }
+        // .Description {
+        //     display: flex;
+        //     flex-flow: row wrap;
+        //     list-style: none;
+        //     justify-content: space-around;
+        //     .flex-item-1 {
+        //         color: #0e0e0f;
+        //         font-size: 14px;
+        //         font-weight: 700;
+        //         margin-bottom: 10px;
+        //     }
+        //     .flex-item-2 {
+        //         color: #00698c;
+        //         font-size: 14px;
+        //         font-weight: 500;
+        //         .add__skill {
+        //             margin-bottom: 15px;
+        //             margin-left: 167px;
+        //         }
+        //     }
+        // }
         .done__add__skill {
             .skill {
                 text-align: center;
@@ -415,9 +495,6 @@
         }
     }
 }
- @media (max-width: 992px) {
-   
- }
 
 @media (max-width: 992px) {
     .user__information__content {
@@ -867,9 +944,6 @@
     }
 }
 
-
-
-
 @media (max-width: 452px) {
     .user__information__content {
         max-width: 100% !important;
@@ -989,6 +1063,63 @@
             font-weight: 500;
             border: 1px solid rgba(49, 25, 25, 0.075);
             font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .home__town__two {
+        max-width: 85%;
+        margin: 0 auto;
+        .flex-item-member {
+            font-size: 16px;
+            float: left;
+            font-weight: 400;
+            width: 75% !important;
+            margin-bottom: 20px;
+            color: #62646a;
+        }
+        .flex-item-year {
+            float: left;
+            width: 25% !important;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .home__town__two {
+        max-width: 85%;
+        margin: 0 auto;
+        .flex-item-member {
+            font-size: 16px;
+            float: left;
+            font-weight: 400;
+            width: 65% !important;
+            margin-bottom: 20px;
+            color: #62646a;
+        }
+        .flex-item-year {
+            float: left;
+            width: 35% !important;
+        }
+    }
+}
+
+@media (max-width: 544px) {
+    .home__town__two {
+        max-width: 85%;
+        margin: 0 auto;
+        .flex-item-member {
+            font-size: 16px;
+            float: left;
+            font-weight: 400;
+            width: 83% !important;
+            margin-bottom: 20px;
+            color: #62646a;
+        }
+        .flex-item-year {
+            float: left;
+            width: 17% !important;
         }
     }
 }
