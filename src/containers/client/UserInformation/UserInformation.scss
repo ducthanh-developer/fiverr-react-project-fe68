@@ -80,6 +80,19 @@
 // card button left
 .card__bottom {
     .add__form {
+        .clear {
+            clear: both;
+        }
+        .noidung__add {
+            margin: 0 auto;
+            text-align: center;
+            /* width: 43%; */
+            border: 1px solid #17b875;
+            border-radius: 31px;
+            width: 44%;
+            margin-top: 30px;
+            height: 33px;
+        }
         .add__form__certification {
             max-width: 85%;
             margin: 0 auto;
@@ -92,6 +105,10 @@
                 color: #62646a;
             }
             .flex-item-add-certification {
+                line-height: 30px;
+                font-weight: 500;
+                font-size: 15px;
+                color: #1dbf73;
                 float: left;
                 width: 20%;
             }
@@ -121,12 +138,16 @@
                 color: #62646a;
             }
             .flex-item-add {
+                line-height: 30px;
+                font-weight: 500;
+                font-size: 15px;
+                color: #1dbf73;
                 float: left;
                 width: 20%;
             }
             .add__skill {
                 background: rgba(238, 235, 235, 0.898);
-                width: 100%; 
+                width: 100%;
                 box-shadow: none;
                 input {
                     height: 36px;
@@ -194,6 +215,16 @@
                 margin-bottom: 20px;
             }
         }
+    }
+    .noidung__addskill{
+        margin: 0 auto;
+    text-align: center;
+    /* width: 43%; */
+    border: 1px solid #17b875;
+    border-radius: 31px;
+    width: 44%;
+    margin-top: 30px;
+    height: 33px
     }
 }
 
@@ -381,78 +412,6 @@
         width: 50%;
     }
 }
-// @media (max-width: 1497px) {
-//     .add__certification {
-//         background: rgba(238, 235, 235, 0.898);
-//         width: 209% !important;
-//         box-shadow: none;
-//     }
-//     .add__skill {
-//         background: rgba(238, 235, 235, 0.898);
-//         width: 350px !important;
-//         box-shadow: none;
-//     }
-// }
-
-// @media (max-width: 1252px) {
-//     .add__certification {
-//         background: rgba(238, 235, 235, 0.898);
-//         width: 195% !important;
-//         box-shadow: none;
-//     }
-//     .add__skill {
-//         background: rgba(238, 235, 235, 0.898);
-//         width: 300px !important;
-//         box-shadow: none;
-//     }
-// }
-
-//  @media( max-width:1148px){
-
-//     .add__certification {
-//         background: rgba(238, 235, 235, 0.898);
-//         width: 155% !important;
-//         box-shadow: none;
-
-//     }
-//     .add__skill {
-//         background: rgba(238, 235, 235, 0.898);
-//         width: 155% !important;
-//         box-shadow: none;
-
-//     }
-//  }
-//  @media( max-width:1125px){
-
-//     .add__certification {
-//         background: rgba(238, 235, 235, 0.898);
-//         width: 155% !important;
-//         box-shadow: none;
-
-//     }
-//     .add__skill {
-//         background: rgba(238, 235, 235, 0.898);
-//         width: 155% !important;
-//         box-shadow: none;
-
-//     }
-//  }
-
-//  @media( max-width:1055px){
-
-//     .add__certification {
-//         background: rgba(238, 235, 235, 0.898);
-//         width: 147% !important;
-//         box-shadow: none;
-
-//     }
-//     .add__skill {
-//         background: rgba(238, 235, 235, 0.898);
-//         width: 147% !important;
-//         box-shadow: none;
-
-//     }
-//  }
 
 @media (max-width: 992px) {
     .user__information__content {
@@ -688,8 +647,6 @@
         float: left;
         width: 100%;
     }
-    
-    
 }
 
 @media (max-width: 452px) {
