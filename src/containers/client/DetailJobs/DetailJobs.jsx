@@ -50,7 +50,7 @@ export default function DetailJobs(props) {
                 </span>
               </span>
             </div>
-            {/* <hr className="hr"></hr> */}
+            <hr className="hr"></hr>
             <div className="exceptional">
               <img src="../../images/market/1.png" alt="" />
               <span className="People ">People keep coming back?</span>

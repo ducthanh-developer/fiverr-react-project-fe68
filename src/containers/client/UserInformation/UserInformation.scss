@@ -73,12 +73,130 @@
                     }
                 }
             }
-            .add__form{
-                
+        }
+    }
+}
+
+// card button left
+.card__bottom {
+    .add__form {
+        .add__form__certification {
+            max-width: 85%;
+            margin: 0 auto;
+            .flex-item-certification {
+                font-size: 16px;
+                float: left;
+                font-weight: 400;
+                width: 80%;
+                margin-bottom: 20px;
+                color: #62646a;
+            }
+            .flex-item-add-certification {
+                float: left;
+                width: 20%;
+            }
+            .add__button__certification {
+                .cancle__add__certification {
+                    background: white;
+                    letter-spacing: 1px;
+                    height: 38px;
+                    margin-bottom: 13px;
+                    text-align: center;
+                    padding-top: 8px;
+                    font-weight: 500;
+                    border: 1px solid green;
+                    border-radius: 5px;
+                }
+            }
+        }
+        .add__form__skill {
+            max-width: 85%;
+            margin: 0 auto;
+            .flex-item-skill {
+                font-size: 16px;
+                float: left;
+                font-weight: 400;
+                width: 80%;
+                margin-bottom: 20px;
+                color: #62646a;
+            }
+            .flex-item-add {
+                float: left;
+                width: 20%;
+            }
+            .add__skill {
+                background: rgba(238, 235, 235, 0.898);
+                width: 100%; 
+                box-shadow: none;
+                input {
+                    height: 36px;
+                    width: 91%;
+                    text-align: center;
+                    margin-left: 13px;
+                    margin-top: 20px;
+                }
+                .cancle {
+                    margin-top: 20px;
+                    font-weight: 500;
+                    text-align: center;
+                    background: white;
+                    height: 35px;
+                    padding-top: 7px;
+                    border: 1px solid green;
+                    border-radius: 4px;
+                    margin-bottom: 20px;
+                }
+                .add {
+                    margin-top: 20px;
+
+                    color: white;
+                    font-weight: 500;
+                    border: none;
+                    text-align: center;
+                    background: rgb(20, 152, 46);
+                    height: 35px;
+                    padding-top: 7px;
+                    border-radius: 4px;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+        .add__certification {
+            background: rgba(238, 235, 235, 0.898);
+            width: 100%;
+            box-shadow: none;
+            input {
+                height: 36px;
+                width: 91%;
+                text-align: center;
+                margin-left: 13px;
+                margin-top: 20px;
+            }
+            .cancle {
+                font-weight: 500;
+                text-align: center;
+                background: white;
+                height: 35px;
+                padding-top: 7px;
+                border: 1px solid green;
+                border-radius: 4px;
+                margin-bottom: 20px;
+            }
+            .add {
+                color: white;
+                font-weight: 500;
+                border: none;
+                text-align: center;
+                background: rgb(20, 152, 46);
+                height: 35px;
+                padding-top: 7px;
+                border-radius: 4px;
+                margin-bottom: 20px;
             }
         }
     }
 }
+
 .card__bottom {
     .learning {
         img {
@@ -109,149 +227,14 @@
     }
     button {
         margin-left: 31px;
-        width: 323px;
+        width: 85%;
         /* text-align: center; */
         margin-top: 30px;
         font-weight: 500;
     }
 }
 
-// .card-2 {
-//     // border: 1px solid rgba(206, 200, 200, 0.769);
-//     // position: relative;
-//     // width: 100%;
-//     // height: auto;
-//     // background: #fff;
-//     // transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-//     // margin-bottom: 50px;
-//     margin-top: 25px;
-//     // box-shadow: none;
-//     hr {
-//         margin-left: 14px;
-//         margin-top: 50px;
-//         width: 90%;
-//     }
-//     .description__content {
-//         margin: 0 auto;
-//         max-width: 90%;
-//         .description__one {
-//             width: 80%;
-//             float: left;
-
-//         }
-//         .description__two {
-//             width: 20%;
-//             float: left;
-//         }
-//     }
-//     .description__add__certification {
-//         .flex-item-1 {
-//             font-size: 10 rem;
-//             font-weight: 500;
-//             text-align: center;
-//         }
-//         .flex-item-2 {
-//             font-size: 10 rem;
-//             text-align: center;
-//             font-weight: 500;
-//             .add__skill {
-//                 margin-bottom: 15px;
-//                 margin-left: 167px;
-//             }
-//         }
-//     }
-//     .done__add__skill {
-//         .skill {
-//             text-align: center;
-//             border: 1px solid;
-//             border-radius: 31px;
-//             width: 64px;
-//             margin-left: 108px;
-//             margin-top: 10px;
-//         }
-//     }
-// }
-
-//addSkill
-// .card-2 {
-//     height: auto !important;
-//     .add__skill_content {
-//         max-width: 85%;
-//         margin: 0 auto;
-//         .flex-item-3 {
-//             float: left;
-//             width: 80%;
-//             // text-align: center;
-//             // color: #0e0e0f;
-//             // font-size: 15px;
-//             // font-weight: 700;
-//         }
-//         .flex-item-4 {
-//             float: left;
-//             width: 20%;
-//             // text-align: center;
-//             // color: #00698c;
-//             // font-size: 15px;
-//             // font-weight: 500;
-//             .add__skill {
-//                 margin-bottom: 15px;
-//                 margin-left: 167px;
-//             }
-//         }
-//     }
-
-//     .add__form__Skill {
-//         width: 108%;
-//         margin-left: 29px;
-//         height: 154px;
-//         background-color: rgba(32, 24, 24, 0.061);
-//         border-radius: 3px;
-//         box-shadow: none;
-//         margin-top: 20px;
-//         input {
-//             margin-top: 20px;
-//             border-radius: 4px;
-//             height: 40px;
-//         }
-//         .ant-select-selector {
-//             height: 440px;
-//         }
-//         .ant-form-item-control-input {
-//             width: 158%;
-//             margin-left: 12px;
-//             margin-top: -9px;
-//         }
-//         .ant-select:not(.ant-select-customize-input) .ant-select-selector {
-//             height: 42px;
-//             position: relative;
-//             border: 1px solid #0a4c14b4;
-//             background-color: #fff;
-//             border-radius: 2px;
-//             transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-//         }
-//         .add__skill__button {
-//             hr {
-//                 width: 89%;
-//                 margin-top: -7px;
-//             }
-//         }
-//         .btn__add__skill {
-//             width: 100%;
-//             margin-top: -4px;
-//             height: 35px;
-//         }
-//         .btn__cancle__skkil {
-//             background-color: #fff;
-//             width: 135px;
-//             margin-top: -4px;
-//             color: black;
-//             font-weight: 500;
-//             border: 1px solid 1px solid #257537a1;
-//             font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
-//         }
-//     }
-// }
-
+// right
 .user__information__right {
     .car__done__create {
         border-radius: 1px;
@@ -331,61 +314,6 @@
     }
 }
 
-.addform__certification {
-    width: 87%;
-    margin-top: 10px;
-    margin-left: 28px;
-    height: 154px;
-    background-color: rgba(32, 24, 24, 0.061);
-    border-radius: 3px;
-    box-shadow: none;
-    margin-bottom: 20px;
-    input {
-        margin-top: 20px;
-        border-radius: 4px;
-        height: 40px;
-    }
-    .ant-select-selector {
-        height: 440px;
-    }
-    .ant-form-item-control-input {
-        width: 160%;
-        margin-left: 10px;
-        margin-top: -9px;
-    }
-    .ant-select:not(.ant-select-customize-input) .ant-select-selector {
-        height: 42px;
-        position: relative;
-        border: 1px solid #d9d9d9;
-        background-color: #fff;
-        border-radius: 2px;
-        transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-    }
-    .add__skill__button {
-        hr {
-            width: 89%;
-            margin-top: -7px;
-        }
-    }
-    .btn__add__certification {
-        width: 135px;
-        height: 38px;
-        margin-top: -4px;
-        font-size: 13px;
-        font-weight: 600;
-    }
-    .btn__cancle__skkil {
-        font-weight: 600;
-        background-color: #fff;
-        width: 144px;
-        margin-top: -4px;
-        color: black;
-        font-weight: 500;
-        border: 1px solid rgba(11, 84, 67, 0.075);
-        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
-    }
-}
-
 .upload__avatar {
     .img_select {
         width: 150px;
@@ -422,7 +350,7 @@
     width: 60%;
 }
 
-@media (max-width: 1504px) {
+@media (max-width: 1510px) {
     .user__information__content {
         max-width: 100% !important;
         margin: 0 auto;
@@ -438,66 +366,93 @@
     }
 }
 
-// @media (max-width: 1196px) {
-//     .card-2 {
-//         border: 1px solid rgba(206, 200, 200, 0.769);
-//         position: relative;
-//         width: 100%;
-//         height: auto;
-//         background: #fff;
-//         transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-//         margin-bottom: 50px;
-//         margin-top: 25px;
-//         box-shadow: none;
-//         hr {
-//             margin-left: 14px;
-//             margin-top: 50px;
-//             width: 90%;
-//         }
-//         // .Description {
-//         //     display: flex;
-//         //     flex-flow: row wrap;
-//         //     list-style: none;
-//         //     justify-content: space-around;
-//         //     .flex-item-1 {
-//         //         color: #0e0e0f;
-//         //         font-size: 14px;
-//         //         font-weight: 700;
-//         //         margin-bottom: 10px;
-//         //     }
-//         //     .flex-item-2 {
-//         //         color: #00698c;
-//         //         font-size: 14px;
-//         //         font-weight: 500;
-//         //         .add__skill {
-//         //             margin-bottom: 15px;
-//         //             margin-left: 167px;
-//         //         }
-//         //     }
-//         // }
-//         // .done__add__skill {
-//         //     .skill {
-//         //         text-align: center;
-//         //         border: 1px solid;
-//         //         border-radius: 31px;
-//         //         width: 64px;
-//         //         margin-left: 108px;
-//         //         margin-top: 10px;
-//         //     }
-//         // }
-//     }
+@media (max-width: 1310px) {
+    .user__information__content {
+        max-width: 100% !important;
+        margin: 0 auto;
+    }
 
-//     .history__job__booking {
-//         .bookingName {
-//             .ant-card-bordered {
-//                 width: 155% !important;
-//                 margin-left: -35px;
-//                 border-radius: 4px;
-//                 border: 1px solid rgba(206, 200, 200, 0.769);
-//             }
-//         }
+    .userInformation__item1 {
+        float: left;
+        width: 50%;
+    }
+    .userInformation__item2 {
+        float: left;
+        width: 50%;
+    }
+}
+// @media (max-width: 1497px) {
+//     .add__certification {
+//         background: rgba(238, 235, 235, 0.898);
+//         width: 209% !important;
+//         box-shadow: none;
+//     }
+//     .add__skill {
+//         background: rgba(238, 235, 235, 0.898);
+//         width: 350px !important;
+//         box-shadow: none;
 //     }
 // }
+
+// @media (max-width: 1252px) {
+//     .add__certification {
+//         background: rgba(238, 235, 235, 0.898);
+//         width: 195% !important;
+//         box-shadow: none;
+//     }
+//     .add__skill {
+//         background: rgba(238, 235, 235, 0.898);
+//         width: 300px !important;
+//         box-shadow: none;
+//     }
+// }
+
+//  @media( max-width:1148px){
+
+//     .add__certification {
+//         background: rgba(238, 235, 235, 0.898);
+//         width: 155% !important;
+//         box-shadow: none;
+
+//     }
+//     .add__skill {
+//         background: rgba(238, 235, 235, 0.898);
+//         width: 155% !important;
+//         box-shadow: none;
+
+//     }
+//  }
+//  @media( max-width:1125px){
+
+//     .add__certification {
+//         background: rgba(238, 235, 235, 0.898);
+//         width: 155% !important;
+//         box-shadow: none;
+
+//     }
+//     .add__skill {
+//         background: rgba(238, 235, 235, 0.898);
+//         width: 155% !important;
+//         box-shadow: none;
+
+//     }
+//  }
+
+//  @media( max-width:1055px){
+
+//     .add__certification {
+//         background: rgba(238, 235, 235, 0.898);
+//         width: 147% !important;
+//         box-shadow: none;
+
+//     }
+//     .add__skill {
+//         background: rgba(238, 235, 235, 0.898);
+//         width: 147% !important;
+//         box-shadow: none;
+
+//     }
+//  }
 
 @media (max-width: 992px) {
     .user__information__content {
@@ -512,6 +467,7 @@
         float: left;
         width: 50%;
     }
+
     .history__job__booking {
         .bookingName {
             .ant-card-bordered {
@@ -568,113 +524,7 @@
             }
         }
     }
-
-    // .add__form__Skill {
-    //     width: 91% !important;
-    //     margin-left: 29px;
-    //     height: 194px;
-    //     background-color: rgba(32, 24, 24, 0.061);
-    //     border-radius: 3px;
-    //     box-shadow: none;
-    //     margin-top: 20px;
-    //     input {
-    //         margin-top: 20px;
-    //         border-radius: 4px;
-    //         height: 40px;
-    //     }
-    //     .ant-select-selector {
-    //         height: 440px;
-    //     }
-    //     .ant-form-item-control-input {
-    //         width: 155% !important ;
-    //         margin-left: 12px;
-    //         margin-top: -9px;
-    //     }
-    //     .ant-select:not(.ant-select-customize-input) .ant-select-selector {
-    //         height: 42px;
-    //         position: relative;
-    //         border: 1px solid #d9d9d9;
-    //         background-color: #fff;
-    //         border-radius: 2px;
-    //         transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-    //     }
-    //     .add__skill__button {
-    //         hr {
-    //             width: 89%;
-    //             margin-top: -7px;
-    //         }
-    //     }
-    //     .btn__add__skill {
-    //         width: 90%;
-    //         margin-top: -4px;
-    //         margin-left: 10px;
-    //         height: 35px;
-    //     }
-    //     .btn__cancle__skkil {
-    //         background-color: #fff;
-    //         width: 160px;
-    //         margin-top: -4px;
-    //         color: black;
-    //         font-weight: 500;
-    //         border: 1px solid rgba(49, 25, 25, 0.075);
-    //         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
-    //     }
-    // }
-
-    // .addform__certification {
-    //     width: 100%;
-    //     margin-top: 10px;
-    //     margin-left: 30px;
-    //     height: 194px;
-    //     background-color: rgba(32, 24, 24, 0.061);
-    //     border-radius: 3px;
-    //     box-shadow: none;
-    //     margin-bottom: 100px;
-    //     input {
-    //         margin-top: 20px;
-    //         border-radius: 4px;
-    //         height: 40px;
-    //     }
-    //     .ant-select-selector {
-    //         height: 440px;
-    //     }
-    //     .ant-form-item-control-input {
-    //         width: 93% !important;
-    //         margin-left: 10px;
-    //         margin-top: -9px;
-    //     }
-    //     .ant-select:not(.ant-select-customize-input) .ant-select-selector {
-    //         height: 42px;
-    //         position: relative;
-    //         border: 1px solid #d9d9d9;
-    //         background-color: #fff;
-    //         border-radius: 2px;
-    //         transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-    //     }
-    //     .add__skill__button {
-    //         hr {
-    //             width: 89%;
-    //             margin-top: -7px;
-    //         }
-    //     }
-    //     .btn__add__certification {
-    //         width: 130px;
-    //         height: 38px;
-    //         margin-top: -4px;
-    //         font-size: 12px;
-    //         font-weight: 600;
-    //     }
-    //     .btn__cancle__skkil {
-    //         font-weight: 600;
-    //         background-color: #fff;
-    //         width: 134px;
-    //         margin-top: -4px;
-    //         color: black;
-    //         font-weight: 500;
-    //         border: 1px solid rgba(49, 25, 25, 0.075);
-    //         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
-    //     }
-    }
+}
 
 @media (max-width: 768px) {
     .user__information__content {
@@ -838,113 +688,8 @@
         float: left;
         width: 100%;
     }
-
-    .add__form__Skill {
-        width: 108% !important;
-        margin-left: 29px;
-        height: 194px;
-        background-color: rgba(32, 24, 24, 0.061);
-        border-radius: 3px;
-        box-shadow: none;
-        margin-top: 20px;
-        input {
-            margin-top: 20px;
-            border-radius: 4px;
-            height: 40px;
-        }
-        .ant-select-selector {
-            height: 440px;
-        }
-        .ant-form-item-control-input {
-            width: 93% !important ;
-            margin-left: 12px;
-            margin-top: -9px;
-        }
-        .ant-select:not(.ant-select-customize-input) .ant-select-selector {
-            height: 42px;
-            position: relative;
-            border: 1px solid #d9d9d9;
-            background-color: #fff;
-            border-radius: 2px;
-            transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-        }
-        .add__skill__button {
-            hr {
-                width: 89%;
-                margin-top: -7px;
-            }
-        }
-        .btn__add__skill {
-            width: 90%;
-            margin-top: -4px;
-            margin-left: 10px;
-            height: 35px;
-        }
-        .btn__cancle__skkil {
-            background-color: #fff;
-            width: 160px;
-            margin-top: -4px;
-            color: black;
-            font-weight: 500;
-            border: 1px solid rgba(49, 25, 25, 0.075);
-            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
-        }
-    }
-
-    .addform__certification {
-        width: 100%;
-        margin-top: 10px;
-        margin-left: 30px;
-        height: 194px;
-        background-color: rgba(32, 24, 24, 0.061);
-        border-radius: 3px;
-        box-shadow: none;
-        margin-bottom: 100px;
-        input {
-            margin-top: 20px;
-            border-radius: 4px;
-            height: 40px;
-        }
-        .ant-select-selector {
-            height: 440px;
-        }
-        .ant-form-item-control-input {
-            width: 93% !important;
-            margin-left: 10px;
-            margin-top: -9px;
-        }
-        .ant-select:not(.ant-select-customize-input) .ant-select-selector {
-            height: 42px;
-            position: relative;
-            border: 1px solid #d9d9d9;
-            background-color: #fff;
-            border-radius: 2px;
-            transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-        }
-        .add__skill__button {
-            hr {
-                width: 89%;
-                margin-top: -7px;
-            }
-        }
-        .btn__add__certification {
-            width: 130px;
-            height: 38px;
-            margin-top: -4px;
-            font-size: 12px;
-            font-weight: 600;
-        }
-        .btn__cancle__skkil {
-            font-weight: 600;
-            background-color: #fff;
-            width: 134px;
-            margin-top: -4px;
-            color: black;
-            font-weight: 500;
-            border: 1px solid rgba(49, 25, 25, 0.075);
-            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
-        }
-    }
+    
+    
 }
 
 @media (max-width: 452px) {
@@ -960,113 +705,6 @@
     .userInformation__item2 {
         float: left;
         width: 100%;
-    }
-
-    .add__form__Skill {
-        width: 108% !important;
-        margin-left: 29px;
-        height: 194px;
-        background-color: rgba(32, 24, 24, 0.061);
-        border-radius: 3px;
-        box-shadow: none;
-        margin-top: 20px;
-        input {
-            margin-top: 20px;
-            border-radius: 4px;
-            height: 40px;
-        }
-        .ant-select-selector {
-            height: 440px;
-        }
-        .ant-form-item-control-input {
-            width: 93% !important ;
-            margin-left: 12px;
-            margin-top: -9px;
-        }
-        .ant-select:not(.ant-select-customize-input) .ant-select-selector {
-            height: 42px;
-            position: relative;
-            border: 1px solid #d9d9d9;
-            background-color: #fff;
-            border-radius: 2px;
-            transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-        }
-        .add__skill__button {
-            hr {
-                width: 89%;
-                margin-top: -7px;
-            }
-        }
-        .btn__add__skill {
-            width: 90%;
-            margin-top: -4px;
-            margin-left: 10px;
-            height: 35px;
-        }
-        .btn__cancle__skkil {
-            background-color: #fff;
-            width: 160px;
-            margin-top: -4px;
-            color: black;
-            font-weight: 500;
-            border: 1px solid rgba(49, 25, 25, 0.075);
-            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
-        }
-    }
-
-    .addform__certification {
-        width: 100%;
-        margin-top: 10px;
-        margin-left: 30px;
-        height: 194px;
-        background-color: rgba(32, 24, 24, 0.061);
-        border-radius: 3px;
-        box-shadow: none;
-        margin-bottom: 100px;
-        input {
-            margin-top: 20px;
-            border-radius: 4px;
-            height: 40px;
-        }
-        .ant-select-selector {
-            height: 440px;
-        }
-        .ant-form-item-control-input {
-            width: 93% !important;
-            margin-left: 10px;
-            margin-top: -9px;
-        }
-        .ant-select:not(.ant-select-customize-input) .ant-select-selector {
-            height: 42px;
-            position: relative;
-            border: 1px solid #d9d9d9;
-            background-color: #fff;
-            border-radius: 2px;
-            transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-        }
-        .add__skill__button {
-            hr {
-                width: 89%;
-                margin-top: -7px;
-            }
-        }
-        .btn__add__certification {
-            width: 130px;
-            height: 38px;
-            margin-top: -4px;
-            font-size: 12px;
-            font-weight: 600;
-        }
-        .btn__cancle__skkil {
-            font-weight: 600;
-            background-color: #fff;
-            width: 134px;
-            margin-top: -4px;
-            color: black;
-            font-weight: 500;
-            border: 1px solid rgba(49, 25, 25, 0.075);
-            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
-        }
     }
 }
 
