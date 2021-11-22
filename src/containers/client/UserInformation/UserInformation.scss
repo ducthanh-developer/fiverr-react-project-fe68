@@ -5,8 +5,13 @@
         margin: 0 auto;
         .card-1 {
             margin-top: 50px;
+            position: relative;
+            width: 100%;
+            height: auto;
+            background: #fff;
+            box-shadow: none;
             .btn__profile {
-                width: 87%;
+                width: 85%;
                 margin-left: 28px;
                 border: 1px solid black;
                 color: black;
@@ -19,183 +24,217 @@
             }
             hr {
                 margin-left: 25px;
-                width: 87%;
+                width: 85%;
             }
-            .from__item {
-                display: flex;
-                flex-flow: row wrap;
-                list-style: none;
-                .flex-item-from {
-                    margin-top: 20px;
-                    margin-left: 30px;
-                    color: #0e0e0f;
-                    font-size: 14px;
-                    font-weight: 700;
-                    margin-bottom: 10px;
-                }
+            .home__town {
                 .flex-item-vietnam {
-                    text-align: center;
-                    margin-top: 20px;
-                    margin-left: 241px;
                     color: #00698c;
                     font-size: 14px;
                     font-weight: 500;
-                    .unAddSkill {
-                        margin-left: 62px;
+                    text-align: center;
+                }
+
+                .flex-item-year {
+                    color: #00698c;
+                    font-size: 14px;
+                    font-weight: 500;
+                    text-align: center;
+                }
+                .home__town__one {
+                    max-width: 85%;
+                    margin: 0 auto;
+                    .flex-item-from {
+                        font-size: 16px;
+                        float: left;
+                        font-weight: 400;
+                        width: 80%;
+                        margin-bottom: 20px;
+                        color: #62646a;
+                    }
+                    .flex-item-vietnam {
+                        float: left;
+                        width: 20%;
                     }
                 }
-                .flex-item-time {
-                    margin-left: 185px;
-                    margin-top: 13px;
-                    color: #00698c;
-                    font-size: 14px;
-                    font-weight: 500;
+                .home__town__two {
+                    max-width: 85%;
+                    margin: 0 auto;
+                    .flex-item-member {
+                        font-size: 16px;
+                        float: left;
+                        font-weight: 400;
+                        width: 80%;
+                        margin-bottom: 20px;
+                        color: #62646a;
+                    }
+                    .flex-item-year {
+                        float: left;
+                        width: 20%;
+                    }
                 }
             }
         }
     }
 }
 
-.card-1 {
-    position: relative;
-    width: 100%;
-    height: auto;
-    background: #fff;
-    box-shadow: none;
-}
-.card-2 {
-    border: 1px solid rgba(206, 200, 200, 0.769);
-    position: relative;
-    width: 100%;
-    height: auto;
-    background: #fff;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    margin-bottom: 50px;
-    margin-top: 25px;
-    box-shadow: none;
-    hr {
-        margin-left: 14px;
-        margin-top: 50px;
-        width: 90%;
-    }
-    .Description {
-        display: flex;
-        flex-flow: row wrap;
-        list-style: none;
-        .flex-item-1 {
-            margin-top: 40px;
-            margin-left: 30px;
-            color: #0e0e0f;
-            font-size: 14px;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-        .flex-item-2 {
-            text-align: center;
-            margin-top: -25px;
-            margin-left: 253px;
-            color: #00698c;
-            font-size: 14px;
-            font-weight: 500;
-            .add__skill {
-                margin-bottom: 15px;
-                margin-left: 167px;
+// card button left
+.card__bottom {
+    .add__form {
+        .add__form__certification {
+            max-width: 85%;
+            margin: 0 auto;
+            .flex-item-certification {
+                font-size: 16px;
+                float: left;
+                font-weight: 400;
+                width: 80%;
+                margin-bottom: 20px;
+                color: #62646a;
+            }
+            .flex-item-add-certification {
+                float: left;
+                width: 20%;
+            }
+            .add__button__certification {
+                .cancle__add__certification {
+                    background: white;
+                    letter-spacing: 1px;
+                    height: 38px;
+                    margin-bottom: 13px;
+                    text-align: center;
+                    padding-top: 8px;
+                    font-weight: 500;
+                    border: 1px solid green;
+                    border-radius: 5px;
+                }
             }
         }
-    }
-    .done__add__skill {
-        .skill {
-            text-align: center;
-            border: 1px solid;
-            border-radius: 31px;
-            width: 64px;
-            margin-left: 108px;
-            margin-top: 10px;
+        .add__form__skill {
+            max-width: 85%;
+            margin: 0 auto;
+            .flex-item-skill {
+                font-size: 16px;
+                float: left;
+                font-weight: 400;
+                width: 80%;
+                margin-bottom: 20px;
+                color: #62646a;
+            }
+            .flex-item-add {
+                float: left;
+                width: 20%;
+            }
+            .add__skill {
+                background: rgba(238, 235, 235, 0.898);
+                width: 100%; 
+                box-shadow: none;
+                input {
+                    height: 36px;
+                    width: 91%;
+                    text-align: center;
+                    margin-left: 13px;
+                    margin-top: 20px;
+                }
+                .cancle {
+                    margin-top: 20px;
+                    font-weight: 500;
+                    text-align: center;
+                    background: white;
+                    height: 35px;
+                    padding-top: 7px;
+                    border: 1px solid green;
+                    border-radius: 4px;
+                    margin-bottom: 20px;
+                }
+                .add {
+                    margin-top: 20px;
+
+                    color: white;
+                    font-weight: 500;
+                    border: none;
+                    text-align: center;
+                    background: rgb(20, 152, 46);
+                    height: 35px;
+                    padding-top: 7px;
+                    border-radius: 4px;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+        .add__certification {
+            background: rgba(238, 235, 235, 0.898);
+            width: 100%;
+            box-shadow: none;
+            input {
+                height: 36px;
+                width: 91%;
+                text-align: center;
+                margin-left: 13px;
+                margin-top: 20px;
+            }
+            .cancle {
+                font-weight: 500;
+                text-align: center;
+                background: white;
+                height: 35px;
+                padding-top: 7px;
+                border: 1px solid green;
+                border-radius: 4px;
+                margin-bottom: 20px;
+            }
+            .add {
+                color: white;
+                font-weight: 500;
+                border: none;
+                text-align: center;
+                background: rgb(20, 152, 46);
+                height: 35px;
+                padding-top: 7px;
+                border-radius: 4px;
+                margin-bottom: 20px;
+            }
         }
     }
 }
 
-//addSkill
-.card-2 {
-    height: auto !important;
-    .Description {
-        display: flex;
-        flex-flow: row wrap;
-        list-style: none;
-        .flex-item-3 {
-            margin-top: 40px;
-            margin-left: 30px;
-            color: #0e0e0f;
-            font-size: 16px;
-            font-weight: 700;
-        }
-        .flex-item-4 {
-            text-align: center;
-            margin-top: -30px;
-            margin-left: 303px;
-            color: #00698c;
-            font-size: 14px;
-            font-weight: 500;
-            .add__skill {
-                margin-bottom: 15px;
-                margin-left: 167px;
-            }
-        }
-    }
-
-    .add__form__Skill {
-        width: 97%;
-        margin-left: 29px;
-        height: 194px;
-        background-color: rgba(32, 24, 24, 0.061);
-        border-radius: 3px;
-        box-shadow: none;
-        margin-top: 20px;
-        input {
+.card__bottom {
+    .learning {
+        img {
+            width: 27%;
+            margin-left: 28px;
             margin-top: 20px;
-            border-radius: 4px;
-            height: 40px;
         }
-        .ant-select-selector {
-            height: 440px;
+    }
+    .circle {
+        img {
+            font-weight: 600;
+            font-size: 25px;
+            width: 80%;
+            text-align: center;
+            margin-left: 52px;
         }
-        .ant-form-item-control-input {
-            width: 158%;
-            margin-left: 12px;
-            margin-top: -9px;
-        }
-        .ant-select:not(.ant-select-customize-input) .ant-select-selector {
-            height: 42px;
-            position: relative;
-            border: 1px solid #d9d9d9;
-            background-color: #fff;
-            border-radius: 2px;
-            transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-        }
-        .add__skill__button {
-            hr {
-                width: 89%;
-                margin-top: -7px;
-            }
-        }
-        .btn__add__skill {
-            width: 90%;
-            margin-top: -4px;
-            margin-left: 10px;
-            height: 35px;
-        }
-        .btn__cancle__skkil {
-            background-color: #fff;
-            width: 160px;
-            margin-top: -4px;
-            color: black;
-            font-weight: 500;
-            border: 1px solid rgba(49, 25, 25, 0.075);
-            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
-        }
+    }
+    .badges {
+        font-weight: 700;
+        font-size: 23px;
+        text-align: center;
+        margin-left: 10px;
+    }
+    .boost {
+        letter-spacing: 1px;
+        font-size: 18px;
+        text-align: center;
+    }
+    button {
+        margin-left: 31px;
+        width: 85%;
+        /* text-align: center; */
+        margin-top: 30px;
+        font-weight: 500;
     }
 }
 
+// right
 .user__information__right {
     .car__done__create {
         border-radius: 1px;
@@ -209,27 +248,30 @@
         .Buying {
             font-size: 18px;
             img {
-                margin-right: 10px;
                 width: 50px;
-                margin-left: 25px;
             }
             b {
                 font-weight: 600;
-                line-height: 10px;
+                line-height: 35px;
                 font-size: 17px;
             }
+            span {
+                line-height: 35px;
+                font-size: 15px;
+            }
         }
-
         .questions {
-            margin-left: 90px;
             font-weight: 500;
             font-size: 15px;
             margin-top: -10px;
+            line-height: 30px;
         }
         .industry {
+            line-height: 30px;
             font-weight: 500;
             font-size: 15px;
             color: #1dbf73;
+            margin-top: 5px;
         }
     }
     .create__new__gif {
@@ -239,7 +281,8 @@
         padding: 26px 20px 20px 20px;
         border: 1px solid #9f9ca26b;
         .Gigs {
-            font-size: 17px;
+            font-size: 15px;
+            line-height: 30px;
         }
         .button__gif {
             button {
@@ -248,79 +291,26 @@
         }
     }
     .history__job__booking {
+        width: 100%;
         margin-top: 30px;
         margin-left: 0px;
         border-radius: 4px;
         padding-top: 10px;
         padding-bottom: 10px;
-
         .bookingName {
+            img {
+                width: 100px;
+            }
             .name {
                 margin-bottom: 30px;
             }
             .ant-card-bordered {
-                width: 100%;
+                width: 150%;
                 margin-left: -35px;
                 border-radius: 4px;
                 border: 1px solid rgba(206, 200, 200, 0.769);
             }
         }
-    }
-}
-
-.addform__certification {
-    width: 90%;
-    margin-top: 10px;
-    margin-left: 30px;
-    height: 194px;
-    background-color: rgba(32, 24, 24, 0.061);
-    border-radius: 3px;
-    box-shadow: none;
-    margin-bottom: 100px;
-    input {
-        margin-top: 20px;
-        border-radius: 4px;
-        height: 40px;
-    }
-    .ant-select-selector {
-        height: 440px;
-    }
-    .ant-form-item-control-input {
-        width: 160%;
-        margin-left: 10px;
-        margin-top: -9px;
-    }
-    .ant-select:not(.ant-select-customize-input) .ant-select-selector {
-        height: 42px;
-        position: relative;
-        border: 1px solid #d9d9d9;
-        background-color: #fff;
-        border-radius: 2px;
-        transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-    }
-    .add__skill__button {
-        hr {
-            width: 89%;
-            margin-top: -7px;
-        }
-    }
-
-    .btn__add__certification {
-        width: 130px;
-        height: 38px;
-        margin-top: -4px;
-        font-size: 12px;
-        font-weight: 600;
-    }
-    .btn__cancle__skkil {
-        font-weight: 600;
-        background-color: #fff;
-        width: 134px;
-        margin-top: -4px;
-        color: black;
-        font-weight: 500;
-        border: 1px solid rgba(49, 25, 25, 0.075);
-        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
     }
 }
 
@@ -332,23 +322,20 @@
         border-radius: 176px;
         position: relative;
         margin-top: 70px;
-        margin-left: 120px;
     }
     .file {
-        height: 35px;
+        height: 20%;
         width: 78px;
         margin-left: 156px;
         margin-top: 20px;
     }
     .tacvu {
         margin-left: 140px;
-        /* color: #f5deb312; */
         border: 1px;
         background: #7ea587;
         color: white;
-        border-radius: 29px;
         height: 41px;
-        width: 131px;
+        width: 30%;
         margin-bottom: 20px;
         margin-top: 20px;
     }
@@ -363,7 +350,7 @@
     width: 60%;
 }
 
-@media (max-width: 1504px) {
+@media (max-width: 1510px) {
     .user__information__content {
         max-width: 100% !important;
         margin: 0 auto;
@@ -376,6 +363,166 @@
     .userInformation__item2 {
         float: left;
         width: 50%;
+    }
+}
+
+@media (max-width: 1310px) {
+    .user__information__content {
+        max-width: 100% !important;
+        margin: 0 auto;
+    }
+
+    .userInformation__item1 {
+        float: left;
+        width: 50%;
+    }
+    .userInformation__item2 {
+        float: left;
+        width: 50%;
+    }
+}
+// @media (max-width: 1497px) {
+//     .add__certification {
+//         background: rgba(238, 235, 235, 0.898);
+//         width: 209% !important;
+//         box-shadow: none;
+//     }
+//     .add__skill {
+//         background: rgba(238, 235, 235, 0.898);
+//         width: 350px !important;
+//         box-shadow: none;
+//     }
+// }
+
+// @media (max-width: 1252px) {
+//     .add__certification {
+//         background: rgba(238, 235, 235, 0.898);
+//         width: 195% !important;
+//         box-shadow: none;
+//     }
+//     .add__skill {
+//         background: rgba(238, 235, 235, 0.898);
+//         width: 300px !important;
+//         box-shadow: none;
+//     }
+// }
+
+//  @media( max-width:1148px){
+
+//     .add__certification {
+//         background: rgba(238, 235, 235, 0.898);
+//         width: 155% !important;
+//         box-shadow: none;
+
+//     }
+//     .add__skill {
+//         background: rgba(238, 235, 235, 0.898);
+//         width: 155% !important;
+//         box-shadow: none;
+
+//     }
+//  }
+//  @media( max-width:1125px){
+
+//     .add__certification {
+//         background: rgba(238, 235, 235, 0.898);
+//         width: 155% !important;
+//         box-shadow: none;
+
+//     }
+//     .add__skill {
+//         background: rgba(238, 235, 235, 0.898);
+//         width: 155% !important;
+//         box-shadow: none;
+
+//     }
+//  }
+
+//  @media( max-width:1055px){
+
+//     .add__certification {
+//         background: rgba(238, 235, 235, 0.898);
+//         width: 147% !important;
+//         box-shadow: none;
+
+//     }
+//     .add__skill {
+//         background: rgba(238, 235, 235, 0.898);
+//         width: 147% !important;
+//         box-shadow: none;
+
+//     }
+//  }
+
+@media (max-width: 992px) {
+    .user__information__content {
+        max-width: 100% !important;
+        margin: 0 auto;
+    }
+    .userInformation__item1 {
+        float: left;
+        width: 50%;
+    }
+    .userInformation__item2 {
+        float: left;
+        width: 50%;
+    }
+
+    .history__job__booking {
+        .bookingName {
+            .ant-card-bordered {
+                width: 175% !important;
+                margin-left: -35px;
+                border-radius: 4px;
+                border: 1px solid rgba(206, 200, 200, 0.769);
+            }
+        }
+    }
+
+    .car__done__create {
+        width: 100%;
+        height: 161px !important;
+        padding: 20px 20px 20px 20px;
+        .Buying {
+            font-size: 18px;
+            img {
+                width: 70px !important;
+            }
+            b {
+                font-weight: 600;
+                line-height: 10px;
+                font-size: 17px;
+            }
+            span {
+                font-size: 15px;
+            }
+        }
+        .questions {
+            font-weight: 500;
+            font-size: 15px;
+            margin-top: -10px;
+        }
+        .industry {
+            font-weight: 500;
+            font-size: 15px;
+            color: #1dbf73;
+            margin-top: 10px;
+        }
+    }
+    .create__new__gif {
+        height: 140px !important;
+        width: 100%;
+        position: relative;
+        padding: 26px 20px 20px 20px;
+        border: 1px solid #9f9ca26b;
+        .Gigs {
+            font-size: 17px;
+        }
+        .button__gif {
+            button {
+                position: absolute;
+            }
+        }
     }
 }
 
@@ -384,7 +531,6 @@
         max-width: 100% !important;
         margin: 0 auto;
     }
-
     .userInformation__item1 {
         float: left;
         width: 50%;
@@ -393,91 +539,228 @@
         float: left;
         width: 50%;
     }
+
+    .history__job__booking {
+        .bookingName {
+            .ant-card-bordered {
+                width: 192% !important;
+                margin-left: -35px;
+                border-radius: 4px;
+                border: 1px solid rgba(206, 200, 200, 0.769);
+            }
+            .name {
+                margin-left: 90px !important;
+            }
+        }
+    }
+
+    .car__done__create {
+        width: 100%;
+        height: 251px !important;
+        // padding: 20px 20px 20px 20px;
+        .Buying {
+            font-size: 18px;
+            img {
+                width: 70px !important;
+            }
+            b {
+                font-weight: 600;
+                line-height: 10px;
+                font-size: 17px;
+            }
+            span {
+                font-size: 15px;
+            }
+        }
+        .questions {
+            font-weight: 500;
+            font-size: 15px;
+            margin-top: -10px;
+        }
+        .industry {
+            font-weight: 500;
+            font-size: 15px;
+            color: #1dbf73;
+            margin-top: 10px;
+        }
+    }
+    .create__new__gif {
+        height: 140px !important;
+        width: 100%;
+        position: relative;
+        padding: 26px 20px 20px 20px;
+        border: 1px solid #9f9ca26b;
+        .Gigs {
+            font-size: 17px;
+        }
+        .button__gif {
+            button {
+                position: absolute;
+            }
+        }
+    }
 }
 
 @media (max-width: 576px) {
     .user__information__content {
         max-width: 100% !important;
         margin: 0 auto;
+    }
+    .userInformation__item1 {
+        float: left;
+        width: 50%;
+    }
+    .userInformation__item2 {
+        float: left;
+        width: 50%;
+    }
 
-        .card-2 {
-            height: auto !important;
-            .Description {
-                display: flex;
-                flex-flow: row wrap;
-                list-style: none;
-                .flex-item-3 {
-                    margin-top: 40px;
-                    margin-left: 30px;
-                    color: #0e0e0f;
-                    font-size: 16px;
-                    font-weight: 700;
-                }
-                .flex-item-4 {
-                    text-align: center;
-                    margin-top: -30px;
-                    margin-left: 303px;
-                    color: #00698c;
-                    font-size: 14px;
-                    font-weight: 500;
-                    .add__skill {
-                        margin-bottom: 15px;
-                        margin-left: 167px;
-                    }
-                }
+    .history__job__booking {
+        .bookingName {
+            .ant-card-bordered {
+                width: 192% !important;
+                margin-left: -35px;
+                border-radius: 4px;
+                border: 1px solid rgba(206, 200, 200, 0.769);
             }
+            .name {
+                margin-left: 90px !important;
+            }
+        }
+    }
+    .car__done__create {
+        width: 100%;
+        height: 251px !important;
+        .Buying {
+            font-size: 12px !important;
+            img {
+                width: 70px !important;
+            }
+            b {
+                font-weight: 600;
+                line-height: 10px;
+                font-size: 12px !important;
+            }
+            span {
+                font-size: 12px !important;
+            }
+        }
+        .questions {
+            font-weight: 500;
+            font-size: 12px !important;
+            margin-top: -10px;
+        }
+        .industry {
+            font-weight: 500;
+            font-size: 12px !important;
+            color: #1dbf73;
+            margin-top: 10px;
+        }
+    }
+    .create__new__gif {
+        height: 140px !important;
+        width: 100%;
+        position: relative;
+        padding: 26px 20px 20px 20px;
+        border: 1px solid #9f9ca26b;
+        .Gigs {
+            font-size: 12px !important;
+        }
+        .button__gif {
+            button {
+                position: absolute;
+            }
+        }
+    }
+}
 
-            .add__form__Skill {
-                width: 97%;
-                margin-left: 29px;
-                height: 194px;
-                background-color: rgba(32, 24, 24, 0.061);
-                border-radius: 3px;
-                box-shadow: none;
-                margin-top: 20px;
-                input {
-                    margin-top: 20px;
-                    border-radius: 4px;
-                    height: 40px;
-                }
-                .ant-select-selector {
-                    height: 440px;
-                }
-                .ant-form-item-control-input {
-                    width: 108% !important;
-                    margin-left: 12px;
-                    margin-top: -9px;
-                }
-                .ant-select:not(.ant-select-customize-input) .ant-select-selector {
-                    height: 42px;
-                    position: relative;
-                    border: 1px solid #d9d9d9;
-                    background-color: #fff;
-                    border-radius: 2px;
-                    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-                }
-                .add__skill__button {
-                    hr {
-                        width: 89%;
-                        margin-top: -7px;
-                    }
-                }
-                .btn__add__skill {
-                    width: 90%;
-                    margin-top: -4px;
-                    margin-left: 10px;
-                    height: 35px;
-                }
-                .btn__cancle__skkil {
-                    background-color: #fff;
-                    width: 160px;
-                    margin-top: -4px;
-                    color: black;
-                    font-weight: 500;
-                    border: 1px solid rgba(49, 25, 25, 0.075);
-                    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
-                }
-            }
+@media (max-width: 552px) {
+    .user__information__content {
+        max-width: 100% !important;
+        margin: 0 auto;
+    }
+
+    .userInformation__item1 {
+        float: left;
+        width: 100%;
+    }
+    .userInformation__item2 {
+        float: left;
+        width: 100%;
+    }
+    
+    
+}
+
+@media (max-width: 452px) {
+    .user__information__content {
+        max-width: 100% !important;
+        margin: 0 auto;
+    }
+
+    .userInformation__item1 {
+        float: left;
+        width: 100%;
+    }
+    .userInformation__item2 {
+        float: left;
+        width: 100%;
+    }
+}
+
+@media (max-width: 992px) {
+    .home__town__two {
+        max-width: 85%;
+        margin: 0 auto;
+        .flex-item-member {
+            font-size: 16px;
+            float: left;
+            font-weight: 400;
+            width: 75% !important;
+            margin-bottom: 20px;
+            color: #62646a;
+        }
+        .flex-item-year {
+            float: left;
+            width: 25% !important;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .home__town__two {
+        max-width: 85%;
+        margin: 0 auto;
+        .flex-item-member {
+            font-size: 16px;
+            float: left;
+            font-weight: 400;
+            width: 65% !important;
+            margin-bottom: 20px;
+            color: #62646a;
+        }
+        .flex-item-year {
+            float: left;
+            width: 35% !important;
+        }
+    }
+}
+
+@media (max-width: 544px) {
+    .home__town__two {
+        max-width: 85%;
+        margin: 0 auto;
+        .flex-item-member {
+            font-size: 16px;
+            float: left;
+            font-weight: 400;
+            width: 83% !important;
+            margin-bottom: 20px;
+            color: #62646a;
+        }
+        .flex-item-year {
+            float: left;
+            width: 17% !important;
         }
     }
 }
