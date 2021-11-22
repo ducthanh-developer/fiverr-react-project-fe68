@@ -2,15 +2,15 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { actDetailUserInformation, actFetchAddUserInformation, actHistoryJobsUser, actUploadImg, } from "./modules/action";
-import { useFormik, form } from 'formik';
+import { useFormik } from 'formik';
 import "../UserInformation/UserInformation.scss"
-import { Form, Input, Card } from 'antd';
+import { Form, Card } from 'antd';
 import { useState } from "react";
 
 export default function UserInformation(props) {
-    const { Meta } = Card;
     const dispatch = useDispatch();
     const { detailUser, historyJobs } = useSelector((state) => state.userListJobsReducer);
+    console.log("his", historyJobs);
     const { currentUser } = useSelector((state) => state.authReducer);
 
     const userId = props.match.params.id;
@@ -36,7 +36,6 @@ export default function UserInformation(props) {
         return <p>{props.children}</p>;
     }
     const [setComponentSize] = useState('default');
-    // const { values, touched, errors, handleChange, handleBlur, handleSubmit } = props;
     const formik = useFormik({
         enableReinitialize: true,
         initialValues: {
@@ -80,11 +79,7 @@ export default function UserInformation(props) {
                                 </ul>
                             </div>
                         </div>
-
                         <div className=" card card-1  card__bottom">
-                            {/* <UploadImgUser path={props} /> */}
-                            {/* <h6 className="name__profile text-center">{detailUser.email}</h6>
-                            <button className="btn btn__profile">Preview Public Model</button> */}
                             <div className="learning">
                                 <img src="../../images/UserInformation/userInformation_2.png" alt="" />
                             </div>
@@ -98,86 +93,93 @@ export default function UserInformation(props) {
                             </div>
                             <hr></hr>
                             <div className=" add__form">
-                                <ul className=" add__form__certification">
-                                    <li className="flex-item-certification">Certification</li>
-                                    <li className="flex-item-add-certification" onClick={handleClick1}>Add New</li>
-                                    <div>
-                                    {show ?
-                                        <>
-                                        </>
-                                        :
-                                        <div className="add__certification card">
-                                            <div>
-                                                <Form
-                                                    onSubmitCapture={formik.handleSubmit}
-                                                    labelCol={{ span: 4 }}
-                                                    wrapperCol={{ span: 14 }}
-                                                    layout="horizontal" >
+                                <div>
+                                    <ul className=" add__form__certification">
+                                        <li className="flex-item-certification">Certification</li>
+                                        <li className="flex-item-add-certification" onClick={handleClick1}>Add New</li>
+                                        <div>
+                                            {show ?
+                                                <>
+                                                </>
+                                                :
+                                                <div className="add__certification card">
+                                                    <div>
+                                                        <Form
+                                                            onSubmitCapture={formik.handleSubmit}
+                                                            labelCol={{ span: 4 }}
+                                                            wrapperCol={{ span: 14 }}
+                                                            layout="horizontal" >
 
-                                                    <input name="certification"
-                                                        onChange={formik.handleChange}
-                                                        value={formik.values.certification} />
-                                                    <hr></hr>
-                                                    <div className="row add__button__certification">
-                                                        <div className="col-6">
-                                                            <div className="cancle" onClick={handleClick1}>Cancel</div>
-                                                        </div>
-                                                        <div className="col-6">
-                                                            <div className="add" type="submit">Add New</div>
-                                                        </div>
+                                                            <input name="certification"
+                                                                onChange={formik.handleChange}
+                                                                value={formik.values.certification} />
+                                                            <hr></hr>
+                                                            <div className="row add__button__certification">
+                                                                <div className="col-6">
+                                                                    <div className="cancle" onClick={handleClick1}>Cancel</div>
+                                                                </div>
+                                                                <div className="col-6">
+                                                                    <div className="add" type="submit">Add New</div>
+                                                                </div>
+                                                            </div>
+                                                        </Form>
                                                     </div>
-                                                </Form>
-                                            </div>
+                                                </div>
+                                            }
                                         </div>
-                                    }
+                                    </ul>
                                 </div>
-                                </ul>
-
-                               
+                                <div className="clear"></div>
+                                <div className="">
+                                    {detailUser.certification?.map((certification, index) => {
+                                        return (
+                                            <div key={index} className="noidung__add">{certification}</div>
+                                        )
+                                    })}
+                                </div>
                                 <ul className=" add__form__skill">
                                     <li className="flex-item-skill ">Skill</li>
                                     <li className="flex-item-add" onClick={handleClick}>Add Skill</li>
                                     <div>
-                                    {isShow ?
-                                        <>
-                                        </>
-                                        : <div className="">
-                                            <div className="add__skill card ">
-                                                <div className="">
-                                                    <Form
-                                                        layout="horizontal"
-                                                        onSubmitCapture={formik.handleSubmit}
-                                                        labelCol={{ span: 4 }}
-                                                        wrapperCol={{ span: 14 }}
-                                                        onValuesChange={onFormLayoutChange}>
+                                        {isShow ?
+                                            <>
+                                            </>
+                                            : <div className="">
+                                                <div className="add__skill card ">
+                                                    <div className="">
+                                                        <Form
+                                                            layout="horizontal"
+                                                            onSubmitCapture={formik.handleSubmit}
+                                                            labelCol={{ span: 4 }}
+                                                            wrapperCol={{ span: 14 }}
+                                                            onValuesChange={onFormLayoutChange}>
 
-                                                        <input name="skill" onChange={formik.handleChange}
-                                                            value={formik.values.skill} />
+                                                            <input name="skill" onChange={formik.handleChange}
+                                                                value={formik.values.skill} />
 
-                                                        <div className="row add__button__skill">
-                                                            <div className="col-6">
-                                                                <div className="cancle" onClick={handleClick1}>Cancel</div>
+                                                            <div className="row add__button__skill">
+                                                                <div className="col-6">
+                                                                    <div className="cancle" onClick={handleClick1}>Cancel</div>
+                                                                </div>
+                                                                <div className="col-6">
+                                                                    <div className="add" type="submit">Add New</div>
+                                                                </div>
                                                             </div>
-                                                            <div className="col-6">
-                                                                <div className="add" type="submit">Add New</div>
-                                                            </div>
-                                                        </div>
-                                                    </Form>
+                                                        </Form>
+                                                    </div>
                                                 </div>
-                                            </div>
 
-                                        </div>
-                                    }
-                                </div>
+                                            </div>
+                                        }
+                                    </div>
                                 </ul>
-                               
-                                {/* <div className="done__add__skill">
-                                    {detailUser.certification?.map((skill, index) => {
-                                        return (
-                                            <div key={index} className="skill">{skill}</div>
-                                        )
-                                    })}
-                                </div> */}
+                            </div>
+                            <div className="">
+                                {detailUser.skill?.map((addSkill, index) => {
+                                    return (
+                                        <div key={index} className="noidung__addskill">{addSkill}</div>
+                                    )
+                                })}
                             </div>
                         </div>
 
