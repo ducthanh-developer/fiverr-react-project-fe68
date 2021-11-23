@@ -87,7 +87,7 @@ const fiverrApi = {
   //   return callApiPut(`users/${userId}`, user);
   // },
 
-  fetchAddUserInformation(userId) {
+  fetchEditUserInformationApi(userId) {
     return callApiPut(`users/${userId}`);
   },
   fetchListJobsBooking(token) {

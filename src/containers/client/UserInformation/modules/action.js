@@ -1,4 +1,5 @@
 import fiverrApi from "apis/fiverrApi";
+import { actListUserAdmin } from "containers/admin/UserManagement/module/action";
 import { FETCH_USER_LIST_JOBS_SUCCESS, FETCH__HISTORY__JOBS__SUCCESS, FETCH__UPLOAD__SUCCESS } from "./type";
 
 
@@ -41,14 +42,15 @@ export const actDetailUserInformation = (userId) => {
 
 
 
-export const actFetchAddUserInformation = (values, id) => {
+export const actEditUserInformation = (values, id, token) => {
   console.log("values action", values)
   console.log("values id", id)
 
   return async (dispatch) => {
     try {
-      let res = await fiverrApi.fetchAddUserInformation(values, id);
+      let res = await fiverrApi.fetchEditUserInformationApi(values, id, token);
       console.log("values action", values)
+      dispatch(actListUserAdmin())
 
       console.log('res', res.data)
       alert("Cập nhât thành công");
