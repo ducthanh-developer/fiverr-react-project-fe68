@@ -1,19 +1,29 @@
 import React from 'react'
-import {  useSelector,useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import "./Carousel.scss"
 import { Input, Space } from 'antd';
+import { useHistory } from 'react-router-dom'
+
 import { actFetchListJobs } from 'containers/client/ListJobs/module/actions';
 
-function Carousel() {
-    
-  const dispatch = useDispatch();
-  const { userList } = useSelector(state => state.listUserReducer)
-  console.log("userList", userList);
+function Carousel(props) {
+    const { jobDetail } = useSelector((state) => state.JobDetailReducer);
+
+    console.log("lis", jobDetail);
+    const history = useHistory()
+
+    const dispatch = useDispatch();
+    const { userList } = useSelector(state => state.listUserReducer)
+    console.log("userList", userList);
     const { Search } = Input;
     const onSearch = values => {
         console.log(values);
         dispatch(actFetchListJobs(values));
-      }    
+        if (values !== "") {
+            history.push(`/listjob/by-name?name=${values}`)
+
+        }
+    }
     return (
         <div>
             <div id="carouselExampleControls" className="carousel carousel__content  " data-ride="carousel">

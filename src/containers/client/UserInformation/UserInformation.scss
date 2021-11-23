@@ -348,8 +348,8 @@
         margin: 0 auto;
         .img_select {
             text-align: center;
-          margin-top: 30px !important;
-            img{
+            margin-top: 30px !important;
+            img {
                 width: 150px;
                 height: 150px;
                 font-size: 3em;
@@ -358,13 +358,18 @@
             }
         }
     }
-
-    .file {
-        height: 20%;
-        width: 78px;
-        margin-left: 156px;
-        margin-top: 20px;
+    .chontep {
+        max-width: 30%;
+        margin: 0 auto;
+        .file {
+            height: 20%;
+            width: 100%;
+            color:#f7f7f7;
+            // margin-left: 156px;
+            margin-top: 20px;
+        }
     }
+
     .tacvu {
         margin-left: 140px;
         border: 1px;
