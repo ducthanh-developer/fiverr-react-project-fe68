@@ -13,12 +13,9 @@ import {
 } from "@ant-design/icons";
 export default function UserManagerment() {
   const { Search } = Input;
-
   const dispatch = useDispatch();
   const { userList } = useSelector(state => state.listUserReducer)
-  const {  currentUser } = useSelector(
-    state => state.authReducer
-  );
+  const {  currentUser } = useSelector(state => state.authReducer);
 
   useEffect(() => {
     dispatch(actListUserAdmin())

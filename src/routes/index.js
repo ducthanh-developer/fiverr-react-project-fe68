@@ -64,7 +64,13 @@ export const clientRoutes = [
     component: Register,
     exact: false,
   },
+  {
+    path: '/listjob/by-name',
+    component: ListJobs,
+    exact: true
+},
 ];
+
 
 export const adminRoutes = [
   {

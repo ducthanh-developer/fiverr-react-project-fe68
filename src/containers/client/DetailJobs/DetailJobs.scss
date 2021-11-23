@@ -195,66 +195,69 @@
 }
 //commented
 .comment {
-    margin-left: 50px;
-    margin-top: 100px;
-    h5 {
-        font-weight: 700;
-        line-height: 28px;
-    }
-    h6 {
-        background-color: #eed0a2;
-        width: 300px;
-    }
-    .hello {
-        font-size: 17px;
-        max-width: 20px;
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-    .content {
-        font-size: 16px;
-        font-weight: 400;
-    }
-    .offer {
-        margin-top: 25px;
-        margin-bottom: 25px;
-    }
-    .information_detailjob {
-        ul {
-            li {
-                font-size: 16px;
-                font-weight: 400;
+    .noidung__job {
+        margin-left: 10px;
+        h5 {
+            font-weight: 700;
+            line-height: 28px;
+        }
+        h6 {
+            background-color: #eed0a2;
+            width: 300px;
+        }
+        .hello {
+            font-size: 17px;
+            max-width: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .content {
+            font-size: 16px;
+            font-weight: 400;
+        }
+        .offer {
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+        .information_detailjob {
+            ul {
+                li {
+                    font-size: 16px;
+                    font-weight: 400;
+                }
             }
         }
-    }
-    .satisfied {
-        background-color: #eed0a2;
-        font-weight: 600;
-        // width: 600px;
-        margin-top: 25px;
-        margin-bottom: 25px;
-    }
-    hr {
-        width: 600px;
-        margin-left: 10px;
-    }
-    .comment__bottom {
-        .Programming,
-        .Expertise {
-            font-size: 17px;
-            font-weight: 500;
-            color: #4041456e;
-            margin-bottom: 10px;
+        .satisfied {
+            background-color: #eed0a2;
+            font-weight: 600;
+            // width: 600px;
+            margin-top: 25px;
+            margin-bottom: 25px;
         }
-        .php,
-        .Cross__Browser {
-            font-size: 17px;
+        hr {
+            width: 600px;
+            margin-left: 10px;
+        }
+        .comment__bottom {
+            .Programming,
+            .Expertise {
+                font-size: 17px;
+                font-weight: 500;
+                color: #4041456e;
+                margin-bottom: 10px;
+            }
+            .php,
+            .Cross__Browser {
+                font-size: 17px;
+            }
+        }
+        .About {
+            font-weight: 700;
+            font-size: 20px;
         }
     }
-    .About {
-        font-weight: 700;
-        font-size: 20px;
-    }
+    // margin-left: 50px;
+    margin-top: 100px;
 }
 
 .user__comment {
@@ -288,7 +291,7 @@
         img {
             width: 90%;
             position: relative;
-          
+
             display: block;
             border-radius: 50%;
             margin-left: -20px;
@@ -374,73 +377,70 @@
 }
 
 @media (max-width: 992px) {
+    .contact__user {
+        max-width: 90%;
+        margin: 0 auto;
+        .img__user__contact {
+            float: left;
+            width: 15% !important;
+            img {
+                width: 90%;
+                position: relative;
 
-
-    
-.contact__user {
-    max-width: 90%;
-    margin: 0 auto;
-    .img__user__contact {
-        float: left;
-        width: 15% !important;
-        img {
-            width: 90%;
-            position: relative;
-          
-            display: block;
-            border-radius: 50%;
-            margin-left: -20px;
-            margin-top: 20px;
-        }
-    }
-    .thongtin {
-        float: left;
-        width: 80%;
-        .nofilrazzaq {
-            margin-top: 5px;
-            font-weight: 700;
-            font-size: 18px;
-            letter-spacing: 1px;
-        }
-        .online {
-            padding: 3px 7px 3px 3px;
-            font-size: 15px;
-            font-weight: none;
-            border: 1px solid #1dbf73;
-            color: #1dbf73;
-            text-transform: capitalize;
-            border-radius: 13px;
-        }
-        .Web__Developer {
-            font-weight: 400;
-        }
-
-        .Star__comment {
-            margin-left: -10px;
-            color: #ffb33e;
-            font-size: 15px;
-            margin-top: 10px;
-            svg {
-                margin-top: -10px;
-                margin-right: 4px;
+                display: block;
+                border-radius: 50%;
+                margin-left: -20px;
+                margin-top: 20px;
             }
         }
-        button {
-            font-weight: 700;
-            background: white;
-            border: 1px solid;
-            width: 132px;
-            padding-top: 8px;
-            padding-bottom: 11px;
-            margin-top: 10px;
-            border-radius: 2px;
-            font-size: 14px;
-        }
-        hr {
-            margin-top: 50px;
+        .thongtin {
+            float: left;
+            width: 80%;
+            .nofilrazzaq {
+                margin-top: 5px;
+                font-weight: 700;
+                font-size: 18px;
+                letter-spacing: 1px;
+            }
+            .online {
+                padding: 3px 7px 3px 3px;
+                font-size: 15px;
+                font-weight: none;
+                border: 1px solid #1dbf73;
+                color: #1dbf73;
+                text-transform: capitalize;
+                border-radius: 13px;
+            }
+            .Web__Developer {
+                font-weight: 400;
+            }
+
+            .Star__comment {
+                margin-left: -10px;
+                color: #ffb33e;
+                font-size: 15px;
+                margin-top: 10px;
+                svg {
+                    margin-top: -10px;
+                    margin-right: 4px;
+                }
+            }
+            button {
+                font-weight: 700;
+                background: white;
+                border: 1px solid;
+                width: 132px;
+                padding-top: 8px;
+                padding-bottom: 11px;
+                margin-top: 10px;
+                border-radius: 2px;
+                font-size: 14px;
+            }
+            hr {
+                margin-top: 50px;
+            }
         }
     }
-}
     .user__comment {
         margin-top: 50px;
         .comment__user__name {
@@ -465,70 +465,82 @@
 }
 
 @media (max-width: 768px) {
-.contact__user {
-    max-width: 90%;
-    margin: 0 auto;
-    .img__user__contact {
-        float: left;
-        width: 20% !important;
-        img {
-            width: 100%;
-            position: relative;
-          
-            display: block;
-            border-radius: 50%;
-            margin-left: -20px;
-            margin-top: 20px;
-        }
-    }
-    .thongtin {
-        float: left;
-        width: 80%;
-        .nofilrazzaq {
-            margin-top: 5px;
-            font-weight: 700;
-            font-size: 18px;
-            letter-spacing: 1px;
-        }
-        .online {
-            padding: 3px 7px 3px 3px;
-            font-size: 15px;
-            font-weight: none;
-            border: 1px solid #1dbf73;
-            color: #1dbf73;
-            text-transform: capitalize;
-            border-radius: 13px;
-        }
-        .Web__Developer {
-            font-weight: 400;
-        }
-
-        .Star__comment {
-            margin-left: -10px;
-            color: #ffb33e;
-            font-size: 15px;
-            margin-top: 10px;
-            svg {
-                margin-top: -10px;
-                margin-right: 4px;
+    .detailjob {
+        .detailjob__right {
+            .img__job {
+                img {
+                    width: 100% !important;
+                    margin-top: 30px;
+                    margin-bottom: 50px;
+                }
             }
         }
-        button {
-            font-weight: 700;
-            background: white;
-            border: 1px solid;
-            width: 132px;
-            padding-top: 8px;
-            padding-bottom: 11px;
-            margin-top: 10px;
-            border-radius: 2px;
-            font-size: 14px;
+    }
+
+    .contact__user {
+        max-width: 90%;
+        margin: 0 auto;
+        .img__user__contact {
+            float: left;
+            width: 20% !important;
+            img {
+                width: 100%;
+                position: relative;
+
+                display: block;
+                border-radius: 50%;
+                margin-left: -20px;
+                margin-top: 20px;
+            }
         }
-        hr {
-            margin-top: 50px;
+        .thongtin {
+            float: left;
+            width: 80%;
+            .nofilrazzaq {
+                margin-top: 5px;
+                font-weight: 700;
+                font-size: 18px;
+                letter-spacing: 1px;
+            }
+            .online {
+                padding: 3px 7px 3px 3px;
+                font-size: 15px;
+                font-weight: none;
+                border: 1px solid #1dbf73;
+                color: #1dbf73;
+                text-transform: capitalize;
+                border-radius: 13px;
+            }
+            .Web__Developer {
+                font-weight: 400;
+            }
+
+            .Star__comment {
+                margin-left: -10px;
+                color: #ffb33e;
+                font-size: 15px;
+                margin-top: 10px;
+                svg {
+                    margin-top: -10px;
+                    margin-right: 4px;
+                }
+            }
+            button {
+                font-weight: 700;
+                background: white;
+                border: 1px solid;
+                width: 132px;
+                padding-top: 8px;
+                padding-bottom: 11px;
+                margin-top: 10px;
+                border-radius: 2px;
+                font-size: 14px;
+            }
+            hr {
+                margin-top: 50px;
+            }
         }
     }
-}
     .user__comment {
         margin-top: 50px;
         .comment__user__name {
@@ -577,71 +589,131 @@
 }
 
 @media (max-width: 506px) {
-   
-.contact__user {
-    max-width: 90%;
-    margin: 0 auto;
-    .img__user__contact {
-        float: left;
-        width: 35% !important;
-        img {
-            width: 100%;
-            position: relative;
-          
-            display: block;
-            border-radius: 50%;
-            margin-left: -20px;
-            margin-top: 20px;
-        }
-    }
-    .thongtin {
-        float: left;
-        width: 60%;
-        .nofilrazzaq {
-            margin-top: 5px;
-            font-weight: 700;
-            font-size: 18px;
-            letter-spacing: 1px;
-        }
-        .online {
-            padding: 3px 7px 3px 3px;
-            font-size: 15px;
-            font-weight: none;
-            border: 1px solid #1dbf73;
-            color: #1dbf73;
-            text-transform: capitalize;
-            border-radius: 13px;
-        }
-        .Web__Developer {
-            font-weight: 400;
-        }
+    .contact__user {
+        max-width: 50% !important;
+        margin: 0 auto;
+        .img__user__contact {
+            float: left;
+            width: 70% !important;
+            img {
+                width: 100%;
+                position: relative;
 
-        .Star__comment {
-            margin-left: -10px;
-            color: #ffb33e;
-            font-size: 15px;
-            margin-top: 10px;
-            svg {
-                margin-top: -10px;
-                margin-right: 4px;
+                display: block;
+                border-radius: 50%;
+                margin-left: -20px;
+                margin-top: 20px;
             }
         }
-        button {
-            font-weight: 700;
-            background: white;
-            border: 1px solid;
-            width: 132px;
-            padding-top: 8px;
-            padding-bottom: 11px;
-            margin-top: 10px;
-            border-radius: 2px;
-            font-size: 14px;
-        }
-        hr {
-            margin-top: 50px;
+        .thongtin {
+            float: left;
+            width: 30%;
+            .nofilrazzaq {
+                font-size: 15px !important;
+            }
+            .online {
+                padding: 3px 7px 3px 3px;
+                font-size: 15px !important;
+                font-weight: none;
+                border: 1px solid #1dbf73;
+                color: #1dbf73;
+                text-transform: capitalize;
+                border-radius: 13px;
+            }
+            .Web__Developer {
+                font-weight: 400;
+            }
+
+            .Star__comment {
+                margin-left: -10px;
+                color: #ffb33e;
+                font-size: 15px !important;
+                margin-top: 10px;
+                svg {
+                    margin-top: -10px;
+                    margin-right: 4px;
+                }
+            }
+            button {
+                font-weight: 700;
+                background: white;
+                border: 1px solid;
+                width: 132px;
+                padding-top: 8px;
+                padding-bottom: 11px;
+                margin-top: 10px;
+                border-radius: 2px;
+                font-size: 14px;
+            }
+            hr {
+                margin-top: 50px;
+            }
         }
     }
-}
+    .contact__user {
+        max-width: 90%;
+        margin: 0 auto;
+        .img__user__contact {
+            float: left;
+            width: 35% !important;
+            img {
+                width: 100%;
+                position: relative;
+
+                display: block;
+                border-radius: 50%;
+                margin-left: -20px;
+                margin-top: 20px;
+            }
+        }
+        .thongtin {
+            float: left;
+            width: 60%;
+            .nofilrazzaq {
+                margin-top: 5px;
+                font-weight: 700;
+                font-size: 18px;
+                letter-spacing: 1px;
+            }
+            .online {
+                padding: 3px 7px 3px 3px;
+                font-size: 15px;
+                font-weight: none;
+                border: 1px solid #1dbf73;
+                color: #1dbf73;
+                text-transform: capitalize;
+                border-radius: 13px;
+            }
+            .Web__Developer {
+                font-weight: 400;
+            }
+
+            .Star__comment {
+                margin-left: -10px;
+                color: #ffb33e;
+                font-size: 15px;
+                margin-top: 10px;
+                svg {
+                    margin-top: -10px;
+                    margin-right: 4px;
+                }
+            }
+            button {
+                font-weight: 700;
+                background: white;
+                border: 1px solid;
+                width: 132px;
+                padding-top: 8px;
+                padding-bottom: 11px;
+                margin-top: 10px;
+                border-radius: 2px;
+                font-size: 14px;
+            }
+            hr {
+                margin-top: 50px;
+            }
+        }
+    }
     .user__comment {
         margin-top: 50px;
         .comment__user__name {
@@ -666,6 +738,67 @@
 }
 
 @media (max-width: 336px) {
+    .contact__user {
+        max-width: 80% !important;
+        margin: 0 auto;
+        .img__user__contact {
+            float: left;
+            width: 50% !important;
+            img {
+                width: 100%;
+                position: relative;
+
+                display: block;
+                border-radius: 50%;
+                margin-left: -20px;
+                margin-top: 20px;
+            }
+        }
+        .thongtin {
+            float: left;
+            width: 50%;
+            .nofilrazzaq {
+                font-size: 15px !important;
+            }
+            .online {
+                padding: 3px 7px 3px 3px;
+                font-size: 15px !important;
+                font-weight: none;
+                border: 1px solid #1dbf73;
+                color: #1dbf73;
+                text-transform: capitalize;
+                border-radius: 13px;
+            }
+            .Web__Developer {
+                font-weight: 400;
+            }
+
+            .Star__comment {
+                margin-left: -10px;
+                color: #ffb33e;
+                font-size: 15px !important;
+                margin-top: 10px;
+                svg {
+                    margin-top: -10px;
+                    margin-right: 4px;
+                }
+            }
+            button {
+                font-weight: 700;
+                background: white;
+                border: 1px solid;
+                width: 132px;
+                padding-top: 8px;
+                padding-bottom: 11px;
+                margin-top: 10px;
+                border-radius: 2px;
+                font-size: 14px;
+            }
+            hr {
+                margin-top: 50px;
+            }
+        }
+    }
     .user__comment {
         margin-top: 50px;
         .comment__user__name {

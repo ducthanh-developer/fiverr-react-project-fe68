@@ -16,7 +16,7 @@ export default function UserInformation(props) {
     useEffect(() => {
         dispatch(actDetailUserInformation(userId));
         dispatch(actHistoryJobsUser(currentUser?.token));
-    }, [dispatch, userId]);
+    }, [dispatch, userId, currentUser?.token]);
     const onFormLayoutChange = ({ size }) => {
         setComponentSize(size);
     };
@@ -31,9 +31,7 @@ export default function UserInformation(props) {
     const handleClick1 = () => {
         setShow(!show);
     };
-    const Typography = (props) => {
-        return <p>{props.children}</p>;
-    }
+
     const [setComponentSize] = useState('default');
     const formik = useFormik({
         enableReinitialize: true,
@@ -304,7 +302,9 @@ export function UploadImgUser(props) {
                             src={imgSrc === "" ? detailUser.avatar : imgSrc}
                             alt="..." />
                     </div>
-                    <input type="file" onChange={handleChangeFile} className="file" />
+                    <div className="chontep">
+                        <input type="file" onChange={handleChangeFile} className="file" />
+                    </div>
 
                 </div>
             </Form>

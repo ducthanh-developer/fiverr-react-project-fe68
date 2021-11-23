@@ -29,7 +29,7 @@ export default function Login(props) {
           justifyContent: 'center',
           alignItems: 'center',
         }}
-        className="   login__content"
+        className="login__content"
       >
         <Form
           name="normal_login"

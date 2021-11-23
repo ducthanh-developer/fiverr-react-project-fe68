@@ -179,69 +179,70 @@ export default function DetailJobs(props) {
         </div>
       </div>
       <div className="comment">
-        <h5>About This Gig </h5>
-        <h6>Top Rated Seller with all positive reviews</h6>
-        <div className="hello">Hello,</div>
-        <div className="content">
-          Want a custom website built for your business? Or Having trouble in
-          recognizing or fixing
-        </div>
-        <div className="content">
-          Want a custom website built for your business? Or Having trouble in
-          recognizing{" "}
-        </div>
-        <div className="content">
-          or fixing any issues in HTML, CSS, Bootstrap jquery, javascript, PHP
-          or database(Mysql/Oracle).{" "}
-        </div>
-        <h5 className="offer">Things I offer:</h5>
-        <div className="information_detailjob">
-          <ul>
-            <li>CRM development</li>
-            <li>E-commerce&nbsp;Development</li>
-            <li>
-              Custom website development (both front-end and back-end) with
-              Laravel, PHP and MySQL
-            </li>
-            <li>
-              Vue.js, HTML, CSS, Boostrap, Javascript/Jquery, PHP single/multi
-              web page,
-            </li>
-            <li>
-              Complete website creation from scratch using Laravel Rest Api
-              and vue.js
-            </li>
-            <li>Web Application with proper exception handling</li>
-            <li>Can work with APIs, integrate API's in your applications.</li>
-            <li>Responsive - Mobile Friendly sites.</li>
-            <li>Great UI/UX for&nbsp;your site.</li>
-            <li>
-              PSD to HTML, XD to HTML&nbsp;or any other design to HTML with
-              best quality and pixel perfect design
-            </li>
-            <li>Fix issues in&nbsp;front-end or add some changes to it.</li>
-            <li>Bug Investigation and Bug fixing.</li>
-            <li>MySQL database design and integration in websites.</li>
-            <li>
-              MySQL database bugs fixing and integration issues fixing.&nbsp;
-            </li>
-          </ul>
-        </div>
-        <div className="satisfied">
-          I will do the work until you are satisfied with fast and responsive
-          communication.{" "}
-        </div>
-        {/* <hr></hr> */}
-        <div className="row comment__bottom">
-          <div className="col-5">
-            <div className="Programming">Programming Language</div>
-            <div className="php">PHP</div>
+        <div className="noidung__job">
+          <h5>About This Gig </h5>
+          <h6>Top Rated Seller with all positive reviews</h6>
+          <div className="hello">Hello,</div>
+          <div className="content">
+            Want a custom website built for your business? Or Having trouble in
+            recognizing or fixing
           </div>
-          <div className="col-7">
-            <div className="Expertise">Expertise </div>
-            <div className="Cross__Browser">Cross Browser</div>
-            <div className="Cross__Browser">Cross Browser</div>
-            <div className="Cross__Browser">Cross Browser</div>
+          <div className="content">
+            Want a custom website built for your business? Or Having trouble in
+            recognizing{" "}
+          </div>
+          <div className="content">
+            or fixing any issues in HTML, CSS, Bootstrap jquery, javascript, PHP
+            or database(Mysql/Oracle).{" "}
+          </div>
+          <h5 className="offer">Things I offer:</h5>
+          <div className="information_detailjob">
+            <ul>
+              <li>CRM development</li>
+              <li>E-commerce&nbsp;Development</li>
+              <li>
+                Custom website development (both front-end and back-end) with
+                Laravel, PHP and MySQL
+              </li>
+              <li>
+                Vue.js, HTML, CSS, Boostrap, Javascript/Jquery, PHP single/multi
+                web page,
+              </li>
+              <li>
+                Complete website creation from scratch using Laravel Rest Api
+                and vue.js
+              </li>
+              <li>Web Application with proper exception handling</li>
+              <li>Can work with APIs, integrate API's in your applications.</li>
+              <li>Responsive - Mobile Friendly sites.</li>
+              <li>Great UI/UX for&nbsp;your site.</li>
+              <li>
+                PSD to HTML, XD to HTML&nbsp;or any other design to HTML with
+                best quality and pixel perfect design
+              </li>
+              <li>Fix issues in&nbsp;front-end or add some changes to it.</li>
+              <li>Bug Investigation and Bug fixing.</li>
+              <li>MySQL database design and integration in websites.</li>
+              <li>
+                MySQL database bugs fixing and integration issues fixing.&nbsp;
+              </li>
+            </ul>
+          </div>
+          <div className="satisfied">
+            I will do the work until you are satisfied with fast and responsive
+            communication.{" "}
+          </div>
+          <div className="row comment__bottom">
+            <div className="col-5">
+              <div className="Programming">Programming Language</div>
+              <div className="php">PHP</div>
+            </div>
+            <div className="col-7">
+              <div className="Expertise">Expertise </div>
+              <div className="Cross__Browser">Cross Browser</div>
+              <div className="Cross__Browser">Cross Browser</div>
+              <div className="Cross__Browser">Cross Browser</div>
+            </div>
           </div>
         </div>
         <div className="About">About The Seller</div>
