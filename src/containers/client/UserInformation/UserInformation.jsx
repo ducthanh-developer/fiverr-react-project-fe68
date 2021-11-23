@@ -1,16 +1,15 @@
 
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { actDetailUserInformation, actFetchAddUserInformation, actHistoryJobsUser, actUploadImg, } from "./modules/action";
+import { actDetailUserInformation, actEditUserInformation, actHistoryJobsUser, actUploadImg, } from "./modules/action";
 import { useFormik } from 'formik';
 import "../UserInformation/UserInformation.scss"
-import { Form, Card } from 'antd';
+import { Form, Card, Input } from 'antd';
 import { useState } from "react";
 
 export default function UserInformation(props) {
     const dispatch = useDispatch();
     const { detailUser, historyJobs } = useSelector((state) => state.userListJobsReducer);
-    console.log("his", historyJobs);
     const { currentUser } = useSelector((state) => state.authReducer);
 
     const userId = props.match.params.id;
@@ -51,10 +50,9 @@ export default function UserInformation(props) {
             certification: detailUser.certification,
             bookingJob: detailUser.bookingJob
         },
-        onSubmit: async (values) => {
+        onSubmit: (values) => {
             console.log("values", values);
-            console.log("id ", userId);
-            await dispatch(actFetchAddUserInformation(userId, values));
+            dispatch(actEditUserInformation(userId, values, currentUser?.token));
         }
     })
 
@@ -66,8 +64,11 @@ export default function UserInformation(props) {
                         <div className=" card card-1 ">
                             <UploadImgUser path={props} />
                             <h6 className="name__profile text-center">{detailUser.email}</h6>
-                            <button className="btn btn__profile">Preview Public Model</button>
-                            <hr></hr>
+                            <div className=" container preview__public__model">
+                                <div className=" btn__profile">Preview Public Model</div>
+                                <hr></hr>
+
+                            </div>
                             <div className="home__town">
                                 <ul className="row home__town__one">
                                     <li className="flex-item-from">From</li>
@@ -88,11 +89,11 @@ export default function UserInformation(props) {
                             </div>
                             <div className="badges">Earn badges and stand out</div>
                             <div className="boost">Boost your sales, by boosting your expertise.</div>
-                            <div>
+                            <div className="enroll__now container">
                                 <button className="btn btn-success">Enroll Now</button>
                             </div>
                             <hr></hr>
-                            <div className=" add__form">
+                            <div className="add__form">
                                 <div>
                                     <ul className=" add__form__certification">
                                         <li className="flex-item-certification">Certification</li>
@@ -110,7 +111,7 @@ export default function UserInformation(props) {
                                                             wrapperCol={{ span: 14 }}
                                                             layout="horizontal" >
 
-                                                            <input name="certification"
+                                                            <Input name="certification"
                                                                 onChange={formik.handleChange}
                                                                 value={formik.values.certification} />
                                                             <hr></hr>
@@ -119,7 +120,7 @@ export default function UserInformation(props) {
                                                                     <div className="cancle" onClick={handleClick1}>Cancel</div>
                                                                 </div>
                                                                 <div className="col-6">
-                                                                    <div className="add" type="submit">Add New</div>
+                                                                    <button className="add" type="submit">Add New</button>
                                                                 </div>
                                                             </div>
                                                         </Form>
@@ -162,7 +163,7 @@ export default function UserInformation(props) {
                                                                     <div className="cancle" onClick={handleClick1}>Cancel</div>
                                                                 </div>
                                                                 <div className="col-6">
-                                                                    <div className="add" type="submit">Add New</div>
+                                                                    <button className="add" type="submit">Add New</button>
                                                                 </div>
                                                             </div>
                                                         </Form>
@@ -188,10 +189,10 @@ export default function UserInformation(props) {
                         <div className="card car__done__create">
                             <div className="Buying">
                                 <div className="row ">
-                                    <div className="col-2 col-lg-2">
+                                    <div className="col-3 col-lg-2">
                                         <img src="https://npm-assets.fiverrcdn.com/assets/@fiverr-private/business_blocks/office-building.7ac5061.gif" alt="" />
                                     </div>
-                                    <div className="col-10 col-lg-10">
+                                    <div className="col-9 col-lg-10">
                                         <b>Buying services for work? </b>
                                         <span>Get the best experience for your business</span>
                                         <div className="questions">with 3 quick questions.</div>
@@ -246,10 +247,7 @@ export default function UserInformation(props) {
 
 export function UploadImgUser(props) {
     const dispatch = useDispatch();
-
     const { detailUser } = useSelector((state) => state.userListJobsReducer);
-    // console.log("object,", detailUser);
-    // console.log("ava", detailUser.avatar);
 
     const { currentUser } = useSelector((state) => state.authReducer);
     console.log("current", currentUser);
@@ -259,7 +257,6 @@ export function UploadImgUser(props) {
     }, [dispatch, idJOb]);
 
     const [imgSrc, setImgSrc] = useState(detailUser && detailUser.avatar ? detailUser.avatar : "");
-
 
     const formik = useFormik({
         enableReinitialize: true,
@@ -283,7 +280,7 @@ export function UploadImgUser(props) {
         console.log("formdata", formData);
 
         dispatch(actUploadImg(formData, currentUser?.token));
-        dispatch(actFetchAddUserInformation(formData, currentUser?.token))
+        dispatch(actEditUserInformation(formData, currentUser?.token))
 
     };
 
@@ -297,17 +294,18 @@ export function UploadImgUser(props) {
                 wrapperCol={{
                     span: 14,
                 }} >
-                <div className="select row">
-                    <div className="col-3 col-sm-2 col-lg-3">
-                    </div>
-                    <div className="col-9 col-sm-10 col-lg-9">
+                <div className="select  ">
+                    {/* <div className="col-3 col-sm-2 col-lg-3">
+                    </div> */}
+                    <div className="img_select">
                         <img
                             type="submit"
-                            className="img_select"
+                            className=""
                             src={imgSrc === "" ? detailUser.avatar : imgSrc}
                             alt="..." />
-                        <input type="file" onChange={handleChangeFile} className="file" />
                     </div>
+                    <input type="file" onChange={handleChangeFile} className="file" />
+
                 </div>
             </Form>
         </div>

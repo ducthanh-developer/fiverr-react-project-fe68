@@ -10,21 +10,23 @@
             height: auto;
             background: #fff;
             box-shadow: none;
-            .btn__profile {
-                width: 85%;
-                margin-left: 28px;
-                border: 1px solid black;
-                color: black;
-                font-weight: 600;
-                margin-top: 10px;
-            }
-            .btn__profile:hover {
-                background-color: rgb(12, 62, 142);
-                color: white;
-            }
-            hr {
-                margin-left: 25px;
-                width: 85%;
+            .preview__public__model {
+                max-width: 91%;
+                .btn__profile {
+                    text-align: center;
+                    border: 1px solid black;
+                    color: black;
+                    font-weight: 600;
+                    margin-top: 10px;
+                    height: 34px;
+                    padding-top: 4px;
+                    border-radius: 5px;
+                }
+
+                .btn__profile:hover {
+                    background-color: rgb(12, 62, 142);
+                    color: white;
+                }
             }
             .home__town {
                 .flex-item-vietnam {
@@ -168,17 +170,15 @@
                     margin-bottom: 20px;
                 }
                 .add {
-                    margin-top: 20px;
-
+                    margin-left: 0px !important;
+                    height: 35px;
+                    /* padding: 0px; */
+                    margin-top: 21px;
+                    width: 100%;
                     color: white;
                     font-weight: 500;
                     border: none;
-                    text-align: center;
-                    background: rgb(20, 152, 46);
-                    height: 35px;
-                    padding-top: 7px;
                     border-radius: 4px;
-                    margin-bottom: 20px;
                 }
             }
         }
@@ -204,31 +204,27 @@
                 margin-bottom: 20px;
             }
             .add {
-                color: white;
-                font-weight: 500;
-                border: none;
-                text-align: center;
-                background: rgb(20, 152, 46);
+                margin-left: 0px !important;
                 height: 35px;
-                padding-top: 7px;
-                border-radius: 4px;
-                margin-bottom: 20px;
+                margin-top: 1px;
+                width: 100%;
             }
         }
     }
-    .noidung__addskill{
+    .noidung__addskill {
         margin: 0 auto;
-    text-align: center;
-    /* width: 43%; */
-    border: 1px solid #17b875;
-    border-radius: 31px;
-    width: 44%;
-    margin-top: 30px;
-    height: 33px
+        text-align: center;
+        /* width: 43%; */
+        border: 1px solid #17b875;
+        border-radius: 31px;
+        width: 44%;
+        margin-top: 30px;
+        height: 33px;
     }
 }
 
 .card__bottom {
+    margin-bottom: 90px;
     .learning {
         img {
             width: 27%;
@@ -256,12 +252,13 @@
         font-size: 18px;
         text-align: center;
     }
-    button {
-        margin-left: 31px;
-        width: 85%;
-        /* text-align: center; */
-        margin-top: 30px;
-        font-weight: 500;
+    .enroll__now {
+        max-width: 91%;
+        button {
+            width: 100%;
+            margin-top: 30px;
+            font-weight: 500;
+        }
     }
 }
 
@@ -346,14 +343,22 @@
 }
 
 .upload__avatar {
-    .img_select {
-        width: 150px;
-        height: 150px;
-        font-size: 3em;
-        border-radius: 176px;
-        position: relative;
-        margin-top: 70px;
+    .select {
+        max-width: 100%;
+        margin: 0 auto;
+        .img_select {
+            text-align: center;
+          margin-top: 30px !important;
+            img{
+                width: 150px;
+                height: 150px;
+                font-size: 3em;
+                border-radius: 176px;
+                position: relative;
+            }
+        }
     }
+
     .file {
         height: 20%;
         width: 78px;
@@ -413,6 +418,18 @@
     }
 }
 
+@media (max-width: 1080px) {
+    .history__job__booking {
+        .bookingName {
+            .ant-card-bordered {
+                width: 165% !important;
+                margin-left: -35px;
+                border-radius: 4px;
+                border: 1px solid rgba(206, 200, 200, 0.769);
+            }
+        }
+    }
+}
 @media (max-width: 992px) {
     .user__information__content {
         max-width: 100% !important;
@@ -430,7 +447,7 @@
     .history__job__booking {
         .bookingName {
             .ant-card-bordered {
-                width: 175% !important;
+                width: 165% !important;
                 margin-left: -35px;
                 border-radius: 4px;
                 border: 1px solid rgba(206, 200, 200, 0.769);
@@ -440,7 +457,7 @@
 
     .car__done__create {
         width: 100%;
-        height: 161px !important;
+        height: 191px !important;
         padding: 20px 20px 20px 20px;
         .Buying {
             font-size: 18px;
@@ -502,6 +519,7 @@
     .history__job__booking {
         .bookingName {
             .ant-card-bordered {
+                height: 200px !important;
                 width: 192% !important;
                 margin-left: -35px;
                 border-radius: 4px;
@@ -560,24 +578,24 @@
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 676px) {
     .user__information__content {
         max-width: 100% !important;
         margin: 0 auto;
     }
     .userInformation__item1 {
         float: left;
-        width: 50%;
+        width: 100%;
     }
     .userInformation__item2 {
         float: left;
-        width: 50%;
+        width: 100%;
     }
 
     .history__job__booking {
         .bookingName {
             .ant-card-bordered {
-                width: 192% !important;
+                width: 162% !important;
                 margin-left: -35px;
                 border-radius: 4px;
                 border: 1px solid rgba(206, 200, 200, 0.769);
