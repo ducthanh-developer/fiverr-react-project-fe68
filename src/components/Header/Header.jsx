@@ -50,7 +50,6 @@ export default function Header(props) {
           onClick={() => {
             document.getElementById("menu-toggle").style.left = "0";
             document.getElementById("menu-overlay").style.display = "block";
-            console.log(document.getElementById("sidebar"));
           }}
         >
           <svg
@@ -182,7 +181,7 @@ export default function Header(props) {
           </ul>
         </nav>
       </header>
-      <div className="sidebar">
+      <div className="sidebar-fiverr">
         <div className="site-sidebar d-flex" id="menu-toggle">
           <div className="sidebar-header">
             <a href=".." className="btn-join">
