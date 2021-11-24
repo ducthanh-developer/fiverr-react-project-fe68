@@ -5,7 +5,7 @@ import { SET_SUB_JOB } from "./types";
 export const actAddSubJob = (subJob) => {
   return async (dispatch) => {
     try {
-      const result = await fiverrApi.addSubJobApi(subJob);
+      await fiverrApi.addSubJobApi(subJob);
       alert("thêm thành công");
     } catch (errors) {
       console.log(errors);
@@ -16,7 +16,7 @@ export const actAddSubJob = (subJob) => {
 export const actDeleteSubJob = (subJobId) => {
   return async (dispatch) => {
     try {
-      const result = await fiverrApi.deleteSubJobApi(subJobId);
+      await fiverrApi.deleteSubJobApi(subJobId);
       dispatch(actFetchListSubJob());
       alert("xóa thành công");
     } catch (errors) {
@@ -42,7 +42,7 @@ export const actFetchSubJob = (subjobId) => {
 export const actEditSubJob = (subjobId, subjob) => {
   return async (dispatch) => {
     try {
-      const result = await fiverrApi.editSubJobApi(subjobId, subjob);
+      await fiverrApi.editSubJobApi(subjobId, subjob);
       dispatch(actFetchListSubJob());
       alert("sửa thành công");
     } catch (errors) {

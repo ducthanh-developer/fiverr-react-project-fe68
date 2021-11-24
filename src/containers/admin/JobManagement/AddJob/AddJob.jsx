@@ -74,8 +74,8 @@ export default function AddJob(props) {
     return listSubJob.map((job, index) => {
       const { _id, name, typeJob } = job;
       if (
-        typeJob?._id == formik.getFieldProps("job.type").value ||
-        typeJob == formik.getFieldProps("job.type").value
+        typeJob?._id === formik.getFieldProps("job.type").value ||
+        typeJob === formik.getFieldProps("job.type").value
       ) {
         return (
           <Select.Option value={_id} key={index}>
@@ -136,7 +136,7 @@ export default function AddJob(props) {
         </Form.Item>
         <Form.Item label="Image">
           <input type="file" onChange={handleChangeFile} />
-          {imgSrc == "" ? (
+          {imgSrc === "" ? (
             ""
           ) : (
             <img

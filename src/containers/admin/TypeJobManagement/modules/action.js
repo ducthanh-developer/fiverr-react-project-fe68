@@ -1,5 +1,4 @@
 import fiverrApi from "apis/fiverrApi";
-import { actFetchListTypeJobs } from "components/Header/module/actions";
 import {
   FETCH__LIST__TYPE__JOBS__SUCCESS,
   FETCH__LIST__TYPE__JOBS__FAIL,
@@ -78,7 +77,7 @@ export const actDetailTypeJob = (typeJobId) => {
 export const actEditTypeJob = (typeJobId, typeJob) => {
   return async (dispatch) => {
     try {
-      let res = await fiverrApi.editTypeJobApi(typeJobId, typeJob);
+      await fiverrApi.editTypeJobApi(typeJobId, typeJob);
       alert("Cập nhât thành công");
     } catch (error) {
       console.log(error.response?.date);
@@ -89,7 +88,7 @@ export const actEditTypeJob = (typeJobId, typeJob) => {
 export const actDeleteTypeJob = (typeJobId) => {
   return async (dispatch) => {
     try {
-      const result = fiverrApi.deleteTypeJobApi(typeJobId);
+     fiverrApi.deleteTypeJobApi(typeJobId);
       dispatch(actListTypeJob());
       alert("Xóa thành công");
     } catch (error) {

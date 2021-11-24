@@ -10,6 +10,8 @@ export default function Header(props) {
   const dispatch = useDispatch();
   const { listTypeJobs } = useSelector((state) => state.TypeJobsReducer);
   const { currentUser } = useSelector((state) => state.authReducer);
+  const { detailUser } = useSelector((state) => state.userListJobsReducer);
+
   const logOut = () => {
     dispatch(actLogout());
   };
@@ -103,17 +105,17 @@ export default function Header(props) {
         <nav className="package-nav row">
           <ul className="row nav-list">
             <li className="nav-item active">
-              <a href="..." className="nav-link">
+              <a href="..." className="nav-link none__mobile">
                 Fiverr Pro
               </a>
             </li>
             <li className="nav-item">
-              <a href="..." className="nav-link">
+              <a href="..." className="nav-link none__mobile">
                 Explore
               </a>
             </li>
             <li className="nav-item language">
-              <a href="..." className="nav-link">
+              <a href="..." className="nav-link none__mobile">
                 <svg
                   width="18"
                   height="18"
@@ -128,25 +130,36 @@ export default function Header(props) {
                 English
               </a>
             </li>
-            <li className="nav-item currency">
+            <li className="nav-item currency none__mobile" >
               <a href="..." className="nav-link">
                 $ USD
               </a>
             </li>
             <li className="nav-item">
-              <a href="..." className="nav-link">
+              <a href="..." className="nav-link none__mobile">
                 Become a Seller
               </a>
             </li>
-
-            <li className="nav-item">
+            <li className="nav-item hh">
               {currentUser == null ? (
                 <Link to="/login" className="nav-link nav-link--btn">
                   Join
                 </Link>
               ) : (
-                <nav>
-                  <li className="nav-item">
+                <div className="main">
+                  <input type="checkbox" id="drop-1" hidden />
+                  <label className="dropHeader dropHeader-1" for="drop-1">
+                    {detailUser.avatar == null ? (
+                      <span>
+                        <img src="../../images/Market/4.png" alt="" />
+                      </span>
+                    ) : (<div>
+                      <img src={detailUser.avatar} alt="" />
+
+                    </div>)
+                    }
+                  </label>
+                  <div className="list list-1">
                     <Link
                       className="dropdown-item"
                       href="#"
@@ -154,16 +167,16 @@ export default function Header(props) {
                     >
                       Profile
                     </Link>
-                  </li>
-                  <Link
-                    className="dropdown-item"
-                    href="..."
-                    onClick={logOut}
-                    to="/Login"
-                  >
-                    Logout
-                  </Link>
-                </nav>
+                    <Link
+                      className="dropdown-item"
+                      href="..."
+                      onClick={logOut}
+                      to="/Login"
+                    >
+                      Logout
+                    </Link>
+                  </div>
+                </div>
               )}
             </li>
           </ul>

@@ -9,6 +9,7 @@ export const actFetchListJobs = (jobName = "") => {
         type: SET_LIST_JOBS,
         payload: result.data,
       });
+      
     } catch (errors) {
       console.log("Errors: ", errors);
     }

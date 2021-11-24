@@ -83,7 +83,11 @@ const fiverrApi = {
   fetchUserListJobsApi(userId) {
     return callApi(`users/${userId}`);
   },
-  fetchAddUserInformation(userId) {
+  // fetchAddUserInformation(userId, user) {
+  //   return callApiPut(`users/${userId}`, user);
+  // },
+
+  fetchEditUserInformationApi(userId) {
     return callApiPut(`users/${userId}`);
   },
   fetchListJobsBooking(token) {
@@ -93,8 +97,8 @@ const fiverrApi = {
   fetchHistoryJobBookingApi(token) {
     return callApi(`jobs/by-user`, null, token);
   },
-  fetchUploadImgApi(formData, user, token) {
-    return callApiPost(`users/upload-avatar`, formData, user, token);
+  fetchUploadImgApi(formData, token) {
+    return callApiPost(`users/upload-avatar`, formData, token);
   },
   loginApi(userLogin) {
     return callApiPost(`auth/signin`, userLogin);
