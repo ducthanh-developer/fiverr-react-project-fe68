@@ -1,6 +1,5 @@
 import React from "react";
 import Slider from "react-slick";
-import { Link } from 'react-router-dom';
 
 import "./Product.scss";
 function SampleNextArrow(props) {
@@ -81,13 +80,11 @@ const settings = {
 
 export default function Product() {
   return (
-    <Link to="/list-jobs" >
       <div className=" container Product__content">
         <h2>Popular professional services</h2>
         <Slider {...settings}>
           <div className="img__time">
             <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741678/logo-design-2x.png" alt="..." />
-
           </div>
           <div>
             <img
@@ -133,7 +130,5 @@ export default function Product() {
           </div>
         </Slider>
       </div>
-    </Link>
-
   );
 }

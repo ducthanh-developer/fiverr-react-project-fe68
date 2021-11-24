@@ -177,30 +177,6 @@ export default function Header(props) {
                     </Link>
                   </div>
                 </div>
-                // <nav>
-                //   <li className="nav-item">
-
-                //     <Link
-                //       className="dropdown-item"
-                //       href="#"
-                //       to={`/login/${currentUser.user._id}`}
-                //     >
-                //       Profile
-                //     </Link>
-                //   </li>
-
-                //   <li className="nav-item">
-
-                //   </li>
-                //   <Link
-                //     className="dropdown-item"
-                //     href="..."
-                //     onClick={logOut}
-                //     to="/Login"
-                //   >
-                //     Logout
-                //   </Link>
-                // </nav>
               )}
             </li>
           </ul>

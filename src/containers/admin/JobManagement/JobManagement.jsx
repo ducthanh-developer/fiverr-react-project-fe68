@@ -42,6 +42,7 @@ export default function JobManagement() {
       title: "Image",
       render: (text, job) => {
         return (
+          
           <img src={job.image} alt="Image" style={{ maxWidth: "100px" }} />
         );
       },

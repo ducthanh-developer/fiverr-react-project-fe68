@@ -65,7 +65,6 @@ export default function UserInformation(props) {
                             <div className=" container preview__public__model">
                                 <div className=" btn__profile">Preview Public Model</div>
                                 <hr></hr>
-
                             </div>
                             <div className="home__town">
                                 <ul className="row home__town__one">

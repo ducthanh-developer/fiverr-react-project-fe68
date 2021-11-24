@@ -202,8 +202,7 @@
             line-height: 28px;
         }
         h6 {
-            background-color: #eed0a2;
-            width: 300px;
+            color: #19a463;
         }
         .hello {
             font-size: 17px;
@@ -227,12 +226,14 @@
                 }
             }
         }
+       
         .satisfied {
-            background-color: #eed0a2;
+            font-weight: 700;
+            color: #1dbf73;
             font-weight: 600;
-            // width: 600px;
             margin-top: 25px;
             margin-bottom: 25px;
+            font-size: 20px;
         }
         hr {
             width: 600px;
@@ -251,12 +252,12 @@
                 font-size: 17px;
             }
         }
-        .About {
-            font-weight: 700;
-            font-size: 20px;
-        }
+       
     }
-    // margin-left: 50px;
+    .about {
+        font-weight: 900;
+        font-size: 20px;
+    }
     margin-top: 100px;
 }
 
