@@ -51,7 +51,7 @@ export const actAddNewJob = (job, formData) => {
 export const actDeleteJob = (jobId) => {
   return async (dispatch) => {
     try {
-      const result = await fiverrApi.deleteJobApi(jobId);
+      await fiverrApi.deleteJobApi(jobId);
       dispatch(actFetchListJobs());
     } catch (errors) {
       console.log(errors);
@@ -62,7 +62,7 @@ export const actDeleteJob = (jobId) => {
 export const actEditJob = (jobId, jobInfo, formData) => {
   return async (dispatch) => {
     try {
-      const result = await fiverrApi.editJobApi(jobId, jobInfo);
+      await fiverrApi.editJobApi(jobId, jobInfo);
       // dispatch(actFetchListJobs());
       dispatch(actAddJobImage(jobId, formData));
       alert('thay đổi thành công');
@@ -75,8 +75,8 @@ export const actEditJob = (jobId, jobInfo, formData) => {
 export const actSearchJob = (jobName) => {
   return async (dispatch) => {
     try {
-      const result = await fiverrApi.searchJobApi(jobName);
-      
+      await fiverrApi.searchJobApi(jobName);
+
     } catch (errors) {
       console.log(errors);
     }

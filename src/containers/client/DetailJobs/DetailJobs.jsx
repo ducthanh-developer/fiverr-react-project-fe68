@@ -22,7 +22,6 @@ export default function DetailJobs(props) {
   }, [dispatch, jobId]);
 
   return (
-
     <div className="Detailjob__checkout">
       <div className=" detailjob ">
         <div className="row  chinh ">
@@ -54,7 +53,6 @@ export default function DetailJobs(props) {
               <img src="../../images/market/1.png" alt="" />
               <span className="People ">People keep coming back?</span>
               <span>
-                {" "}
                 afzaal1721 has an exceptional number of repeat buyers.
               </span>
             </div>
@@ -245,7 +243,7 @@ export default function DetailJobs(props) {
             </div>
           </div>
         </div>
-        <div className="About">About The Seller</div>
+        <div className="about">About The Seller</div>
         <div className="row contact__user">
           <div className="img__user__contact">
             <img

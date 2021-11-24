@@ -11,8 +11,7 @@ export default function AdminSidebar() {
             <button
               type="button"
               className="hamburger close-sidebar-btn hamburger--elastic"
-              data-class="closed-sidebar"
-            >
+              data-class="closed-sidebar">
               <span className="hamburger-box">
                 <span className="hamburger-inner" />
               </span>
@@ -25,7 +24,7 @@ export default function AdminSidebar() {
           <ul className="vertical-nav-menu">
             <li className="app-sidebar__heading">Management</li>
             <li>
-              <a>
+              <a href="..">
                 <i className="metismenu-icon pe-7s-diamond" />
                 Users
                 <i className="metismenu-state-icon pe-7s-angle-down caret-left" />
@@ -40,7 +39,7 @@ export default function AdminSidebar() {
               </ul>
             </li>
             <li>
-              <a href="..">
+              <a href="...">
                 <i className="metismenu-icon pe-7s-car" />
                 Jobs
                 <i className="metismenu-state-icon pe-7s-angle-down caret-left" />

@@ -5,28 +5,19 @@ import Product from "./Product/Product";
 import Testimonial from "./Testimonial/Testimonial";
 import Selling from "./Selling/Selling";
 import Marketplace from "./Marketplace/Marketplace";
-// import LoadImg from "../UserInformation/UploadImgUser/HinhAnh";
-
 
 export default function Home() {
   return (
     <main>
-      {/* Carousel */}
       <Carousel />
 
-      {/* Product */}
       <Product />
 
-      {/* Selling */}
       <Selling />
 
-      {/* Testimonial */}
       <Testimonial />
 
-      {/* Marketplace */}
       <Marketplace />
-      {/* <LoadImg/> */}
-     
     </main>
   );
 }

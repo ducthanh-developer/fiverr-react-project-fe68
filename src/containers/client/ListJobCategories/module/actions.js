@@ -1,5 +1,5 @@
 import fiverrApi from "apis/fiverrApi";
-import { SET_LIST_JOB_BY_TYPE, SET_TYPE_JOB_DETAIL } from "./types";
+import { SET_TYPE_JOB_DETAIL } from "./types";
 
 export const actFetchTypeJobDetail = (typeId) => {
   return async (dispatch) => {
