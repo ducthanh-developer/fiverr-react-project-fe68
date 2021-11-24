@@ -7,7 +7,7 @@ export default function Footer() {
       <footer className="footer-package">
         <div className="footer-wrapper">
           <div className="footer-collapsibles row">
-            <div className="footer-column col-15-xs col-5-sm col-3-md">
+            <div className="footer-column col-12 col-sm-4 col-md-3">
               <article className="column">
                 <h6 className="column-title">Categories</h6>
                 <div className="column-content">
@@ -48,7 +48,7 @@ export default function Footer() {
                 </div>
               </article>
             </div>
-            <div className="footer-column col-15-xs col-5-sm col-3-md">
+            <div className="footer-column col-12 col-sm-4 col-md-3">
               <article className="column">
                 <h6 className="column-title">About</h6>
                 <div className="column-content">
@@ -80,7 +80,7 @@ export default function Footer() {
                 </div>
               </article>
             </div>
-            <div className="footer-column col-15-xs col-5-sm col-3-md">
+            <div className="footer-column col-12 col-sm-4 col-md-3">
               <article className="column">
                 <h6 className="column-title">Support</h6>
                 <div className="column-content">
@@ -101,7 +101,7 @@ export default function Footer() {
                 </div>
               </article>
             </div>
-            <div className="footer-column col-15-xs col-5-sm col-3-md">
+            <div className="footer-column col-12 col-sm-4 col-md-3">
               <article className="column">
                 <h6 className="column-title">Community</h6>
                 <div className="column-content">
@@ -140,7 +140,7 @@ export default function Footer() {
                 </div>
               </article>
             </div>
-            <div className="footer-column col-15-xs col-5-sm col-3-md">
+            <div className="footer-column col-12 col-sm-4 col-md-3">
               <article className="column">
                 <h6 className="column-title">More From Fiverr</h6>
                 <div className="column-content">

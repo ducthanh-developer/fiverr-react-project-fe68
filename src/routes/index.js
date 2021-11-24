@@ -78,21 +78,18 @@ export const adminRoutes = [
     component: UserManagerment,
     exact: true,
     isPrivate: false,
-
   },
   {
     path: "/admin/job-management",
     component: JobManagement,
     exact: true,
     isPrivate: true,
-
   },
   {
     path: "/admin/job-management/add-job",
     component: AddJob,
     exact: true,
     isPrivate: true,
-
   },
   {
     path: "/admin/job-management/edit-job/:jobId",
@@ -119,28 +116,24 @@ export const adminRoutes = [
     component: AddUser,
     exact: false,
     isPrivate: true,
-
   },
   {
     path: "/admin/user-managerment/edit/:idUser",
     component: EditUser,
     exact: false,
     isPrivate: true,
-
   },
   {
     path: "/admin/type-job",
     component: TypeJobManagement,
     exact: true,
     isPrivate: true,
-
   },
   {
     path: "/admin/type-job/add",
     component: AddTypeJob,
     exact: false,
     isPrivate: true,
-
   },
   {
     path: "/admin/type-job/edit/:typeId",
@@ -148,6 +141,4 @@ export const adminRoutes = [
     exact: false,
     isPrivate: true,
   },
-  
-  
 ];
