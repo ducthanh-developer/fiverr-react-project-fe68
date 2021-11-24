@@ -12,7 +12,7 @@ export default function DetailJobs(props) {
     console.log(`checked = ${e.target.checked}`);
   }
   const dispatch = useDispatch();
-  const { tittleJob, commentJob } = useSelector(
+  const { tittleJob} = useSelector(
     (state) => state.tittleJobReducer
   );
   const { currentUser } = useSelector((state) => state.authReducer);
