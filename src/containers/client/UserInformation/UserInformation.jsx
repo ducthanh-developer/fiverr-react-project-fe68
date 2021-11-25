@@ -137,7 +137,7 @@ export default function UserInformation(props) {
                                 </div>
                                 <ul className=" add__form__skill">
                                     <li className="flex-item-skill ">Skill</li>
-                                    <li className="flex-item-add" onClick={handleClick}>Add Skill</li>
+                                    <li className="flex-item-add" onClick={handleClick}>Add New</li>
                                     <div>
                                         {isShow ?
                                             <>
