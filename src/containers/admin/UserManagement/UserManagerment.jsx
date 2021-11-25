@@ -71,12 +71,12 @@ export default function UserManagerment() {
 
       render: (text, user) => {
         return <div key={text}>
-          <NavLink className="bg-dark text-white hhhhh" to={`/Admin/user-managerment/edit/${user._id}`} >
+          <NavLink className="" to={`/Admin/user-managerment/edit/${user._id}`} >
             <i className="btn-xoa-sua-showtime">
               <EditOutlined />
             </i>
           </NavLink>
-          <span width={200} onClick className=" bg-dark ml-2"
+          <span width={200} onClick className="ml-2"
             onClick={() => {
               if(window.confirm('Are you sure you want to delete' + user._id)) {
                 dispatch(actDeleteUser(user._id));
@@ -86,11 +86,6 @@ export default function UserManagerment() {
               <DeleteOutlined />
             </i>
           </span>
-          <NavLink className="bg-dark text-white" to={`/Admin/MovieManager/ShowTime/${user._id}`} >
-            <i className="btn-xoa-sua-showtime">
-              <CalendarOutlined />
-            </i>
-          </NavLink>
         </div>
       },
     },

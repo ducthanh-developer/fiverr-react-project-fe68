@@ -9,7 +9,7 @@ import "bootstrap/dist/js/bootstrap.bundle";
 import "@fortawesome/fontawesome-free/css/all.css";
 import "startbootstrap-sb-admin-2/vendor/jquery-easing/jquery.easing";
 import "startbootstrap-sb-admin-2/css/sb-admin-2.css";
-import "startbootstrap-sb-admin-2/js/sb-admin-2";
+// import "startbootstrap-sb-admin-2/js/sb-admin-2";
 import "antd/dist/antd.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
