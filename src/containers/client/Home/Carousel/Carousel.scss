@@ -6,7 +6,7 @@
         max-width: 80%;
         margin: 0 auto;
         .ant-input-affix-wrapper-lg {
-            width: 550px;
+            width: 550px ;
             height: 54px;
         }
         .ant-input-search-button {
@@ -41,7 +41,7 @@
         top: 200px;
 
         .ant-input-affix-wrapper-lg {
-            width: 480px;
+            width: 480px !important;
             height: 59px;
         }
         .ant-input-search-button {
@@ -99,29 +99,28 @@
             }
         }
     }
-
     .Sliders__search {
         position: absolute;
-        top: 10px;
-        left: 30px;
+        top: 170px !important;
+        left: 0px !important;
         .ant-space-vertical {
             margin-top: 50px;
         }
         .ant-input-affix-wrapper-lg {
-            width: 300px !important;
+            width: 400px !important;
             height: 59px;
         }
         .ant-input-search-button {
             height: 59px;
             background-color: rgb(9, 74, 27);
-            width: 70px;
+            width: 90px !important;
             border: none;
         }
         .Sliders__search__item {
             margin-left: 25px !important;
             span {
                 color: white;
-                font-size: 35px !important;
+                font-size: 37px !important;
                 font-weight: bold;
             }
         }
@@ -140,15 +139,15 @@
     }
     .Sliders__search {
         position: absolute;
-        top: 10px;
-        left: 10px;
+        top: 130px !important;
+        left: 0px !important;
         .Sliders__search__item {
             h1 {
                 font-size: 30px;
             }
         }
         .ant-input-affix-wrapper-lg {
-            width: 350px;
+            width: 300px !important;
             height: 50px;
         }
         .ant-input-search-button {
@@ -179,22 +178,22 @@
         }
     }
     .Sliders__search {
-        top: 10px;
-        left: 20px;
+        top: 150px;
+        left: 0px !important;
         .ant-input-affix-wrapper-lg {
-            width: 250px !important;
+            width: 279px !important;
             height: 45px;
         }
         .ant-input-search-button {
             height: 45px;
             background-color: rgb(81, 213, 118);
-            width: 69px !important;
+            width: 79px !important;
             border-right: 20px;
         }
         .Sliders__search__item {
             span {
                 color: white;
-                font-size: 24px !important;
+                font-size: 30px !important;
                 font-weight: bold;
             }
         }
@@ -297,7 +296,7 @@
 
 
 
-@media screen and (max-width: 352px) {
+@media screen and (max-width: 412px) {
     .carousel__content {
         .carousel__images {
             .images__item {
@@ -309,11 +308,11 @@
         }
     }
     .Sliders__search {
-        left: 0px !important;
+        left:0px !important;
         position: absolute;
-        top: 15px !important;
+        top: 215px !important;
         .ant-input-affix-wrapper-lg {
-            width: 200px !important;
+            width: 270px !important;
             height: 55px;
         }
         .ant-input-search-button {
@@ -325,8 +324,7 @@
         .Sliders__search__item {
             span {
                 color: white;
-                font-size: 32px !important;
-                font-weight: bold;
+                font-size: 30px !important;
             }
         }
     }
@@ -337,7 +335,7 @@
 
 
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 350px) {
     .carousel__content {
         .carousel__images {
             .images__item {
@@ -351,9 +349,9 @@
     .Sliders__search {
         left: 0px !important;
         position: absolute;
-        top: 15px !important;
+        top: 51px !important;
         .ant-input-affix-wrapper-lg {
-            width: 100px !important;
+            width: 50px !important;
             height: 55px;
         }
         .ant-input-search-button {
@@ -365,7 +363,7 @@
         .Sliders__search__item {
             span {
                 color: white;
-                font-size: 30px !important;
+                font-size: 20px !important;
                 font-weight: bold;
             }
         }

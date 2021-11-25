@@ -13,40 +13,45 @@ export default function Register(props) {
     const dispatch = useDispatch();
     const [componentSize, setComponentSize] = useState('default');
 
-    const formik = useFormik({
-        initialValues: {
-            first_name: '',
-            last_name: '',
-            email: '',
-            password: '',
-            phone: '',
-            skill: [],
-            certification: [],
-            birthday: '',
-            gender: true,
-            type: '',
-        },
-        onSubmit: (value) => {
-            console.log("values", value);
-            dispatch(actRegister(value));
-        }
-    })
+    // const formik = useFormik({
+    //     initialValues: {
+    //         first_name: '',
+    //         last_name: '',
+    //         email: '',
+    //         password: '',
+    //         phone: '',
+    //         skill: [],
+    //         certification: [],
+    //         birthday: '',
+    //         gender: true,
+    //         type: '',
+    //     },
+    //     onSubmit: (value) => {
+    //         console.log("values", value);
+    //         dispatch(actRegister(value));
+    //     }
+    // })
 
-    const handleChangeDatePicker = (value) => {
-        let birthday = moment(value).format('YYYY/MM/DD')
-        console.log(birthday);
-        formik.setFieldValue('birthday', birthday)
-    }
+    // const handleChangeDatePicker = (value) => {
+    //     let birthday = moment(value).format('YYYY/MM/DD')
+    //     console.log(birthday);
+    //     formik.setFieldValue('birthday', birthday)
+    // }
 
-    const handleChangeSwitch = (name) => {
-        return (value) => {
-            formik.setFieldValue(name, value);
-        }
-    }
+    // const handleChangeSwitch = (name) => {
+    //     return (value) => {
+    //         formik.setFieldValue(name, value);
+    //     }
+    // }
     const onFormLayoutChange = ({ size }) => {
         setComponentSize(size);
     };
 
+    const onFinish = values => {
+        console.log('Received values of form: ', values);
+           dispatch(actRegister(values));
+    
+      };
     return (
         <div className="register" style={{
             display: 'flex',
@@ -55,7 +60,7 @@ export default function Register(props) {
         }}>
             <div className="register__content">
                 <Form
-                    onSubmitCapture={formik.handleSubmit}
+                    // onSubmitCapture={formik.handleSubmit}
                     labelCol={{
                         span: 4,
                     }}
@@ -66,6 +71,7 @@ export default function Register(props) {
                     initialValues={{
                         size: componentSize,
                     }}
+                    onFinish={onFinish}
 
                     scrollToFirstError
                     onValuesChange={onFormLayoutChange}
@@ -73,10 +79,10 @@ export default function Register(props) {
                     validateTrigger="onBlur">
                     <Form.Item label=" first_name" style={{ marginTop: "80px" }} name="first_name"
                         rules={[{ required: true, message: 'Please input your fist-name', whitespace: true }]}>
-                        <Input name="first_name" onChange={formik.handleChange} />
+                        <Input name="first_name" />
                     </Form.Item >
                     <Form.Item label=" last_name" name="last-name" rules={[{ required: true, message: 'Please input your last-name', whitespace: true }]} >
-                        <Input name="last_name" onChange={formik.handleChange} />
+                        <Input name="last_name"  />
                     </Form.Item>
                     <Form.Item label="email" name="email" rules={[
                         {
@@ -88,7 +94,7 @@ export default function Register(props) {
                             message: 'Please input your E-mail!',
                         },
                     ]}>
-                        <Input name="email" onChange={formik.handleChange} />
+                        <Input name="email"  />
                     </Form.Item>
                     <Form.Item label="password" name="password" rules={[
                         {
@@ -97,28 +103,28 @@ export default function Register(props) {
                         },
                     ]}
                         hasFeedback >
-                        <Input.Password name="password" onChange={formik.handleChange} />
+                        <Input.Password name="password" />
                     </Form.Item>
                     <Form.Item label="phone" name="phone" rules={[{ required: true, message: 'Please input your phone number!' }]} >
-                        <Input name="phone" onChange={formik.handleChange} />
+                        <Input name="phone"/>
                     </Form.Item>
                     <Form.Item label="skill" name="skill" rules={[{ required: true, message: 'Please input your skill', whitespace: true }]}>
-                        <Input name="skill" onChange={formik.handleChange} />
+                        <Input name="skill"/>
                     </Form.Item>
                     <Form.Item label="type" name="type" rules={[{ required: true, message: 'Please input your type', whitespace: true }]}  >
-                        <Input name="type" onChange={formik.handleChange} />
+                        <Input name="type" />
                     </Form.Item>
                     <Form.Item label="certification" name="certification" rules={[{ required: true, message: 'Please input your skill', whitespace: true }]} >
-                        <Input name="certification" onChange={formik.handleChange} />
+                        <Input name="certification"  />
                     </Form.Item>
                     <Form.Item label="birthday" name="birthday" >
-                        <DatePicker format="DD/MM/YYYY" onChange={handleChangeDatePicker} />
+                        <DatePicker format="DD/MM/YYYY"  />
                     </Form.Item>
-                    <Form.Item label=" gender " name=" gender" rules={[{ required: true, message: 'Please input your skill', whitespace: true }]}>
-                        <Switch name="gender" onChange={handleChangeSwitch('gender')} />
+                    <Form.Item label=" gender " name=" gender">
+                        <Switch name="gender" />
                     </Form.Item>
                     <Form.Item >
-                        <button type="submit" className="btn btn-default btn-register" value=""> Register</button>
+                        <button type="submit" className="btn btn-default btn-register" zvalue=""> Register</button>
                     </Form.Item>
                 </Form>
             </div>
