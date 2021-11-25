@@ -88,7 +88,6 @@
         .noidung__add {
             margin: 0 auto;
             text-align: center;
-            /* width: 43%; */
             border: 1px solid #17b875;
             border-radius: 31px;
             width: 44%;
@@ -364,7 +363,7 @@
         .file {
             height: 20%;
             width: 100%;
-            color:#f7f7f7;
+            color: #f7f7f7;
             // margin-left: 156px;
             margin-top: 20px;
         }
@@ -412,7 +411,6 @@
         max-width: 100% !important;
         margin: 0 auto;
     }
-
     .userInformation__item1 {
         float: left;
         width: 50%;
@@ -423,6 +421,34 @@
     }
 }
 
+@media (max-width: 1123px) {
+    .create__new__gif {
+        height: 130px !important;
+        width: 100%;
+        position: relative;
+        padding: 26px 20px 20px 20px;
+        border: 1px solid #9f9ca26b;
+        .Gigs {
+            font-size: 15px;
+            line-height: 30px;
+        }
+        .button__gif {
+            button {
+                position: absolute;
+            }
+        }
+    }
+    .history__job__booking {
+        .bookingName {
+            .ant-card-bordered {
+                width: 160% !important;
+                margin-left: -35px;
+                border-radius: 4px;
+                border: 1px solid rgba(206, 200, 200, 0.769);
+            }
+        }
+    }
+}
 @media (max-width: 1080px) {
     .history__job__booking {
         .bookingName {
@@ -696,17 +722,136 @@
             font-size: 16px;
             float: left;
             font-weight: 400;
-            width: 75% !important;
+            width: 80% !important;
             margin-bottom: 20px;
             color: #62646a;
         }
         .flex-item-year {
             float: left;
-            width: 25% !important;
+            width: 20% !important;
+        }
+    }
+
+    .add__form__skill {
+        .flex-item-skill {
+            font-size: 14px !important;
+            width: 80% !important;
+        }
+        .flex-item-add {
+            font-weight: 500;
+            font-size: 14px !important;
+            width: 20% !important;
+        }
+    }
+
+    .history__job__booking {
+        .bookingName {
+            .ant-card-bordered {
+                width: 162% !important;
+                margin-left: -35px;
+                border-radius: 4px;
+                border: 1px solid rgba(206, 200, 200, 0.769);
+            }
+            .name {
+                margin-left: 90px !important;
+            }
+        }
+    }
+    .add__form__certification {
+        max-width: 85%;
+        margin: 0 auto;
+        .flex-item-certification {
+            font-size: 14px !important;
+            float: left;
+            font-weight: 400;
+            width: 80% !important;
+            margin-bottom: 20px;
+            color: #62646a;
+        }
+        .flex-item-add-certification {
+            line-height: 30px;
+            font-weight: 500;
+            font-size: 14px !important;
+            color: #1dbf73;
+            float: left;
+            width: 20% !important;
+        }
+        .add__button__certification {
+            .cancle__add__certification {
+                background: white;
+                letter-spacing: 1px;
+                height: 38px;
+                margin-bottom: 13px;
+                text-align: center;
+                padding-top: 8px;
+                font-weight: 500;
+                border: 1px solid green;
+                border-radius: 5px;
+            }
         }
     }
 }
 
+@media (max-width: 930px) {
+    .add__form__skill {
+        .flex-item-skill {
+            font-size: 14px;
+            width: 75% !important;
+        }
+        .flex-item-add {
+            font-weight: 500;
+            font-size: 14px !important;
+            width: 25% !important;
+        }
+    }
+
+    .history__job__booking {
+        .bookingName {
+            .ant-card-bordered {
+                width: 165% !important;
+                margin-left: -35px;
+                border-radius: 4px;
+                border: 1px solid rgba(206, 200, 200, 0.769);
+            }
+            .name {
+                margin-left: 90px !important;
+            }
+        }
+    }
+    .add__form__certification {
+        max-width: 85%;
+        margin: 0 auto;
+        .flex-item-certification {
+            font-size: 14px;
+            float: left;
+            font-weight: 400;
+            width: 75% !important;
+            margin-bottom: 20px;
+            color: #62646a;
+        }
+        .flex-item-add-certification {
+            line-height: 30px;
+            font-weight: 500;
+            font-size: 14px;
+            color: #1dbf73;
+            float: left;
+            width: 25% !important;
+        }
+        .add__button__certification {
+            .cancle__add__certification {
+                background: white;
+                letter-spacing: 1px;
+                height: 38px;
+                margin-bottom: 13px;
+                text-align: center;
+                padding-top: 8px;
+                font-weight: 500;
+                border: 1px solid green;
+                border-radius: 5px;
+            }
+        }
+    }
+}
 @media (max-width: 576px) {
     .home__town__two {
         max-width: 85%;
@@ -741,6 +886,117 @@
         .flex-item-year {
             float: left;
             width: 17% !important;
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .add__form__skill {
+        .flex-item-skill {
+            font-size: 14px;
+            width: 70% !important;
+        }
+        .flex-item-add {
+            font-weight: 500;
+            font-size: 14px !important;
+            width: 30% !important;
+        }
+    }
+
+    .history__job__booking {
+        .bookingName {
+            .ant-card-bordered {
+                width: 182% !important;
+                margin-left: -35px;
+                border-radius: 4px;
+                border: 1px solid rgba(206, 200, 200, 0.769);
+            }
+            .name {
+                margin-left: 90px !important;
+            }
+        }
+    }
+    .add__form__certification {
+        max-width: 85%;
+        margin: 0 auto;
+        .flex-item-certification {
+            font-size: 14px;
+            float: left;
+            font-weight: 400;
+            width: 70% !important;
+            margin-bottom: 20px;
+            color: #62646a;
+        }
+        .flex-item-add-certification {
+            line-height: 30px;
+            font-weight: 500;
+            font-size: 14px;
+            color: #1dbf73;
+            float: left;
+            width: 30% !important;
+        }
+        .add__button__certification {
+            .cancle__add__certification {
+                background: white;
+                letter-spacing: 1px;
+                height: 38px;
+                margin-bottom: 13px;
+                text-align: center;
+                padding-top: 8px;
+                font-weight: 500;
+                border: 1px solid green;
+                border-radius: 5px;
+            }
+        }
+    }
+}
+
+@media (max-width: 360px) {
+    .history__job__booking {
+        .bookingName {
+            .ant-card-bordered {
+                width: 202% !important;
+                margin-left: -35px;
+                border-radius: 4px;
+                border: 1px solid rgba(206, 200, 200, 0.769);
+            }
+            .name {
+                margin-left: 90px !important;
+            }
+        }
+    }
+    .add__form__certification {
+        max-width: 85%;
+        margin: 0 auto;
+        .flex-item-certification {
+            font-size: 14px;
+            float: left;
+            font-weight: 400;
+            width: 70% !important;
+            margin-bottom: 20px;
+            color: #62646a;
+        }
+        .flex-item-add-certification {
+            line-height: 30px;
+            font-weight: 500;
+            font-size: 14px;
+            color: #1dbf73;
+            float: left;
+            width: 30% !important;
+        }
+    
+    }
+
+    .create__new__gif {
+        .Gigs {
+            font-size: 11px !important;
+        }
+        .button__gif {
+            button {
+                width: 56px;
+                position: absolute;
+                font-size: 12px;
+            }
         }
     }
 }

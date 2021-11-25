@@ -430,14 +430,21 @@ ul {
   }
 }
 
-.hh {
+.drop__login {
   .main {
     display: inline-block;
     position: relative;
     width: 150px;
     text-align: left;
   }
-  label {
+  .done__login{
+    background-color: #1dbf73;
+    border-radius: 44px;
+    width: 45px;
+    color: white;
+    margin-left: 73px;
+  }
+  .dropHeader {
     text-align: center;
     width: 100%;
     line-height: 45px;

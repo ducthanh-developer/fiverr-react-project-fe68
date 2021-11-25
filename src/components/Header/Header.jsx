@@ -4,7 +4,7 @@ import { NavLink, Link } from "react-router-dom";
 import "./Header.scss";
 import { actFetchListTypeJobs } from "./module/actions";
 import { actLogout } from "containers/shared/LoginFiverr/modules/action";
-// import { Menu, Dropdown, Button } from "antd";
+import { Menu, Dropdown, Button } from "antd";
 
 export default function Header(props) {
   const dispatch = useDispatch();
@@ -15,6 +15,8 @@ export default function Header(props) {
   const logOut = () => {
     dispatch(actLogout());
   };
+
+  
   useEffect(() => {
     dispatch(actFetchListTypeJobs());
   }, [dispatch]);
@@ -139,7 +141,7 @@ export default function Header(props) {
                 Become a Seller
               </a>
             </li>
-            <li className="nav-item hh">
+            <li className="nav-item drop__login">
               {currentUser == null ? (
                 <Link to="/login" className="nav-link nav-link--btn">
                   Join
@@ -149,9 +151,9 @@ export default function Header(props) {
                   <input type="checkbox" id="drop-1" hidden />
                   <label className="dropHeader dropHeader-1" for="drop-1">
                     {detailUser.avatar == null ? (
-                      <span>
-                        <img src="../../images/Market/4.png" alt="" />
-                      </span>
+                      <div className="done__login">
+                          M
+                      </div>
                     ) : (<div>
                       <img src={detailUser.avatar} alt="" />
 
