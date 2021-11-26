@@ -88,7 +88,7 @@ export const adminRoutes = [
   {
     path: "/admin/job-management/add-job",
     component: AddJob,
-    exact: true,
+    exact: false,
     isPrivate: true,
   },
   {

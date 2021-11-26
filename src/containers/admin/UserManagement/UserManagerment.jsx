@@ -9,7 +9,6 @@ import {
   EditOutlined,
   DeleteOutlined,
   SearchOutlined,
-  CalendarOutlined,
 } from "@ant-design/icons";
 export default function UserManagerment() {
   const { Search } = Input;
@@ -26,7 +25,7 @@ export default function UserManagerment() {
       title: 'Name',
       dataIndex: 'name',
       key: 'name',
-      render: text => <a href="1" className="">{text}</a>,
+      // render: text => <a href="1" className="">{text}</a>,
       width: 150,
     },
     {
@@ -81,9 +80,9 @@ export default function UserManagerment() {
               if(window.confirm('Are you sure you want to delete' + user._id)) {
                 dispatch(actDeleteUser(user._id));
               }
-            }} >
+            }}>
             <i className="btn-xoa-sua-showtime">
-              <DeleteOutlined />
+              <DeleteOutlined/>
             </i>
           </span>
         </div>

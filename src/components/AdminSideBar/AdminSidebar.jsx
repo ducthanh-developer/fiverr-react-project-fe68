@@ -1,6 +1,6 @@
 import React from "react";
 import { Fragment } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export default function AdminSidebar() {
   return (
@@ -45,7 +45,7 @@ export default function AdminSidebar() {
             aria-controls="collapseTwo"
           >
             <i className="fas fa-fw fa-cog" />
-            <span>Components</span>
+            <span>User Management</span>
           </a>
           <div
             id="collapseTwo"
@@ -55,12 +55,16 @@ export default function AdminSidebar() {
           >
             <div className="bg-white py-2 collapse-inner rounded">
               <h6 className="collapse-header">Custom Components:</h6>
-              <NavLink className="collapse-item" to="/admin/job-management/add-job">
+              <NavLink className="collapse-item" to="/admin">
+                list User
+              </NavLink>
+
+              <NavLink className="collapse-item" to="/admin/user-managerment/add">
                 Add User
               </NavLink>
-              <a className="collapse-item" href="cards.html">
+              {/* <a className="collapse-item" href="cards.html">
                 Cards
-              </a>
+              </a> */}
             </div>
           </div>
         </li>
@@ -75,7 +79,7 @@ export default function AdminSidebar() {
             aria-controls="collapseUtilities"
           >
             <i className="fas fa-fw fa-wrench" />
-            <span>Utilities</span>
+            <span>Job Management</span>
           </a>
           <div
             id="collapseUtilities"
@@ -85,18 +89,13 @@ export default function AdminSidebar() {
           >
             <div className="bg-white py-2 collapse-inner rounded">
               <h6 className="collapse-header">Custom Utilities:</h6>
-              <a className="collapse-item" href="utilities-color.html">
-                Colors
-              </a>
-              <a className="collapse-item" href="utilities-border.html">
-                Borders
-              </a>
-              <a className="collapse-item" href="utilities-animation.html">
-                Animations
-              </a>
-              <a className="collapse-item" href="utilities-other.html">
-                Other
-              </a>
+              <NavLink className="collapse-item" to="admin/job-management">
+                List Jobs
+              </NavLink>
+              <NavLink className="collapse-item" to="/admin/job-management/add-job"
+              >
+                Add Job
+              </NavLink>
             </div>
           </div>
         </li>

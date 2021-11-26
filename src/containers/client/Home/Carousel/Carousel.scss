@@ -340,7 +340,7 @@
         .carousel__images {
             .images__item {
                 img {
-                    height: 500px;
+                    height: 300px;
                     width: 100%;
                 }
             }
@@ -349,9 +349,9 @@
     .Sliders__search {
         left: 0px !important;
         position: absolute;
-        top: 51px !important;
+        top: 151px !important;
         .ant-input-affix-wrapper-lg {
-            width: 50px !important;
+            width: 150px !important;
             height: 55px;
         }
         .ant-input-search-button {

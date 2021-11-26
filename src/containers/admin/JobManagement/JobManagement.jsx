@@ -32,7 +32,7 @@ export default function JobManagement() {
     {
       title: "Rate",
       dataIndex: "rating",
-      sorter: (a, b) => a.rating - b.rating,
+      // sorter: (a, b) => a.rating - b.rating,
     },
     {
       title: "Price",
@@ -42,8 +42,11 @@ export default function JobManagement() {
       title: "Image",
       render: (text, job) => {
         return (
-          
-          <img src={job.image} alt="Image" style={{ maxWidth: "100px" }} />
+          <span key={text}>
+            <img src={job.image} alt="..." style={{ maxWidth: "100px" }} />
+
+          </span>
+
         );
       },
     },
@@ -51,7 +54,7 @@ export default function JobManagement() {
       title: "Action",
       render: (text, job) => {
         return (
-          <Fragment>
+          <Fragment key={text}>
             <NavLink
               to={`/admin/job-management/edit-job/${job._id}`}
               className="mr-3 text-success"
@@ -78,7 +81,7 @@ export default function JobManagement() {
 
   const data = listJobs;
 
-  function onChange(pagination, filters, sorter, extra) {}
+  function onChange(pagination, filters, sorter, extra) { }
   return (
     <div>
       <h3>List Jobs</h3>
