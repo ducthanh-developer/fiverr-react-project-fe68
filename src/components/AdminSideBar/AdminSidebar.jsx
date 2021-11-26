@@ -55,12 +55,15 @@ export default function AdminSidebar() {
           >
             <div className="bg-white py-2 collapse-inner rounded">
               <h6 className="collapse-header">Custom Components:</h6>
-              <NavLink className="collapse-item" to="/admin/job-management/add-job">
+              <NavLink className="collapse-item" to="/admin/user-managerment/add">
                 Add User
               </NavLink>
-              <a className="collapse-item" href="cards.html">
-                Cards
-              </a>
+              <NavLink className="collapse-item" to="/admin/job-management">
+                List job
+              </NavLink>
+              <NavLink className="collapse-item" to="/admin/job-management/add-job">
+                add job
+              </NavLink>
             </div>
           </div>
         </li>
@@ -85,9 +88,6 @@ export default function AdminSidebar() {
           >
             <div className="bg-white py-2 collapse-inner rounded">
               <h6 className="collapse-header">Custom Utilities:</h6>
-              <a className="collapse-item" href="utilities-color.html">
-                Colors
-              </a>
               <a className="collapse-item" href="utilities-border.html">
                 Borders
               </a>
