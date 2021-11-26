@@ -18,7 +18,7 @@ export default function AdminSidebar() {
             <i className="fas fa-laugh-wink" />
           </div>
           <div className="sidebar-brand-text mx-3">
-            SB Admin <sup>2</sup>
+            Fiverr  
           </div>
         </a>
         {/* Divider */}
@@ -45,7 +45,7 @@ export default function AdminSidebar() {
             aria-controls="collapseTwo"
           >
             <i className="fas fa-fw fa-cog" />
-            <span>Components</span>
+            <span>User Management</span>
           </a>
           <div
             id="collapseTwo"
@@ -55,15 +55,13 @@ export default function AdminSidebar() {
           >
             <div className="bg-white py-2 collapse-inner rounded">
               <h6 className="collapse-header">Custom Components:</h6>
+              <NavLink className="collapse-item" to="/admin">
+                List User
+              </NavLink>
               <NavLink className="collapse-item" to="/admin/user-managerment/add">
                 Add User
               </NavLink>
-              <NavLink className="collapse-item" to="/admin/job-management">
-                List job
-              </NavLink>
-              <NavLink className="collapse-item" to="/admin/job-management/add-job">
-                add job
-              </NavLink>
+
             </div>
           </div>
         </li>
@@ -78,7 +76,7 @@ export default function AdminSidebar() {
             aria-controls="collapseUtilities"
           >
             <i className="fas fa-fw fa-wrench" />
-            <span>Utilities</span>
+            <span>Job Management</span>
           </a>
           <div
             id="collapseUtilities"
@@ -88,25 +86,64 @@ export default function AdminSidebar() {
           >
             <div className="bg-white py-2 collapse-inner rounded">
               <h6 className="collapse-header">Custom Utilities:</h6>
-              <a className="collapse-item" href="utilities-border.html">
-                Borders
-              </a>
-              <a className="collapse-item" href="utilities-animation.html">
-                Animations
-              </a>
-              <a className="collapse-item" href="utilities-other.html">
-                Other
-              </a>
+              <NavLink className="collapse-item" to="/admin/job-management">
+                List job
+              </NavLink>
+              <NavLink className="collapse-item" to="/admin/type-job">
+                list Type Job
+              </NavLink>
+              <NavLink className="collapse-item" to="/admin/subjob-management">
+                List  Sub Type Job
+              </NavLink>
+              <NavLink className="collapse-item" to="/admin/job-management/add-job">
+                add job
+              </NavLink>
+              <NavLink className="collapse-item" to="/admin/type-job/add">
+                add Type Job
+              </NavLink>
+              <NavLink className="collapse-item" to="/admin/subjob-management/add-subjo">
+                add Sub Type Job
+              </NavLink>
             </div>
           </div>
         </li>
-        {/* Divider */}
-        <hr className="sidebar-divider" />
-        {/* Heading */}
-        <div className="sidebar-heading">Addons</div>
-        {/* Nav Item - Pages Collapse Menu */}
-        <li className="nav-item active">
+        {/* 
+        <li className="nav-item">
           <a
+            className="nav-link collapsed"
+            href=".."
+            data-toggle="collapse"
+            data-target="#collapseUtilities"
+            aria-expanded="true"
+            aria-controls="collapseUtilities"
+          >
+            <i className="fas fa-fw fa-wrench" />
+            <span>Job Type Management</span>
+          </a>
+          <div
+            id="collapseUtilities"
+            className="collapse"
+            aria-labelledby="headingUtilities"
+            data-parent="#accordionSidebar"
+          >
+            <div className="bg-white py-2 collapse-inner rounded">
+              <h6 className="collapse-header">Custom Utilities:</h6>
+              <NavLink className="collapse-item" to="/admin/type-job">
+              list Type Job
+              </NavLink>
+              <NavLink className="collapse-item" to="/admin/type-job/add">
+                add Type Job
+              </NavLink>
+            </div>
+          </div>
+        </li> */}
+        {/* Divider */}
+        {/* <hr className="sidebar-divider" /> */}
+        {/* Heading */}
+        {/* <div className="sidebar-heading">Addons</div> */}
+        {/* Nav Item - Pages Collapse Menu */}
+        {/* <li className="nav-item active"> */}
+        {/* <a
             className="nav-link"
             href=".."
             data-toggle="collapse"
@@ -115,7 +152,7 @@ export default function AdminSidebar() {
             aria-controls="collapsePages"
           >
             <i className="fas fa-fw fa-folder" />
-            <span>Pages</span>
+            <span>Sub Job Management</span>
           </a>
           <div
             id="collapsePages"
@@ -125,46 +162,36 @@ export default function AdminSidebar() {
           >
             <div className="bg-white py-2 collapse-inner rounded">
               <h6 className="collapse-header">Login Screens:</h6>
-              <a className="collapse-item" href="login.html">
-                Login
-              </a>
-              <a className="collapse-item" href="register.html">
-                Register
-              </a>
-              <a className="collapse-item" href="forgot-password.html">
-                Forgot Password
-              </a>
-              <div className="collapse-divider" />
-              <h6 className="collapse-header">Other Pages:</h6>
-              <a className="collapse-item" href="404.html">
-                404 Page
-              </a>
-              <a className="collapse-item active" href="blank.html">
-                Blank Page
-              </a>
+              <NavLink className="collapse-item" to="/admin/subjob-management">
+              Sub Type Job
+              </NavLink>
+              <NavLink className="collapse-item" to="/admin/subjob-management/add-subjo">
+                add Sub Type Job
+              </NavLink>
+              
             </div>
           </div>
-        </li>
+        </li> */}
         {/* Nav Item - Charts */}
-        <li className="nav-item">
+        {/* <li className="nav-item">
           <a className="nav-link" href="charts.html">
             <i className="fas fa-fw fa-chart-area" />
             <span>Charts</span>
           </a>
-        </li>
+        </li> */}
         {/* Nav Item - Tables */}
-        <li className="nav-item">
+        {/* <li className="nav-item">
           <a className="nav-link" href="tables.html">
             <i className="fas fa-fw fa-table" />
             <span>Tables</span>
           </a>
-        </li>
+        </li> */}
         {/* Divider */}
-        <hr className="sidebar-divider d-none d-md-block" />
+        {/* <hr className="sidebar-divider d-none d-md-block" /> */}
         {/* Sidebar Toggler (Sidebar) */}
-        <div className="text-center d-none d-md-inline">
+        {/* <div className="text-center d-none d-md-inline">
           <button className="rounded-circle border-0" id="sidebarToggle" />
-        </div>
+        </div> */}
       </ul>
     </Fragment>
   );

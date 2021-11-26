@@ -79,7 +79,7 @@ export default function EditJob(props) {
   const renderListSubType = () => {
     return listSubJob.map((job, index) => {
       const { _id, name, typeJob } = job;
-      if (typeJob?._id == formik.values.job.type?._id) {
+      if (typeJob?._id === formik.values.job.type?._id) {
         return (
           <Select.Option value={_id} key={index}>
             {name}
@@ -155,8 +155,8 @@ export default function EditJob(props) {
           <input type="file" onChange={handleChangeFile} />
           <img
             style={{ maxWidth: "150px" }}
-            src={imgSrc == "" ? tittleJob.image : imgSrc}
-            alt="Image"
+            src={imgSrc === "" ? tittleJob.image : imgSrc}
+            alt="..."
             className="mt-3"
           />
         </Form.Item>

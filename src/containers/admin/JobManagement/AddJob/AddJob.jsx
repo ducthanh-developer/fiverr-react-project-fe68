@@ -142,7 +142,7 @@ export default function AddJob(props) {
             <img
               style={{ maxWidth: "150px" }}
               src={imgSrc}
-              alt="Image"
+              alt="..."
               className="mt-3"
             />
           )}

@@ -4,7 +4,6 @@ import { NavLink, Link } from "react-router-dom";
 import "./Header.scss";
 import { actFetchListTypeJobs } from "./module/actions";
 import { actLogout } from "containers/shared/LoginFiverr/modules/action";
-import { Menu, Dropdown, Button } from "antd";
 
 export default function Header(props) {
   const dispatch = useDispatch();
@@ -16,7 +15,6 @@ export default function Header(props) {
     dispatch(actLogout());
   };
 
-  
   useEffect(() => {
     dispatch(actFetchListTypeJobs());
   }, [dispatch]);
@@ -47,24 +45,26 @@ export default function Header(props) {
   return (
     <div className="header">
       <header className="header-package row">
-        <button
-          className="btn-navicon"
-          onClick={() => {
-            document.getElementById("menu-toggle").style.left = "0";
-            document.getElementById("menu-overlay").style.display = "block";
-          }}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width={23}
-            height={19}
-            viewBox="0 0 23 19"
+        <div className="">
+          <button
+            className="btn-navicon"
+            onClick={() => {
+              document.getElementById("menu-toggle").style.left = "0";
+              document.getElementById("menu-overlay").style.display = "block";
+            }}
           >
-            <rect y={16} width={23} height={3} rx="1.5" fill="#555" />
-            <rect width={23} height={3} rx="1.5" fill="#555" />
-            <rect y={8} width={23} height={3} rx="1.5" fill="#555" />
-          </svg>
-        </button>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width={23}
+              height={19}
+              viewBox="0 0 23 19"
+            >
+              <rect y={16} width={23} height={3} rx="1.5" fill="#555" />
+              <rect width={23} height={3} rx="1.5" fill="#555" />
+              <rect y={8} width={23} height={3} rx="1.5" fill="#555" />
+            </svg>
+          </button>
+        </div>
         <a href=".." className="package-logo">
           <svg
             width="89"
@@ -141,7 +141,7 @@ export default function Header(props) {
                 Become a Seller
               </a>
             </li>
-            <li className="nav-item drop__login">
+            <li className=" drop__login">
               {currentUser == null ? (
                 <Link to="/login" className="nav-link nav-link--btn">
                   Join
@@ -152,7 +152,7 @@ export default function Header(props) {
                   <label className="dropHeader dropHeader-1" for="drop-1">
                     {detailUser.avatar == null ? (
                       <div className="done__login">
-                          M
+                        M
                       </div>
                     ) : (<div>
                       <img src={detailUser.avatar} alt="" />
@@ -231,6 +231,9 @@ export default function Header(props) {
             </a>
             <a href=".." className="sidebar-link">
               Open in App
+            </a>
+            <a href=".." className="sidebar-link">
+            {renderListTypeJobs()}
             </a>
           </div>
         </div>
