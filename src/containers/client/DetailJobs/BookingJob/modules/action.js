@@ -12,8 +12,7 @@ export const actDatCongViec = (jobId, token) => {
       .fetchBookingJob(jobId, token)
       .then((result) => {
         console.log("Đặt công việc nè!", result);
-        // alert("Booking Success!");
-        // dispatch(acBookingJob(result.data))
+        alert("Booking Success!");
       })
       .catch((error) => {
         console.log("errrhhh", error.response?.data);
